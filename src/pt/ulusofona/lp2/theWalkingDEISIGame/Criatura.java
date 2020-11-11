@@ -2,7 +2,7 @@ package pt.ulusofona.lp2.theWalkingDEISIGame;
 
 // Teste
 // Batata
-
+// BATATa
 public class Criatura {
 
     public int id;
