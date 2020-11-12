@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="277f7e4c-8220-423e-9b73-9c62c1e271f8" name="Default Changelist" comment="edit Criatura">
+    <list default="true" id="277f7e4c-8220-423e-9b73-9c62c1e271f8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projeto_LP2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Projeto_LP2.iml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,6 +14,7 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="Matheus-21800876 &lt;a21800876@alunos.ulht.pt&gt;" />
         <option value="joao-21900074 &lt;a21900074@alunos.ulht.pt&gt;" />
       </list>
     </option>
@@ -21,9 +23,13 @@
   <component name="ProjectId" id="1k9XecTPy5UYw3PiBkdnurFlSBE" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\matah\IdeaProjects\LP2-21900074_21800876\lib" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Utilizador\Documents\Projetos\Faculdade\Projeto_LP2\src\pt\ulusofona\lp2\theWalkingDEISIGame" />
     </key>
@@ -39,6 +45,15 @@
         </RuleState>
       </list>
     </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="AppLauncher" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="pt.ulusofona.lp2.guiSimulator.AppLauncher" />
+      <module name="Projeto_LP2" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -72,7 +87,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605115822901</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Criação de pasta images e lib&#10;&#10;.jar adicionado a pasta lib">
+      <created>1605192566847</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1605192566847</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -91,6 +113,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="edit gitignore" />
     <MESSAGE value="edit Criatura" />
-    <option name="LAST_COMMIT_MESSAGE" value="edit Criatura" />
+    <MESSAGE value="Criação de pasta images e lib&#10;&#10;.jar adicionado a pasta lib" />
+    <option name="LAST_COMMIT_MESSAGE" value="Criação de pasta images e lib&#10;&#10;.jar adicionado a pasta lib" />
   </component>
 </project>
