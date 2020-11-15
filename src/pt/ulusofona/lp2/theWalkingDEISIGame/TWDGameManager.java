@@ -4,9 +4,10 @@ import java.io.*;
 import java.util.List;
 
 public class TWDGameManager {
-    /* Batata */
-    /* Batata */
-    List<Humano> humanos;
+
+    List<Humano> humans;
+    List<Zombie> zombies;
+    int initialTeam;
 
     /* Deve fazer a leitura do ficheiro de texto e
        carregar para a memória a informação
@@ -24,21 +25,19 @@ public class TWDGameManager {
         return null;
     }
 
-    /* Devolve o ID da equipa que vai jogar no primeiro turno do jogo. */
+    // pronto
     public int getInitialTeam() {
-        return 0;
+        return initialTeam;
     }
 
-    /* Devolve uma lista com todos os objectos
-       pt.ulusofona.lp2.Humano que existem no jogo. */
+    // pronto
     public List<Humano> getHumans() {
-        return null;
+        return humans;
     }
 
-    /* Devolve uma lista com todos os objectos
-       pt.ulusofona.lp2.Zombie que existem no jogo. */
+    //pronto
     public List<Zombie> getZombies() {
-        return null;
+        return zombies;
     }
 
     /* Deve tentar executar uma jogada,

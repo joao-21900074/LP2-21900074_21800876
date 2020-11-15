@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="277f7e4c-8220-423e-9b73-9c62c1e271f8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Humano.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Humano.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Zombie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Zombie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,8 +15,8 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
-        <option value="Matheus-21800876 &lt;a21800876@alunos.ulht.pt&gt;" />
         <option value="joao-21900074 &lt;a21900074@alunos.ulht.pt&gt;" />
+        <option value="Matheus-21800876 &lt;a21800876@alunos.ulht.pt&gt;" />
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -95,7 +95,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605192566847</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Removi a classe Criatura e editei Humano e Zombie">
+      <created>1605456024994</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1605456024994</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -115,6 +122,7 @@
     <MESSAGE value="edit gitignore" />
     <MESSAGE value="edit Criatura" />
     <MESSAGE value="Criação de pasta images e lib&#10;&#10;.jar adicionado a pasta lib" />
-    <option name="LAST_COMMIT_MESSAGE" value="Criação de pasta images e lib&#10;&#10;.jar adicionado a pasta lib" />
+    <MESSAGE value="Removi a classe Criatura e editei Humano e Zombie" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removi a classe Criatura e editei Humano e Zombie" />
   </component>
 </project>
