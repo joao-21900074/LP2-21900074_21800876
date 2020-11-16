@@ -1,110 +1,27 @@
 package pt.ulusofona.lp2.theWalkingDEISIGame;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 public class TWDGameManager {
 
     List<Humano> humans;
     List<Zombie> zombies;
-    static int initialTeam;
+    int initialTeam;
+    int[] worldSize = new int[2];
+
+
 
     /* Deve fazer a leitura do ficheiro de texto e
        carregar para a memória a informação
        relevante. */
-    public static boolean startGame(File ficheiroInicial) {
-        try {
-            //Leitor para o ficheiro do jogo
-            BufferedReader leitor = new BufferedReader(new FileReader(ficheiroInicial));
-            //String para ler linha a linha
-            String linha;
-            int key = 1;
-            HashMap<Integer,String> conteudo = new HashMap<>();
-
-            //While de leitura
-            while (((linha = leitor.readLine()))!= null) {
-                String[] info = linha.split(" ");
-                conteudo.put(key, String.join(" ",info));
-                key++;
-            }
-
-            //Criação do Mapa
-            String[] cxl = conteudo.get(1).split(" ");
-            int linhas = Integer.parseInt(cxl[0]);
-            int colunas = Integer.parseInt(cxl[1]);
-            int[][] mapa = new int[linhas][colunas];
-
-            //Equipe inicial
-            initialTeam = Integer.parseInt(conteudo.get(2));
-
-            //Quantidade de criaturas
-            int nCriaturas = Integer.parseInt(conteudo.get(3));
-
-            //Criação de criaturas
-            ArrayList<Humano> humanos = new ArrayList<>();
-            ArrayList<Zombie> zombies = new ArrayList<>();
-            int linhaCriaturas = 4;
-
-            for(String criatura : conteudo.values()){
-                if(criatura.length() > 13) {
-                    String[] infoCriaturas = conteudo.get(linhaCriaturas).split(":");
-                    int id = Integer.parseInt(infoCriaturas[0].trim());
-                    int tipo = Integer.parseInt(infoCriaturas[1].trim());
-                    String nome = infoCriaturas[2].trim();
-                    int posicaoX = Integer.parseInt(infoCriaturas[3].trim());//Adicionar no mapa
-                    int posicaoY = Integer.parseInt(infoCriaturas[4].trim());//Adicionar no mapa
-
-                    if(tipo == 0) {
-                        Zombie z = new Zombie(id, tipo, nome, "");//VER A IMAGEM
-                        zombies.add(z);
-                    }else{
-                        Humano h = new Humano(id, tipo, nome, "");//VER A IMAGEM
-                        humanos.add(h);
-                    }
-
-                    linhaCriaturas++;
-                }
-            }
-
-            //Quantidade de equipamentos
-            int nEquimamentos = Integer.parseInt(conteudo.get(linhaCriaturas));
-            linhaCriaturas++;
-
-            //Criação de Equipamentos
-            ArrayList<Equipamento> equipamentos = new ArrayList<>();
-            for(String equip : conteudo.values()){
-                if(equip.length() > 3 && equip.length() < 14) {
-                    String[] infoEquipamento = conteudo.get(linhaCriaturas).split(":");
-                    int id = Integer.parseInt(infoEquipamento[0].trim());
-                    int tipo = Integer.parseInt(infoEquipamento[1].trim());
-                    int posicaoX = Integer.parseInt(infoEquipamento[2].trim());//Adicionar no mapa
-                    int posicaoY = Integer.parseInt(infoEquipamento[3].trim());//Adicionar no mapa
-
-                    Equipamento e = new Equipamento(id, tipo, false);//Ver o q fazer com o "equipado"
-
-                    equipamentos.add(e);
-
-                    linhaCriaturas++;
-                }
-            }
-
-            System.out.println(equipamentos);
-
-        }catch(IOException exception) {
-            exception.printStackTrace();
-        }
+    public boolean startGame(File ficheiroInicial) {
         return false;
     }
 
-    /* Deve devolver o tamanho do bairro,
-       conforme lido do ficheiro respectivo.
-       Na posição 0 do array deve ser devolvido o
-       número de linhas e na posição 1 deve ser
-       devolvido o número de colunas. */
+    //pronto
     public int[] getWorldSize() {
-        return null;
+        return worldSize;
     }
 
     // pronto
