@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="277f7e4c-8220-423e-9b73-9c62c1e271f8" name="Default Changelist" comment="">
+    <list default="true" id="277f7e4c-8220-423e-9b73-9c62c1e271f8" name="Default Changelist" comment="Editei TWd,Humano,Zombie e adicionei o arquivo com dados de teste">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Equipamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Equipamento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" afterDir="false" />
-    </list>
-    <list id="a7e435a9-4b90-42d4-9ac0-7137be121cd0" name="Revert &quot;Merge branch 'master' of C:\Users\Utilizador\Documents\Projetos\Faculdade\Projeto_LP2 with conflicts.&quot;" comment="Revert &quot;Merge branch 'master' of C:\Users\Utilizador\Documents\Projetos\Faculdade\Projeto_LP2 with conflicts.&quot;&#10;&#10;This reverts commit 8114a496">
+      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,23 +21,11 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java">
-      <ranges>
-        <range start1="3" end1="3" start2="3" end2="5" changelist="a7e435a9-4b90-42d4-9ac0-7137be121cd0" />
-        <range start1="9" end1="9" start2="11" end2="12" changelist="277f7e4c-8220-423e-9b73-9c62c1e271f8" />
-        <range start1="11" end1="12" start2="14" end2="16" changelist="a7e435a9-4b90-42d4-9ac0-7137be121cd0" />
-        <range start1="16" end1="17" start2="20" end2="108" changelist="a7e435a9-4b90-42d4-9ac0-7137be121cd0" />
-        <range start1="20" end1="21" start2="111" end2="116" changelist="a7e435a9-4b90-42d4-9ac0-7137be121cd0" />
-        <range start1="22" end1="23" start2="117" end2="118" changelist="a7e435a9-4b90-42d4-9ac0-7137be121cd0" />
-      </ranges>
-    </file>
-  </component>
   <component name="ProjectId" id="1k9XecTPy5UYw3PiBkdnurFlSBE" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Forca 2020 Segunda Parte" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/LP2GuiViewer2021-p1-v100.jar!/" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -63,7 +48,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.AppLauncher">
     <configuration name="AppLauncher" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="pt.ulusofona.lp2.guiSimulator.AppLauncher" />
       <module name="Projeto_LP2" />

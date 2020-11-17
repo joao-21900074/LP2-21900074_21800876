@@ -7,18 +7,19 @@ import java.util.List;
 
 public class TWDGameManager {
 
-    static ArrayList<Humano> humans = new ArrayList<>();
-    static ArrayList<Zombie> zombies = new ArrayList<>();
-    static ArrayList<Equipamento> equipamentos = new ArrayList<>();
-    static int initialTeam;
+    ArrayList<Humano> humans = new ArrayList<>();
+    ArrayList<Zombie> zombies = new ArrayList<>();
+    ArrayList<Equipamento> equipamentos = new ArrayList<>();
+    int initialTeam;
+    int currentTeam;
+    int[][] map;
+    int[] worldSize;
 
     //Construtor Vazio
     public void TWDGameManager() {}
 
-    /* Deve fazer a leitura do ficheiro de texto e
-       carregar para a memória a informação
-       relevante. */
-    public static boolean startGame(File ficheiroInicial) {
+    // pronto
+    public boolean startGame(File ficheiroInicial) {
         //Teste
         try {
             //Leitor para o ficheiro do jogo
@@ -39,59 +40,59 @@ public class TWDGameManager {
             String[] cxl = conteudo.get(1).split(" ");
             int linhas = Integer.parseInt(cxl[0]);
             int colunas = Integer.parseInt(cxl[1]);
-            int[][] mapa = new int[linhas][colunas];
+            map = new int[linhas][colunas];
+            worldSize = new int[]{linhas,colunas};
 
             //Equipe inicial
             initialTeam = Integer.parseInt(conteudo.get(2));
+            currentTeam = initialTeam;
 
             //Quantidade de criaturas
             int nCriaturas = Integer.parseInt(conteudo.get(3));
 
             int linhaCriaturas = 4;
 
-            for(String criatura : conteudo.values()){
-                if(criatura.length() > 13) {
-                    String[] infoCriaturas = conteudo.get(linhaCriaturas).split(":");
-                    int id = Integer.parseInt(infoCriaturas[0].trim());
-                    int tipo = Integer.parseInt(infoCriaturas[1].trim());
-                    String nome = infoCriaturas[2].trim();
-                    int posicaoX = Integer.parseInt(infoCriaturas[3].trim());//Adicionar no mapa
-                    int posicaoY = Integer.parseInt(infoCriaturas[4].trim());//Adicionar no mapa
+            for(int i = 0;i < nCriaturas ;i++){
+                String[] infoCriaturas = conteudo.get(linhaCriaturas).split(":");
+                int id = Integer.parseInt(infoCriaturas[0].trim());
+                int tipo = Integer.parseInt(infoCriaturas[1].trim());
+                String nome = infoCriaturas[2].trim();
+                int posicaoX = Integer.parseInt(infoCriaturas[3].trim());
+                int posicaoY = Integer.parseInt(infoCriaturas[4].trim());
+                 if (tipo == 0) {
+                     Zombie z = new Zombie(id, tipo, nome, new int[]{posicaoX, posicaoY});
+                     zombies.add(z);
+                 } else {
+                     Humano h = new Humano(id, tipo, nome, new int[]{posicaoX, posicaoY});
+                     humans.add(h);
+                 }
 
-                    if(tipo == 0) {
-                        Zombie z = new Zombie(id, tipo, nome, new int[]{posicaoX,posicaoY});
-                        zombies.add(z);
-                    }else{
-                        Humano h = new Humano(id, tipo, nome, new int[]{posicaoX,posicaoY});
-                        humans.add(h);
-                    }
-
-                    linhaCriaturas++;
-                }
+                 linhaCriaturas++;
             }
 
             //Quantidade de equipamentos
             int nEquimamentos = Integer.parseInt(conteudo.get(linhaCriaturas));
-            linhaCriaturas++;
+            int linhaEquipamento = linhaCriaturas+1;
 
             //Criação de Equipamentos
             //ArrayList<Equipamento> equipamentos = new ArrayList<>();
-            for(String equip : conteudo.values()){
-                if(equip.length() > 3 && equip.length() < 14) {
-                    String[] infoEquipamento = conteudo.get(linhaCriaturas).split(":");
-                    int id = Integer.parseInt(infoEquipamento[0].trim());
-                    int tipo = Integer.parseInt(infoEquipamento[1].trim());
-                    int posicaoX = Integer.parseInt(infoEquipamento[2].trim());//Adicionar no mapa
-                    int posicaoY = Integer.parseInt(infoEquipamento[3].trim());//Adicionar no mapa
+            for(int i = 0;i < nEquimamentos ;i++){
+                String[] infoEquipamento = conteudo.get(linhaEquipamento).split(":");
+                int id = Integer.parseInt(infoEquipamento[0].trim());
+                int tipo = Integer.parseInt(infoEquipamento[1].trim());
+                int posicaoX = Integer.parseInt(infoEquipamento[2].trim());//Adicionar no mapa
+                int posicaoY = Integer.parseInt(infoEquipamento[3].trim());//Adicionar no mapa
 
-                    Equipamento e = new Equipamento(id, tipo, new int[]{posicaoX,posicaoY});//Ver o q fazer com o "equipado"
+                Equipamento e = new Equipamento(id, tipo, new int[]{posicaoX,posicaoY});//Ver o q fazer com o "equipado"
 
-                    equipamentos.add(e);
+                equipamentos.add(e);
 
-                    linhaCriaturas++;
-                }
+                linhaEquipamento++;
             }
 
+            return true;
+
+            /*Verificar os conteudos
             for(Equipamento e : equipamentos) {
                 System.out.println(e.id);
             }
@@ -102,7 +103,7 @@ public class TWDGameManager {
             System.out.println("-----");
             for(Zombie z : zombies) {
                 System.out.println(z.nome);
-            }
+            }*/
 
         }catch(IOException exception) {
             exception.printStackTrace();
@@ -110,13 +111,9 @@ public class TWDGameManager {
         return false;
     }
 
-    /* Deve devolver o tamanho do bairro,
-       conforme lido do ficheiro respectivo.
-       Na posição 0 do array deve ser devolvido o
-       número de linhas e na posição 1 deve ser
-       devolvido o número de colunas. */
+    // pronto
     public int[] getWorldSize() {
-        return null;
+        return worldSize;
     }
 
     // pronto
@@ -149,19 +146,17 @@ public class TWDGameManager {
         return false;
     }
 
-    /* Devolve uma lista de Strings com os
-       nomes dos autores do projecto. */
+    // pronto
     public List<String> getAuthors() {
         ArrayList<String> creditos = new ArrayList<>();
         creditos.add("João Barreiros");
-        creditos.add("Matheus");//COLOCAR O NOME COMPLETO DO MATHEUS
+        creditos.add("Matheus Barcelos");
         return creditos;
     }
 
-    /* Deve devolver o ID da equipa que está
-       activa no turno actual. */
+    // pronto
     public int getCurrentTeamId() {
-        return 0;
+        return currentTeam;
     }
 
     /* Deve devolver o ID do objecto/elemento
