@@ -14,9 +14,10 @@ public class TWDGameManager {
     int currentTeam;
     int[][] map;
     int[] worldSize;
+    boolean isDay = true;
 
     //Construtor Vazio
-    public void TWDGameManager() {}
+    public TWDGameManager() {}
 
     // pronto
     public boolean startGame(File ficheiroInicial) {
@@ -162,10 +163,7 @@ public class TWDGameManager {
         return currentTeam;
     }
 
-    /* Deve devolver o ID do objecto/elemento
-       que se encontra na posição indicada pelas
-       coordenadas (x,y) passadas por
-       argumento. */
+    // pronto
     public int getElementId(int x, int y) {
         return map[x][y];
     }
@@ -183,7 +181,7 @@ public class TWDGameManager {
        caso o turno actual corresponda um turno
        nocturno. */
     public boolean isDay() {
-        return false;
+        return isDay;
     }
 
     /* Deve retornar true caso a criatura
@@ -192,6 +190,11 @@ public class TWDGameManager {
        for passado como 2º argumento.
        Em caso contrário, deve retornar false. */
     public boolean hasEquipment(int creatureId, int equipmentTypeId) {
+        for(Humano h : humans) {
+            if(h.id == creatureId && h.equipamento != null) {
+                return true;
+            }
+        }
         return false;
     }
 

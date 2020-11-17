@@ -5,7 +5,7 @@ public class Equipamento {
     int idTipo;
     int[] posicao = new int[2];
     boolean equipado = false;
-    final String imagePNG = "equipament.png";
+    final String imagePNG = "equipment.png";
 
     public Equipamento() {}
 
