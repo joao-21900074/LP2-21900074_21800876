@@ -5,10 +5,9 @@ import java.util.List;
 
 public class TWDGameManager {
 
-    List<Humano> humans;
-    List<Zombie> zombies;
-    int initialTeam;
-    int[] worldSize = new int[2];
+    static ArrayList<Humano> humans = new ArrayList<>();
+    static ArrayList<Zombie> zombies = new ArrayList<>();
+    static int initialTeam;
 
 
 
@@ -57,7 +56,10 @@ public class TWDGameManager {
     /* Devolve uma lista de Strings com os
        nomes dos autores do projecto. */
     public List<String> getAuthors() {
-        return null;
+        ArrayList<String> creditos = new ArrayList<>();
+        creditos.add("João Barreiros");
+        creditos.add("Matheus");//COLOCAR O NOME COMPLETO DO MATHEUS
+        return creditos;
     }
 
     /* Deve devolver o ID da equipa que está

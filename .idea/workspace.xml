@@ -2,6 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="277f7e4c-8220-423e-9b73-9c62c1e271f8" name="Default Changelist" comment="Adicionei o README e editei TWDGameManager">
+      <change afterPath="$PROJECT_DIR$/Game_sample.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Humano.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Humano.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Zombie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Zombie.java" afterDir="false" />
+    </list>
+    <list id="a7e435a9-4b90-42d4-9ac0-7137be121cd0" name="Revert &quot;Merge branch 'master' of C:\Users\Utilizador\Documents\Projetos\Faculdade\Projeto_LP2 with conflicts.&quot;" comment="Revert &quot;Merge branch 'master' of C:\Users\Utilizador\Documents\Projetos\Faculdade\Projeto_LP2 with conflicts.&quot;&#10;&#10;This reverts commit 8114a496">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" afterDir="false" />
     </list>
@@ -14,11 +21,40 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
-        <option value="joao-21900074 &lt;a21900074@alunos.ulht.pt&gt;" />
         <option value="Matheus-21800876 &lt;a21800876@alunos.ulht.pt&gt;" />
+        <option value="joao-21900074 &lt;a21900074@alunos.ulht.pt&gt;" />
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java">
+      <ranges>
+        <range start1="3" end1="3" start2="3" end2="5" changelist="a7e435a9-4b90-42d4-9ac0-7137be121cd0" />
+        <range start1="7" end1="11" start2="9" end2="12" changelist="277f7e4c-8220-423e-9b73-9c62c1e271f8" />
+        <range start1="12" end1="13" start2="13" end2="15" changelist="a7e435a9-4b90-42d4-9ac0-7137be121cd0" />
+        <range start1="17" end1="18" start2="19" end2="97" changelist="a7e435a9-4b90-42d4-9ac0-7137be121cd0" />
+        <range start1="21" end1="22" start2="100" end2="105" changelist="a7e435a9-4b90-42d4-9ac0-7137be121cd0" />
+        <range start1="23" end1="24" start2="106" end2="107" changelist="a7e435a9-4b90-42d4-9ac0-7137be121cd0" />
+        <range start1="59" end1="60" start2="142" end2="146" changelist="277f7e4c-8220-423e-9b73-9c62c1e271f8" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/.idea/workspace.xml">
+      <ranges>
+        <range start1="4" end1="4" start2="4" end2="11" changelist="277f7e4c-8220-423e-9b73-9c62c1e271f8" />
+        <range start1="16" end1="16" start2="23" end2="24" changelist="277f7e4c-8220-423e-9b73-9c62c1e271f8" />
+        <range start1="17" end1="18" start2="25" end2="25" changelist="277f7e4c-8220-423e-9b73-9c62c1e271f8" />
+        <range start1="21" end1="21" start2="28" end2="57" changelist="277f7e4c-8220-423e-9b73-9c62c1e271f8" />
+        <range start1="26" end1="27" start2="62" end2="63" changelist="a7e435a9-4b90-42d4-9ac0-7137be121cd0" />
+        <range start1="29" end1="32" start2="65" end2="65" changelist="277f7e4c-8220-423e-9b73-9c62c1e271f8" />
+        <range start1="34" end1="34" start2="67" end2="71" changelist="277f7e4c-8220-423e-9b73-9c62c1e271f8" />
+        <range start1="48" end1="49" start2="85" end2="86" changelist="a7e435a9-4b90-42d4-9ac0-7137be121cd0" />
+        <range start1="56" end1="56" start2="93" end2="111" changelist="a7e435a9-4b90-42d4-9ac0-7137be121cd0" />
+        <range start1="103" end1="111" start2="158" end2="159" changelist="a7e435a9-4b90-42d4-9ac0-7137be121cd0" />
+        <range start1="112" end1="112" start2="160" end2="170" changelist="277f7e4c-8220-423e-9b73-9c62c1e271f8" />
+        <range start1="131" end1="133" start2="189" end2="190" changelist="a7e435a9-4b90-42d4-9ac0-7137be121cd0" />
+      </ranges>
+    </file>
   </component>
   <component name="ProjectId" id="1k9XecTPy5UYw3PiBkdnurFlSBE" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -27,11 +63,12 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\matah\IdeaProjects\LP2-21900074_21800876\lib" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Utilizador\Documents\Projetos\Faculdade\Projeto_LP2\src\pt\ulusofona\lp2\theWalkingDEISIGame" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Utilizador\Documents\Projetos\Faculdade\Projeto_LP2" />
+      <recent name="C:\Users\matah\IdeaProjects\LP2-21900074_21800876\lib" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -110,6 +147,16 @@
     </task>
     <option name="localTasksCounter" value="7" />
     <servers />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
