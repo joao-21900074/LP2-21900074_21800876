@@ -54,4 +54,9 @@ public class Humano{
     public void desequiparEquipamento() {
         this.equipamento = null;
     }
+
+    @Override
+    public String toString() {
+        return id + " | " + idTipo + " | Os Vivos | " + nome + " 0 @ (" + posicao[0] + "," + posicao[1] + ")";
+    }
 }

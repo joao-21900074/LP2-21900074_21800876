@@ -38,4 +38,8 @@ public class Zombie {
     public void die() {
         vivo = false;
     }
+
+    public String toString() {
+        return id + " | " + idTipo + " | Os Outros | " + nome + " 0 @ (" + posicao[0] + "," + posicao[1] + ")";
+    }
 }
