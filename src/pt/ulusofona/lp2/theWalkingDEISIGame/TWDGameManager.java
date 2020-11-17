@@ -62,9 +62,11 @@ public class TWDGameManager {
                  if (tipo == 0) {
                      Zombie z = new Zombie(id, tipo, nome, new int[]{posicaoX, posicaoY});
                      zombies.add(z);
+                     map[posicaoX][posicaoY] = id;
                  } else {
                      Humano h = new Humano(id, tipo, nome, new int[]{posicaoX, posicaoY});
                      humans.add(h);
+                     map[posicaoX][posicaoY] = id;
                  }
 
                  linhaCriaturas++;
@@ -86,6 +88,7 @@ public class TWDGameManager {
                 Equipamento e = new Equipamento(id, tipo, new int[]{posicaoX,posicaoY});//Ver o q fazer com o "equipado"
 
                 equipamentos.add(e);
+                map[posicaoX][posicaoY] = id;
 
                 linhaEquipamento++;
             }
@@ -164,7 +167,7 @@ public class TWDGameManager {
        coordenadas (x,y) passadas por
        argumento. */
     public int getElementId(int x, int y) {
-        return 0;
+        return map[x][y];
     }
 
     /* Devolve uma lista de Strings que

@@ -5,7 +5,7 @@ public class Zombie {
     int id;
     int idTipo;
     String nome;
-    final String imagePng = "";
+    final String imagePNG = "zombie.png";
     int[] posicao = new int[2];
     boolean vivo = true;
 
@@ -23,8 +23,8 @@ public class Zombie {
         return id;
     }
 
-    public String getImagePng() {
-        return imagePng;
+    public String getImagePNG() {
+        return imagePNG;
     }
 
     public boolean mudarPosicao(int[] newPosicao)  {

@@ -5,7 +5,7 @@ public class Humano{
     int id;
     int idTipo;
     String nome;
-    final String imagePng = "";
+    final String imagePNG = "human.png";
     int[] posicao = new int[2];
     boolean vivo = true;
     Equipamento equipamento;
@@ -23,8 +23,8 @@ public class Humano{
         return id;
     }
 
-    public String getImagePng() {
-        return imagePng;
+    public String getImagePNG() {
+        return imagePNG;
     }
 
     public boolean mudarPosicao(int[] newPosicao)  {

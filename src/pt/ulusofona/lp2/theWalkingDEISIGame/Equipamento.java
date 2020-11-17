@@ -5,6 +5,7 @@ public class Equipamento {
     int idTipo;
     int[] posicao = new int[2];
     boolean equipado = false;
+    final String imagePNG = "equipament.png";
 
     public Equipamento() {}
 
@@ -25,5 +26,9 @@ public class Equipamento {
     /* Verifica se o equipamento esta equipado e equipa se não estiver */
     public boolean estaEquipado() {
         return equipado;
+    }
+
+    public String getImagePNG() {
+        return imagePNG;
     }
 }
