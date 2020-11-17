@@ -7,6 +7,7 @@ public class TWDGameManager {
 
     static ArrayList<Humano> humans = new ArrayList<>();
     static ArrayList<Zombie> zombies = new ArrayList<>();
+    static ArrayList<Equipamento> equipamentos = new ArrayList<>();
     static int initialTeam;
 
 

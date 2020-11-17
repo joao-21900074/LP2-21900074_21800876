@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="277f7e4c-8220-423e-9b73-9c62c1e271f8" name="Default Changelist" comment="Adicionei o README e editei TWDGameManager">
-      <change afterPath="$PROJECT_DIR$/Game_sample.txt" afterDir="false" />
+    <list default="true" id="277f7e4c-8220-423e-9b73-9c62c1e271f8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Humano.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Humano.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Equipamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Equipamento.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Zombie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Zombie.java" afterDir="false" />
     </list>
     <list id="a7e435a9-4b90-42d4-9ac0-7137be121cd0" name="Revert &quot;Merge branch 'master' of C:\Users\Utilizador\Documents\Projetos\Faculdade\Projeto_LP2 with conflicts.&quot;" comment="Revert &quot;Merge branch 'master' of C:\Users\Utilizador\Documents\Projetos\Faculdade\Projeto_LP2 with conflicts.&quot;&#10;&#10;This reverts commit 8114a496">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,8 +18,8 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
-        <option value="Matheus-21800876 &lt;a21800876@alunos.ulht.pt&gt;" />
         <option value="joao-21900074 &lt;a21900074@alunos.ulht.pt&gt;" />
+        <option value="Matheus-21800876 &lt;a21800876@alunos.ulht.pt&gt;" />
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -31,28 +28,11 @@
     <file path="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java">
       <ranges>
         <range start1="3" end1="3" start2="3" end2="5" changelist="a7e435a9-4b90-42d4-9ac0-7137be121cd0" />
-        <range start1="7" end1="11" start2="9" end2="12" changelist="277f7e4c-8220-423e-9b73-9c62c1e271f8" />
-        <range start1="12" end1="13" start2="13" end2="15" changelist="a7e435a9-4b90-42d4-9ac0-7137be121cd0" />
-        <range start1="17" end1="18" start2="19" end2="97" changelist="a7e435a9-4b90-42d4-9ac0-7137be121cd0" />
-        <range start1="21" end1="22" start2="100" end2="105" changelist="a7e435a9-4b90-42d4-9ac0-7137be121cd0" />
-        <range start1="23" end1="24" start2="106" end2="107" changelist="a7e435a9-4b90-42d4-9ac0-7137be121cd0" />
-        <range start1="59" end1="60" start2="142" end2="146" changelist="277f7e4c-8220-423e-9b73-9c62c1e271f8" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/.idea/workspace.xml">
-      <ranges>
-        <range start1="4" end1="4" start2="4" end2="11" changelist="277f7e4c-8220-423e-9b73-9c62c1e271f8" />
-        <range start1="16" end1="16" start2="23" end2="24" changelist="277f7e4c-8220-423e-9b73-9c62c1e271f8" />
-        <range start1="17" end1="18" start2="25" end2="25" changelist="277f7e4c-8220-423e-9b73-9c62c1e271f8" />
-        <range start1="21" end1="21" start2="28" end2="57" changelist="277f7e4c-8220-423e-9b73-9c62c1e271f8" />
-        <range start1="26" end1="27" start2="62" end2="63" changelist="a7e435a9-4b90-42d4-9ac0-7137be121cd0" />
-        <range start1="29" end1="32" start2="65" end2="65" changelist="277f7e4c-8220-423e-9b73-9c62c1e271f8" />
-        <range start1="34" end1="34" start2="67" end2="71" changelist="277f7e4c-8220-423e-9b73-9c62c1e271f8" />
-        <range start1="48" end1="49" start2="85" end2="86" changelist="a7e435a9-4b90-42d4-9ac0-7137be121cd0" />
-        <range start1="56" end1="56" start2="93" end2="111" changelist="a7e435a9-4b90-42d4-9ac0-7137be121cd0" />
-        <range start1="103" end1="111" start2="158" end2="159" changelist="a7e435a9-4b90-42d4-9ac0-7137be121cd0" />
-        <range start1="112" end1="112" start2="160" end2="170" changelist="277f7e4c-8220-423e-9b73-9c62c1e271f8" />
-        <range start1="131" end1="133" start2="189" end2="190" changelist="a7e435a9-4b90-42d4-9ac0-7137be121cd0" />
+        <range start1="9" end1="9" start2="11" end2="12" changelist="277f7e4c-8220-423e-9b73-9c62c1e271f8" />
+        <range start1="11" end1="12" start2="14" end2="16" changelist="a7e435a9-4b90-42d4-9ac0-7137be121cd0" />
+        <range start1="16" end1="17" start2="20" end2="108" changelist="a7e435a9-4b90-42d4-9ac0-7137be121cd0" />
+        <range start1="20" end1="21" start2="111" end2="116" changelist="a7e435a9-4b90-42d4-9ac0-7137be121cd0" />
+        <range start1="22" end1="23" start2="117" end2="118" changelist="a7e435a9-4b90-42d4-9ac0-7137be121cd0" />
       </ranges>
     </file>
   </component>
@@ -60,7 +40,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Forca 2020 Segunda Parte" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -83,7 +63,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="AppLauncher" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="pt.ulusofona.lp2.guiSimulator.AppLauncher" />
       <module name="Projeto_LP2" />
@@ -91,6 +71,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="pt.ulusofona.lp2.theWalkingDEISIGame.Main" />
+      <module name="Projeto_LP2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pt.ulusofona.lp2.theWalkingDEISIGame.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -138,12 +136,12 @@
       <option name="project" value="LOCAL" />
       <updated>1605456024994</updated>
     </task>
-    <task id="LOCAL-00006" summary="Adicionei o README e editei TWDGameManager">
-      <created>1605457902621</created>
+    <task id="LOCAL-00006" summary="Editei TWd,Humano,Zombie e adicionei o arquivo com dados de teste">
+      <created>1605621821001</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1605457902622</updated>
+      <updated>1605621821001</updated>
     </task>
     <option name="localTasksCounter" value="7" />
     <servers />
@@ -176,7 +174,7 @@
     <MESSAGE value="edit Criatura" />
     <MESSAGE value="Criação de pasta images e lib&#10;&#10;.jar adicionado a pasta lib" />
     <MESSAGE value="Removi a classe Criatura e editei Humano e Zombie" />
-    <MESSAGE value="Adicionei o README e editei TWDGameManager" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adicionei o README e editei TWDGameManager" />
+    <MESSAGE value="Editei TWd,Humano,Zombie e adicionei o arquivo com dados de teste" />
+    <option name="LAST_COMMIT_MESSAGE" value="Editei TWd,Humano,Zombie e adicionei o arquivo com dados de teste" />
   </component>
 </project>

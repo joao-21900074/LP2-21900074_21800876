@@ -3,14 +3,15 @@ package pt.ulusofona.lp2.theWalkingDEISIGame;
 public class Equipamento {
     int id;
     int idTipo;
-    boolean equipado;
+    int[] posicao = new int[2];
+    boolean equipado = false;
 
     public Equipamento() {}
 
-    public Equipamento(int id, int idTipo, boolean equipado) {
+    public Equipamento(int id, int idTipo, int[] posicao) {
         this.id = id;
         this.idTipo = idTipo;
-        this.equipado = equipado;
+        this.posicao = posicao;
     }
 
     public int getIdTipo() {
