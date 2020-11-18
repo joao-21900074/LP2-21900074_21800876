@@ -150,16 +150,46 @@ public class TWDGameManager {
         //if() verificar espaço livre para movimento
 
         //Teste João
-        
+
         //Escrevi aqui
         int peca = map[xO][yO];
         int destino = map[xD][yD];
+
+        validaTime(peca,currentTeam);
 
         if(currentTeam == peca);
 
         map[xD][yD] = peca;
         map[xO][yO] = 0;
+
+        //Muda o time depois da jogada
+        currentTeam = (currentTeam == 0) ? 1 : 0;
+        //verifica a váriavel que vai definir a mudança de dia ou noite
+        if(turnos != 0) {
+            turnos--;
+            if(turnos == 0) {//Muda o isDay depois de dois turnos
+                turnos = 2; //Reseta a váriavel
+                isDay = !isDay; //Inverte o valor de isDay
+            }
+        }
+
         return true;
+    }
+
+    public boolean validaTime(int id, int currentTeam) {
+        for(Humano h : humans){
+            if(h.id == id) {
+                return h.idTipo == currentTeam;
+            }
+        }
+
+        for(Zombie z : zombies) {
+            if(z.id == id) {
+                return z.idTipo == currentTeam;
+            }
+        }
+
+        return false;
     }
 
     /* Deve devolver true caso já tenha sido
