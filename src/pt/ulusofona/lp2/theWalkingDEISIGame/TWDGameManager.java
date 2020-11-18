@@ -204,8 +204,8 @@ public class TWDGameManager {
     }
 
     public boolean validaTime(int id, int currentTeam) {
-        if(id < 0) {
-            return false;
+        if(id <= 0) {
+            return true;
         }
 
         for(Humano h : humans){
