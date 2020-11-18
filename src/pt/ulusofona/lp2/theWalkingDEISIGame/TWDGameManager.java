@@ -150,7 +150,8 @@ public class TWDGameManager {
         //if() verificar espaço livre para movimento
 
         //Teste João
-
+        
+        //Escrevi aqui
         int peca = map[xO][yO];
         int destino = map[xD][yD];
 
