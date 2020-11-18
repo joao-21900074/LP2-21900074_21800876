@@ -48,6 +48,6 @@ public class Zombie {
     }
 
     public String toString() {
-        return id + " | Zombie | Os Outros | " + nome + " " + nItensDestruido + " @ (" + posicao[0] + ", " + posicao[1] + ")";
+        return id + " | Zombie | Os Outros | " + nome + " " + nItensDestruido + " @ (" + posicao[1] + ", " + posicao[0] + ")";
     }
 }

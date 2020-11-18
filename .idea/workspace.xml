@@ -4,7 +4,6 @@
     <list default="true" id="277f7e4c-8220-423e-9b73-9c62c1e271f8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Humano.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Humano.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Zombie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Zombie.java" afterDir="false" />
     </list>
@@ -193,7 +192,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605727054249</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Editei ToString em Humano e Zombie e Editei move()">
+      <created>1605733576227</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1605733576227</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -232,6 +238,7 @@
     <MESSAGE value="Edit hasEquipment and move" />
     <MESSAGE value="Edit move" />
     <MESSAGE value="Edit Humano.getNome Zombie.getNome gameOver + getSurvivors" />
-    <option name="LAST_COMMIT_MESSAGE" value="Edit Humano.getNome Zombie.getNome gameOver + getSurvivors" />
+    <MESSAGE value="Editei ToString em Humano e Zombie e Editei move()" />
+    <option name="LAST_COMMIT_MESSAGE" value="Editei ToString em Humano e Zombie e Editei move()" />
   </component>
 </project>

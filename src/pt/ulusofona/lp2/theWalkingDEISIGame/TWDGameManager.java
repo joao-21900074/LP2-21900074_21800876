@@ -140,11 +140,15 @@ public class TWDGameManager {
         int peca = getElementId(xO,yO);
         int destino = getElementId(xD,yD);
 
+        if(gameIsOver()) {
+            return false;
+        }
+
         if(validaTime(peca,currentTeam)){
             return false;
         }
 
-        if(xD >= worldSize[1] || yD >= worldSize[0]){
+        if(xD > worldSize[1] || yD > worldSize[0]){
             return false;
         }
 

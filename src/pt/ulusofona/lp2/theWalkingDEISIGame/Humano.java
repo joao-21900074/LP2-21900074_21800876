@@ -71,6 +71,6 @@ public class Humano{
 
     @Override
     public String toString() {
-        return id + " | Humano | Os Vivos | " + nome + " " + nEquipamentos + " @ (" + posicao[0] + ", " + posicao[1] + ")";
+        return id + " | Humano | Os Vivos | " + nome + " " + nEquipamentos + " @ (" + posicao[1] + ", " + posicao[0] + ")";
     }
 }
