@@ -142,6 +142,7 @@ public class TWDGameManager {
        destino da jogada. */
     public boolean move(int xO, int yO, int xD, int yD) {
         //retornaTime = recebe o id e retorna o idTipo(que define o time) - Apenas o humano se move
+        //if() só pode movimentar um quadrado em volta dele não pode teleportar
         //if() dentro do worldsize
         //Alterar a variavel de turnos(inicia em 2) (--) e mudar o dia(turnos = 0 muda o dia e da refresh nos turnos)
         //Mudar o currentTeam após cada movimento
@@ -154,6 +155,8 @@ public class TWDGameManager {
         int peca = map[xO][yO];
         int destino = map[xD][yD];
 
+        validaTime(peca,currentTeam);
+
         //Meter isso dentro de uma função
         //Verificar quadrados possíveis
         if(!(((xD == xO+1 && yD == yO) || (xD == xO && yD == yO+1)) || ((xD == xO-1 && yD == yO) || (xD == xO && yD == yO-1)))){
@@ -161,7 +164,35 @@ public class TWDGameManager {
         }
         map[xD][yD] = peca;
         map[xO][yO] = 0;
+
+        //Muda o time depois da jogada
+        currentTeam = (currentTeam == 0) ? 1 : 0;
+        //verifica a váriavel que vai definir a mudança de dia ou noite
+        if(turnos != 0) {
+            turnos--;
+            if(turnos == 0) {//Muda o isDay depois de dois turnos
+                turnos = 2; //Reseta a váriavel
+                isDay = !isDay; //Inverte o valor de isDay
+            }
+        }
+
         return true;
+    }
+
+    public boolean validaTime(int id, int currentTeam) {
+        for(Humano h : humans){
+            if(h.id == id) {
+                return h.idTipo == currentTeam;
+            }
+        }
+
+        for(Zombie z : zombies) {
+            if(z.id == id) {
+                return z.idTipo == currentTeam;
+            }
+        }
+
+        return false;
     }
 
     /* Deve devolver true caso já tenha sido
