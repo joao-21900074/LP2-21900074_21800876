@@ -15,6 +15,7 @@ public class TWDGameManager {
     int[][] map;
     int[] worldSize;
     boolean isDay = true;
+    int turnos = 2;
 
     //Construtor Vazio
     public TWDGameManager() {}
@@ -81,7 +82,7 @@ public class TWDGameManager {
             //ArrayList<Equipamento> equipamentos = new ArrayList<>();
             for(int i = 0;i < nEquimamentos ;i++){
                 String[] infoEquipamento = conteudo.get(linhaEquipamento).split(":");
-                int id = Integer.parseInt(infoEquipamento[0].trim());
+                int id = Integer.parseInt(infoEquipamento[0].trim())*-1;
                 int tipo = Integer.parseInt(infoEquipamento[1].trim());
                 int posicaoX = Integer.parseInt(infoEquipamento[2].trim());//Adicionar no mapa
                 int posicaoY = Integer.parseInt(infoEquipamento[3].trim());//Adicionar no mapa
@@ -140,7 +141,22 @@ public class TWDGameManager {
        origem a jogada e (xD, yD) representa o
        destino da jogada. */
     public boolean move(int xO, int yO, int xD, int yD) {
-        return false;
+        //retornaTime = recebe o id e retorna o idTipo(que define o time) - Apenas o humano se move
+        //if() só pode movimentar um quadrado em volta dele não pode teleportar
+        //if() dentro do worldsize
+        //Alterar a variavel de turnos(inicia em 2) (--) e mudar o dia(turnos = 0 muda o dia e da refresh nos turnos)
+        //Mudar o currentTeam após cada movimento
+        //atualizarEquipamento, zumbi destroe equipamento, humano equipa / dropa
+        //if() verificar espaço livre para movimento
+
+        int peca = map[xO][yO];
+        int destino = map[xD][yD];
+
+        if(currentTeam == peca);
+
+        map[xD][yD] = peca;
+        map[xO][yO] = 0;
+        return true;
     }
 
     /* Deve devolver true caso já tenha sido
@@ -191,6 +207,9 @@ public class TWDGameManager {
        Em caso contrário, deve retornar false. */
     public boolean hasEquipment(int creatureId, int equipmentTypeId) {
         for(Humano h : humans) {
+            if(h.equipamento == null){
+                continue;
+            }
             if(h.id == creatureId && h.equipamento.idTipo == equipmentTypeId) {
                 return true;
             }
