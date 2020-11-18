@@ -149,6 +149,9 @@ public class TWDGameManager {
         //atualizarEquipamento, zumbi destroe equipamento, humano equipa / dropa
         //if() verificar espaço livre para movimento
 
+
+
+        //Escrevi aqui
         int peca = map[xO][yO];
         int destino = map[xD][yD];
 
