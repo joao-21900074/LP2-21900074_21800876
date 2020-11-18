@@ -145,10 +145,17 @@ public class TWDGameManager {
         boolean droparItem = false;
         int itemDropado = 0;
 
+        //Teste João
+        
+        //Escrevi aqui
         int peca = getElementId(xO,yO);
         int destino = getElementId(xD,yD);
 
         if(validaTime(peca,currentTeam)){
+            return false;
+        }
+
+        if(xD >= worldSize[0] || yD >= worldSize[1]){
             return false;
         }
 
@@ -224,8 +231,6 @@ public class TWDGameManager {
 
         return false;
     }
-
-
 
     /* Deve devolver true caso já tenha sido
        alcançada uma das condições de paragem
