@@ -150,16 +150,23 @@ public class TWDGameManager {
         //Teste João
         
         //Escrevi aqui
-        int peca = map[xO][yO];
-        int destino = map[xD][yD];
+        int peca = getElementId(xO,yO);
+        int destino = getElementId(xD,yD);
 
-        validaTime(peca,currentTeam);
+        if(validaTime(peca,currentTeam)){
+            return false;
+        }
 
         //Meter isso dentro de uma função
         //Verificar quadrados possíveis
         if(!(((xD == xO+1 && yD == yO) || (xD == xO && yD == yO+1)) || ((xD == xO-1 && yD == yO) || (xD == xO && yD == yO-1)))){
             return false;
         }
+
+        if(!(destino == 0 || destino < 0)){
+            return false;
+        }
+
         map[xD][yD] = peca;
         map[xO][yO] = 0;
 
