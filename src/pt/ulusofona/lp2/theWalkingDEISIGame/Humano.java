@@ -9,6 +9,7 @@ public class Humano{
     int[] posicao = new int[2];
     boolean vivo = true;
     Equipamento equipamento;
+    int nEquipamentos = 0;
 
     public Humano() {}
 
@@ -52,6 +53,7 @@ public class Humano{
         //derruba ele na posicao anterior e equipa o novo
 
         this.equipamento = equipamento;
+        nEquipamentos++;
         return true;
     }
 
@@ -69,6 +71,6 @@ public class Humano{
 
     @Override
     public String toString() {
-        return id + " | Humano | Os Vivos | " + nome + " 0 @ (" + posicao[0] + ", " + posicao[1] + ")";
+        return id + " | Humano | Os Vivos | " + nome + " " + nEquipamentos + " @ (" + posicao[0] + ", " + posicao[1] + ")";
     }
 }

@@ -8,7 +8,7 @@ public class Zombie {
     final String imagePNG = "zombie.png";
     int[] posicao = new int[2];
     boolean vivo = true;
-
+    int nItensDestruido = 0;
 
     public Zombie() {}
 
@@ -43,7 +43,11 @@ public class Zombie {
         vivo = false;
     }
 
+    public void destruirIten() {
+        nItensDestruido++;
+    }
+
     public String toString() {
-        return id + " | Zombie | Os Outros | " + nome + " 0 @ (" + posicao[0] + ", " + posicao[1] + ")";
+        return id + " | Zombie | Os Outros | " + nome + " " + nItensDestruido + " @ (" + posicao[0] + ", " + posicao[1] + ")";
     }
 }

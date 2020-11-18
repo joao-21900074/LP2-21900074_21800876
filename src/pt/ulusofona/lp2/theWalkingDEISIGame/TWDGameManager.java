@@ -144,7 +144,7 @@ public class TWDGameManager {
             return false;
         }
 
-        if(xD > worldSize[0] || yD > worldSize[1]){
+        if(xD >= worldSize[1] || yD >= worldSize[0]){
             return false;
         }
 
@@ -175,6 +175,14 @@ public class TWDGameManager {
                         itemDropado = h.getEquipamento().getId();
                         h.equiparEquipamento(equipEscolhido);
                     }
+                }
+            }
+        }
+
+        if(getElementId(xD,yD) < 0 && currentTeam == 1) {
+            for(Zombie z : zombies) {
+                if(z.getId() == getElementId(xO,yO)){
+                    z.nItensDestruido++;
                 }
             }
         }
@@ -263,7 +271,7 @@ public class TWDGameManager {
 
         for(int i = 0; i < zombies.size(); i++){
             listaZombie += zombies.get(i).getId() + " (antigamente conhecido como " + zombies.get(i).getNome() + ")";
-            if(i == zombies.size()){
+            if(i == zombies.size() - 1){
                 listaZombie += "\n";
             }
         }
