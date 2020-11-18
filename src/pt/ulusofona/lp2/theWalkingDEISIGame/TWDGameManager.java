@@ -141,11 +141,7 @@ public class TWDGameManager {
        origem a jogada e (xD, yD) representa o
        destino da jogada. */
     public boolean move(int xO, int yO, int xD, int yD) {
-
-        //if() dentro do worldsize
-
         //atualizarEquipamento, zumbi destroe equipamento, humano equipa / dropa
-        //if() verificar espaço livre para movimento
 
         //Teste João
         
@@ -154,6 +150,10 @@ public class TWDGameManager {
         int destino = getElementId(xD,yD);
 
         if(validaTime(peca,currentTeam)){
+            return false;
+        }
+
+        if(xD >= worldSize[0] || yD >= worldSize[1]){
             return false;
         }
 
