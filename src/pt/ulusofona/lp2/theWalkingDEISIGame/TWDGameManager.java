@@ -141,11 +141,9 @@ public class TWDGameManager {
        origem a jogada e (xD, yD) representa o
        destino da jogada. */
     public boolean move(int xO, int yO, int xD, int yD) {
-        //retornaTime = recebe o id e retorna o idTipo(que define o time) - Apenas o humano se move
-        //if() só pode movimentar um quadrado em volta dele não pode teleportar
+
         //if() dentro do worldsize
-        //Alterar a variavel de turnos(inicia em 2) (--) e mudar o dia(turnos = 0 muda o dia e da refresh nos turnos)
-        //Mudar o currentTeam após cada movimento
+
         //atualizarEquipamento, zumbi destroe equipamento, humano equipa / dropa
         //if() verificar espaço livre para movimento
 
@@ -180,6 +178,10 @@ public class TWDGameManager {
     }
 
     public boolean validaTime(int id, int currentTeam) {
+        if(id < 0) {
+            return false;
+        }
+
         for(Humano h : humans){
             if(h.id == id) {
                 return h.idTipo == currentTeam;
