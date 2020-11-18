@@ -79,10 +79,10 @@ public class TWDGameManager {
             int linhaEquipamento = linhaCriaturas+1;
 
             //Criação de Equipamentos
-            //ArrayList<Equipamento> equipamentos = new ArrayList<>();
+
             for(int i = 0;i < nEquimamentos ;i++){
                 String[] infoEquipamento = conteudo.get(linhaEquipamento).split(":");
-                int id = Integer.parseInt(infoEquipamento[0].trim())*-1;
+                int id = Integer.parseInt(infoEquipamento[0].trim());
                 int tipo = Integer.parseInt(infoEquipamento[1].trim());
                 int posicaoX = Integer.parseInt(infoEquipamento[2].trim());//Adicionar no mapa
                 int posicaoY = Integer.parseInt(infoEquipamento[3].trim());//Adicionar no mapa
@@ -97,18 +97,6 @@ public class TWDGameManager {
 
             return true;
 
-            /*Verificar os conteudos
-            for(Equipamento e : equipamentos) {
-                System.out.println(e.id);
-            }
-            System.out.println("----");
-            for(Humano h : humans) {
-                System.out.println(h.nome);
-            }
-            System.out.println("-----");
-            for(Zombie z : zombies) {
-                System.out.println(z.nome);
-            }*/
 
         }catch(IOException exception) {
             exception.printStackTrace();
@@ -155,7 +143,7 @@ public class TWDGameManager {
             return false;
         }
 
-        if(xD >= worldSize[0] || yD >= worldSize[1]){
+        if(xD > worldSize[0] || yD > worldSize[1]){
             return false;
         }
 
