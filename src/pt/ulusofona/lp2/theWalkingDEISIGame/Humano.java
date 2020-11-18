@@ -55,6 +55,14 @@ public class Humano{
         this.equipamento = null;
     }
 
+    public boolean temEquipamento() {
+        return equipamento != null;
+    }
+
+    public Equipamento getEquipamento() {
+        return equipamento;
+    }
+
     @Override
     public String toString() {
         return id + " | Humano | Os Vivos | " + nome + " 0 @ (" + posicao[0] + ", " + posicao[1] + ")";

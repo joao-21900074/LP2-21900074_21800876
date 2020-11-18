@@ -142,14 +142,9 @@ public class TWDGameManager {
        destino da jogada. */
     public boolean move(int xO, int yO, int xD, int yD) {
 
-        //if() dentro do worldsize
+        boolean droparItem = false;
+        int itemDropado = 0;
 
-        //atualizarEquipamento, zumbi destroe equipamento, humano equipa / dropa
-        //if() verificar espaço livre para movimento
-
-        //Teste João
-        
-        //Escrevi aqui
         int peca = getElementId(xO,yO);
         int destino = getElementId(xD,yD);
 
@@ -167,8 +162,34 @@ public class TWDGameManager {
             return false;
         }
 
+        if(getElementId(xD,yD) < 0 && currentTeam == 0) {
+            Equipamento equipEscolhido = new Equipamento();
+            for(Equipamento e : equipamentos) {
+                if(e.getId() == getElementId(xD,yD)){
+                    equipEscolhido = e;
+                }
+            }
+
+            for(Humano h : humans) {
+                if(h.getId() == getElementId(xO,yO)){
+                    if(!h.temEquipamento()){
+                        h.equiparEquipamento(equipEscolhido);
+                    } else {
+                        droparItem = true;
+                        itemDropado = h.getEquipamento().getId();
+                        h.equiparEquipamento(equipEscolhido);
+                    }
+                }
+            }
+        }
+
         map[xD][yD] = peca;
-        map[xO][yO] = 0;
+        if(droparItem) {
+            map[xO][yO] = itemDropado;
+        } else {
+            map[xO][yO] = 0;
+        }
+
 
         //Muda o time depois da jogada
         currentTeam = (currentTeam == 0) ? 1 : 0;
@@ -203,6 +224,8 @@ public class TWDGameManager {
 
         return false;
     }
+
+
 
     /* Deve devolver true caso já tenha sido
        alcançada uma das condições de paragem

@@ -15,6 +15,10 @@ public class Equipamento {
         this.posicao = posicao;
     }
 
+    public int getId() {
+        return id;
+    }
+
     public int getIdTipo() {
         return idTipo;
     }
