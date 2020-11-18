@@ -15,7 +15,8 @@ public class TWDGameManager {
     int[][] map;
     int[] worldSize;
     boolean isDay = true;
-    int turnos = 2;
+    int tamanhoDiaNoite = 2;
+    int turnos = 0;
 
     //Construtor Vazio
     public TWDGameManager() {}
@@ -189,13 +190,15 @@ public class TWDGameManager {
         //Muda o time depois da jogada
         currentTeam = (currentTeam == 0) ? 1 : 0;
         //verifica a váriavel que vai definir a mudança de dia ou noite
-        if(turnos != 0) {
-            turnos--;
-            if(turnos == 0) {//Muda o isDay depois de dois turnos
-                turnos = 2; //Reseta a váriavel
+        if(tamanhoDiaNoite != 0) {
+            tamanhoDiaNoite--;
+            if(tamanhoDiaNoite == 0) {//Muda o isDay depois de dois turnos
+                tamanhoDiaNoite = 2; //Reseta a váriavel
                 isDay = !isDay; //Inverte o valor de isDay
             }
         }
+
+        turnos++;
 
         return true;
     }
@@ -224,7 +227,7 @@ public class TWDGameManager {
        alcançada uma das condições de paragem
        do jogo e false em caso contrário. */
     public boolean gameIsOver() {
-        return false;
+        return turnos >= 12;
     }
 
     // pronto
@@ -250,7 +253,27 @@ public class TWDGameManager {
        jogo, conforme descrito na secção dos
        “Resultados da execução …”. */
     public List<String> getSurvivors() {
-        return null;
+        List<String> retorno = new ArrayList<>();
+        String listHumanos = "";
+        String listaZombie = "";
+
+        for(int i = 0; i < humans.size(); i++){
+            listHumanos += humans.get(i).getId() + " " + humans.get(i).getNome() + "\n";
+        }
+
+        for(int i = 0; i < zombies.size(); i++){
+            listaZombie += zombies.get(i).getId() + " (antigamente conhecido como " + zombies.get(i).getNome() + ")";
+            if(i == zombies.size()){
+                listaZombie += "\n";
+            }
+        }
+
+        String infoTurno = "Nr. de turnos terminados:\n" + turnos + "\n\n" + "OS VIVOS\n" + listHumanos + "\n" +
+                "OS OUTROS\n" + listaZombie;
+
+        retorno.add(infoTurno);
+
+        return retorno;
     }
 
     /* Dever retornar true caso o turno actual

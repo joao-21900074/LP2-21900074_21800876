@@ -23,6 +23,10 @@ public class Humano{
         return id;
     }
 
+    public String getNome() {
+        return nome;
+    }
+
     public String getImagePNG() {
         return imagePNG;
     }

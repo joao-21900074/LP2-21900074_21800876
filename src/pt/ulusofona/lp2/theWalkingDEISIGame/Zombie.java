@@ -23,6 +23,10 @@ public class Zombie {
         return id;
     }
 
+    public String getNome() {
+        return nome;
+    }
+
     public String getImagePNG() {
         return imagePNG;
     }
