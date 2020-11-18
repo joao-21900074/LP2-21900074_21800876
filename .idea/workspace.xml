@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="277f7e4c-8220-423e-9b73-9c62c1e271f8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Humano.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Humano.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Zombie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Zombie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game_sample.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Game_sample.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -149,7 +149,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605635134608</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Editei ToString">
+      <created>1605637877019</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1605637877019</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -184,6 +191,7 @@
     <MESSAGE value="Fiz algumas alterações e implementei os personagens no mapa" />
     <MESSAGE value="Implementei o ToString" />
     <MESSAGE value="Editei ToString&#10;Implementei hasEquipament&#10;Implementei isDay" />
-    <option name="LAST_COMMIT_MESSAGE" value="Editei ToString&#10;Implementei hasEquipament&#10;Implementei isDay" />
+    <MESSAGE value="Editei ToString" />
+    <option name="LAST_COMMIT_MESSAGE" value="Editei ToString" />
   </component>
 </project>

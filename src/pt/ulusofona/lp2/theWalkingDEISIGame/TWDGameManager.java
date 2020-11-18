@@ -191,7 +191,7 @@ public class TWDGameManager {
        Em caso contrário, deve retornar false. */
     public boolean hasEquipment(int creatureId, int equipmentTypeId) {
         for(Humano h : humans) {
-            if(h.id == creatureId && h.equipamento != null) {
+            if(h.id == creatureId && h.equipamento.idTipo == equipmentTypeId) {
                 return true;
             }
         }
