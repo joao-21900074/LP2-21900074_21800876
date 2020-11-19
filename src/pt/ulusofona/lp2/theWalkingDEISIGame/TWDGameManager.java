@@ -186,9 +186,17 @@ public class TWDGameManager {
         if(getElementId(xD,yD) < 0 && currentTeam == 1) {
             for(Zombie z : zombies) {
                 if(z.getId() == getElementId(xO,yO)){
-                    z.nItensDestruido++;
+                    z.destruirIten();
                 }
             }
+        }
+
+        if(currentTeam == 1) {
+            Humano h = getHumanoById(peca);
+            h.setPosicao(new int[]{xD,yD});
+        } else if(currentTeam == 0) {
+            Zombie z = getZombieById(peca);
+            z.setPosicao(new int[]{xD,yD});
         }
 
         map[xD][yD] = peca;
@@ -313,5 +321,21 @@ public class TWDGameManager {
         return false;
     }
 
+    public Humano getHumanoById(int id) {
+        for(Humano h : humans) {
+            if(h.getId() == id) {
+                return h;
+            }
+        }
+        return null;
+    }
 
+    public Zombie getZombieById(int id) {
+        for(Zombie z : zombies) {
+            if(z.getId() == id) {
+                return z;
+            }
+        }
+        return null;
+    }
 }

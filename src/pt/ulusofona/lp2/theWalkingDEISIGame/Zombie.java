@@ -47,7 +47,11 @@ public class Zombie {
         nItensDestruido++;
     }
 
+    public void setPosicao(int[] newPosicao) {
+        posicao = newPosicao;
+    }
+
     public String toString() {
-        return id + " | Zombie | Os Outros | " + nome + " " + nItensDestruido + " @ (" + posicao[1] + ", " + posicao[0] + ")";
+        return id + " | Zombie | Os Outros | " + nome + " " + nItensDestruido + " @ (" + posicao[0] + ", " + posicao[1] + ")";
     }
 }

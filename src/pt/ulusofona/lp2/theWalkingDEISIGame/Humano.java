@@ -69,8 +69,12 @@ public class Humano{
         return equipamento;
     }
 
+    public void setPosicao(int[] newPosicao) {
+        posicao = newPosicao;
+    }
+
     @Override
     public String toString() {
-        return id + " | Humano | Os Vivos | " + nome + " " + nEquipamentos + " @ (" + posicao[1] + ", " + posicao[0] + ")";
+        return id + " | Humano | Os Vivos | " + nome + " " + nEquipamentos + " @ (" + posicao[0] + ", " + posicao[1] + ")";
     }
 }
