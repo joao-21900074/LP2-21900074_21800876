@@ -137,12 +137,15 @@ public class TWDGameManager {
         //Teste João
 
         //Escrevi aqui
-        if(xO >= worldSize[0] || yO >= worldSize[1] || xD >= worldSize[0] || yD >= worldSize[1]){
+        if(xO > worldSize[0] || yO > worldSize[1] || xD > worldSize[0] || yD > worldSize[1]){
             return false;
         }
 
         int peca = getElementId(xO,yO);
-        int destino = getElementId(xD,yD);
+        int destino = 0;
+        if(xD < worldSize[0] && yD < worldSize[0]){
+            destino = getElementId(xD,yD);
+        }
 
         if(gameIsOver()) {
             return false;
@@ -154,15 +157,15 @@ public class TWDGameManager {
 
         //Meter isso dentro de uma função
         //Verificar quadrados possíveis
-        if(!(((xD == xO+1 && yD == yO) || (xD == xO && yD == yO+1)) || ((xD == xO-1 && yD == yO) || (xD == xO && yD == yO-1)) || (xD == xO && yD == yO))){
+        if(!(((xD == xO+1 && yD == yO) || (xD == xO && yD == yO+1)) || ((xD == xO-1 && yD == yO) || (xD == xO && yD == yO-1)))){
             return false;
         }
 
-        if(!(destino == 0 || destino < 0 || destino == peca)){
+        if(!(destino == 0 || destino < 0)){
             return false;
         }
 
-        if(getElementId(xD,yD) < 0 && currentTeam == 0) {
+        if(destino < 0 && currentTeam == 0) {
             Equipamento equipEscolhido = new Equipamento();
             for(Equipamento e : equipamentos) {
                 if(e.getId() == getElementId(xD,yD)){
@@ -183,7 +186,7 @@ public class TWDGameManager {
             }
         }
 
-        if(getElementId(xD,yD) < 0 && currentTeam == 1) {
+        if(destino < 0 && currentTeam == 1) {
             for(Zombie z : zombies) {
                 if(z.getId() == getElementId(xO,yO)){
                     z.destruirIten();
@@ -203,10 +206,13 @@ public class TWDGameManager {
             }
         }
 
-        map[xD][yD] = peca;
+        if(xD < worldSize[0] && yD < worldSize[0]){
+            map[xD][yD] = peca;
+        }
+
         if(droparItem) {
             map[xO][yO] = itemDropado;
-        } else if(destino != peca) {
+        }else {
             map[xO][yO] = 0;
         }
 
