@@ -84,6 +84,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestTWDGameManager.testMove" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Projeto_LP2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pt.ulusofona.lp2.theWalkingDEISIGame.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pt.ulusofona.lp2.theWalkingDEISIGame" />
+      <option name="MAIN_CLASS_NAME" value="pt.ulusofona.lp2.theWalkingDEISIGame.TestTWDGameManager" />
+      <option name="METHOD_NAME" value="testMove" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestTWDGameManager.testMoveDiagonal" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Projeto_LP2" />
       <extension name="coverage">
@@ -95,22 +111,6 @@
       <option name="PACKAGE_NAME" value="pt.ulusofona.lp2.theWalkingDEISIGame" />
       <option name="MAIN_CLASS_NAME" value="pt.ulusofona.lp2.theWalkingDEISIGame.TestTWDGameManager" />
       <option name="METHOD_NAME" value="testMoveDiagonal" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestTWDGameManager.testMoveEsquerda" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Projeto_LP2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="pt.ulusofona.lp2.theWalkingDEISIGame.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="pt.ulusofona.lp2.theWalkingDEISIGame" />
-      <option name="MAIN_CLASS_NAME" value="pt.ulusofona.lp2.theWalkingDEISIGame.TestTWDGameManager" />
-      <option name="METHOD_NAME" value="testMoveEsquerda" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -151,10 +151,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.TestTWDGameManager" />
+        <item itemvalue="JUnit.TestTWDGameManager.testMove" />
         <item itemvalue="JUnit.TestTWDGameManager.testMoveOutOfBounds" />
-        <item itemvalue="JUnit.TestTWDGameManager.testStartGameBonecoForaDoMapa" />
-        <item itemvalue="JUnit.TestTWDGameManager.testMoveEsquerda" />
         <item itemvalue="JUnit.TestTWDGameManager.testMoveDiagonal" />
+        <item itemvalue="JUnit.TestTWDGameManager.testStartGameBonecoForaDoMapa" />
       </list>
     </recent_temporary>
   </component>
@@ -323,7 +323,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605804886306</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="edit startGame move() denovo">
+      <created>1605807752955</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1605807752955</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -369,6 +376,7 @@
     <MESSAGE value="edit startGame (Boneco fora do mapa)&#10;+ Tests para o move()" />
     <MESSAGE value="edit move() denovo + tests" />
     <MESSAGE value="edit startGame" />
-    <option name="LAST_COMMIT_MESSAGE" value="edit startGame" />
+    <MESSAGE value="edit startGame move() denovo" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit startGame move() denovo" />
   </component>
 </project>

@@ -154,11 +154,11 @@ public class TWDGameManager {
 
         //Meter isso dentro de uma função
         //Verificar quadrados possíveis
-        if(!(((xD == xO+1 && yD == yO) || (xD == xO && yD == yO+1)) || ((xD == xO-1 && yD == yO) || (xD == xO && yD == yO-1)))){
+        if(!(((xD == xO+1 && yD == yO) || (xD == xO && yD == yO+1)) || ((xD == xO-1 && yD == yO) || (xD == xO && yD == yO-1)) || (xD == xO && yD == yO))){
             return false;
         }
 
-        if(!(destino == 0 || destino < 0)){
+        if(!(destino == 0 || destino < 0 || destino == peca)){
             return false;
         }
 
@@ -206,7 +206,7 @@ public class TWDGameManager {
         map[xD][yD] = peca;
         if(droparItem) {
             map[xO][yO] = itemDropado;
-        } else {
+        } else if(destino != peca) {
             map[xO][yO] = 0;
         }
 
