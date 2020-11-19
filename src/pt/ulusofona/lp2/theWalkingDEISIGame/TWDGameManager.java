@@ -62,15 +62,15 @@ public class TWDGameManager {
                 String nome = infoCriaturas[2].trim();
                 int posicaoX = Integer.parseInt(infoCriaturas[3].trim());
                 int posicaoY = Integer.parseInt(infoCriaturas[4].trim());
-                 if (tipo == 0 && (posicaoX < linhas && posicaoY < colunas)) {
-                     Zombie z = new Zombie(id, tipo, nome, new int[]{posicaoX, posicaoY});
-                     zombies.add(z);
-                     map[posicaoX][posicaoY] = id;
-                 } else if(tipo == 1 && (posicaoX < linhas && posicaoY < colunas)){
-                     Humano h = new Humano(id, tipo, nome, new int[]{posicaoX, posicaoY});
-                     humans.add(h);
-                     map[posicaoX][posicaoY] = id;
-                 }
+                if (tipo == 0 && (posicaoX < linhas && posicaoY < colunas)) {
+                    Zombie z = new Zombie(id, tipo, nome, new int[]{posicaoX, posicaoY});
+                    zombies.add(z);
+                    map[posicaoX][posicaoY] = id;
+                } else if(tipo == 1 && (posicaoX < linhas && posicaoY < colunas)){
+                    Humano h = new Humano(id, tipo, nome, new int[]{posicaoX, posicaoY});
+                    humans.add(h);
+                    map[posicaoX][posicaoY] = id;
+                }
 
                  linhaCriaturas++;
             }
@@ -137,6 +137,10 @@ public class TWDGameManager {
         //Teste João
         
         //Escrevi aqui
+        if(xO > worldSize[0] || yO > worldSize[1] || xD > worldSize[0] || yD > worldSize[1]){
+            return false;
+        }
+
         int peca = getElementId(xO,yO);
         int destino = getElementId(xD,yD);
 
@@ -145,10 +149,6 @@ public class TWDGameManager {
         }
 
         if(validaTime(peca,currentTeam)){
-            return false;
-        }
-
-        if(xD > worldSize[1] || yD > worldSize[0]){
             return false;
         }
 

@@ -38,7 +38,6 @@ public class TestTWDGameManager {
         assertTrue("Movimento para Baixo",testStart.move(1,1,1,2));
     }
 
-    //Teste para erro na Diagonal
     /*@Test
     public void testMoveDiagonal(){
         TWDGameManager testStart = new TWDGameManager();
@@ -47,16 +46,14 @@ public class TestTWDGameManager {
         assertTrue("Movimento na Diagonal",testStart.move(1,1,2,2));
     }*/
 
-    //Teste para erro movimentar fora do mapa
     /*@Test
     public void testMoveOutOfBounds(){
         TWDGameManager testStart = new TWDGameManager();
         File ficheiroTest = new File("./test-files/input");
         testStart.startGame(ficheiroTest);
-        assertTrue("Movimento para fora do mapa",testStart.move(5,5,6,5));
+        assertTrue("Movimento para fora do mapa",testStart.move(5,5,6,6));
     }*/
 
-    //Teste para boneco nascendo fora do mapa
     @Test
     public void testStartGameBonecoForaDoMapa(){
         TWDGameManager testStart = new TWDGameManager();

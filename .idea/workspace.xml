@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="277f7e4c-8220-423e-9b73-9c62c1e271f8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TestTWDGameManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-files/input" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projeto_LP2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Projeto_LP2.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TestTWDGameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TestTWDGameManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-files/input" beforeDir="false" afterPath="$PROJECT_DIR$/test-files/input" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -153,10 +152,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.TestTWDGameManager" />
+        <item itemvalue="JUnit.TestTWDGameManager.testMoveOutOfBounds" />
+        <item itemvalue="JUnit.TestTWDGameManager.testStartGameBonecoForaDoMapa" />
         <item itemvalue="JUnit.TestTWDGameManager.testMoveEsquerda" />
         <item itemvalue="JUnit.TestTWDGameManager.testMoveDiagonal" />
-        <item itemvalue="JUnit.TestTWDGameManager.testStartGameBonecoForaDoMapa" />
-        <item itemvalue="JUnit.TestTWDGameManager.testMoveOutOfBounds" />
       </list>
     </recent_temporary>
   </component>
@@ -304,7 +303,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605750000843</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="edit startGame (Boneco fora do mapa)&#10;+ Tests para o move()">
+      <created>1605801811560</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1605801811560</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -347,6 +353,7 @@
     <MESSAGE value="Editei ToString em Humano e Zombie e Editei move() de novo" />
     <MESSAGE value="Criei setPosicao de Humano e Zumbi" />
     <MESSAGE value="edit move()" />
-    <option name="LAST_COMMIT_MESSAGE" value="edit move()" />
+    <MESSAGE value="edit startGame (Boneco fora do mapa)&#10;+ Tests para o move()" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit startGame (Boneco fora do mapa)&#10;+ Tests para o move()" />
   </component>
 </project>
