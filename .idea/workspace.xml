@@ -5,7 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TestTWDGameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TestTWDGameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-files/input" beforeDir="false" afterPath="$PROJECT_DIR$/test-files/input" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -310,7 +309,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605801811560</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="edit move() denovo + tests">
+      <created>1605804072054</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1605804072054</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -354,6 +360,7 @@
     <MESSAGE value="Criei setPosicao de Humano e Zumbi" />
     <MESSAGE value="edit move()" />
     <MESSAGE value="edit startGame (Boneco fora do mapa)&#10;+ Tests para o move()" />
-    <option name="LAST_COMMIT_MESSAGE" value="edit startGame (Boneco fora do mapa)&#10;+ Tests para o move()" />
+    <MESSAGE value="edit move() denovo + tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit move() denovo + tests" />
   </component>
 </project>
