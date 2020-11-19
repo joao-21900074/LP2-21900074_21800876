@@ -316,7 +316,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605804072054</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="edit startGame">
+      <created>1605804886306</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1605804886306</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -361,6 +368,7 @@
     <MESSAGE value="edit move()" />
     <MESSAGE value="edit startGame (Boneco fora do mapa)&#10;+ Tests para o move()" />
     <MESSAGE value="edit move() denovo + tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="edit move() denovo + tests" />
+    <MESSAGE value="edit startGame" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit startGame" />
   </component>
 </project>

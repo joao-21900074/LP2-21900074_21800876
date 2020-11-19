@@ -61,5 +61,4 @@ public class TestTWDGameManager {
         assertTrue("Boneco nasce fora do mapa",testStart.startGame(ficheiroTest));
     }
 
-
 }

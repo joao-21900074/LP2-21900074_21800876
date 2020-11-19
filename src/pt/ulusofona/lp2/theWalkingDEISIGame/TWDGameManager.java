@@ -44,7 +44,7 @@ public class TWDGameManager {
             int linhas = Integer.parseInt(cxl[0]);
             int colunas = Integer.parseInt(cxl[1]);
             map = new int[linhas][colunas];
-            worldSize = new int[]{linhas-1,colunas-1};
+            worldSize = new int[]{linhas,colunas};
 
             //Equipe inicial
             initialTeam = Integer.parseInt(conteudo.get(2));
@@ -137,7 +137,7 @@ public class TWDGameManager {
         //Teste João
         
         //Escrevi aqui
-        if(xO > worldSize[0] || yO > worldSize[1] || xD > worldSize[0] || yD > worldSize[1]){
+        if(xO >= worldSize[0] || yO >= worldSize[1] || xD >= worldSize[0] || yD >= worldSize[1]){
             return false;
         }
 
