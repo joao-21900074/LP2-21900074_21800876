@@ -211,7 +211,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605747612890</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="edit move()">
+      <created>1605750000843</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1605750000843</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -253,6 +260,7 @@
     <MESSAGE value="Editei ToString em Humano e Zombie e Editei move()" />
     <MESSAGE value="Editei ToString em Humano e Zombie e Editei move() de novo" />
     <MESSAGE value="Criei setPosicao de Humano e Zumbi" />
-    <option name="LAST_COMMIT_MESSAGE" value="Criei setPosicao de Humano e Zumbi" />
+    <MESSAGE value="edit move()" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit move()" />
   </component>
 </project>

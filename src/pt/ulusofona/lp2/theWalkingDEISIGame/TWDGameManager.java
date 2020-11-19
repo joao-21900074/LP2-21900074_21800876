@@ -191,12 +191,12 @@ public class TWDGameManager {
             }
         }
 
-        if(currentTeam == 1) {
+        if(currentTeam == 0) {
             Humano h = getHumanoById(peca);
             if(h != null) {
                 h.setPosicao(new int[]{xD,yD});
             }
-        } else if(currentTeam == 0) {
+        } else if(currentTeam == 1) {
             Zombie z = getZombieById(peca);
             if(z != null) {
                 z.setPosicao(new int[]{xD,yD});
