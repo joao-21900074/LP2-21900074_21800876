@@ -193,10 +193,14 @@ public class TWDGameManager {
 
         if(currentTeam == 1) {
             Humano h = getHumanoById(peca);
-            h.setPosicao(new int[]{xD,yD});
+            if(h != null) {
+                h.setPosicao(new int[]{xD,yD});
+            }
         } else if(currentTeam == 0) {
             Zombie z = getZombieById(peca);
-            z.setPosicao(new int[]{xD,yD});
+            if(z != null) {
+                z.setPosicao(new int[]{xD,yD});
+            }
         }
 
         map[xD][yD] = peca;

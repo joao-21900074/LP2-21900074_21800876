@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="277f7e4c-8220-423e-9b73-9c62c1e271f8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Humano.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Humano.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Zombie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Zombie.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -206,7 +204,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605737920127</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Criei setPosicao de Humano e Zumbi">
+      <created>1605747612859</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1605747612890</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -247,6 +252,7 @@
     <MESSAGE value="Edit Humano.getNome Zombie.getNome gameOver + getSurvivors" />
     <MESSAGE value="Editei ToString em Humano e Zombie e Editei move()" />
     <MESSAGE value="Editei ToString em Humano e Zombie e Editei move() de novo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Editei ToString em Humano e Zombie e Editei move() de novo" />
+    <MESSAGE value="Criei setPosicao de Humano e Zumbi" />
+    <option name="LAST_COMMIT_MESSAGE" value="Criei setPosicao de Humano e Zumbi" />
   </component>
 </project>
