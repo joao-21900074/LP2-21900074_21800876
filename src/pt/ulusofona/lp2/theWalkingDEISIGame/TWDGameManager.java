@@ -44,7 +44,7 @@ public class TWDGameManager {
             int linhas = Integer.parseInt(cxl[0]);
             int colunas = Integer.parseInt(cxl[1]);
             map = new int[colunas][linhas];
-            worldSize = new int[]{colunas,linhas};
+            worldSize = new int[]{linhas,colunas};
 
             //Equipe inicial
             initialTeam = Integer.parseInt(conteudo.get(2));
