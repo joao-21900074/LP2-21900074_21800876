@@ -41,10 +41,10 @@ public class TWDGameManager {
 
             //Criação do Mapa
             String[] cxl = conteudo.get(1).split(" ");
-            int linhas = Integer.parseInt(cxl[0]);
-            int colunas = Integer.parseInt(cxl[1]);
+            int linhas = Integer.parseInt(cxl[1]);
+            int colunas = Integer.parseInt(cxl[0]);
             map = new int[linhas][colunas];
-            worldSize = new int[]{linhas,colunas};
+            worldSize = new int[]{colunas,linhas};
 
             //Equipe inicial
             initialTeam = Integer.parseInt(conteudo.get(2));
@@ -219,15 +219,7 @@ public class TWDGameManager {
 
         turnos++;
 
-        //verifica se é o turno dos Zombies e faz um movimento por eles
-        if(currentTeam == 1) {
-            //Escolhe um zumbi aleatorio
-            Zombie z = zombies.get((int) (Math.random() * (zombies.size() - 1)));
 
-            while(move(z.posicao[0], z.posicao[1],randomNumber(z.posicao[0] - 1, z.posicao[0] + 1),randomNumber(z.posicao[1] - 1, z.posicao[1] + 1))) {
-                System.out.println("teste");
-            }
-        }
 
         return true;
     }
