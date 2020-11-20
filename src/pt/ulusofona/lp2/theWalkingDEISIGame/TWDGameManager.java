@@ -21,8 +21,14 @@ public class TWDGameManager {
     //Construtor Vazio
     public TWDGameManager() {}
 
+    public void resetGame() {
+        boolean isDay = true;
+        int tamanhoDiaNoite = 2;
+        int turnos = 0;
+    }
     // pronto
     public boolean startGame(File ficheiroInicial) {
+        resetGame();
         //Teste
         try {
             //Leitor para o ficheiro do jogo
@@ -134,7 +140,7 @@ public class TWDGameManager {
         boolean droparItem = false;
         int itemDropado = 0;
 
-        if(xO >= worldSize[1] || yO >= worldSize[0] || xD >= worldSize[1] || yD >= worldSize[0]){
+        if(xO >= worldSize[1] || yO >= worldSize[0] || xD >= worldSize[1] || yD > worldSize[0]){
             return false;
         }
 
