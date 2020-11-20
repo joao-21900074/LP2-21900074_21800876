@@ -134,9 +134,6 @@ public class TWDGameManager {
         boolean droparItem = false;
         int itemDropado = 0;
 
-        //Teste João
-
-        //Escrevi aqui
         if(xO >= worldSize[0] || yO >= worldSize[1] || xD >= worldSize[0] || yD >= worldSize[1]){
             return false;
         }
@@ -152,8 +149,6 @@ public class TWDGameManager {
             return false;
         }
 
-        //Meter isso dentro de uma função
-        //Verificar quadrados possíveis
         if(!(((xD == xO+1 && yD == yO) || (xD == xO && yD == yO+1)) || ((xD == xO-1 && yD == yO) || (xD == xO && yD == yO-1)) || (xD == xO && yD == yO))){
             return false;
         }
@@ -224,6 +219,16 @@ public class TWDGameManager {
 
         turnos++;
 
+        //verifica se é o turno dos Zombies e faz um movimento por eles
+        if(currentTeam == 1) {
+            //Escolhe um zumbi aleatorio
+            Zombie z = zombies.get((int) (Math.random() * (zombies.size() - 1)));
+
+            while(move(z.posicao[0], z.posicao[1],randomNumber(z.posicao[0] - 1, z.posicao[0] + 1),randomNumber(z.posicao[1] - 1, z.posicao[1] + 1))) {
+                System.out.println("teste");
+            }
+        }
+
         return true;
     }
 
@@ -247,9 +252,11 @@ public class TWDGameManager {
         return false;
     }
 
-    /* Deve devolver true caso já tenha sido
-       alcançada uma das condições de paragem
-       do jogo e false em caso contrário. */
+    public int randomNumber(int min, int max) {
+        return (int) ((Math.random() * (max - min)) + min);
+    }
+
+    // pronto (acho que vai ter mais condições nas proximas entregas
     public boolean gameIsOver() {
         return turnos >= 12;
     }
