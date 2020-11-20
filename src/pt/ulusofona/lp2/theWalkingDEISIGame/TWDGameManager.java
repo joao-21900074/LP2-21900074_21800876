@@ -44,7 +44,7 @@ public class TWDGameManager {
             int linhas = Integer.parseInt(cxl[0]);
             int colunas = Integer.parseInt(cxl[1]);
             map = new int[colunas][linhas];
-            worldSize = new int[]{linhas,colunas};
+            worldSize = new int[]{colunas,linhas};
 
             //Equipe inicial
             initialTeam = Integer.parseInt(conteudo.get(2));
@@ -242,10 +242,6 @@ public class TWDGameManager {
         }
 
         return false;
-    }
-
-    public int randomNumber(int min, int max) {
-        return (int) ((Math.random() * (max - min)) + min);
     }
 
     // pronto (acho que vai ter mais condições nas proximas entregas

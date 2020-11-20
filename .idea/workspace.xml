@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="277f7e4c-8220-423e-9b73-9c62c1e271f8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -384,7 +385,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605903508622</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="fiz alteração na leitura de arquivos">
+      <created>1605903607092</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1605903607092</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -434,6 +442,7 @@
     <MESSAGE value="editei o move() implementei o movimento do zombie" />
     <MESSAGE value="edit move()" />
     <MESSAGE value="edit move() de novo" />
-    <option name="LAST_COMMIT_MESSAGE" value="edit move() de novo" />
+    <MESSAGE value="fiz alteração na leitura de arquivos" />
+    <option name="LAST_COMMIT_MESSAGE" value="fiz alteração na leitura de arquivos" />
   </component>
 </project>
