@@ -392,7 +392,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605903607092</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Fiz outra alteração na leitura de arquivos">
+      <created>1605904396668</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1605904396668</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -443,6 +450,7 @@
     <MESSAGE value="edit move()" />
     <MESSAGE value="edit move() de novo" />
     <MESSAGE value="fiz alteração na leitura de arquivos" />
-    <option name="LAST_COMMIT_MESSAGE" value="fiz alteração na leitura de arquivos" />
+    <MESSAGE value="Fiz outra alteração na leitura de arquivos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fiz outra alteração na leitura de arquivos" />
   </component>
 </project>
