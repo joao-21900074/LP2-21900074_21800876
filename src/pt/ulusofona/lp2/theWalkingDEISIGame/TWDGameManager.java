@@ -41,9 +41,9 @@ public class TWDGameManager {
 
             //Criação do Mapa
             String[] cxl = conteudo.get(1).split(" ");
-            int linhas = Integer.parseInt(cxl[1]);
-            int colunas = Integer.parseInt(cxl[0]);
-            map = new int[linhas][colunas];
+            int linhas = Integer.parseInt(cxl[0]);
+            int colunas = Integer.parseInt(cxl[1]);
+            map = new int[colunas][linhas];
             worldSize = new int[]{colunas,linhas};
 
             //Equipe inicial
