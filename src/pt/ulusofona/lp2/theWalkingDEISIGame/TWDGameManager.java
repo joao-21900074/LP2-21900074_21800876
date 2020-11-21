@@ -70,11 +70,11 @@ public class TWDGameManager {
                 String nome = infoCriaturas[2].trim();
                 int posicaoX = Integer.parseInt(infoCriaturas[3].trim());
                 int posicaoY = Integer.parseInt(infoCriaturas[4].trim());
-                if (tipo == 0 && (posicaoX < worldSize[0] && posicaoY < worldSize[1])) {
+                if (tipo == 0 && (posicaoX < colunas && posicaoY < linhas)) {
                     Zombie z = new Zombie(id, tipo, nome, new int[]{posicaoX, posicaoY});
                     zombies.add(z);
                     map[posicaoX][posicaoY] = id;
-                } else if(tipo == 1 && (posicaoX < worldSize[0] && posicaoY < worldSize[1])){
+                } else if(tipo == 1 && (posicaoX < colunas && posicaoY < linhas)){
                     Humano h = new Humano(id, tipo, nome, new int[]{posicaoX, posicaoY});
                     humans.add(h);
                     map[posicaoX][posicaoY] = id;
@@ -137,7 +137,7 @@ public class TWDGameManager {
         boolean droparItem = false;
         int itemDropado = 0;
 
-        if(xD < 0 || xD > worldSize[0] || yD < 0 || yD > worldSize[1]){
+        if(xD < 0 || xD > worldSize[1] || yD < 0 || yD > worldSize[0]){
             return false;
         }
 

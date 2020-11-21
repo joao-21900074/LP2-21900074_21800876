@@ -51,7 +51,7 @@ public class TestTWDGameManager {
         TWDGameManager testStart = new TWDGameManager();
         File ficheiroTest = new File("./test-files/input");
         testStart.startGame(ficheiroTest);
-        assertTrue("Movimento para fora do mapa",testStart.move(5,4,4,4));
+        assertTrue("Movimento para fora do mapa",testStart.move(4,4,4,5));
     }*/
 
     @Test
@@ -60,5 +60,4 @@ public class TestTWDGameManager {
         File ficheiroTest = new File("./test-files/input");
         assertTrue("Boneco nasce fora do mapa",testStart.startGame(ficheiroTest));
     }
-
 }
