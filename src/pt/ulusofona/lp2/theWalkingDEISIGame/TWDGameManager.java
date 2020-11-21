@@ -47,9 +47,9 @@ public class TWDGameManager {
 
             //Criação do Mapa
             String[] cxl = conteudo.get(1).split(" ");
-            int linhas = Integer.parseInt(cxl[0]);
-            int colunas = Integer.parseInt(cxl[1]);
-            map = new int[colunas + 1][linhas + 1];
+            int linhas = Integer.parseInt(cxl[0]) + 1;
+            int colunas = Integer.parseInt(cxl[1]) + 1;
+            map = new int[colunas][linhas];
             worldSize = new int[]{linhas,colunas};
 
             //Equipe inicial
@@ -137,6 +137,7 @@ public class TWDGameManager {
         int itemDropado = 0;
 
         if(xO > worldSize[1] || yO > worldSize[0] || xD > worldSize[1] || yD > worldSize[0]){
+            System.out.println("Teste pra fora do mapa");
             return false;
         }
 
@@ -148,10 +149,12 @@ public class TWDGameManager {
         }
 
         if(validaTime(peca,currentTeam)){
+            System.out.println("Time errado");
             return false;
         }
 
         if(!(((xD == xO+1 && yD == yO) || (xD == xO && yD == yO+1)) || ((xD == xO-1 && yD == yO) || (xD == xO && yD == yO-1)) || (xD == xO && yD == yO))){
+            System.out.println("Movimento errado");
             return false;
         }
 

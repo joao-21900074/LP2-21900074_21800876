@@ -1,8 +1,8 @@
-5 4
+5 5
 0
 4
-1 : 1 : Freddy M. : 1 : 1
-2 : 1 : Jackie Chan : 4 : 4
+1 : 1 : Freddy M. : 5 : 4
+2 : 1 : Jackie Chan : 3 : 3
 3 : 0 : Paciente Zero : 0 : 1
 4 : 0 : Paciente Um : 1 : 2
 2

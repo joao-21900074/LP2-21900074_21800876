@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="277f7e4c-8220-423e-9b73-9c62c1e271f8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game_sample.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Game_sample.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TestTWDGameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TestTWDGameManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-files/input" beforeDir="false" afterPath="$PROJECT_DIR$/test-files/input" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -61,7 +62,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TestTWDGameManager.testMoveOutOfBounds">
+  <component name="RunManager" selected="Application.AppLauncher">
     <configuration name="AppLauncher" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="pt.ulusofona.lp2.guiSimulator.AppLauncher" />
       <module name="Projeto_LP2" />
@@ -414,7 +415,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605916031223</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Editei move() e editei leitura de arquivo">
+      <created>1605963431467</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1605963431467</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -441,7 +449,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Criação de pasta images e lib&#10;&#10;.jar adicionado a pasta lib" />
     <MESSAGE value="Removi a classe Criatura e editei Humano e Zombie" />
     <MESSAGE value="Editei TWd,Humano,Zombie e adicionei o arquivo com dados de teste" />
     <MESSAGE value="Fiz algumas alterações e implementei os personagens no mapa" />
@@ -466,6 +473,7 @@
     <MESSAGE value="Fiz outra alteração na leitura de arquivos" />
     <MESSAGE value="inverti coluna com linha" />
     <MESSAGE value="Criei resetGame()" />
-    <option name="LAST_COMMIT_MESSAGE" value="Criei resetGame()" />
+    <MESSAGE value="Editei move() e editei leitura de arquivo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Editei move() e editei leitura de arquivo" />
   </component>
 </project>
