@@ -49,7 +49,7 @@ public class TWDGameManager {
             String[] cxl = conteudo.get(1).split(" ");
             int linhas = Integer.parseInt(cxl[0]);
             int colunas = Integer.parseInt(cxl[1]);
-            map = new int[colunas][linhas];
+            map = new int[colunas + 1][linhas + 1];
             worldSize = new int[]{linhas,colunas};
 
             //Equipe inicial
@@ -91,10 +91,10 @@ public class TWDGameManager {
                 String[] infoEquipamento = conteudo.get(linhaEquipamento).split(":");
                 int id = Integer.parseInt(infoEquipamento[0].trim());
                 int tipo = Integer.parseInt(infoEquipamento[1].trim());
-                int posicaoX = Integer.parseInt(infoEquipamento[2].trim());//Adicionar no mapa
-                int posicaoY = Integer.parseInt(infoEquipamento[3].trim());//Adicionar no mapa
+                int posicaoX = Integer.parseInt(infoEquipamento[2].trim());
+                int posicaoY = Integer.parseInt(infoEquipamento[3].trim());
 
-                Equipamento e = new Equipamento(id, tipo, new int[]{posicaoX,posicaoY});//Ver o q fazer com o "equipado"
+                Equipamento e = new Equipamento(id, tipo, new int[]{posicaoX,posicaoY});
 
                 equipamentos.add(e);
                 map[posicaoX][posicaoY] = id;
@@ -131,16 +131,12 @@ public class TWDGameManager {
         return zombies;
     }
 
-    /* Deve tentar executar uma jogada,
-       considerando que (xO, yO) representa a
-       origem a jogada e (xD, yD) representa o
-       destino da jogada. */
     public boolean move(int xO, int yO, int xD, int yD) {
 
         boolean droparItem = false;
         int itemDropado = 0;
 
-        if(xO >= worldSize[1] || yO >= worldSize[0] || xD >= worldSize[1] || yD > worldSize[0]){
+        if(xO > worldSize[1] || yO > worldSize[0] || xD > worldSize[1] || yD > worldSize[0]){
             return false;
         }
 
