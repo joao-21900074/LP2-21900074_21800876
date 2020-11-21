@@ -7,7 +7,6 @@ public class Zombie {
     String nome;
     final String imagePNG = "zombie.png";
     int[] posicao = new int[2];
-    boolean vivo = true;
     int nItensDestruido = 0;
 
     public Zombie() {}
@@ -23,24 +22,16 @@ public class Zombie {
         return id;
     }
 
+    public int getIdTipo() {
+        return idTipo;
+    }
+
     public String getNome() {
         return nome;
     }
 
     public String getImagePNG() {
         return imagePNG;
-    }
-
-    public boolean mudarPosicao(int[] newPosicao)  {
-        if(newPosicao != null && newPosicao.length != 2) {
-            return false;
-        }
-
-        return true;
-    }
-
-    public void die() {
-        vivo = false;
     }
 
     public void destruirIten() {

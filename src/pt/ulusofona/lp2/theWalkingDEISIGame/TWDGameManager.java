@@ -17,21 +17,12 @@ public class TWDGameManager {
     boolean isDay = true;
     int tamanhoDiaNoite = 2;
     int turnos = 0;
-    int linhas = 0;
-    int colunas = 0;
 
     //Construtor Vazio
     public TWDGameManager() {}
 
-    public void resetGame() {
-        boolean isDay = true;
-        int tamanhoDiaNoite = 2;
-        int turnos = 0;
-    }
     // pronto
     public boolean startGame(File ficheiroInicial) {
-        resetGame();
-        //Teste
         try {
             //Leitor para o ficheiro do jogo
             BufferedReader leitor = new BufferedReader(new FileReader(ficheiroInicial));
@@ -49,8 +40,8 @@ public class TWDGameManager {
 
             //Criação do Mapa
             String[] cxl = conteudo.get(1).split(" ");
-            linhas = Integer.parseInt(cxl[0]);
-            colunas = Integer.parseInt(cxl[1]);
+            int linhas = Integer.parseInt(cxl[0]);
+            int colunas = Integer.parseInt(cxl[1]);
             map = new int[colunas][linhas];
             worldSize = new int[]{linhas,colunas};
 
@@ -241,14 +232,14 @@ public class TWDGameManager {
         }
 
         for(Humano h : humans){
-            if(h.id == id) {
-                return h.idTipo == currentTeam;
+            if(h.getId() == id) {
+                return h.getIdTipo() == currentTeam;
             }
         }
 
         for(Zombie z : zombies) {
-            if(z.id == id) {
-                return z.idTipo == currentTeam;
+            if(z.getId() == id) {
+                return z.getIdTipo() == currentTeam;
             }
         }
 
@@ -278,10 +269,7 @@ public class TWDGameManager {
         return map[x][y];
     }
 
-    /* Devolve uma lista de Strings que
-       representam as criaturas sobreviventes do
-       jogo, conforme descrito na secção dos
-       “Resultados da execução …”. */
+    // pronto
     public List<String> getSurvivors() {
         List<String> retorno = new ArrayList<>();
         String listHumanos = "";
@@ -306,25 +294,18 @@ public class TWDGameManager {
         return retorno;
     }
 
-    /* Dever retornar true caso o turno actual
-       corresponda a um turno diurno e false
-       caso o turno actual corresponda um turno
-       nocturno. */
+    // pronto
     public boolean isDay() {
         return isDay;
     }
 
-    /* Deve retornar true caso a criatura
-       identificada pelo 1º argumento tenha em
-       sua posse um equipamento do tipo cujo ID
-       for passado como 2º argumento.
-       Em caso contrário, deve retornar false. */
+    // pronto
     public boolean hasEquipment(int creatureId, int equipmentTypeId) {
         for(Humano h : humans) {
-            if(h.equipamento == null){
+            if(h.getEquipamento() == null){
                 continue;
             }
-            if(h.id == creatureId && h.equipamento.idTipo == equipmentTypeId) {
+            if(h.getId() == creatureId && h.getEquipamento().getIdTipo() == equipmentTypeId) {
                 return true;
             }
         }

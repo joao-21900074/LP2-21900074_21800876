@@ -7,7 +7,6 @@ public class Humano{
     String nome;
     final String imagePNG = "human.png";
     int[] posicao = new int[2];
-    boolean vivo = true;
     Equipamento equipamento;
     int nEquipamentos = 0;
 
@@ -24,24 +23,16 @@ public class Humano{
         return id;
     }
 
+    public int getIdTipo() {
+        return idTipo;
+    }
+
     public String getNome() {
         return nome;
     }
 
     public String getImagePNG() {
         return imagePNG;
-    }
-
-    public boolean mudarPosicao(int[] newPosicao)  {
-        if(newPosicao != null && newPosicao.length != 2) {
-            return false;
-        }
-
-        return true;
-    }
-
-    public void die() {
-        vivo = false;
     }
 
     public boolean equiparEquipamento(Equipamento equipamento) {
@@ -55,10 +46,6 @@ public class Humano{
         this.equipamento = equipamento;
         nEquipamentos++;
         return true;
-    }
-
-    public void desequiparEquipamento() {
-        this.equipamento = null;
     }
 
     public boolean temEquipamento() {
