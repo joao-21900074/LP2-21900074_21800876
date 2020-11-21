@@ -17,6 +17,8 @@ public class TWDGameManager {
     boolean isDay = true;
     int tamanhoDiaNoite = 2;
     int turnos = 0;
+    int linhas = 0;
+    int colunas = 0;
 
     //Construtor Vazio
     public TWDGameManager() {}
@@ -47,8 +49,8 @@ public class TWDGameManager {
 
             //Criação do Mapa
             String[] cxl = conteudo.get(1).split(" ");
-            int linhas = Integer.parseInt(cxl[0]) + 1;
-            int colunas = Integer.parseInt(cxl[1]) + 1;
+            linhas = Integer.parseInt(cxl[0]);
+            colunas = Integer.parseInt(cxl[1]);
             map = new int[colunas][linhas];
             worldSize = new int[]{linhas,colunas};
 
@@ -68,11 +70,11 @@ public class TWDGameManager {
                 String nome = infoCriaturas[2].trim();
                 int posicaoX = Integer.parseInt(infoCriaturas[3].trim());
                 int posicaoY = Integer.parseInt(infoCriaturas[4].trim());
-                if (tipo == 0 && (posicaoX < linhas && posicaoY < colunas)) {
+                if (tipo == 0 && (posicaoX < worldSize[0] && posicaoY < worldSize[1])) {
                     Zombie z = new Zombie(id, tipo, nome, new int[]{posicaoX, posicaoY});
                     zombies.add(z);
                     map[posicaoX][posicaoY] = id;
-                } else if(tipo == 1 && (posicaoX < linhas && posicaoY < colunas)){
+                } else if(tipo == 1 && (posicaoX < worldSize[0] && posicaoY < worldSize[1])){
                     Humano h = new Humano(id, tipo, nome, new int[]{posicaoX, posicaoY});
                     humans.add(h);
                     map[posicaoX][posicaoY] = id;
@@ -132,30 +134,34 @@ public class TWDGameManager {
     }
 
     public boolean move(int xO, int yO, int xD, int yD) {
-
         boolean droparItem = false;
         int itemDropado = 0;
 
-        if(xO > worldSize[1] || yO > worldSize[0] || xD > worldSize[1] || yD > worldSize[0]){
-            System.out.println("Teste pra fora do mapa");
+        if(xD < 0 || xD > worldSize[0] || yD < 0 || yD > worldSize[1]){
             return false;
         }
 
         int peca = getElementId(xO,yO);
         int destino = getElementId(xD,yD);
 
-        if(gameIsOver()) {
-            return false;
-        }
-
         if(validaTime(peca,currentTeam)){
-            System.out.println("Time errado");
             return false;
         }
 
-        if(!(((xD == xO+1 && yD == yO) || (xD == xO && yD == yO+1)) || ((xD == xO-1 && yD == yO) || (xD == xO && yD == yO-1)) || (xD == xO && yD == yO))){
-            System.out.println("Movimento errado");
+        if(xO != xD && yO != yD) {
             return false;
+        }
+
+        if(yO == yD) {
+            if(Math.abs(xO - xD) > 1) {
+                return false;
+            }
+        }
+
+        if(xO == xD) {
+            if(Math.abs(yO - yD) > 1) {
+                return false;
+            }
         }
 
         if(!(destino == 0 || destino < 0 || destino == peca)){
