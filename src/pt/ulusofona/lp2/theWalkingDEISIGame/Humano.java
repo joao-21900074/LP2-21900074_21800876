@@ -1,39 +1,18 @@
 package pt.ulusofona.lp2.theWalkingDEISIGame;
 
-public class Humano{
+public class Humano extends Creature{
 
-    int id;
-    int idTipo;
-    String nome;
-    final String imagePNG = "human.png";
-    int[] posicao = new int[2];
+
     Equipamento equipamento;
     int nEquipamentos = 0;
 
     public Humano() {}
 
     public Humano(int id, int idTipo, String nome, int[] posicao) {
-        this.id = id;
-        this.idTipo = idTipo;
-        this.nome = nome;
-        this.posicao = posicao;
+        super(id,idTipo,nome,posicao);
+        imagePng = "humano.png";
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public int getIdTipo() {
-        return idTipo;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public String getImagePNG() {
-        return imagePNG;
-    }
 
     public boolean equiparEquipamento(Equipamento equipamento) {
         if(equipamento == null) {
@@ -56,9 +35,6 @@ public class Humano{
         return equipamento;
     }
 
-    public void setPosicao(int[] newPosicao) {
-        posicao = newPosicao;
-    }
 
     @Override
     public String toString() {

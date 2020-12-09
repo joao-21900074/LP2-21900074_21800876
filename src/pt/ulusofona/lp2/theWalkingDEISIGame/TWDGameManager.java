@@ -221,8 +221,6 @@ public class TWDGameManager {
 
         turnos++;
 
-
-
         return true;
     }
 
