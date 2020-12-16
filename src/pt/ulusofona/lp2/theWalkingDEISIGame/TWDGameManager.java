@@ -7,6 +7,8 @@ import java.util.List;
 
 public class TWDGameManager {
 
+    ArrayList<Creature> creatures = new ArrayList<>();
+
     ArrayList<Humano> humans = new ArrayList<>();
     ArrayList<Zombie> zombies = new ArrayList<>();
     ArrayList<Equipamento> equipamentos = new ArrayList<>();
@@ -128,6 +130,7 @@ public class TWDGameManager {
         boolean droparItem = false;
         int itemDropado = 0;
 
+        //Valida se o destino esta fora do mapa
         if(xD < 0 || xD > worldSize[1] || yD < 0 || yD > worldSize[0]){
             return false;
         }
@@ -135,20 +138,23 @@ public class TWDGameManager {
         int peca = getElementId(xO,yO);
         int destino = getElementId(xD,yD);
 
+        //Valida se é o turno do time da criatura
         if(validaTime(peca,currentTeam)){
             return false;
         }
-
+        //Valida diagonal
         if(xO != xD && yO != yD) {
             return false;
         }
 
+        //Valida movimento esquerda/direita
         if(yO == yD) {
             if(Math.abs(xO - xD) > 1) {
                 return false;
             }
         }
 
+        //Valida movimento baixo/cima
         if(xO == xD) {
             if(Math.abs(yO - yD) > 1) {
                 return false;
@@ -325,6 +331,43 @@ public class TWDGameManager {
                 return z;
             }
         }
+        return null;
+    }
+
+    // ++++MÉTODOS NOVOS+++
+    public List<Creature> getCreatures() {
+        return creatures;
+    }
+
+    public int getEquipmentId(int creatureId) {
+        return 0;
+    }
+
+    public List<Integer> getIdsInSafeHaven() {
+        return null;
+    }
+
+    public boolean isDoorToSafeHaven(int x, int y) {
+        return false;
+    }
+
+    public int getEquipmentTypeId(int equipmentId) {
+        return 0;
+    }
+
+    public String getEquipmentInfo(int equipmentId) {
+        return "";
+    }
+
+    public boolean saveGame(File fich) {
+        return false;
+    }
+
+    public boolean loadGame(File fich) {
+        return false;
+    }
+
+    public String[] popCultureExtravaganza() {
         return null;
     }
 }
