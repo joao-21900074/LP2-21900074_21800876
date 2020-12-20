@@ -2,8 +2,9 @@ package pt.ulusofona.lp2.theWalkingDEISIGame;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
 public class TWDGameManager {
 
@@ -27,78 +28,82 @@ public class TWDGameManager {
     public boolean startGame(File ficheiroInicial) {
         try {
             //Leitor para o ficheiro do jogo
-            BufferedReader leitor = new BufferedReader(new FileReader(ficheiroInicial));
-            //String para ler linha a linha
-            String linha;
-            int key = 1;
-            HashMap<Integer,String> conteudo = new HashMap<>();
+            Scanner leitor = new Scanner(new FileReader(ficheiroInicial));
+            String[] info;
+            int nLinha = 1;
 
             //While de leitura
-            while (((linha = leitor.readLine()))!= null) {
-                String[] info = linha.split(" ");
-                conteudo.put(key, String.join(" ",info));
-                key++;
-            }
+            while(leitor.hasNextLine()) {
+                info = leitor.nextLine().split(":");
 
-            //Criação do Mapa
-            String[] cxl = conteudo.get(1).split(" ");
-            int linhas = Integer.parseInt(cxl[0]);
-            int colunas = Integer.parseInt(cxl[1]);
-            map = new int[colunas][linhas];
-            worldSize = new int[]{linhas,colunas};
-
-            //Equipe inicial
-            initialTeam = Integer.parseInt(conteudo.get(2));
-            currentTeam = initialTeam;
-
-            //Quantidade de criaturas
-            int nCriaturas = Integer.parseInt(conteudo.get(3));
-
-            int linhaCriaturas = 4;
-
-            for(int i = 0;i < nCriaturas ;i++){
-                String[] infoCriaturas = conteudo.get(linhaCriaturas).split(":");
-                int id = Integer.parseInt(infoCriaturas[0].trim());
-                int tipo = Integer.parseInt(infoCriaturas[1].trim());
-                String nome = infoCriaturas[2].trim();
-                int posicaoX = Integer.parseInt(infoCriaturas[3].trim());
-                int posicaoY = Integer.parseInt(infoCriaturas[4].trim());
-                if (tipo == 0 && (posicaoX < colunas && posicaoY < linhas)) {
-                    Zombie z = new Zombie(id, tipo, nome, new int[]{posicaoX, posicaoY});
-                    zombies.add(z);
-                    map[posicaoX][posicaoY] = id;
-                } else if(tipo == 1 && (posicaoX < colunas && posicaoY < linhas)){
-                    Humano h = new Humano(id, tipo, nome, new int[]{posicaoX, posicaoY});
-                    humans.add(h);
-                    map[posicaoX][posicaoY] = id;
+                //Criação do Mapa + worldSize
+                if(nLinha == 1) {
+                    String[] cxl = info[0].split(" ");
+                    int linhas = Integer.parseInt(cxl[0]);
+                    int colunas = Integer.parseInt(cxl[1]);
+                    map = new int[colunas][linhas];
+                    worldSize = new int[]{linhas, colunas};
                 }
 
-                linhaCriaturas++;
-            }
+                //Equipe Inicial
+                if(nLinha == 2) {
+                    initialTeam = Integer.parseInt(info[0]);
+                    currentTeam = initialTeam;
+                }
 
-            //Quantidade de equipamentos
-            int nEquimamentos = Integer.parseInt(conteudo.get(linhaCriaturas));
-            int linhaEquipamento = linhaCriaturas+1;
+                //Quantidade de Criaturas
+                if(nLinha == 3) {
+                    int nCriaturas = Integer.parseInt(info[0]);
 
-            //Criação de Equipamentos
+                    //Criação das Criaturas
+                    while(nCriaturas != 0){
+                        info = leitor.nextLine().split(" : ");
+                        int id = Integer.parseInt(info[0]);
+                        int tipo = Integer.parseInt(info[1]);
+                        String nome = info[2];
+                        int posicaoX = Integer.parseInt(info[3]);
+                        int posicaoY = Integer.parseInt(info[4]);
+                        //FAZER AS CRIATURAS USANDO O TIPO
 
-            for(int i = 0;i < nEquimamentos ;i++){
-                String[] infoEquipamento = conteudo.get(linhaEquipamento).split(":");
-                int id = Integer.parseInt(infoEquipamento[0].trim());
-                int tipo = Integer.parseInt(infoEquipamento[1].trim());
-                int posicaoX = Integer.parseInt(infoEquipamento[2].trim());
-                int posicaoY = Integer.parseInt(infoEquipamento[3].trim());
+                        nCriaturas--;
+                    }
+                }
 
-                Equipamento e = new Equipamento(id, tipo, new int[]{posicaoX,posicaoY});
+                //Quantidade de Criaturas
+                if(nLinha == 4){
+                    int nEquimamentos = Integer.parseInt(info[0]);
 
-                equipamentos.add(e);
-                map[posicaoX][posicaoY] = id;
+                    //Criação dos Equipamentos
+                    while(nEquimamentos != 0){
+                        info = leitor.nextLine().split(" : ");
+                        int id = Integer.parseInt(info[0]);
+                        int tipo = Integer.parseInt(info[1]);
+                        int posicaoX = Integer.parseInt(info[2]);
+                        int posicaoY = Integer.parseInt(info[2]);
+                        //FAZER OS EQUIPAMENTOS USANDO O TIPO
 
-                linhaEquipamento++;
+                        nEquimamentos--;
+                    }
+                }
+
+                //Quantidade de Safe Havens
+                if(nLinha == 5){
+                    int nSafeHaven = Integer.parseInt(info[0]);
+
+                    while(nSafeHaven != 0){
+                        info = leitor.nextLine().split(" : ");
+                        int posicaoX = Integer.parseInt(info[0]);
+                        int posicaoY = Integer.parseInt(info[1]);
+                        //FAZER AS SAFE HAVENS
+
+                        nSafeHaven--;
+                    }
+                }
+
+                nLinha++;
             }
 
             return true;
-
 
         }catch(IOException exception) {
             exception.printStackTrace();
