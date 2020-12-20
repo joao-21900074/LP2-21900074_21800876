@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="277f7e4c-8220-423e-9b73-9c62c1e271f8" name="Default Changelist" comment="Nova .jar adicionado">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/LP2GuiViewer2021_p2_v102.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/LP2GuiViewer2021-p2-v102.jar" afterDir="false" />
+    <list default="true" id="277f7e4c-8220-423e-9b73-9c62c1e271f8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/HumanoAdulto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/HumanoCrianca.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/HumanoIdoso.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/ZombieAdulto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/ZombieCrianca.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/ZombieIdoso.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/ZombieVampiro.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projeto_LP2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Projeto_LP2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/LP2GuiViewer2021-p1-v100.jar" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
