@@ -2,10 +2,34 @@ package pt.ulusofona.lp2.theWalkingDEISIGame;
 
 import org.junit.Test;
 import java.io.File;
-import static org.junit.Assert.*;
 
 public class TestTWDGameManager {
+    private TWDGameManager testStart = new TWDGameManager();
+    private File ficheiroTest = new File("./test-files/input");
 
+    @Test
+    public void testLeituraRuim(){
+        TWDGameManager testStart = new TWDGameManager();
+        File ficheiroTest = new File("");
+        testStart.startGame(ficheiroTest);
+    }
+
+    @Test
+    public void testLeituraBoa(){
+        testStart.startGame(ficheiroTest);
+    }
+
+    @Test
+    public void testWolrdSize(){
+        testStart.getWorldSize();
+    }
+
+    @Test
+    public void testInitialTeam(){
+        testStart.getInitialTeam();
+    }
+
+    /*OLD TESTES, ainda possa ser útil
     @Test
     public void testMoveDireita(){
         TWDGameManager testStart = new TWDGameManager();
@@ -38,26 +62,26 @@ public class TestTWDGameManager {
         assertTrue("Movimento para Baixo",testStart.move(1,1,1,2));
     }
 
-    /*@Test
+    @Test
     public void testMoveDiagonal(){
         TWDGameManager testStart = new TWDGameManager();
         File ficheiroTest = new File("./test-files/input");
         testStart.startGame(ficheiroTest);
         assertTrue("Movimento na Diagonal",testStart.move(1,1,2,2));
-    }*/
+    }
 
-    /*@Test
+    @Test
     public void testMoveOutOfBounds(){
         TWDGameManager testStart = new TWDGameManager();
         File ficheiroTest = new File("./test-files/input");
         testStart.startGame(ficheiroTest);
         assertTrue("Movimento para fora do mapa",testStart.move(4,4,4,5));
-    }*/
+    }
 
     @Test
     public void testStartGameBonecoForaDoMapa(){
         TWDGameManager testStart = new TWDGameManager();
         File ficheiroTest = new File("./test-files/input");
         assertTrue("Boneco nasce fora do mapa",testStart.startGame(ficheiroTest));
-    }
+    }*/
 }

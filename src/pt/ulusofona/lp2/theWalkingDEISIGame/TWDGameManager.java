@@ -2,7 +2,6 @@ package pt.ulusofona.lp2.theWalkingDEISIGame;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -24,99 +23,99 @@ public class TWDGameManager {
     //Construtor Vazio
     public TWDGameManager() {}
 
-    // pronto
+    //Leitura do Ficheiro, onde pretende-se iniciar o jogo (Precisa criar os Objetos ainda)
     public boolean startGame(File ficheiroInicial) {
         try {
             //Leitor para o ficheiro do jogo
             Scanner leitor = new Scanner(new FileReader(ficheiroInicial));
             String[] info;
-            int nLinha = 1;
+            int nLinha = 0;
 
             //While de leitura
             while(leitor.hasNextLine()) {
                 info = leitor.nextLine().split(":");
-
-                //Criação do Mapa + worldSize
-                if(nLinha == 1) {
-                    String[] cxl = info[0].split(" ");
-                    int linhas = Integer.parseInt(cxl[0]);
-                    int colunas = Integer.parseInt(cxl[1]);
-                    map = new int[colunas][linhas];
-                    worldSize = new int[]{linhas, colunas};
-                }
-
-                //Equipe Inicial
-                if(nLinha == 2) {
-                    initialTeam = Integer.parseInt(info[0]);
-                    currentTeam = initialTeam;
-                }
-
-                //Quantidade de Criaturas
-                if(nLinha == 3) {
-                    int nCriaturas = Integer.parseInt(info[0]);
-
-                    //Criação das Criaturas
-                    while(nCriaturas != 0){
-                        info = leitor.nextLine().split(" : ");
-                        int id = Integer.parseInt(info[0]);
-                        int tipo = Integer.parseInt(info[1]);
-                        String nome = info[2];
-                        int posicaoX = Integer.parseInt(info[3]);
-                        int posicaoY = Integer.parseInt(info[4]);
-                        //FAZER AS CRIATURAS USANDO O TIPO
-
-                        nCriaturas--;
-                    }
-                }
-
-                //Quantidade de Criaturas
-                if(nLinha == 4){
-                    int nEquimamentos = Integer.parseInt(info[0]);
-
-                    //Criação dos Equipamentos
-                    while(nEquimamentos != 0){
-                        info = leitor.nextLine().split(" : ");
-                        int id = Integer.parseInt(info[0]);
-                        int tipo = Integer.parseInt(info[1]);
-                        int posicaoX = Integer.parseInt(info[2]);
-                        int posicaoY = Integer.parseInt(info[2]);
-                        //FAZER OS EQUIPAMENTOS USANDO O TIPO
-
-                        nEquimamentos--;
-                    }
-                }
-
-                //Quantidade de Safe Havens
-                if(nLinha == 5){
-                    int nSafeHaven = Integer.parseInt(info[0]);
-
-                    while(nSafeHaven != 0){
-                        info = leitor.nextLine().split(" : ");
-                        int posicaoX = Integer.parseInt(info[0]);
-                        int posicaoY = Integer.parseInt(info[1]);
-                        //FAZER AS SAFE HAVENS
-
-                        nSafeHaven--;
-                    }
-                }
-
                 nLinha++;
+                switch (nLinha) {
+
+                    //Criação do Mapa + worldSize
+                    case 1:
+                        String[] cxl = info[0].split(" ");
+                        int linhas = Integer.parseInt(cxl[0]);
+                        int colunas = Integer.parseInt(cxl[1]);
+                        map = new int[colunas][linhas];
+                        worldSize = new int[]{linhas, colunas};
+                        break;
+
+                    //Equipe Inicial
+                    case 2:
+                        initialTeam = Integer.parseInt(info[0]);
+                        currentTeam = initialTeam;
+                        break;
+
+                    //Quantidade de Criaturas
+                    case 3:
+                        int nCriaturas = Integer.parseInt(info[0]);
+
+                        //Criação das Criaturas
+                        while (nCriaturas != 0) {
+                            info = leitor.nextLine().split(" : ");
+                            int id = Integer.parseInt(info[0]);
+                            int tipo = Integer.parseInt(info[1]);
+                            String nome = info[2];
+                            int posicaoX = Integer.parseInt(info[3]);
+                            int posicaoY = Integer.parseInt(info[4]);
+                            //FAZER AS CRIATURAS USANDO O TIPO
+
+                            nCriaturas--;
+                        }
+                        break;
+
+                    //Quantidade de Criaturas
+                    case 4:
+                        int nEquimamentos = Integer.parseInt(info[0]);
+
+                        //Criação dos Equipamentos
+                        while (nEquimamentos != 0) {
+                            info = leitor.nextLine().split(" : ");
+                            int id = Integer.parseInt(info[0]);
+                            int tipo = Integer.parseInt(info[1]);
+                            int posicaoX = Integer.parseInt(info[2]);
+                            int posicaoY = Integer.parseInt(info[2]);
+                            //FAZER OS EQUIPAMENTOS USANDO O TIPO
+
+                            nEquimamentos--;
+                        }
+                        break;
+
+                    //Quantidade de Safe Havens
+                    case 5:
+                        int nSafeHaven = Integer.parseInt(info[0]);
+
+                        while (nSafeHaven != 0) {
+                            info = leitor.nextLine().split(" : ");
+                            int posicaoX = Integer.parseInt(info[0]);
+                            int posicaoY = Integer.parseInt(info[1]);
+                            //FAZER AS SAFE HAVENS
+
+                            nSafeHaven--;
+                        }
+                        break;
+                }
             }
 
             return true;
-
-        }catch(IOException exception) {
-            exception.printStackTrace();
+        } catch (FileNotFoundException e) {
+            System.out.println("Ficheiro não encontrado");
         }
         return false;
     }
 
-    // pronto
+    //Tamanho do mapa (PRONTO)
     public int[] getWorldSize() {
         return worldSize;
     }
 
-    // pronto
+    //Equipe inicial (PRONTO)
     public int getInitialTeam() {
         return initialTeam;
     }
