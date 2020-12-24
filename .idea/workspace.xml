@@ -14,12 +14,7 @@
       <change afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Revista.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Veneno.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/test-files/allequipments" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/LP2GuiViewer2021-p1-v100.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Equipamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Equipamento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Humano.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Humano.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TestTWDGameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TestTWDGameManager.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,7 +23,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageViewManager">
-    <option name="myElementSize" value="122" />
+    <option name="myElementSize" value="125" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -472,7 +467,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608814311811</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Leitura de Ficheiro V1.2&#10;+ Funçoes relacionadas a Equipamentos&#10;(Mudei a classe Equipamentos para abstract)&#10;(Criação de Equipamentos com Factory)&#10;(Teste das novas funções + Factory)">
+      <created>1608824980028</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1608824980028</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -499,7 +501,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Editei ToString" />
     <MESSAGE value="Edit hasEquipment and move" />
     <MESSAGE value="Edit move" />
     <MESSAGE value="Edit Humano.getNome Zombie.getNome gameOver + getSurvivors" />
@@ -524,7 +525,8 @@
     <MESSAGE value="Nova lib adicionado" />
     <MESSAGE value="Leitura de Ficheiro V1&#10;&#10;(Falta passar os dados para os respectivos Objetos)" />
     <MESSAGE value="Leitura de Ficheiro V1.1&#10;(Mudei ifs para switch)&#10;(Adicionei alguns testes básicos)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Leitura de Ficheiro V1.1&#10;(Mudei ifs para switch)&#10;(Adicionei alguns testes básicos)" />
+    <MESSAGE value="Leitura de Ficheiro V1.2&#10;+ Funçoes relacionadas a Equipamentos&#10;(Mudei a classe Equipamentos para abstract)&#10;(Criação de Equipamentos com Factory)&#10;(Teste das novas funções + Factory)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Leitura de Ficheiro V1.2&#10;+ Funçoes relacionadas a Equipamentos&#10;(Mudei a classe Equipamentos para abstract)&#10;(Criação de Equipamentos com Factory)&#10;(Teste das novas funções + Factory)" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/LP2_21900074_21800876$TestTWDGameManager_falhaLeitura.ic" NAME="TestTWDGameManager.falhaLeitura Coverage Results" MODIFIED="1608812833196" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
