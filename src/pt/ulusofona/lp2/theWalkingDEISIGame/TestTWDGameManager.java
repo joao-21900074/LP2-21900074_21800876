@@ -21,12 +21,32 @@ public class TestTWDGameManager {
 
     @Test
     public void testWolrdSize(){
+        testLeituraBoa();
         testStart.getWorldSize();
     }
 
     @Test
     public void testInitialTeam(){
+        testLeituraBoa();
         testStart.getInitialTeam();
+    }
+
+    @Test
+    public void testEquipmentTypeId(){
+        testLeituraBoa();
+        testStart.getEquipmentTypeId(-1);
+    }
+
+    @Test
+    public void testEquipmentInfo(){
+        testLeituraBoa();
+        testStart.getEquipmentInfo(-1);
+    }
+
+    @Test
+    public void testFicheiroAllEquipments(){
+        File ficheiroE = new File("./test-files/allequipments");
+        testStart.startGame(ficheiroE);
     }
 
     /*OLD TESTES, ainda possa ser útil

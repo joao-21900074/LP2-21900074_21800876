@@ -1,13 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="277f7e4c-8220-423e-9b73-9c62c1e271f8" name="Default Changelist" comment="Nova .jar adicionado">
+    <list default="true" id="277f7e4c-8220-423e-9b73-9c62c1e271f8" name="Default Changelist" comment="Leitura de Ficheiro V1.1&#10;(Mudei ifs para switch)&#10;(Adicionei alguns testes básicos)">
+      <change afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Alho.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Antidoto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Beskar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/EscudoMadeira.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/EscudoTactico.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Espada.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Estaca.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Lixivia.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Pistola.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Revista.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Veneno.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-files/allequipments" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/LP2GuiViewer2021-p1-v100.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Equipamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Equipamento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Humano.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Humano.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TestTWDGameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TestTWDGameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-files/input" beforeDir="false" afterPath="$PROJECT_DIR$/test-files/input" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,7 +28,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageViewManager">
-    <option name="myElementSize" value="112" />
+    <option name="myElementSize" value="122" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -76,6 +88,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="pt.ulusofona.lp2.theWalkingDEISIGame.Main" />
+      <module name="Projeto_LP2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pt.ulusofona.lp2.theWalkingDEISIGame.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestTWDGameManager" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Projeto_LP2" />
       <extension name="coverage">
@@ -91,7 +116,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestTWDGameManager.falhaLeitura" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestTWDGameManager.testEquipmentTypeId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Projeto_LP2" />
       <extension name="coverage">
         <pattern>
@@ -101,13 +126,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="pt.ulusofona.lp2.theWalkingDEISIGame" />
       <option name="MAIN_CLASS_NAME" value="pt.ulusofona.lp2.theWalkingDEISIGame.TestTWDGameManager" />
-      <option name="METHOD_NAME" value="falhaLeitura" />
+      <option name="METHOD_NAME" value="testEquipmentTypeId" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestTWDGameManager.testInitialTeam" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestTWDGameManager.testFicheiroAllEquipments" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Projeto_LP2" />
       <extension name="coverage">
         <pattern>
@@ -117,13 +142,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="pt.ulusofona.lp2.theWalkingDEISIGame" />
       <option name="MAIN_CLASS_NAME" value="pt.ulusofona.lp2.theWalkingDEISIGame.TestTWDGameManager" />
-      <option name="METHOD_NAME" value="testInitialTeam" />
+      <option name="METHOD_NAME" value="testFicheiroAllEquipments" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestTWDGameManager.testLeituraBad" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestTWDGameManager.testWolrdSize" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Projeto_LP2" />
       <extension name="coverage">
         <pattern>
@@ -133,23 +158,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="pt.ulusofona.lp2.theWalkingDEISIGame" />
       <option name="MAIN_CLASS_NAME" value="pt.ulusofona.lp2.theWalkingDEISIGame.TestTWDGameManager" />
-      <option name="METHOD_NAME" value="testLeituraBad" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestTWDGameManager.testLeituraGood" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Projeto_LP2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="pt.ulusofona.lp2.theWalkingDEISIGame.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="pt.ulusofona.lp2.theWalkingDEISIGame" />
-      <option name="MAIN_CLASS_NAME" value="pt.ulusofona.lp2.theWalkingDEISIGame.TestTWDGameManager" />
-      <option name="METHOD_NAME" value="testLeituraGood" />
+      <option name="METHOD_NAME" value="testWolrdSize" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -158,10 +167,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.TestTWDGameManager" />
-        <item itemvalue="JUnit.TestTWDGameManager.testInitialTeam" />
-        <item itemvalue="JUnit.TestTWDGameManager.testLeituraGood" />
-        <item itemvalue="JUnit.TestTWDGameManager.testLeituraBad" />
-        <item itemvalue="JUnit.TestTWDGameManager.falhaLeitura" />
+        <item itemvalue="JUnit.TestTWDGameManager.testFicheiroAllEquipments" />
+        <item itemvalue="JUnit.TestTWDGameManager.testWolrdSize" />
+        <item itemvalue="JUnit.TestTWDGameManager.testEquipmentTypeId" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -456,7 +465,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608408929541</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Leitura de Ficheiro V1.1&#10;(Mudei ifs para switch)&#10;(Adicionei alguns testes básicos)">
+      <created>1608814311810</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1608814311811</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -483,7 +499,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Editei ToString&#10;Implementei hasEquipament&#10;Implementei isDay" />
     <MESSAGE value="Editei ToString" />
     <MESSAGE value="Edit hasEquipment and move" />
     <MESSAGE value="Edit move" />
@@ -508,7 +523,8 @@
     <MESSAGE value="+ edits no move()" />
     <MESSAGE value="Nova lib adicionado" />
     <MESSAGE value="Leitura de Ficheiro V1&#10;&#10;(Falta passar os dados para os respectivos Objetos)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Leitura de Ficheiro V1&#10;&#10;(Falta passar os dados para os respectivos Objetos)" />
+    <MESSAGE value="Leitura de Ficheiro V1.1&#10;(Mudei ifs para switch)&#10;(Adicionei alguns testes básicos)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Leitura de Ficheiro V1.1&#10;(Mudei ifs para switch)&#10;(Adicionei alguns testes básicos)" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/LP2_21900074_21800876$TestTWDGameManager_falhaLeitura.ic" NAME="TestTWDGameManager.falhaLeitura Coverage Results" MODIFIED="1608812833196" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -517,7 +533,10 @@
     <SUITE FILE_PATH="coverage/LP2_21900074_21800876$TestTWDGameManager_testInitialTeam.ic" NAME="TestTWDGameManager.testInitialTeam Coverage Results" MODIFIED="1608813491911" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>pt.ulusofona.lp2.theWalkingDEISIGame.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/LP2_21900074_21800876$TestTWDGameManager.ic" NAME="TestTWDGameManager Coverage Results" MODIFIED="1608814127521" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/LP2_21900074_21800876$TestTWDGameManager_testEquipmentTypeId.ic" NAME="TestTWDGameManager.testEquipmentTypeId Coverage Results" MODIFIED="1608819854628" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>pt.ulusofona.lp2.theWalkingDEISIGame.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/LP2_21900074_21800876$TestTWDGameManager.ic" NAME="TestTWDGameManager Coverage Results" MODIFIED="1608824718881" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>pt.ulusofona.lp2.theWalkingDEISIGame.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/LP2_21900074_21800876$TestTWDGameManager_testLeituraGood.ic" NAME="TestTWDGameManager.testLeituraGood Coverage Results" MODIFIED="1608813227857" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

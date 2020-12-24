@@ -70,7 +70,7 @@ public class TWDGameManager {
                         }
                         break;
 
-                    //Quantidade de Criaturas
+                    //Quantidade de Equipamentos
                     case 4:
                         int nEquimamentos = Integer.parseInt(info[0]);
 
@@ -78,10 +78,15 @@ public class TWDGameManager {
                         while (nEquimamentos != 0) {
                             info = leitor.nextLine().split(" : ");
                             int id = Integer.parseInt(info[0]);
-                            int tipo = Integer.parseInt(info[1]);
+                            int idTipo = Integer.parseInt(info[1]);
                             int posicaoX = Integer.parseInt(info[2]);
                             int posicaoY = Integer.parseInt(info[2]);
-                            //FAZER OS EQUIPAMENTOS USANDO O TIPO
+
+                            //Usando o Factory do Equipamento para criar
+                            Equipamento e = Equipamento.criarEquipamento(id, idTipo, new int[]{posicaoX,posicaoY});
+
+                            equipamentos.add(e);
+                            map[posicaoX][posicaoY] = id;
 
                             nEquimamentos--;
                         }
@@ -169,7 +174,7 @@ public class TWDGameManager {
             return false;
         }
 
-        if(getElementId(xD,yD) < 0 && currentTeam == 0) {
+        /*if(getElementId(xD,yD) < 0 && currentTeam == 0) {
             Equipamento equipEscolhido = new Equipamento();
             for(Equipamento e : equipamentos) {
                 if(e.getId() == getElementId(xD,yD)){
@@ -188,7 +193,7 @@ public class TWDGameManager {
                     }
                 }
             }
-        }
+        }*/
 
         if(getElementId(xD,yD) < 0 && currentTeam == 1) {
             for(Zombie z : zombies) {
@@ -355,12 +360,26 @@ public class TWDGameManager {
         return false;
     }
 
+    //Tipo do Equipamento usando o id (Da pra melhorar?)
     public int getEquipmentTypeId(int equipmentId) {
-        return 0;
+        int retorno = 0;
+        for(Equipamento e : equipamentos){
+            if(e.getId() == equipmentId){
+                retorno = e.getIdTipo();
+            }
+        }
+        return retorno;
     }
 
+    //Info do Equipamento usando o id (Da pra melhorar?)
     public String getEquipmentInfo(int equipmentId) {
-        return "";
+        String retorno = "";
+        for(Equipamento e : equipamentos){
+            if(e.getId() == equipmentId){
+                retorno = e.toString();
+            }
+        }
+        return retorno;
     }
 
     public boolean saveGame(File fich) {

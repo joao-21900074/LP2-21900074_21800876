@@ -58,7 +58,7 @@ public class Humano extends Creature{
             Valida se tem o equipamento certo para enfrentar um
             Zumbi Vampiro
              */
-            if(equipamento.idTipo != -6 && idDestino == 4) {
+            if(equipamento.getIdTipo() != -6 && idDestino == 4) {
                 return false;
             }
         }
