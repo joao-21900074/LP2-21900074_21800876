@@ -61,6 +61,12 @@ public class TestTWDGameManager {
         testStart.isDoorToSafeHaven(5,5);
     }
 
+    @Test
+    public void testSaveGame(){
+        testLeituraBoa();
+        testStart.saveGame(new File("save.txt"));
+    }
+
     /*OLD TESTES, ainda possa ser útil
     @Test
     public void testMoveDireita(){

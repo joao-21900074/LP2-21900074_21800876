@@ -31,6 +31,8 @@ public abstract class Creature {
         return imagePng;
     }
 
+    public int[] getPosicao(){return posicao;}
+
     public void setPosicao(int[] newPosicao) {
         posicao = newPosicao;
     }

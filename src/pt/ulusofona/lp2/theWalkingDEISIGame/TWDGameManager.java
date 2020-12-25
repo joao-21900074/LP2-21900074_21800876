@@ -405,12 +405,85 @@ public class TWDGameManager {
         return retorno;
     }
 
+    //Funções auxiliares saveGame
+    public String getEquipmentAtributes(int equipId){
+        String retorno = "";
+        for(Equipamento e : equipamentos){
+            if(e.getId() == equipId) {
+                retorno = e.getId() + " : " + e.getIdTipo() + " : " + e.getPosicao()[0] + " : "  + e.getPosicao()[1];
+            }
+        }
+        return retorno;
+    }
+
+    public String getCreatureAtributes(int creatureId){
+        String retorno = "";
+        for(Creature c : creatures){
+            if(c.getId() == creatureId) {
+                retorno = c.getId() + " : " + c.getIdTipo() + " : " +
+                        c.getNome() + " : " + c.getPosicao()[0] + " : "  + c.getPosicao()[1];
+            }
+        }
+        return retorno;
+    }
+
+    public String getAllCreaturesAtributes(){
+        StringBuilder retorno = new StringBuilder();
+        for(int i=0; i < map.length; i++){
+            for(int j=0; j < map[i].length; j++){
+                if(map[i][j] > 0){
+                    retorno.append(getCreatureAtributes(map[i][j])).append("\n");
+                }
+            }
+        }
+        return retorno.toString();
+    }
+
+    public String getAllEquipmentAtributes(){
+        StringBuilder retorno = new StringBuilder();
+        for(int i=0; i < map.length; i++){
+            for(int j=0; j < map[i].length; j++){
+                if(map[i][j] < 0){
+                    retorno.append(getEquipmentAtributes(map[i][j])).append("\n");
+                }
+            }
+        }
+        return retorno.toString();
+    }
+
+    public String getSafePosicao(){
+        StringBuilder retorno = new StringBuilder();
+        for(int[] s : safeHavens){
+            retorno.append(s[0]).append(" : ").append(s[1]).append("\n");
+        }
+        return retorno.toString();
+    }
+
+    //Ainda não está atualizando as posições
     public boolean saveGame(File fich) {
+        try{
+            FileWriter escrita = new FileWriter(fich);
+
+            escrita.write(getWorldSize()[0] + " " + getWorldSize()[1] + "\n");
+            escrita.write(initialTeam + "\n");
+            escrita.write(creatures.size() + "\n");
+            //Falta ordenar
+            escrita.write(getAllCreaturesAtributes());
+            escrita.write(equipamentos.size() + "\n");
+            //Falta ordenar
+            escrita.write(getAllEquipmentAtributes());
+            escrita.write(safeHavens.size() + "\n");
+            escrita.write(getSafePosicao().trim());
+
+            escrita.close();
+        } catch (IOException e) {
+            System.out.println("Falha no save");
+        }
         return false;
     }
 
     public boolean loadGame(File fich) {
-        return false;
+        return startGame(fich);
     }
 
     public String[] popCultureExtravaganza() {

@@ -3,7 +3,7 @@ package pt.ulusofona.lp2.theWalkingDEISIGame;
 public abstract class Equipamento {
     private int id;
     private int idTipo;
-    int[] posicao = new int[2];
+    private int[] posicao = new int[2];
 
     public Equipamento() {}
 
@@ -20,6 +20,8 @@ public abstract class Equipamento {
     public int getIdTipo() {
         return idTipo;
     }
+
+    public int[] getPosicao(){return posicao;}
 
     //Factory
     static Equipamento criarEquipamento(int id, int idTipo, int[]posicao){
