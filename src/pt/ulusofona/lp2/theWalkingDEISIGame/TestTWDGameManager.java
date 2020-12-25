@@ -49,6 +49,18 @@ public class TestTWDGameManager {
         testStart.startGame(ficheiroE);
     }
 
+    @Test
+    public void testDoorSafeHavenBoa(){
+        testLeituraBoa();
+        testStart.isDoorToSafeHaven(6,6);
+    }
+
+    @Test
+    public void testDoorSafeHavenRuim(){
+        testLeituraBoa();
+        testStart.isDoorToSafeHaven(5,5);
+    }
+
     /*OLD TESTES, ainda possa ser útil
     @Test
     public void testMoveDireita(){

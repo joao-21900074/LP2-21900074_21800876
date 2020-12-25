@@ -7,7 +7,7 @@ public class Humano extends Creature {
 
     public Humano(int id, int idTipo, String nome, int[] posicao) {
         super(id,idTipo,nome,posicao);
-        this.imagePng = "humano.png";
+        this.imagePng = "human.png";
     }
 
     public boolean equiparEquipamento(Equipamento equipamento) {
@@ -29,6 +29,13 @@ public class Humano extends Creature {
 
     public Equipamento getEquipamento() {
         return equipamento;
+    }
+
+    public int getIdEquipamento(){
+        if(equipamento == null){
+            return 0;
+        }
+        return equipamento.getId();
     }
 
     public boolean validaMove(int xD, int yD, boolean isDay, int idDestino, int currentTeam) {

@@ -19,7 +19,7 @@ public class EscudoMadeira extends Equipamento {
 
     //Após utilizar ele quebra
     public void defender(){
-        defesa = 0;
+        defesa--;
     }
 
     //Se um militar pegar ele da upgrade

@@ -2,6 +2,7 @@ package pt.ulusofona.lp2.theWalkingDEISIGame;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -10,6 +11,7 @@ public class TWDGameManager {
     ArrayList<Humano> humans = new ArrayList<>();
     ArrayList<Zombie> zombies = new ArrayList<>();
     ArrayList<Equipamento> equipamentos = new ArrayList<>();
+    ArrayList<int[]> safeHavens = new ArrayList<>();
     int initialTeam;
     int currentTeam;
     int[][] map;
@@ -69,6 +71,10 @@ public class TWDGameManager {
                             creatures.add(c);
                             map[posicaoX][posicaoY] = id;
 
+                            if(idTipo > 4 && idTipo < 10){
+                                humans.add((Humano) c);
+                            }
+
                             nCriaturas--;
                         }
                         break;
@@ -103,7 +109,9 @@ public class TWDGameManager {
                             info = leitor.nextLine().split(" : ");
                             int posicaoX = Integer.parseInt(info[0]);
                             int posicaoY = Integer.parseInt(info[1]);
-                            //FAZER AS SAFE HAVENS
+
+                            safeHavens.add(new int[]{posicaoX,posicaoY});
+                            map[posicaoX][posicaoY] = 0;
 
                             nSafeHaven--;
                         }
@@ -350,7 +358,13 @@ public class TWDGameManager {
         return creatures;
     }
 
+    //ID do equipamento que o vivo carrega (Considera humanos e câes)
     public int getEquipmentId(int creatureId) {
+        for(Humano h : humans){
+            if(h.getId() == creatureId){
+                return h.getIdEquipamento();
+            }
+        }
         return 0;
     }
 
@@ -358,7 +372,14 @@ public class TWDGameManager {
         return null;
     }
 
+    //True caso a safe esteja na lista de safeHavens
     public boolean isDoorToSafeHaven(int x, int y) {
+        int[] check = new int[]{x,y};
+        for(int[] lugar : safeHavens){
+            if(Arrays.equals(lugar, check)){
+                return true;
+            }
+        }
         return false;
     }
 

@@ -27,9 +27,8 @@ public abstract class Creature {
         return nome;
     }
 
-    //N sei pq ta dando ruim n a imagem
     public String getImagePNG() {
-        return null;
+        return imagePng;
     }
 
     public void setPosicao(int[] newPosicao) {
