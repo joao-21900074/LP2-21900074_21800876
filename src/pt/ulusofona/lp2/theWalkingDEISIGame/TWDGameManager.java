@@ -6,9 +6,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class TWDGameManager {
-
     ArrayList<Creature> creatures = new ArrayList<>();
-
     ArrayList<Humano> humans = new ArrayList<>();
     ArrayList<Zombie> zombies = new ArrayList<>();
     ArrayList<Equipamento> equipamentos = new ArrayList<>();
@@ -60,11 +58,16 @@ public class TWDGameManager {
                         while (nCriaturas != 0) {
                             info = leitor.nextLine().split(" : ");
                             int id = Integer.parseInt(info[0]);
-                            int tipo = Integer.parseInt(info[1]);
+                            int idTipo = Integer.parseInt(info[1]);
                             String nome = info[2];
                             int posicaoX = Integer.parseInt(info[3]);
                             int posicaoY = Integer.parseInt(info[4]);
-                            //FAZER AS CRIATURAS USANDO O TIPO
+
+                            //Usando o Factory do Creature para criar objetos
+                            Creature c = Creature.criarCreature(id, idTipo, nome, new int[]{posicaoX,posicaoY});
+
+                            creatures.add(c);
+                            map[posicaoX][posicaoY] = id;
 
                             nCriaturas--;
                         }
@@ -80,9 +83,9 @@ public class TWDGameManager {
                             int id = Integer.parseInt(info[0]);
                             int idTipo = Integer.parseInt(info[1]);
                             int posicaoX = Integer.parseInt(info[2]);
-                            int posicaoY = Integer.parseInt(info[2]);
+                            int posicaoY = Integer.parseInt(info[3]);
 
-                            //Usando o Factory do Equipamento para criar
+                            //Usando o Factory do Equipamento para criar objetos
                             Equipamento e = Equipamento.criarEquipamento(id, idTipo, new int[]{posicaoX,posicaoY});
 
                             equipamentos.add(e);
@@ -125,15 +128,14 @@ public class TWDGameManager {
         return initialTeam;
     }
 
-    // pronto
+    /*Não precisa nessa segunda parte
     public List<Humano> getHumans() {
         return humans;
     }
 
-    //pronto
     public List<Zombie> getZombies() {
         return zombies;
-    }
+    }*/
 
     public boolean move(int xO, int yO, int xD, int yD) {
         boolean droparItem = false;

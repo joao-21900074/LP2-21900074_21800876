@@ -1,18 +1,14 @@
 package pt.ulusofona.lp2.theWalkingDEISIGame;
 
-public class Humano extends Creature{
-
+public class Humano extends Creature {
 
     Equipamento equipamento;
     int nEquipamentos = 0;
 
-    public Humano() {}
-
     public Humano(int id, int idTipo, String nome, int[] posicao) {
         super(id,idTipo,nome,posicao);
-        imagePng = "humano.png";
+        this.imagePng = "humano.png";
     }
-
 
     public boolean equiparEquipamento(Equipamento equipamento) {
         if(equipamento == null) {

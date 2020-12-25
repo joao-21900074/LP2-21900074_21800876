@@ -1,14 +1,12 @@
 package pt.ulusofona.lp2.theWalkingDEISIGame;
 
-public class Creature {
+public abstract class Creature {
 
-    int id;
-    int idTipo;
-    String nome;
-    String imagePng;
+    protected int id;
+    protected int idTipo;
+    protected String nome;
+    protected String imagePng;
     int[] posicao = new int[2];
-
-    public Creature() {};
 
     public Creature(int id, int idTipo, String nome, int[] posicao) {
         this.id = id;
@@ -29,17 +27,45 @@ public class Creature {
         return nome;
     }
 
+    //N sei pq ta dando ruim n a imagem
     public String getImagePNG() {
-        return imagePng;
+        return null;
     }
 
     public void setPosicao(int[] newPosicao) {
         posicao = newPosicao;
     }
 
-    @Override
-    public String toString() {
-        return "";
-    };
+    //Factory
+    static Creature criarCreature(int id, int idTipo, String nome, int[]posicao){
+        switch (idTipo){
+            case 0:
+                return new ZombieCrianca(id, idTipo, nome, posicao);
+            case 1:
+                return new ZombieAdulto(id, idTipo, nome, posicao);
+            case 2:
+                //return new ZombieMilitar(id, idTipo, nome, posicao);
+            case 3:
+                return new ZombieIdoso(id, idTipo, nome, posicao);
+            case 4:
+                return new ZombieVampiro(id, idTipo, nome, posicao);
+            case 5:
+                return new HumanoCrianca(id, idTipo, nome, posicao);
+            case 6:
+                return new HumanoAdulto(id, idTipo, nome, posicao);
+            case 7:
+                //return new HumanoMilitar(id, idTipo, nome, posicao);
+            case 8:
+                return new HumanoIdoso(id, idTipo, nome, posicao);
+            case 9:
+                //return new Cao(id, idTipo, nome, posicao);
+            case 10:
+                //return new ZombieFilme(id, idTipo, nome, posicao);
+            default:
+                throw new IllegalArgumentException("Tipo de Criatura desconhecido");
+        }
+    }
 
+    @Override
+    abstract public String toString();
 }

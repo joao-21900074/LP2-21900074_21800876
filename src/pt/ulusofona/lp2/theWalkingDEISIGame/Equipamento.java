@@ -52,5 +52,4 @@ public abstract class Equipamento {
     }
 
     abstract public String toString();
-
 }

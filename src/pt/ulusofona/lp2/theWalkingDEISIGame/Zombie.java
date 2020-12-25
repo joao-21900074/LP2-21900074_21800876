@@ -4,13 +4,10 @@ public class Zombie extends Creature {
 
     int nItensDestruido = 0;
 
-    public Zombie() {}
-
     public Zombie(int id, int idTipo, String nome, int[] posicao) {
         super(id,idTipo,nome,posicao);
-        this.imagePng = "zombie.pgn";
+        this.imagePng = "zombie.png";
     }
-
 
     public void destruirIten() {
         nItensDestruido++;
