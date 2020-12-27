@@ -28,6 +28,7 @@ public class Zombie extends Creature {
         return true;
     }
 
+    @Override
     public int getEquipe(){return equipe;}
 
     //Mudar para cada tipo de Zombie

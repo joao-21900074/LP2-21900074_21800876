@@ -71,6 +71,7 @@ public class Humano extends Creature {
         return true;
     }
 
+    @Override
     public int getEquipe(){return equipe;}
 
     @Override

@@ -66,6 +66,8 @@ public abstract class Creature {
         }
     }
 
+    abstract public int getEquipe();
+
     @Override
     abstract public String toString();
 }

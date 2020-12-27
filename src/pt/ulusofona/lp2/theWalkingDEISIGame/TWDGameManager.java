@@ -12,7 +12,7 @@ public class TWDGameManager {
     ArrayList<Zombie> zombies = new ArrayList<>();
     ArrayList<Equipamento> equipamentos = new ArrayList<>();
     ArrayList<int[]> safeHavens = new ArrayList<>();
-    ArrayList<Integer> salvos = new ArrayList<Integer>();
+    ArrayList<Integer> salvos = new ArrayList<>();
     int initialTeam;
     int currentTeam;
     int[][] map;
@@ -157,14 +157,7 @@ public class TWDGameManager {
             return false;
         }
 
-        int peca = getElementId(xO,yO);
-        int destino = getElementId(xD,yD);
-
-        //Valida o time que joga
-        if(!validaTime(peca,currentTeam)){
-            return false;
-        }
-
+        /*Old movimentos, ainda pode ser útil
         //Valida diagonal
         if(xO != xD && yO != yD) {
             return false;
@@ -182,13 +175,57 @@ public class TWDGameManager {
             if(Math.abs(yO - yD) > 1) {
                 return false;
             }
-        }
+        }*/
 
-        if(!(destino == 0 || destino < 0 || destino == peca)){
+        int peca = getElementId(xO,yO);
+        int destino = getElementId(xD,yD);
+
+        //Valida o time que joga
+        if(!validaTime(peca,currentTeam)){
             return false;
         }
 
-        /*if(getElementId(xD,yD) < 0 && currentTeam == 0) {
+        //Situação para destino vazio/safe
+        if(destino == 0){
+            //Valida é uma Safe
+            if(isDoorToSafeHaven(xD,yD)){
+                //Valida se é um Vivo indo para Safe
+                if(getCreatureById(peca).getEquipe() == 10){
+                    //Deixa o icone na porta e some com o humano adicionado ele aos "Salvos"
+                    map[xD][yD] = 0;
+                    salvos.add(peca);
+                    //Talvez precise tirar ele dos humans(Para não afetar o Save)
+                //Invalida caso "Outro" foi para a safe
+                }else{
+                    return false;
+                }
+            }else{
+                //Atualiza o mapa
+                map[xD][yD] = peca;
+            }
+        }else{
+            //Vivo para Vivo e Zombie para Zombie
+            if(getCreatureById(peca).getEquipe() == getCreatureById(destino).getEquipe()){
+                return false;
+            }else{//Vivo para Zombie + Zombie para Vivo
+                //VER O QUE O JOÃO TEM DENTRO DE CADA
+                if(getCreatureById(peca).getEquipe() == 10){
+                    Humano vivo = getHumanoById(peca);
+                    vivo.validaMove(xD,yD,isDay,destino,currentTeam);
+                }else{//Zombie que vai mover
+                    Zombie outro = getZombieById(peca);
+                    outro.validaMove(xD,yD,isDay,destino,currentTeam);
+                }
+            }
+            //Atualiza o mapa
+            map[xD][yD] = peca;
+        }
+
+        /*if(!(destino == 0 || destino < 0 || destino == peca)){
+            return false;
+        }
+
+        if(getElementId(xD,yD) < 0 && currentTeam == 0) {
             Equipamento equipEscolhido = new Equipamento();
             for(Equipamento e : equipamentos) {
                 if(e.getId() == getElementId(xD,yD)){
@@ -229,25 +266,11 @@ public class TWDGameManager {
             }
         }
 
-        //Valida se um "Vivo" foi para a safe + Invalido caso "Os Outros" foi para a safe
-        //Deixa o icone na porta e some com o humano adicionado ele aos "Salvos"
-        if(isDoorToSafeHaven(xD,yD)){
-            if(validaVivo(peca)){
-                map[xD][yD] = 0;
-                salvos.add(peca);
-            }else{
-                return false;
-            }
-        }else{
-            map[xD][yD] = peca;
-        }
-
         if(droparItem) {
             map[xO][yO] = itemDropado;
         } else if(destino != peca) {
             map[xO][yO] = 0;
         }
-
 
         //Muda o time depois da jogada
         currentTeam = (currentTeam == 10) ? 20 : 10;
@@ -265,29 +288,13 @@ public class TWDGameManager {
         return true;
     }
 
+    //Alterado para usar apenas a Lista das Criaturas
     public boolean validaTime(int id, int currentTeam) {
-        for(Humano h : humans){
-            if(h.getId() == id) {
-                return h.getEquipe() == currentTeam;
+        for(Creature c : creatures){
+            if(c.getId() == id){
+                return c.getEquipe() == currentTeam;
             }
         }
-
-        for(Zombie z : zombies) {
-            if(z.getId() == id) {
-                return z.getEquipe() == currentTeam;
-            }
-        }
-
-        return false;
-    }
-
-    public boolean validaVivo(int id){
-        for(Humano h : humans){
-            if(h.getId() == id){
-                return true;
-            }
-        }
-
         return false;
     }
 
@@ -370,6 +377,15 @@ public class TWDGameManager {
         for(Zombie z : zombies) {
             if(z.getId() == id) {
                 return z;
+            }
+        }
+        return null;
+    }
+
+    public Creature getCreatureById(int id){
+        for(Creature c : creatures) {
+            if(c.getId() == id) {
+                return c;
             }
         }
         return null;
