@@ -23,7 +23,7 @@ public class TWDGameManager {
     //Construtor Vazio
     public TWDGameManager() {}
 
-    //Leitura do Ficheiro, onde pretende-se iniciar o jogo (Precisa criar os Objetos ainda)
+    //Leitura do Ficheiro, onde pretende-se iniciar o jogo
     public boolean startGame(File ficheiroInicial) {
         try {
             //Leitor para o ficheiro do jogo
@@ -73,6 +73,8 @@ public class TWDGameManager {
 
                             if(idTipo > 4 && idTipo < 10){
                                 humans.add((Humano) c);
+                            }else if(idTipo <= 4){
+                                zombies.add((Zombie) c);
                             }
 
                             nCriaturas--;
@@ -158,9 +160,10 @@ public class TWDGameManager {
         int destino = getElementId(xD,yD);
 
         //Valida se é o turno do time da criatura
-        if(validaTime(peca,currentTeam)){
+        if(!validaTime(peca,currentTeam)){
             return false;
         }
+
         //Valida diagonal
         if(xO != xD && yO != yD) {
             return false;
@@ -234,7 +237,7 @@ public class TWDGameManager {
 
 
         //Muda o time depois da jogada
-        currentTeam = (currentTeam == 0) ? 1 : 0;
+        currentTeam = (currentTeam == 10) ? 20 : 10;
         //verifica a váriavel que vai definir a mudança de dia ou noite
         if(tamanhoDiaNoite != 0) {
             tamanhoDiaNoite--;
@@ -250,19 +253,16 @@ public class TWDGameManager {
     }
 
     public boolean validaTime(int id, int currentTeam) {
-        if(id <= 0) {
-            return true;
-        }
-
         for(Humano h : humans){
             if(h.getId() == id) {
-                return h.getIdTipo() == currentTeam;
+                System.out.println(h.getEquipe() == currentTeam);
+                return h.getEquipe() == currentTeam;
             }
         }
 
         for(Zombie z : zombies) {
             if(z.getId() == id) {
-                return z.getIdTipo() == currentTeam;
+                return z.getEquipe() == currentTeam;
             }
         }
 
@@ -383,7 +383,7 @@ public class TWDGameManager {
         return false;
     }
 
-    //Tipo do Equipamento usando o id (Da pra melhorar?)
+    //Tipo do Equipamento usando o id
     public int getEquipmentTypeId(int equipmentId) {
         int retorno = 0;
         for(Equipamento e : equipamentos){
@@ -394,7 +394,7 @@ public class TWDGameManager {
         return retorno;
     }
 
-    //Info do Equipamento usando o id (Da pra melhorar?)
+    //Info do Equipamento usando o id
     public String getEquipmentInfo(int equipmentId) {
         String retorno = "";
         for(Equipamento e : equipamentos){
@@ -405,7 +405,7 @@ public class TWDGameManager {
         return retorno;
     }
 
-    //Funções auxiliares saveGame
+    //Funções auxiliares saveGame (DA PRA MELHORAR AINDA)
     public String getEquipmentAtributes(int equipId){
         String retorno = "";
         for(Equipamento e : equipamentos){

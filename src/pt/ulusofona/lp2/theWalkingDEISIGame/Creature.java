@@ -1,7 +1,6 @@
 package pt.ulusofona.lp2.theWalkingDEISIGame;
 
 public abstract class Creature {
-
     protected int id;
     protected int idTipo;
     protected String nome;

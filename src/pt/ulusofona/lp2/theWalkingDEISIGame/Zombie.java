@@ -1,8 +1,8 @@
 package pt.ulusofona.lp2.theWalkingDEISIGame;
 
 public class Zombie extends Creature {
-
     int nItensDestruido = 0;
+    int equipe = 20;
 
     public Zombie(int id, int idTipo, String nome, int[] posicao) {
         super(id,idTipo,nome,posicao);
@@ -27,6 +27,8 @@ public class Zombie extends Creature {
 
         return true;
     }
+
+    public int getEquipe(){return equipe;}
 
     //Mudar para cada tipo de Zombie
     public String toString() {

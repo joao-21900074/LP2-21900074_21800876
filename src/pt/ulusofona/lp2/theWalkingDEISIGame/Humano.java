@@ -1,9 +1,9 @@
 package pt.ulusofona.lp2.theWalkingDEISIGame;
 
 public class Humano extends Creature {
-
     Equipamento equipamento;
     int nEquipamentos = 0;
+    int equipe = 10;
 
     public Humano(int id, int idTipo, String nome, int[] posicao) {
         super(id,idTipo,nome,posicao);
@@ -70,6 +70,8 @@ public class Humano extends Creature {
 
         return true;
     }
+
+    public int getEquipe(){return equipe;}
 
     @Override
     public String toString() {
