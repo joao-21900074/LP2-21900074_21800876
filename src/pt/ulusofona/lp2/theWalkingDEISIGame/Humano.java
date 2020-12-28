@@ -1,18 +1,14 @@
 package pt.ulusofona.lp2.theWalkingDEISIGame;
 
-public class Humano extends Creature{
-
-
+public class Humano extends Creature {
     Equipamento equipamento;
     int nEquipamentos = 0;
-
-    public Humano() {}
+    int equipe = 10;
 
     public Humano(int id, int idTipo, String nome, int[] posicao) {
         super(id,idTipo,nome,posicao);
-        imagePng = "humano.png";
+        this.imagePng = "human.png";
     }
-
 
     public boolean equiparEquipamento(Equipamento equipamento) {
         if(equipamento == null) {
@@ -33,6 +29,13 @@ public class Humano extends Creature{
 
     public Equipamento getEquipamento() {
         return equipamento;
+    }
+
+    public int getIdEquipamento(){
+        if(equipamento == null){
+            return 0;
+        }
+        return equipamento.getId();
     }
 
     public boolean validaMove(int xD, int yD, boolean isDay, int idDestino, int currentTeam) {
@@ -58,7 +61,7 @@ public class Humano extends Creature{
             Valida se tem o equipamento certo para enfrentar um
             Zumbi Vampiro
              */
-            if(equipamento.idTipo != -6 && idDestino == 4) {
+            if(equipamento.getIdTipo() != -6 && idDestino == 4) {
                 return false;
             }
         }
@@ -67,6 +70,9 @@ public class Humano extends Creature{
 
         return true;
     }
+
+    @Override
+    public int getEquipe(){return equipe;}
 
     @Override
     public String toString() {

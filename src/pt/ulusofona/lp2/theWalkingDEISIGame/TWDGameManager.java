@@ -7,12 +7,12 @@ import java.util.List;
 import java.util.Scanner;
 
 public class TWDGameManager {
-
     ArrayList<Creature> creatures = new ArrayList<>();
-
     ArrayList<Humano> humans = new ArrayList<>();
     ArrayList<Zombie> zombies = new ArrayList<>();
     ArrayList<Equipamento> equipamentos = new ArrayList<>();
+    ArrayList<int[]> safeHavens = new ArrayList<>();
+    ArrayList<Integer> salvos = new ArrayList<>();
     int initialTeam;
     int currentTeam;
     int[][] map;
@@ -24,112 +24,129 @@ public class TWDGameManager {
     //Construtor Vazio
     public TWDGameManager() {}
 
-    // pronto
+    //Leitura do Ficheiro, onde pretende-se iniciar o jogo
     public boolean startGame(File ficheiroInicial) {
         try {
             //Leitor para o ficheiro do jogo
             Scanner leitor = new Scanner(new FileReader(ficheiroInicial));
             String[] info;
-            int nLinha = 1;
+            int nLinha = 0;
 
             //While de leitura
             while(leitor.hasNextLine()) {
                 info = leitor.nextLine().split(":");
-
-                //Criação do Mapa + worldSize
-                if(nLinha == 1) {
-                    String[] cxl = info[0].split(" ");
-                    int linhas = Integer.parseInt(cxl[0]);
-                    int colunas = Integer.parseInt(cxl[1]);
-                    map = new int[colunas][linhas];
-                    worldSize = new int[]{linhas, colunas};
-                }
-
-                //Equipe Inicial
-                if(nLinha == 2) {
-                    initialTeam = Integer.parseInt(info[0]);
-                    currentTeam = initialTeam;
-                }
-
-                //Quantidade de Criaturas
-                if(nLinha == 3) {
-                    int nCriaturas = Integer.parseInt(info[0]);
-
-                    //Criação das Criaturas
-                    while(nCriaturas != 0){
-                        info = leitor.nextLine().split(" : ");
-                        int id = Integer.parseInt(info[0]);
-                        int tipo = Integer.parseInt(info[1]);
-                        String nome = info[2];
-                        int posicaoX = Integer.parseInt(info[3]);
-                        int posicaoY = Integer.parseInt(info[4]);
-                        //FAZER AS CRIATURAS USANDO O TIPO
-
-                        nCriaturas--;
-                    }
-                }
-
-                //Quantidade de Criaturas
-                if(nLinha == 4){
-                    int nEquimamentos = Integer.parseInt(info[0]);
-
-                    //Criação dos Equipamentos
-                    while(nEquimamentos != 0){
-                        info = leitor.nextLine().split(" : ");
-                        int id = Integer.parseInt(info[0]);
-                        int tipo = Integer.parseInt(info[1]);
-                        int posicaoX = Integer.parseInt(info[2]);
-                        int posicaoY = Integer.parseInt(info[2]);
-                        //FAZER OS EQUIPAMENTOS USANDO O TIPO
-
-                        nEquimamentos--;
-                    }
-                }
-
-                //Quantidade de Safe Havens
-                if(nLinha == 5){
-                    int nSafeHaven = Integer.parseInt(info[0]);
-
-                    while(nSafeHaven != 0){
-                        info = leitor.nextLine().split(" : ");
-                        int posicaoX = Integer.parseInt(info[0]);
-                        int posicaoY = Integer.parseInt(info[1]);
-                        //FAZER AS SAFE HAVENS
-
-                        nSafeHaven--;
-                    }
-                }
-
                 nLinha++;
+                switch (nLinha) {
+
+                    //Criação do Mapa + worldSize
+                    case 1:
+                        String[] cxl = info[0].split(" ");
+                        int linhas = Integer.parseInt(cxl[0]);
+                        int colunas = Integer.parseInt(cxl[1]);
+                        map = new int[colunas][linhas];
+                        worldSize = new int[]{linhas, colunas};
+                        break;
+
+                    //Equipe Inicial
+                    case 2:
+                        initialTeam = Integer.parseInt(info[0]);
+                        currentTeam = initialTeam;
+                        break;
+
+                    //Quantidade de Criaturas
+                    case 3:
+                        int nCriaturas = Integer.parseInt(info[0]);
+
+                        //Criação das Criaturas
+                        while (nCriaturas != 0) {
+                            info = leitor.nextLine().split(" : ");
+                            int id = Integer.parseInt(info[0]);
+                            int idTipo = Integer.parseInt(info[1]);
+                            String nome = info[2];
+                            int posicaoX = Integer.parseInt(info[3]);
+                            int posicaoY = Integer.parseInt(info[4]);
+
+                            //Usando o Factory do Creature para criar objetos
+                            Creature c = Creature.criarCreature(id, idTipo, nome, new int[]{posicaoX,posicaoY});
+
+                            creatures.add(c);
+                            map[posicaoX][posicaoY] = id;
+
+                            if(idTipo > 4 && idTipo < 10){
+                                humans.add((Humano) c);
+                            }else if(idTipo <= 4){
+                                zombies.add((Zombie) c);
+                            }
+
+                            nCriaturas--;
+                        }
+                        break;
+
+                    //Quantidade de Equipamentos
+                    case 4:
+                        int nEquimamentos = Integer.parseInt(info[0]);
+
+                        //Criação dos Equipamentos
+                        while (nEquimamentos != 0) {
+                            info = leitor.nextLine().split(" : ");
+                            int id = Integer.parseInt(info[0]);
+                            int idTipo = Integer.parseInt(info[1]);
+                            int posicaoX = Integer.parseInt(info[2]);
+                            int posicaoY = Integer.parseInt(info[3]);
+
+                            //Usando o Factory do Equipamento para criar objetos
+                            Equipamento e = Equipamento.criarEquipamento(id, idTipo, new int[]{posicaoX,posicaoY});
+
+                            equipamentos.add(e);
+                            map[posicaoX][posicaoY] = id;
+
+                            nEquimamentos--;
+                        }
+                        break;
+
+                    //Quantidade de Safe Havens
+                    case 5:
+                        int nSafeHaven = Integer.parseInt(info[0]);
+
+                        while (nSafeHaven != 0) {
+                            info = leitor.nextLine().split(" : ");
+                            int posicaoX = Integer.parseInt(info[0]);
+                            int posicaoY = Integer.parseInt(info[1]);
+
+                            safeHavens.add(new int[]{posicaoX,posicaoY});
+                            map[posicaoX][posicaoY] = 0;
+
+                            nSafeHaven--;
+                        }
+                        break;
+                }
             }
 
             return true;
-
-        }catch(IOException exception) {
-            exception.printStackTrace();
+        } catch (FileNotFoundException e) {
+            System.out.println("Ficheiro não encontrado");
         }
         return false;
     }
 
-    // pronto
+    //Tamanho do mapa (PRONTO)
     public int[] getWorldSize() {
         return worldSize;
     }
 
-    // pronto
+    //Equipe inicial (PRONTO)
     public int getInitialTeam() {
         return initialTeam;
     }
 
-    // pronto
+    /*Não precisa nessa segunda parte
     public List<Humano> getHumans() {
         return humans;
     }
 
-    //pronto
     public List<Zombie> getZombies() {
         return zombies;
-    }
+    }*/
 
     public boolean move(int xO, int yO, int xD, int yD) {
         boolean droparItem = false;
@@ -140,13 +157,7 @@ public class TWDGameManager {
             return false;
         }
 
-        int peca = getElementId(xO,yO);
-        int destino = getElementId(xD,yD);
-
-        //Valida se é o turno do time da criatura
-        if(validaTime(peca,currentTeam)){
-            return false;
-        }
+        /*Old movimentos, ainda pode ser útil
         //Valida diagonal
         if(xO != xD && yO != yD) {
             return false;
@@ -164,9 +175,53 @@ public class TWDGameManager {
             if(Math.abs(yO - yD) > 1) {
                 return false;
             }
+        }*/
+
+        int peca = getElementId(xO,yO);
+        int destino = getElementId(xD,yD);
+
+        //Valida o time que joga
+        if(!validaTime(peca,currentTeam)){
+            return false;
         }
 
-        if(!(destino == 0 || destino < 0 || destino == peca)){
+        //Situação para destino vazio/safe
+        if(destino == 0){
+            //Valida é uma Safe
+            if(isDoorToSafeHaven(xD,yD)){
+                //Valida se é um Vivo indo para Safe
+                if(getCreatureById(peca).getEquipe() == 10){
+                    //Deixa o icone na porta e some com o humano adicionado ele aos "Salvos"
+                    map[xD][yD] = 0;
+                    salvos.add(peca);
+                    //Talvez precise tirar ele dos humans(Para não afetar o Save)
+                //Invalida caso "Outro" foi para a safe
+                }else{
+                    return false;
+                }
+            }else{
+                //Atualiza o mapa
+                map[xD][yD] = peca;
+            }
+        }else{
+            //Vivo para Vivo e Zombie para Zombie
+            if(getCreatureById(peca).getEquipe() == getCreatureById(destino).getEquipe()){
+                return false;
+            }else{//Vivo para Zombie + Zombie para Vivo
+                //VER O QUE O JOÃO TEM DENTRO DE CADA
+                if(getCreatureById(peca).getEquipe() == 10){
+                    Humano vivo = getHumanoById(peca);
+                    vivo.validaMove(xD,yD,isDay,destino,currentTeam);
+                }else{//Zombie que vai mover
+                    Zombie outro = getZombieById(peca);
+                    outro.validaMove(xD,yD,isDay,destino,currentTeam);
+                }
+            }
+            //Atualiza o mapa
+            map[xD][yD] = peca;
+        }
+
+        /*if(!(destino == 0 || destino < 0 || destino == peca)){
             return false;
         }
 
@@ -189,9 +244,9 @@ public class TWDGameManager {
                     }
                 }
             }
-        }
+        }*/
 
-        if(getElementId(xD,yD) < 0 && currentTeam == 1) {
+        if(getElementId(xD,yD) < 0 && currentTeam == 20) {
             for(Zombie z : zombies) {
                 if(z.getId() == getElementId(xO,yO)){
                     z.destruirIten();
@@ -199,28 +254,26 @@ public class TWDGameManager {
             }
         }
 
-        if(currentTeam == 0) {
+        if(currentTeam == 10) {
             Humano h = getHumanoById(peca);
             if(h != null) {
                 h.setPosicao(new int[]{xD,yD});
             }
-        } else if(currentTeam == 1) {
+        } else if(currentTeam == 20) {
             Zombie z = getZombieById(peca);
             if(z != null) {
                 z.setPosicao(new int[]{xD,yD});
             }
         }
 
-        map[xD][yD] = peca;
         if(droparItem) {
             map[xO][yO] = itemDropado;
         } else if(destino != peca) {
             map[xO][yO] = 0;
         }
 
-
         //Muda o time depois da jogada
-        currentTeam = (currentTeam == 0) ? 1 : 0;
+        currentTeam = (currentTeam == 10) ? 20 : 10;
         //verifica a váriavel que vai definir a mudança de dia ou noite
         if(tamanhoDiaNoite != 0) {
             tamanhoDiaNoite--;
@@ -235,23 +288,13 @@ public class TWDGameManager {
         return true;
     }
 
+    //Alterado para usar apenas a Lista das Criaturas
     public boolean validaTime(int id, int currentTeam) {
-        if(id <= 0) {
-            return true;
-        }
-
-        for(Humano h : humans){
-            if(h.getId() == id) {
-                return h.getIdTipo() == currentTeam;
+        for(Creature c : creatures){
+            if(c.getId() == id){
+                return c.getEquipe() == currentTeam;
             }
         }
-
-        for(Zombie z : zombies) {
-            if(z.getId() == id) {
-                return z.getIdTipo() == currentTeam;
-            }
-        }
-
         return false;
     }
 
@@ -339,37 +382,147 @@ public class TWDGameManager {
         return null;
     }
 
+    public Creature getCreatureById(int id){
+        for(Creature c : creatures) {
+            if(c.getId() == id) {
+                return c;
+            }
+        }
+        return null;
+    }
+
     // ++++MÉTODOS NOVOS+++
     public List<Creature> getCreatures() {
         return creatures;
     }
 
+    //ID do equipamento que o vivo carrega (Considera humanos e câes)
     public int getEquipmentId(int creatureId) {
+        for(Humano h : humans){
+            if(h.getId() == creatureId){
+                return h.getIdEquipamento();
+            }
+        }
         return 0;
     }
 
+    //Lista com os ID's dos vivos salvos
     public List<Integer> getIdsInSafeHaven() {
-        return null;
+        return salvos;
     }
 
+    //True caso a safe esteja na lista de safeHavens
     public boolean isDoorToSafeHaven(int x, int y) {
+        int[] check = new int[]{x,y};
+        for(int[] lugar : safeHavens){
+            if(Arrays.equals(lugar, check)){
+                return true;
+            }
+        }
         return false;
     }
 
+    //Tipo do Equipamento usando o id
     public int getEquipmentTypeId(int equipmentId) {
-        return 0;
+        int retorno = 0;
+        for(Equipamento e : equipamentos){
+            if(e.getId() == equipmentId){
+                retorno = e.getIdTipo();
+            }
+        }
+        return retorno;
     }
 
+    //Info do Equipamento usando o id
     public String getEquipmentInfo(int equipmentId) {
-        return "";
+        String retorno = "";
+        for(Equipamento e : equipamentos){
+            if(e.getId() == equipmentId){
+                retorno = e.toString();
+            }
+        }
+        return retorno;
     }
 
+    //Funções auxiliares saveGame (DA PRA MELHORAR AINDA)
+    public String getEquipmentAtributes(int equipId){
+        String retorno = "";
+        for(Equipamento e : equipamentos){
+            if(e.getId() == equipId) {
+                retorno = e.getId() + " : " + e.getIdTipo() + " : " + e.getPosicao()[0] + " : "  + e.getPosicao()[1];
+            }
+        }
+        return retorno;
+    }
+
+    public String getCreatureAtributes(int creatureId){
+        String retorno = "";
+        for(Creature c : creatures){
+            if(c.getId() == creatureId) {
+                retorno = c.getId() + " : " + c.getIdTipo() + " : " +
+                        c.getNome() + " : " + c.getPosicao()[0] + " : "  + c.getPosicao()[1];
+            }
+        }
+        return retorno;
+    }
+
+    public String getAllCreaturesAtributes(){
+        StringBuilder retorno = new StringBuilder();
+        for(int i=0; i < map.length; i++){
+            for(int j=0; j < map[i].length; j++){
+                if(map[i][j] > 0){
+                    retorno.append(getCreatureAtributes(map[i][j])).append("\n");
+                }
+            }
+        }
+        return retorno.toString();
+    }
+
+    public String getAllEquipmentAtributes(){
+        StringBuilder retorno = new StringBuilder();
+        for(int i=0; i < map.length; i++){
+            for(int j=0; j < map[i].length; j++){
+                if(map[i][j] < 0){
+                    retorno.append(getEquipmentAtributes(map[i][j])).append("\n");
+                }
+            }
+        }
+        return retorno.toString();
+    }
+
+    public String getSafePosicao(){
+        StringBuilder retorno = new StringBuilder();
+        for(int[] s : safeHavens){
+            retorno.append(s[0]).append(" : ").append(s[1]).append("\n");
+        }
+        return retorno.toString();
+    }
+
+    //Ainda não está atualizando as posições
     public boolean saveGame(File fich) {
+        try{
+            FileWriter escrita = new FileWriter(fich);
+
+            escrita.write(getWorldSize()[0] + " " + getWorldSize()[1] + "\n");
+            escrita.write(initialTeam + "\n");
+            escrita.write(creatures.size() + "\n");
+            //Falta ordenar
+            escrita.write(getAllCreaturesAtributes());
+            escrita.write(equipamentos.size() + "\n");
+            //Falta ordenar
+            escrita.write(getAllEquipmentAtributes());
+            escrita.write(safeHavens.size() + "\n");
+            escrita.write(getSafePosicao().trim());
+
+            escrita.close();
+        } catch (IOException e) {
+            System.out.println("Falha no save");
+        }
         return false;
     }
 
     public boolean loadGame(File fich) {
-        return false;
+        return startGame(fich);
     }
 
     public String[] popCultureExtravaganza() {

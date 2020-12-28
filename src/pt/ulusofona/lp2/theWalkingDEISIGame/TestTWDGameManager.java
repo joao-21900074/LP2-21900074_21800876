@@ -2,10 +2,72 @@ package pt.ulusofona.lp2.theWalkingDEISIGame;
 
 import org.junit.Test;
 import java.io.File;
-import static org.junit.Assert.*;
 
 public class TestTWDGameManager {
+    private TWDGameManager testStart = new TWDGameManager();
+    private File ficheiroTest = new File("./test-files/input");
 
+    @Test
+    public void testLeituraRuim(){
+        TWDGameManager testStart = new TWDGameManager();
+        File ficheiroTest = new File("");
+        testStart.startGame(ficheiroTest);
+    }
+
+    @Test
+    public void testLeituraBoa(){
+        testStart.startGame(ficheiroTest);
+    }
+
+    @Test
+    public void testWolrdSize(){
+        testLeituraBoa();
+        testStart.getWorldSize();
+    }
+
+    @Test
+    public void testInitialTeam(){
+        testLeituraBoa();
+        testStart.getInitialTeam();
+    }
+
+    @Test
+    public void testEquipmentTypeId(){
+        testLeituraBoa();
+        testStart.getEquipmentTypeId(-1);
+    }
+
+    @Test
+    public void testEquipmentInfo(){
+        testLeituraBoa();
+        testStart.getEquipmentInfo(-1);
+    }
+
+    @Test
+    public void testFicheiroAllEquipments(){
+        File ficheiroE = new File("./test-files/allequipments");
+        testStart.startGame(ficheiroE);
+    }
+
+    @Test
+    public void testDoorSafeHavenBoa(){
+        testLeituraBoa();
+        testStart.isDoorToSafeHaven(6,6);
+    }
+
+    @Test
+    public void testDoorSafeHavenRuim(){
+        testLeituraBoa();
+        testStart.isDoorToSafeHaven(5,5);
+    }
+
+    @Test
+    public void testSaveGame(){
+        testLeituraBoa();
+        testStart.saveGame(new File("save.txt"));
+    }
+
+    /*OLD TESTES, ainda possa ser útil
     @Test
     public void testMoveDireita(){
         TWDGameManager testStart = new TWDGameManager();
@@ -38,26 +100,26 @@ public class TestTWDGameManager {
         assertTrue("Movimento para Baixo",testStart.move(1,1,1,2));
     }
 
-    /*@Test
+    @Test
     public void testMoveDiagonal(){
         TWDGameManager testStart = new TWDGameManager();
         File ficheiroTest = new File("./test-files/input");
         testStart.startGame(ficheiroTest);
         assertTrue("Movimento na Diagonal",testStart.move(1,1,2,2));
-    }*/
+    }
 
-    /*@Test
+    @Test
     public void testMoveOutOfBounds(){
         TWDGameManager testStart = new TWDGameManager();
         File ficheiroTest = new File("./test-files/input");
         testStart.startGame(ficheiroTest);
         assertTrue("Movimento para fora do mapa",testStart.move(4,4,4,5));
-    }*/
+    }
 
     @Test
     public void testStartGameBonecoForaDoMapa(){
         TWDGameManager testStart = new TWDGameManager();
         File ficheiroTest = new File("./test-files/input");
         assertTrue("Boneco nasce fora do mapa",testStart.startGame(ficheiroTest));
-    }
+    }*/
 }
