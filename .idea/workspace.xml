@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="277f7e4c-8220-423e-9b73-9c62c1e271f8" name="Default Changelist" comment="Nova .jar adicionado">
+    <list default="true" id="277f7e4c-8220-423e-9b73-9c62c1e271f8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Cachorro.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/HumanoMilitar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/ZombieMilitar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game_sample.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Game_sample.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/LP2GuiViewer2021-p1-v100.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Equipamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Equipamento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/HumanoIdoso.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/HumanoIdoso.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,8 +25,8 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
-        <option value="Matheus-21800876 &lt;a21800876@alunos.ulht.pt&gt;" />
         <option value="joao-21900074 &lt;a21900074@alunos.ulht.pt&gt;" />
+        <option value="Matheus-21800876 &lt;a21800876@alunos.ulht.pt&gt;" />
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />

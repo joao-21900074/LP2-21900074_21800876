@@ -3,6 +3,9 @@ package pt.ulusofona.lp2.theWalkingDEISIGame;
 public class Equipamento {
     int id;
     int idTipo;
+    String nome;
+    String info;
+    int usos;
     int[] posicao = new int[2];
 
     public Equipamento() {}

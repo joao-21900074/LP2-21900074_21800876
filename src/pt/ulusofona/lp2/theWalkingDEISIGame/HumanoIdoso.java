@@ -31,6 +31,11 @@ public class HumanoIdoso extends Humano{
             }
         }
 
+        //Valida se é noite (Humano idoso só pode se movimentar de noite)
+        if(!isDay) {
+            return false;
+        }
+
         return true;
     }
 }
