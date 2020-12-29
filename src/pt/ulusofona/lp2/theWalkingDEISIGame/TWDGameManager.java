@@ -391,6 +391,15 @@ public class TWDGameManager {
         return null;
     }
 
+    public Equipamento getEquipmentById(int id){
+        for(Equipamento e : equipamentos) {
+            if(e.getId() == id) {
+                return e;
+            }
+        }
+        return null;
+    }
+
     // ++++MÉTODOS NOVOS+++
     public List<Creature> getCreatures() {
         return creatures;
@@ -424,70 +433,43 @@ public class TWDGameManager {
 
     //Tipo do Equipamento usando o id
     public int getEquipmentTypeId(int equipmentId) {
-        int retorno = 0;
-        for(Equipamento e : equipamentos){
-            if(e.getId() == equipmentId){
-                retorno = e.getIdTipo();
-            }
-        }
-        return retorno;
+        Equipamento e = getEquipmentById(equipmentId);
+        return e.getIdTipo();
     }
 
     //Info do Equipamento usando o id
     public String getEquipmentInfo(int equipmentId) {
-        String retorno = "";
-        for(Equipamento e : equipamentos){
-            if(e.getId() == equipmentId){
-                retorno = e.toString();
-            }
-        }
-        return retorno;
+        Equipamento e = getEquipmentById(equipmentId);
+        return e.toString();
     }
 
-    //Funções auxiliares saveGame (DA PRA MELHORAR AINDA)
+    //Funções auxiliares saveGame
     public String getEquipmentAtributes(int equipId){
-        String retorno = "";
-        for(Equipamento e : equipamentos){
-            if(e.getId() == equipId) {
-                retorno = e.getId() + " : " + e.getIdTipo() + " : " + e.getPosicao()[0] + " : "  + e.getPosicao()[1];
-            }
-        }
-        return retorno;
+        Equipamento e = getEquipmentById(equipId);
+        return e.getId() + " : " + e.getIdTipo() + " : " + e.getPosicao()[0] +
+                " : "  + e.getPosicao()[1];
     }
 
     public String getCreatureAtributes(int creatureId){
-        String retorno = "";
-        for(Creature c : creatures){
-            if(c.getId() == creatureId) {
-                retorno = c.getId() + " : " + c.getIdTipo() + " : " +
-                        c.getNome() + " : " + c.getPosicao()[0] + " : "  + c.getPosicao()[1];
-            }
-        }
-        return retorno;
+        Creature c = getCreatureById(creatureId);
+        return c.getId() + " : " + c.getIdTipo() + " : " +
+                c.getNome() + " : " + c.getPosicao()[0] + " : "  + c.getPosicao()[1];
     }
 
     public String getAllCreaturesAtributes(){
-        StringBuilder retorno = new StringBuilder();
-        for(int i=0; i < map.length; i++){
-            for(int j=0; j < map[i].length; j++){
-                if(map[i][j] > 0){
-                    retorno.append(getCreatureAtributes(map[i][j])).append("\n");
-                }
-            }
+        StringBuilder allAtributes = new StringBuilder();
+        for(int i=0; i < creatures.size(); i++){
+            allAtributes.append(getCreatureAtributes(creatures.get(i).getId())).append("\n");
         }
-        return retorno.toString();
+        return allAtributes.toString();
     }
 
     public String getAllEquipmentAtributes(){
-        StringBuilder retorno = new StringBuilder();
-        for(int i=0; i < map.length; i++){
-            for(int j=0; j < map[i].length; j++){
-                if(map[i][j] < 0){
-                    retorno.append(getEquipmentAtributes(map[i][j])).append("\n");
-                }
-            }
+        StringBuilder allAtributes = new StringBuilder();
+        for(int i=0; i < equipamentos.size(); i++){
+            allAtributes.append(getEquipmentAtributes(equipamentos.get(i).getId())).append("\n");
         }
-        return retorno.toString();
+        return allAtributes.toString();
     }
 
     public String getSafePosicao(){
@@ -498,23 +480,20 @@ public class TWDGameManager {
         return retorno.toString();
     }
 
-    //Ainda não está atualizando as posições
     public boolean saveGame(File fich) {
         try{
             FileWriter escrita = new FileWriter(fich);
-
             escrita.write(getWorldSize()[0] + " " + getWorldSize()[1] + "\n");
             escrita.write(initialTeam + "\n");
             escrita.write(creatures.size() + "\n");
-            //Falta ordenar
             escrita.write(getAllCreaturesAtributes());
             escrita.write(equipamentos.size() + "\n");
-            //Falta ordenar
             escrita.write(getAllEquipmentAtributes());
             escrita.write(safeHavens.size() + "\n");
             escrita.write(getSafePosicao().trim());
 
             escrita.close();
+            return true;
         } catch (IOException e) {
             System.out.println("Falha no save");
         }
