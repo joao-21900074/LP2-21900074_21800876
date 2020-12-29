@@ -2,10 +2,14 @@ package pt.ulusofona.lp2.theWalkingDEISIGame;
 
 public class Lixivia extends Equipamento {
     //Protege se usar
-    float litros = 1;
+    private float litros = 1;
 
     public Lixivia(int id, int idTipo, int[] posicao){
         super(id,idTipo,posicao);
+    }
+
+    public float getLitros(){
+        return litros;
     }
 
     //A cada utilização gasta 0.3 litros, ou seja da pra usar 3 vezes

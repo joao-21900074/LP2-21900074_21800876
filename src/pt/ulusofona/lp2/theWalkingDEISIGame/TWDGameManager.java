@@ -288,6 +288,130 @@ public class TWDGameManager {
         return true;
     }
 
+    //Função para luta entre Humano e Zumbi
+    public void batalha(Humano humano, Zombie zombie){
+        //Ainda n sei o q retonar isso
+        //Talvez vá ser boolean, true quando matou e false quando morrer
+        if(!humano.temEquipamento()){
+            morreu(humano);
+        }else{
+            switch(humano.getIdTipoEquipamento()){
+                case 0:
+                    //Escudo de Madeira
+                    EscudoMadeira escudoMadeira = (EscudoMadeira) humano.getEquipamento();
+                    if(escudoMadeira.getDefesa() > 0){
+                        //Defendeu + Quebrar escudo ou Diminiuir 1 defesa(CASO MILITAR)
+                        escudoMadeira.defender();
+                    }else{
+                        morreu(humano);
+                    }
+                    break;
+
+                case 1://Não tenho certeza se a Espada mata Zombie Vampiro tbm
+                case 6:
+                case 10:
+                    //Espada + Estaca de Madeira + Beskar Helmet, matam zombies
+                    matou(zombie);
+                    break;
+
+                case 2:
+                    //Pistola
+                    Pistola pistola = (Pistola) humano.getEquipamento();
+                    if(pistola.getBalas() > 0){
+                        pistola.atirar();
+                        //Não funciona contra ZombieVampiro
+                        if(!(zombie.getIdTipo() == 4)) {
+                            matou(zombie);
+                        }
+                    }else{
+                        morreu(humano);
+                    }
+                    break;
+
+                case 3:
+                    //Escudo Táctio, só defende então não mata nem morre
+                    break;
+
+                case 4:
+                    //Revista Maria, só defende contra ZombieIdoso
+                    if(!(zombie.getIdTipo() == 3)){
+                        morreu(humano);
+                    }
+                    break;
+
+                case 5:
+                    //Cabeça de Alho, só defende contra ZombieVampiro
+                    if(!(zombie.getIdTipo() == 4)){
+                        morreu(humano);
+                    }
+                    break;
+
+                case 7:
+                    //Garrafa de Lixivia
+                    Lixivia lixivia = (Lixivia) humano.getEquipamento();
+                    if(lixivia.getLitros() > 0.3){
+                        //Proteger + Gastou 0.3Litros (N sei como quebrar isso n)
+                        lixivia.usar();
+                    }else{
+                        morreu(humano);
+                    }
+                    break;
+
+                case 8:
+                    //Veneno, não pode destruir depois de usar tem q ficar com o frasco vazio
+                    Veneno veneno = (Veneno) humano.getEquipamento();
+                    if(veneno.getFrasco()){
+                        veneno.tomar();
+                        //AQUI TEM QUE ENVENENAR O HUMANO
+                    }
+                    if(veneno.getProtecaoTurnos() > 0){
+                        veneno.protecao();
+                    }else{
+                        morreu(humano);
+                    }
+                    break;
+
+                case 9:
+                    //Antidoto, também não pode destruir, tem que ficar com frasco vazio
+                    Antidoto antidoto = (Antidoto) humano.getEquipamento();
+                    if(antidoto.getFrasco()){
+                        antidoto.tomar();
+                        //AQUI TEM QUE CURAR O HUMANO
+                    }
+                    break;
+            }
+        }
+    }
+
+    //Auxiliares para batalha
+    //Muda o id do Humano para id do Zombie
+    public int transformar(int idHumano){
+        switch (idHumano){
+            case 5:
+                return 0;
+            case 6:
+                return 1;
+            case 7:
+                return 2;
+            case 8:
+                return 3;
+        }
+        return 0;
+    }
+
+    public void morreu(Humano humano){
+        //Humano morreu + tirar da lista dos humanos
+        humans.remove(humano);
+        //Humano vira Zombie + botar na lsita dos zombies
+        Creature novoZombie = Creature.criarCreature(humano.getId(),transformar(humano.getIdTipo()),
+                humano.getNome(),humano.getPosicao());
+        zombies.add((Zombie) novoZombie);
+    }
+
+    public void matou(Zombie zombie){
+        zombies.remove(zombie);
+    }
+
     //Alterado para usar apenas a Lista das Criaturas
     public boolean validaTime(int id, int currentTeam) {
         for(Creature c : creatures){

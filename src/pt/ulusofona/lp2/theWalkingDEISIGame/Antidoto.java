@@ -7,15 +7,19 @@ public class Antidoto extends Equipamento{
     > Consome insta
      */
 
-    int frasco = 1;
+    private boolean frasco = true;
 
     public Antidoto(int id, int idTipo, int[] posicao){
         super(id,idTipo,posicao);
     }
 
+    public boolean getFrasco(){
+        return frasco;
+    }
+
     //Só uma uma vez, só se tiver envenedado
     public void tomar(){
-        frasco = 0;
+        frasco = false;
     }
 
     @Override
