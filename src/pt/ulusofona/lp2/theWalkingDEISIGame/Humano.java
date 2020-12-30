@@ -38,6 +38,13 @@ public class Humano extends Creature {
         return equipamento.getId();
     }
 
+    public int getIdTipoEquipamento(){
+        if(equipamento == null){
+            return 0;
+        }
+        return equipamento.getIdTipo();
+    }
+
     public boolean validaMove(int xD, int yD, boolean isDay, int idDestino, int currentTeam) {
 
         /*

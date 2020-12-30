@@ -8,16 +8,29 @@ public class Veneno extends Equipamento{
      */
 
     //Da protecao de 2 turnos
-    int protecaoTurnos = 2;
-    int frasco = 1;
+    private int protecaoTurnos = 2;
+    private boolean frasco = true;
 
     public Veneno(int id, int idTipo, int[] posicao){
         super(id,idTipo,posicao);
     }
 
-    //Só uma uma vez
+    public boolean getFrasco(){
+        return frasco;
+    }
+
+    public int getProtecaoTurnos(){
+        return protecaoTurnos;
+    }
+
+    //Só uma vez
     public void tomar(){
-        frasco = 0;
+        frasco = false;
+    }
+
+    //Proteger 2 turnos
+    public void protecao(){
+        protecaoTurnos--;
     }
 
     @Override

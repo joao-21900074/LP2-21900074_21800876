@@ -11,20 +11,24 @@ public class EscudoMadeira extends Equipamento {
      */
 
     //1 de defesa (GERAL)
-    int defesa = 1;
+    private int defesa = 1;
 
     public EscudoMadeira(int id, int idTipo, int[] posicao){
         super(id,idTipo,posicao);
     }
 
-    //Após utilizar ele quebra
-    public void defender(){
-        defesa--;
+    public int getDefesa(){
+        return defesa;
     }
 
     //Se um militar pegar ele da upgrade
     public void upgrade(){
         defesa = 2;
+    }
+
+    //Após usar ele quebra
+    public void defender(){
+        defesa--;
     }
 
     @Override

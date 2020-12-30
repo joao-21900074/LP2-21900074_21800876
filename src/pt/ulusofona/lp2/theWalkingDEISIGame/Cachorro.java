@@ -1,6 +1,7 @@
 package pt.ulusofona.lp2.theWalkingDEISIGame;
 
 public class Cachorro extends Creature{
+    int equipe = 10;
 
     public Cachorro(int id, int idTipo, String nome, int[] posicao) {
         super(id,idTipo,nome,posicao);
@@ -23,5 +24,13 @@ public class Cachorro extends Creature{
         }
 
         return true;
+    }
+
+    @Override
+    public int getEquipe(){return equipe;}
+
+    @Override
+    public String toString() {
+        return null;
     }
 }

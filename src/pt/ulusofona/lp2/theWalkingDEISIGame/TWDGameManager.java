@@ -244,6 +244,130 @@ public class TWDGameManager {
         return true;
     }
 
+    //Função para luta entre Humano e Zumbi
+    public void batalha(Humano humano, Zombie zombie){
+        //Ainda n sei o q retonar isso
+        //Talvez vá ser boolean, true quando matou e false quando morrer
+        if(!humano.temEquipamento()){
+            morreu(humano);
+        }else{
+            switch(humano.getIdTipoEquipamento()){
+                case 0:
+                    //Escudo de Madeira
+                    EscudoMadeira escudoMadeira = (EscudoMadeira) humano.getEquipamento();
+                    if(escudoMadeira.getDefesa() > 0){
+                        //Defendeu + Quebrar escudo ou Diminiuir 1 defesa(CASO MILITAR)
+                        escudoMadeira.defender();
+                    }else{
+                        morreu(humano);
+                    }
+                    break;
+
+                case 1://Não tenho certeza se a Espada mata Zombie Vampiro tbm
+                case 6:
+                case 10:
+                    //Espada + Estaca de Madeira + Beskar Helmet, matam zombies
+                    matou(zombie);
+                    break;
+
+                case 2:
+                    //Pistola
+                    Pistola pistola = (Pistola) humano.getEquipamento();
+                    if(pistola.getBalas() > 0){
+                        pistola.atirar();
+                        //Não funciona contra ZombieVampiro
+                        if(!(zombie.getIdTipo() == 4)) {
+                            matou(zombie);
+                        }
+                    }else{
+                        morreu(humano);
+                    }
+                    break;
+
+                case 3:
+                    //Escudo Táctio, só defende então não mata nem morre
+                    break;
+
+                case 4:
+                    //Revista Maria, só defende contra ZombieIdoso
+                    if(!(zombie.getIdTipo() == 3)){
+                        morreu(humano);
+                    }
+                    break;
+
+                case 5:
+                    //Cabeça de Alho, só defende contra ZombieVampiro
+                    if(!(zombie.getIdTipo() == 4)){
+                        morreu(humano);
+                    }
+                    break;
+
+                case 7:
+                    //Garrafa de Lixivia
+                    Lixivia lixivia = (Lixivia) humano.getEquipamento();
+                    if(lixivia.getLitros() > 0.3){
+                        //Proteger + Gastou 0.3Litros (N sei como quebrar isso n)
+                        lixivia.usar();
+                    }else{
+                        morreu(humano);
+                    }
+                    break;
+
+                case 8:
+                    //Veneno, não pode destruir depois de usar tem q ficar com o frasco vazio
+                    Veneno veneno = (Veneno) humano.getEquipamento();
+                    if(veneno.getFrasco()){
+                        veneno.tomar();
+                        //AQUI TEM QUE ENVENENAR O HUMANO
+                    }
+                    if(veneno.getProtecaoTurnos() > 0){
+                        veneno.protecao();
+                    }else{
+                        morreu(humano);
+                    }
+                    break;
+
+                case 9:
+                    //Antidoto, também não pode destruir, tem que ficar com frasco vazio
+                    Antidoto antidoto = (Antidoto) humano.getEquipamento();
+                    if(antidoto.getFrasco()){
+                        antidoto.tomar();
+                        //AQUI TEM QUE CURAR O HUMANO
+                    }
+                    break;
+            }
+        }
+    }
+
+    //Auxiliares para batalha
+    //Muda o id do Humano para id do Zombie
+    public int transformar(int idHumano){
+        switch (idHumano){
+            case 5:
+                return 0;
+            case 6:
+                return 1;
+            case 7:
+                return 2;
+            case 8:
+                return 3;
+        }
+        return 0;
+    }
+
+    public void morreu(Humano humano){
+        //Humano morreu + tirar da lista dos humanos
+        humans.remove(humano);
+        //Humano vira Zombie + botar na lsita dos zombies
+        Creature novoZombie = Creature.criarCreature(humano.getId(),transformar(humano.getIdTipo()),
+                humano.getNome(),humano.getPosicao());
+        zombies.add((Zombie) novoZombie);
+    }
+
+    public void matou(Zombie zombie){
+        zombies.remove(zombie);
+    }
+
     //Alterado para usar apenas a Lista das Criaturas
     public boolean validaTime(int id, int currentTeam) {
         for(Creature c : creatures){
@@ -347,7 +471,7 @@ public class TWDGameManager {
         return null;
     }
 
-    public Equipamento getEquipamentById(int id) {
+    public Equipamento getEquipmentById(int id){
         for(Equipamento e : equipamentos) {
             if(e.getId() == id) {
                 return e;
@@ -389,70 +513,43 @@ public class TWDGameManager {
 
     //Tipo do Equipamento usando o id
     public int getEquipmentTypeId(int equipmentId) {
-        int retorno = 0;
-        for(Equipamento e : equipamentos){
-            if(e.getId() == equipmentId){
-                retorno = e.getIdTipo();
-            }
-        }
-        return retorno;
+        Equipamento e = getEquipmentById(equipmentId);
+        return e.getIdTipo();
     }
 
     //Info do Equipamento usando o id
     public String getEquipmentInfo(int equipmentId) {
-        String retorno = "";
-        for(Equipamento e : equipamentos){
-            if(e.getId() == equipmentId){
-                retorno = e.toString();
-            }
-        }
-        return retorno;
+        Equipamento e = getEquipmentById(equipmentId);
+        return e.toString();
     }
 
-    //Funções auxiliares saveGame (DA PRA MELHORAR AINDA)
+    //Funções auxiliares saveGame
     public String getEquipmentAtributes(int equipId){
-        String retorno = "";
-        for(Equipamento e : equipamentos){
-            if(e.getId() == equipId) {
-                retorno = e.getId() + " : " + e.getIdTipo() + " : " + e.getPosicao()[0] + " : "  + e.getPosicao()[1];
-            }
-        }
-        return retorno;
+        Equipamento e = getEquipmentById(equipId);
+        return e.getId() + " : " + e.getIdTipo() + " : " + e.getPosicao()[0] +
+                " : "  + e.getPosicao()[1];
     }
 
     public String getCreatureAtributes(int creatureId){
-        String retorno = "";
-        for(Creature c : creatures){
-            if(c.getId() == creatureId) {
-                retorno = c.getId() + " : " + c.getIdTipo() + " : " +
-                        c.getNome() + " : " + c.getPosicao()[0] + " : "  + c.getPosicao()[1];
-            }
-        }
-        return retorno;
+        Creature c = getCreatureById(creatureId);
+        return c.getId() + " : " + c.getIdTipo() + " : " +
+                c.getNome() + " : " + c.getPosicao()[0] + " : "  + c.getPosicao()[1];
     }
 
     public String getAllCreaturesAtributes(){
-        StringBuilder retorno = new StringBuilder();
-        for(int i=0; i < map.length; i++){
-            for(int j=0; j < map[i].length; j++){
-                if(map[i][j] > 0){
-                    retorno.append(getCreatureAtributes(map[i][j])).append("\n");
-                }
-            }
+        StringBuilder allAtributes = new StringBuilder();
+        for(int i=0; i < creatures.size(); i++){
+            allAtributes.append(getCreatureAtributes(creatures.get(i).getId())).append("\n");
         }
-        return retorno.toString();
+        return allAtributes.toString();
     }
 
     public String getAllEquipmentAtributes(){
-        StringBuilder retorno = new StringBuilder();
-        for(int i=0; i < map.length; i++){
-            for(int j=0; j < map[i].length; j++){
-                if(map[i][j] < 0){
-                    retorno.append(getEquipmentAtributes(map[i][j])).append("\n");
-                }
-            }
+        StringBuilder allAtributes = new StringBuilder();
+        for(int i=0; i < equipamentos.size(); i++){
+            allAtributes.append(getEquipmentAtributes(equipamentos.get(i).getId())).append("\n");
         }
-        return retorno.toString();
+        return allAtributes.toString();
     }
 
     public String getSafePosicao(){
@@ -463,23 +560,20 @@ public class TWDGameManager {
         return retorno.toString();
     }
 
-    //Ainda não está atualizando as posições
     public boolean saveGame(File fich) {
         try{
             FileWriter escrita = new FileWriter(fich);
-
             escrita.write(getWorldSize()[0] + " " + getWorldSize()[1] + "\n");
             escrita.write(initialTeam + "\n");
             escrita.write(creatures.size() + "\n");
-            //Falta ordenar
             escrita.write(getAllCreaturesAtributes());
             escrita.write(equipamentos.size() + "\n");
-            //Falta ordenar
             escrita.write(getAllEquipmentAtributes());
             escrita.write(safeHavens.size() + "\n");
             escrita.write(getSafePosicao().trim());
 
             escrita.close();
+            return true;
         } catch (IOException e) {
             System.out.println("Falha no save");
         }
