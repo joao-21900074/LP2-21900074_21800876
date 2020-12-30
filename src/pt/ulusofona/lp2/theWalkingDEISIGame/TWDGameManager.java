@@ -169,8 +169,8 @@ public class TWDGameManager {
             if(!creature.validaMove(xD,yD,isDay,getCreatureById(destino).getIdTipo(),currentTeam)) {
                 return false;
             }
-        } else if(getEquipamentById(destino) != null) {
-            if(!creature.validaMove(xD,yD,isDay,getEquipamentById(destino).getIdTipo(),currentTeam)) {
+        } else if(getEquipmentById(destino) != null) {
+            if(!creature.validaMove(xD,yD,isDay,getEquipmentById(destino).getIdTipo(),currentTeam)) {
                 return false;
             }
         }
