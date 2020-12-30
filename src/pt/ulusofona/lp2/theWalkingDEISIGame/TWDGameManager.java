@@ -139,50 +139,40 @@ public class TWDGameManager {
         return initialTeam;
     }
 
-    /*Não precisa nessa segunda parte
-    public List<Humano> getHumans() {
-        return humans;
-    }
-
-    public List<Zombie> getZombies() {
-        return zombies;
-    }*/
 
     public boolean move(int xO, int yO, int xD, int yD) {
         boolean droparItem = false;
         int itemDropado = 0;
+        int peca; //Peça que o jogador vai mover
+        int destino; //Lugar,Equipamento ou inimigo para onde o jogador vai se mover
+        Creature creature; //Criatura que vai se movimentada
 
         //Valida se o destino esta fora do mapa
         if(xD < 0 || xD > worldSize[1] || yD < 0 || yD > worldSize[0]){
             return false;
         }
 
-        /*Old movimentos, ainda pode ser útil
-        //Valida diagonal
-        if(xO != xD && yO != yD) {
-            return false;
-        }
-
-        //Valida movimento esquerda/direita
-        if(yO == yD) {
-            if(Math.abs(xO - xD) > 1) {
-                return false;
-            }
-        }
-
-        //Valida movimento baixo/cima
-        if(xO == xD) {
-            if(Math.abs(yO - yD) > 1) {
-                return false;
-            }
-        }*/
-
-        int peca = getElementId(xO,yO);
-        int destino = getElementId(xD,yD);
+        //Define o valor de peca e destino (não pode ser feito antes pq pode dar problemas)
+        peca = getElementId(xO,yO);
+        destino = getElementId(xD,yD);
 
         //Valida o time que joga
-        if(!validaTime(peca,currentTeam)){
+        if(!validaTime(peca,currentTeam)) {
             return false;
+        }
+
+        //Define o valor de criatura que vai ser movimentada
+        creature = getCreatureById(peca);
+
+        //Verifica o que tem no destino e faz uma validação certa
+        if(getCreatureById(destino) != null) {
+            if(!creature.validaMove(xD,yD,isDay,getCreatureById(destino).getIdTipo(),currentTeam)) {
+                return false;
+            }
+        } else if(getEquipamentById(destino) != null) {
+            if(!creature.validaMove(xD,yD,isDay,getEquipamentById(destino).getIdTipo(),currentTeam)) {
+                return false;
+            }
         }
 
         //Situação para destino vazio/safe
@@ -221,51 +211,17 @@ public class TWDGameManager {
             map[xD][yD] = peca;
         }
 
-        /*if(!(destino == 0 || destino < 0 || destino == peca)){
-            return false;
+
+        //Lógica se o Zumbi se mover para um lugar onde tenha um equipamento que ele possa destruir
+        if(destino < 0 && currentTeam == 20) {
+            Zombie z = (Zombie) getCreatureById(destino);
+            z.destruirIten();
         }
 
-        if(getElementId(xD,yD) < 0 && currentTeam == 0) {
-            Equipamento equipEscolhido = new Equipamento();
-            for(Equipamento e : equipamentos) {
-                if(e.getId() == getElementId(xD,yD)){
-                    equipEscolhido = e;
-                }
-            }
+        //Muda a posição da criatura
+        creature.setPosicao(new int[]{xD,yD});
 
-            for(Humano h : humans) {
-                if(h.getId() == getElementId(xO,yO)){
-                    if(!h.temEquipamento()){
-                        h.equiparEquipamento(equipEscolhido);
-                    } else {
-                        droparItem = true;
-                        itemDropado = h.getEquipamento().getId();
-                        h.equiparEquipamento(equipEscolhido);
-                    }
-                }
-            }
-        }*/
-
-        if(getElementId(xD,yD) < 0 && currentTeam == 20) {
-            for(Zombie z : zombies) {
-                if(z.getId() == getElementId(xO,yO)){
-                    z.destruirIten();
-                }
-            }
-        }
-
-        if(currentTeam == 10) {
-            Humano h = getHumanoById(peca);
-            if(h != null) {
-                h.setPosicao(new int[]{xD,yD});
-            }
-        } else if(currentTeam == 20) {
-            Zombie z = getZombieById(peca);
-            if(z != null) {
-                z.setPosicao(new int[]{xD,yD});
-            }
-        }
-
+        //ARRUMAR ISSO
         if(droparItem) {
             map[xO][yO] = itemDropado;
         } else if(destino != peca) {
@@ -386,6 +342,15 @@ public class TWDGameManager {
         for(Creature c : creatures) {
             if(c.getId() == id) {
                 return c;
+            }
+        }
+        return null;
+    }
+
+    public Equipamento getEquipamentById(int id) {
+        for(Equipamento e : equipamentos) {
+            if(e.getId() == id) {
+                return e;
             }
         }
         return null;

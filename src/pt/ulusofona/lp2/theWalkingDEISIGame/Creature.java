@@ -36,6 +36,8 @@ public abstract class Creature {
         posicao = newPosicao;
     }
 
+    public abstract boolean validaMove(int xD, int yD, boolean isDay, int idDestino, int currentTeam);
+
     //Factory
     static Creature criarCreature(int id, int idTipo, String nome, int[]posicao){
         switch (idTipo){

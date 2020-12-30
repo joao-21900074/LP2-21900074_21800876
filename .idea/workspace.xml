@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="277f7e4c-8220-423e-9b73-9c62c1e271f8" name="Default Changelist" comment="Validaçã">
+    <list default="true" id="277f7e4c-8220-423e-9b73-9c62c1e271f8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Creature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Creature.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,8 +25,8 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
-        <option value="Matheus-21800876 &lt;a21800876@alunos.ulht.pt&gt;" />
         <option value="joao-21900074 &lt;a21900074@alunos.ulht.pt&gt;" />
+        <option value="Matheus-21800876 &lt;a21800876@alunos.ulht.pt&gt;" />
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -508,7 +509,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609088019322</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Edit Creature">
+      <created>1609250273325</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1609250273325</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -535,7 +543,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="edit startGame (Boneco fora do mapa)&#10;+ Tests para o move()" />
     <MESSAGE value="edit move() denovo + tests" />
     <MESSAGE value="edit startGame" />
     <MESSAGE value="edit startGame move() denovo" />
@@ -560,7 +567,8 @@
     <MESSAGE value="Save Game V1&#10;+ Teste/Funções Auxiliares&#10;+ LoadGame&#10;(getPosicao para Equipamento e Criatura)&#10;(Falta alterar a posicao da Criatura quando move)&#10;(Falta ordenar os dados do ficheiro de save)" />
     <MESSAGE value="Validação move() Equipe&#10;(Adicionado o numero da equipe em Humano e Zombie)" />
     <MESSAGE value="Validação move() Safe&#10;(Valido quando vivo entra + Adicionado aos salvos)&#10;(Invalido quando o outro entra)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Validação move() Safe&#10;(Valido quando vivo entra + Adicionado aos salvos)&#10;(Invalido quando o outro entra)" />
+    <MESSAGE value="Edit Creature" />
+    <option name="LAST_COMMIT_MESSAGE" value="Edit Creature" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/LP2_21900074_21800876$TestTWDGameManager_testLeituraBad.ic" NAME="TestTWDGameManager.testLeituraBad Coverage Results" MODIFIED="1608812999971" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
