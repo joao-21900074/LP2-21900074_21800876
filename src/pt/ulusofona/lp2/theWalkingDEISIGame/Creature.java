@@ -9,6 +9,8 @@ public abstract class Creature {
     protected String imagePng;
     int[] posicao;
 
+    public Creature() {}
+
     public Creature(int id, int idTipo, String nome, int[] posicao) {
         this.id = id;
         this.idTipo = idTipo;
