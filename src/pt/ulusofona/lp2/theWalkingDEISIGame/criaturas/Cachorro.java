@@ -2,7 +2,7 @@ package pt.ulusofona.lp2.theWalkingDEISIGame.criaturas;
 
 import pt.ulusofona.lp2.theWalkingDEISIGame.*;
 
-public class Cachorro extends Creature {
+public class Cachorro extends Vivo {
     int equipe = 10;
     Equipamento equipamento;
     int nEquipamentos;
@@ -13,6 +13,11 @@ public class Cachorro extends Creature {
     }
 
     public boolean validaMove(int xD, int yD, boolean isDay, int idDestino) {
+
+        if(!super.validaMove(xD,yD,isDay,idDestino)) {
+            return false;
+        }
+
         //Verifica se o cachorro esta tentando andar para cima/baixo
         if(super.getPosicao()[1] == xD && super.getPosicao()[0] != yD) {
             return false;
@@ -31,18 +36,6 @@ public class Cachorro extends Creature {
         return true;
     }
 
-    public boolean equiparEquipamento(Equipamento equipamento) {
-        if(equipamento == null) {
-            return false;
-        }
-
-        //Lembrar de implementar a situação onde o jogador tem um equipamento
-        //derruba ele na posicao anterior e equipa o novo
-
-        this.equipamento = equipamento;
-        nEquipamentos++;
-        return true;
-    }
 
     public void salvar() {
         safe = true;

@@ -6,6 +6,7 @@ public abstract class Zombie extends Creature {
     private int nItensDestruido = 0;
     private int equipe = 20;
     private String nomeTipo;
+    private boolean dead = false;
 
     public Zombie(int id, int idTipo, String nome, int[] posicao) {
         super(id,idTipo,nome,posicao);
@@ -49,11 +50,20 @@ public abstract class Zombie extends Creature {
         }
     }
 
+    public void die() {
+        dead = true;
+    }
+
     @Override
     public int getEquipe(){return equipe;}
 
     //Mudar para cada tipo de Zombie
     public String toString() {
+
+        if(dead) {
+            return id + " | " + nomeTipo + " | Os Outros | " + nome + " " + nItensDestruido + " @ RIP";
+        }
+
         return id + " | " + nomeTipo + " | Os Outros | " + nome + " " + nItensDestruido + " @ (" + super.getPosicao()[0] + ", " + super.getPosicao()[1] + ")";
     }
 }

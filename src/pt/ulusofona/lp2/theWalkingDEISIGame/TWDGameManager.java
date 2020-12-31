@@ -179,6 +179,21 @@ public class TWDGameManager {
             }
         }
 
+        //Verifica se a peça esta pulando sobre outra peça ou equipamento
+        if(xO == xD && Math.abs(yO - yD) >= 2) {//Pulo cima/baixo
+            if(yO > yD && getElementId(xD,yD - 1) != 0) {
+                return false;
+            } else if (yO < yD && getElementId(xD, yD + 1) != 0) {
+                return false;
+            }
+        } else if(yO == yD && Math.abs(xO - xD) >= 2) {//Pulo equerda/direita
+            if(xO > xD && getElementId(xD - 1,yD) != 0) {
+                return false;
+            } else if(xO < xD && getElementId(xD + 1,yD) != 0) {
+                return false;
+            }
+        }
+
         //Situação para destino vazio/safe
         if(destino == 0){
             //Valida é uma Safe
