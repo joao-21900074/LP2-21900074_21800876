@@ -1,7 +1,6 @@
 package pt.ulusofona.lp2.theWalkingDEISIGame;
 
-import pt.ulusofona.lp2.theWalkingDEISIGame.criaturas.Humano;
-import pt.ulusofona.lp2.theWalkingDEISIGame.criaturas.Zombie;
+import pt.ulusofona.lp2.theWalkingDEISIGame.criaturas.*;
 import pt.ulusofona.lp2.theWalkingDEISIGame.equipamentos.*;
 
 import java.io.*;
@@ -12,7 +11,7 @@ import java.util.Scanner;
 
 public class TWDGameManager {
     ArrayList<Creature> creatures = new ArrayList<>();
-    ArrayList<Humano> humans = new ArrayList<>();
+    ArrayList<Vivo> vivos = new ArrayList<>();
     ArrayList<Zombie> zombies = new ArrayList<>();
     ArrayList<Equipamento> equipamentos = new ArrayList<>();
     ArrayList<int[]> safeHavens = new ArrayList<>();
@@ -77,7 +76,7 @@ public class TWDGameManager {
                             map[posicaoX][posicaoY] = id;
 
                             if(idTipo > 4 && idTipo < 10){
-                                humans.add((Humano) c);
+                                vivos.add((Vivo) c);
                             }else if(idTipo <= 4){
                                 zombies.add((Zombie) c);
                             }
@@ -219,7 +218,7 @@ public class TWDGameManager {
             }else{//Vivo para Zombie + Zombie para Vivo
                 //VER O QUE O JOÃO TEM DENTRO DE CADA
                 if(getCreatureById(peca).getEquipe() == 10){
-                    Humano vivo = getHumanoById(peca);
+                    Vivo vivo = getHumanoById(peca);
                     vivo.validaMove(xD,yD,isDay,destino);
                 }else{//Zombie que vai mover
                     Zombie outro = getZombieById(peca);
@@ -270,6 +269,9 @@ public class TWDGameManager {
         if(!humano.temEquipamento()){
             morreu(humano);
         }else{
+            if(!(humano.protecao() > 0)){
+                morreu(humano);
+            }
             switch(humano.getIdTipoEquipamento()){
                 case 0:
                     //Escudo de Madeira
@@ -345,27 +347,7 @@ public class TWDGameManager {
                     }
                     break;
 
-                case 8:
-                    //Veneno, não pode destruir depois de usar tem q ficar com o frasco vazio
-                    Veneno veneno = (Veneno) humano.getEquipamento();
-                    if(veneno.getFrasco()){
-                        veneno.tomar();
-                        //AQUI TEM QUE ENVENENAR O HUMANO
-                    }
-                    if(veneno.getProtecaoTurnos() > 0){
-                        veneno.protecao();
-                    }else{
-                        morreu(humano);
-                    }
-                    break;
-
-                case 9:
-                    //Antidoto, também não pode destruir, tem que ficar com frasco vazio
-                    Antidoto antidoto = (Antidoto) humano.getEquipamento();
-                    if(antidoto.getFrasco()){
-                        antidoto.tomar();
-                        //AQUI TEM QUE CURAR O HUMANO
-                    }
+                default:
                     break;
             }
         }
@@ -389,7 +371,7 @@ public class TWDGameManager {
 
     public void morreu(Humano humano){
         //Humano morreu + tirar da lista dos humanos
-        humans.remove(humano);
+        vivos.remove(humano);
         //Humano vira Zombie + botar na lsita dos zombies
         Creature novoZombie = Creature.criarCreature(humano.getId(),transformar(humano.getIdTipo()),
                 humano.getNome(),humano.getPosicao());
@@ -439,8 +421,8 @@ public class TWDGameManager {
         String listHumanos = "";
         String listaZombie = "";
 
-        for(int i = 0; i < humans.size(); i++){
-            listHumanos += humans.get(i).getId() + " " + humans.get(i).getNome() + "\n";
+        for(int i = 0; i < vivos.size(); i++){
+            listHumanos += vivos.get(i).getId() + " " + vivos.get(i).getNome() + "\n";
         }
 
         for(int i = 0; i < zombies.size(); i++){
@@ -465,21 +447,21 @@ public class TWDGameManager {
 
     // pronto
     public boolean hasEquipment(int creatureId, int equipmentTypeId) {
-        for(Humano h : humans) {
-            if(h.getEquipamento() == null){
+        for(Vivo v : vivos) {
+            if(v.getEquipamento() == null){
                 continue;
             }
-            if(h.getId() == creatureId && h.getEquipamento().getIdTipo() == equipmentTypeId) {
+            if(v.getId() == creatureId && v.getEquipamento().getIdTipo() == equipmentTypeId) {
                 return true;
             }
         }
         return false;
     }
 
-    public Humano getHumanoById(int id) {
-        for(Humano h : humans) {
-            if(h.getId() == id) {
-                return h;
+    public Vivo getHumanoById(int id) {
+        for(Vivo v : vivos) {
+            if(v.getId() == id) {
+                return v;
             }
         }
         return null;
@@ -519,9 +501,9 @@ public class TWDGameManager {
 
     //ID do equipamento que o vivo carrega (Considera humanos e câes)
     public int getEquipmentId(int creatureId) {
-        for(Humano h : humans){
-            if(h.getId() == creatureId){
-                return h.getIdEquipamento();
+        for(Vivo v : vivos){
+            if(v.getId() == creatureId){
+                return v.getIdEquipamento();
             }
         }
         return 0;

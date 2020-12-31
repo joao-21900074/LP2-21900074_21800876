@@ -9,23 +9,25 @@ public class Antidoto extends Equipamento {
     > Consome insta
      */
 
-    private boolean frasco = true;
+    private boolean frascoCheio = true;
+    private int conteudo = 1;
 
     public Antidoto(int id, int idTipo, int[] posicao){
         super(id,idTipo,posicao);
     }
 
     public boolean getFrasco(){
-        return frasco;
+        return frascoCheio;
     }
 
     //Só uma uma vez, só se tiver envenedado
     public void tomar(){
-        frasco = false;
+        this.frascoCheio = false;
+        this.conteudo = 0;
     }
 
     @Override
     public String toString() {
-        return "Antidoto | " + frasco;
+        return "Antidoto | " + conteudo;
     }
 }
