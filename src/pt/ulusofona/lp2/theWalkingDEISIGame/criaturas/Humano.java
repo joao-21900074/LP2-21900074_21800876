@@ -1,13 +1,19 @@
-package pt.ulusofona.lp2.theWalkingDEISIGame;
+package pt.ulusofona.lp2.theWalkingDEISIGame.criaturas;
 
-public class Humano extends Creature {
+import pt.ulusofona.lp2.theWalkingDEISIGame.Creature;
+import pt.ulusofona.lp2.theWalkingDEISIGame.Equipamento;
+
+public abstract class Humano extends Creature {
     Equipamento equipamento;
     int nEquipamentos = 0;
     int equipe = 10;
+    String nomeTipo;
+    boolean safe = false;
 
     public Humano(int id, int idTipo, String nome, int[] posicao) {
         super(id,idTipo,nome,posicao);
         this.imagePng = "human.png";
+        this.nomeTipo = retornaNomeTipo(idTipo);
     }
 
     public boolean equiparEquipamento(Equipamento equipamento) {
@@ -45,7 +51,7 @@ public class Humano extends Creature {
         return equipamento.getIdTipo();
     }
 
-    public boolean validaMove(int xD, int yD, boolean isDay, int idDestino, int currentTeam) {
+    public boolean validaMove(int xD, int yD, boolean isDay, int idDestino) {
 
         /*
         Valida se um Vivo esta tentando se movimentar para
@@ -78,11 +84,36 @@ public class Humano extends Creature {
         return true;
     }
 
+    //Função usada para determinar o nomeTipo que vai ser usado no toString
+    private String retornaNomeTipo(int idTipo) {
+        switch(idTipo) {
+            case 5:
+                return "Criança (Vivo)";
+            case 6:
+                return "Adulto (Vivo)";
+            case 7:
+                return "Militar (Vivo)";
+            case 8:
+                return "Idoso (Vivo)";
+            default:
+                return "ERRO";
+        }
+    }
+
+    public void salvar() {
+        safe = true;
+    }
+
     @Override
     public int getEquipe(){return equipe;}
 
     @Override
     public String toString() {
-        return id + " | Humano | Os Vivos | " + nome + " " + nEquipamentos + " @ (" + posicao[0] + ", " + posicao[1] + ")";
+        if(safe) {
+            return id + " | " + nomeTipo + " | Os Vivos | " + nome + " " + nEquipamentos + " @ A salvo";
+
+        }
+
+        return id + " | " + nomeTipo + " | Os Vivos | " + nome + " " + nEquipamentos + " @ (" + super.getPosicao()[0] + ", " + super.getPosicao()[1] + ")";
     }
 }

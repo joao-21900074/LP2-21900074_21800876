@@ -1,5 +1,8 @@
 package pt.ulusofona.lp2.theWalkingDEISIGame;
 
+import pt.ulusofona.lp2.theWalkingDEISIGame.criaturas.Humano;
+import pt.ulusofona.lp2.theWalkingDEISIGame.criaturas.Zombie;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -166,11 +169,11 @@ public class TWDGameManager {
 
         //Verifica o que tem no destino e faz uma validação certa
         if(getCreatureById(destino) != null) {
-            if(!creature.validaMove(xD,yD,isDay,getCreatureById(destino).getIdTipo(),currentTeam)) {
+            if(!creature.validaMove(xD,yD,isDay,getCreatureById(destino).getIdTipo())) {
                 return false;
             }
         } else if(getEquipmentById(destino) != null) {
-            if(!creature.validaMove(xD,yD,isDay,getEquipmentById(destino).getIdTipo(),currentTeam)) {
+            if(!creature.validaMove(xD,yD,isDay,getEquipmentById(destino).getIdTipo())) {
                 return false;
             }
         }
@@ -201,7 +204,7 @@ public class TWDGameManager {
                 //VER O QUE O JOÃO TEM DENTRO DE CADA
                 if(getCreatureById(peca).getEquipe() == 10){
                     Humano vivo = getHumanoById(peca);
-                    vivo.validaMove(xD,yD,isDay,destino,currentTeam);
+                    vivo.validaMove(xD,yD,isDay,destino);
                 }else{//Zombie que vai mover
                     Zombie outro = getZombieById(peca);
                     outro.validaMove(xD,yD,isDay,destino,currentTeam);

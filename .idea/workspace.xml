@@ -1,9 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="277f7e4c-8220-423e-9b73-9c62c1e271f8" name="Default Changelist" comment="Validaçã">
+    <list default="true" id="277f7e4c-8220-423e-9b73-9c62c1e271f8" name="Default Changelist" comment="edit move()">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/criaturas/Zombie.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Cachorro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/criaturas/Cachorro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Creature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Creature.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Humano.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/criaturas/Humano.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/HumanoAdulto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/criaturas/HumanoAdulto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/HumanoCrianca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/criaturas/HumanoCrianca.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/HumanoIdoso.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/criaturas/HumanoIdoso.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/HumanoMilitar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/criaturas/HumanoMilitar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TestTWDGameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TestTWDGameManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Zombie.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/ZombieAdulto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/criaturas/ZombieAdulto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/ZombieCrianca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/criaturas/ZombieCrianca.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/ZombieIdoso.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/criaturas/ZombieIdoso.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/ZombieMilitar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/criaturas/ZombieMilitar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/ZombieVampiro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/criaturas/ZombieVampiro.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,15 +57,15 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\matah\IdeaProjects\LP2-21900074_21800876\Tests" />
+      <recent name="C:\Users\Utilizador\Documents\Projetos\Faculdade\Projeto_LP2\src\pt\ulusofona\lp2\theWalkingDEISIGame" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\matah\IdeaProjects\LP2-21900074_21800876" />
       <recent name="C:\Users\matah\IdeaProjects\LP2-21900074_21800876\src" />
       <recent name="C:\Users\Utilizador\Documents\Projetos\Faculdade\Projeto_LP2" />
       <recent name="C:\Users\matah\IdeaProjects\LP2-21900074_21800876\lib" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\matah\IdeaProjects\LP2-21900074_21800876\Tests" />
-      <recent name="C:\Users\Utilizador\Documents\Projetos\Faculdade\Projeto_LP2\src\pt\ulusofona\lp2\theWalkingDEISIGame" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -76,7 +92,7 @@
       <module name="Projeto_LP2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="pt.ulusofona.lp2.theWalkingDEISIGame.*" />
+          <option name="PATTERN" value="pt.ulusofona.lp2.theWalkingDEISIGame.criaturas.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -91,7 +107,7 @@
       <module name="Projeto_LP2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="pt.ulusofona.lp2.theWalkingDEISIGame.*" />
+          <option name="PATTERN" value="pt.ulusofona.lp2.theWalkingDEISIGame.criaturas.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -107,7 +123,7 @@
       <module name="Projeto_LP2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="pt.ulusofona.lp2.theWalkingDEISIGame.*" />
+          <option name="PATTERN" value="pt.ulusofona.lp2.theWalkingDEISIGame.criaturas.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -123,7 +139,7 @@
       <module name="Projeto_LP2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="pt.ulusofona.lp2.theWalkingDEISIGame.*" />
+          <option name="PATTERN" value="pt.ulusofona.lp2.theWalkingDEISIGame.criaturas.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -139,7 +155,7 @@
       <module name="Projeto_LP2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="pt.ulusofona.lp2.theWalkingDEISIGame.*" />
+          <option name="PATTERN" value="pt.ulusofona.lp2.theWalkingDEISIGame.criaturas.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -171,13 +187,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605113877526</updated>
-    </task>
-    <task id="LOCAL-00001" summary="edit gitignore">
-      <created>1605114862961</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1605114862974</updated>
     </task>
     <task id="LOCAL-00002" summary="edit gitignore">
       <created>1605115071033</created>
@@ -515,7 +524,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609253569203</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="edit move()">
+      <created>1609289414624</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1609289414624</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -547,7 +563,6 @@
     <MESSAGE value="edit startGame move() denovo" />
     <MESSAGE value="edit move() denovo" />
     <MESSAGE value="editei o move() implementei o movimento do zombie" />
-    <MESSAGE value="edit move()" />
     <MESSAGE value="edit move() de novo" />
     <MESSAGE value="fiz alteração na leitura de arquivos" />
     <MESSAGE value="Fiz outra alteração na leitura de arquivos" />
@@ -567,7 +582,8 @@
     <MESSAGE value="Validação move() Equipe&#10;(Adicionado o numero da equipe em Humano e Zombie)" />
     <MESSAGE value="Validação move() Safe&#10;(Valido quando vivo entra + Adicionado aos salvos)&#10;(Invalido quando o outro entra)" />
     <MESSAGE value="Save Game V2&#10;(Funcionando 100%)&#10;(Crirei get EquipmentById)&#10;(Alterei todas as funções auxiliares)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Save Game V2&#10;(Funcionando 100%)&#10;(Crirei get EquipmentById)&#10;(Alterei todas as funções auxiliares)" />
+    <MESSAGE value="edit move()" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit move()" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/LP2_21900074_21800876$TestTWDGameManager_testLeituraBad.ic" NAME="TestTWDGameManager.testLeituraBad Coverage Results" MODIFIED="1608812999971" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

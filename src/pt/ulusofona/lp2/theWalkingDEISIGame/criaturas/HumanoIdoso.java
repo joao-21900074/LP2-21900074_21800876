@@ -1,32 +1,35 @@
-package pt.ulusofona.lp2.theWalkingDEISIGame;
+package pt.ulusofona.lp2.theWalkingDEISIGame.criaturas;
 
-public class HumanoIdoso extends Humano{
+import pt.ulusofona.lp2.theWalkingDEISIGame.criaturas.Humano;
+
+public class HumanoIdoso extends Humano {
     public HumanoIdoso(int id, int idTipo, String nome, int[] posicao) {
         super(id,idTipo,nome,posicao);
     }
 
-    public boolean validaMove(int xD, int yD, boolean isDay, int idDestino, int currentTeam) {
+    @Override
+    public boolean validaMove(int xD, int yD, boolean isDay, int idDestino) {
 
         //Validações comum para todos os Zombies
-        if(!super.validaMove(xD,yD,isDay,idDestino,currentTeam)) {
+        if(!super.validaMove(xD,yD,isDay,idDestino)) {
             return false;
         }
 
         //Valida diagonal
-        if(posicao[1] != xD && posicao[0] != yD) {
+        if(super.getPosicao()[1] != xD && super.getPosicao()[0] != yD) {
             return false;
         }
 
         //Valida movimento esquerda/direita
-        if(posicao[0] == yD) {
-            if(Math.abs(posicao[1] - xD) > 1) {
+        if(super.getPosicao()[0] == yD) {
+            if(Math.abs(super.getPosicao()[1] - xD) > 1) {
                 return false;
             }
         }
 
         //Valida movimento baixo/cima
-        if(posicao[1] == xD) {
-            if(Math.abs(posicao[0] - yD) > 1) {
+        if(super.getPosicao()[1] == xD) {
+            if(Math.abs(super.getPosicao()[0] - yD) > 1) {
                 return false;
             }
         }

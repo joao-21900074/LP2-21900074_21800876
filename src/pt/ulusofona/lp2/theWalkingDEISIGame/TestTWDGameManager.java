@@ -1,6 +1,9 @@
 package pt.ulusofona.lp2.theWalkingDEISIGame;
 
 import org.junit.Test;
+import pt.ulusofona.lp2.theWalkingDEISIGame.criaturas.Humano;
+import pt.ulusofona.lp2.theWalkingDEISIGame.criaturas.Zombie;
+
 import java.io.File;
 
 public class TestTWDGameManager {
