@@ -180,45 +180,46 @@ public class TWDGameManager {
 
         //Verifica se a peça esta pulando sobre outra peça ou equipamento
         if(xO == xD && Math.abs(yO - yD) >= 2) {//Pulo cima/baixo
-            if(yO > yD && getElementId(xD,yD - 1) != 0) {
+            if(yO > yD && getElementId(xD,yD + 1) != 0) {
                 return false;
-            } else if (yO < yD && getElementId(xD, yD + 1) != 0) {
+            } else if (yO < yD && getElementId(xD, yD - 1) != 0) {
                 return false;
             }
         } else if(yO == yD && Math.abs(xO - xD) >= 2) {//Pulo equerda/direita
-            if(xO > xD && getElementId(xD - 1,yD) != 0) {
+            if(xO > xD && getElementId(xD + 1,yD) != 0) {
                 return false;
-            } else if(xO < xD && getElementId(xD + 1,yD) != 0) {
+            } else if(xO < xD && getElementId(xD - 1,yD) != 0) {
                 return false;
             }
             //Diagonais
         } else if(xD != xO && yD != yO && Math.abs(xO - xD) >= 2 && Math.abs(yO - yD) >= 2) {
             if(xO > xD && yO < yD) {//Diagonal inferior esquerda
-                if(getElementId(xD - 1, yD + 1) != 0) {
+                if(getElementId(xD + 1, yD - 1) != 0) {
                     return false;
                 }
             }
 
             if(xO < xD && yO < yD) {//Diagonal inferior direita
-                if(getElementId(xD + 1, yD + 1) != 0) {
-                    return false;
-                }
-            }
-
-            if(xO > xD && yO > yD) {//Diagonal superior esquerda
                 if(getElementId(xD - 1, yD - 1) != 0) {
                     return false;
                 }
             }
 
+            if(xO > xD && yO > yD) {//Diagonal superior esquerda
+                if(getElementId(xD + 1, yD + 1) != 0) {
+                    return false;
+                }
+            }
+
             if(xO < xD && yO > yD) {//Diagonal superior direita
-                if(getElementId(xD + 1, yD - 1) != 0) {
+                if(getElementId(xD - 1, yD + 1) != 0) {
                     return false;
                 }
             }
         }
 
         //Situação para destino vazio/safe
+        /*
         if(destino == 0){
             //Valida é uma Safe
             if(isDoorToSafeHaven(xD,yD)){
@@ -254,6 +255,8 @@ public class TWDGameManager {
             map[xD][yD] = peca;
         }
 
+         */
+
 
         //Lógica se o Zumbi se mover para um lugar onde tenha um equipamento que ele possa destruir
         if(destino < 0 && currentTeam == 20) {
@@ -263,7 +266,7 @@ public class TWDGameManager {
 
         //Muda a posição da criatura
         creature.setPosicao(new int[]{xD,yD});
-
+        map[xD][yD] = peca;
         //ARRUMAR ISSO
         if(droparItem) {
             map[xO][yO] = itemDropado;
