@@ -1,4 +1,6 @@
-package pt.ulusofona.lp2.theWalkingDEISIGame;
+package pt.ulusofona.lp2.theWalkingDEISIGame.equipamentos;
+
+import pt.ulusofona.lp2.theWalkingDEISIGame.Equipamento;
 
 public class Alho extends Equipamento {
     //Só protege contra ZombieVampiro

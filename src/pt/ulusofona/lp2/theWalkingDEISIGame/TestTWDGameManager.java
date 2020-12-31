@@ -1,18 +1,22 @@
 package pt.ulusofona.lp2.theWalkingDEISIGame;
 
 import org.junit.Test;
-import pt.ulusofona.lp2.theWalkingDEISIGame.criaturas.Humano;
-import pt.ulusofona.lp2.theWalkingDEISIGame.criaturas.Zombie;
+import pt.ulusofona.lp2.theWalkingDEISIGame.criaturas.*;
+import pt.ulusofona.lp2.theWalkingDEISIGame.equipamentos.EscudoMadeira;
 
 import java.io.File;
 
 public class TestTWDGameManager {
     private TWDGameManager testStart = new TWDGameManager();
     private File ficheiroTest = new File("./test-files/input");
-    private Humano humanoTest = new Humano(1,6,"TestH",new int[]{0,0});
-    private Zombie zombieTest = new Zombie(2,1,"TestZ",new int[]{0,1});
-    private Zombie vampiroTest = new Zombie(3,4,"TestVZ",new int[]{1,0});
-    private Zombie idosoZombieTest = new Zombie(4,3,"TestIZ",new int[]{2,0});
+    private HumanoAdulto humanoAdulto = new HumanoAdulto(1,6,"TestHA",new int[]{0,0});
+    private ZombieAdulto zombieAdulto = new ZombieAdulto(2,1,"TestZA",new int[]{0,1});
+    private ZombieVampiro zombieVampiro = new ZombieVampiro(3,4,"TestZV",new int[]{1,0});
+    private ZombieIdoso zombieIdoso = new ZombieIdoso(4,3,"TestZI",new int[]{2,0});
+    private HumanoCrianca humanoCrianca = new HumanoCrianca(5,5,"TestHC",new int[]{3,0});
+    private ZombieCrianca zombieCrianca = new ZombieCrianca(6,0,"TestZC",new int[]{4,0});
+    private HumanoMilitar humanoMilitar1 = new HumanoMilitar(7,7,"TestHM",new int[]{5,0});
+    private HumanoMilitar humanoMilitar2 = new HumanoMilitar(8,7,"TestHM",new int[]{6,0});
 
     @Test
     public void testLeituraRuim(){
@@ -77,27 +81,27 @@ public class TestTWDGameManager {
     @Test
     public void testBatalhaHumanoMorreu(){
         //Humano sem equipamento
-        testStart.batalha(humanoTest, zombieTest);
+        testStart.batalha(humanoAdulto, zombieAdulto);
     }
 
     @Test
     public void testBatalhaMatarZombie(){
         //Destinado para Equipamentos que matam zombies
         //Espada + Estaca + Beskar
-        testStart.zombies.add(zombieTest);
+        testStart.zombies.add(zombieAdulto);
 
         Equipamento espada = Equipamento.criarEquipamento(1,1,new int[]{0,2});
         //Equipamento Estaca = Equipamento.criarEquipamento(2,6,new int[]{0,3});
         //Equipamento Beskar = Equipamento.criarEquipamento(3,10,new int[]{0,4});
-        humanoTest.equiparEquipamento(espada);
+        humanoAdulto.equiparEquipamento(espada);
         //hTest.equiparEquipamento(estaca);
         //hTest.equiparEquipamento(beskar);
 
-        //System.out.println(testStart.zombies.contains(zTest));
+        //System.out.println(testStart.zombies.contains(zombieAdulto));
         //True, zombie vivo
 
-        testStart.batalha(humanoTest, zombieTest);
-        //System.out.println(testStart.zombies.contains(zTest));
+        testStart.batalha(humanoAdulto, zombieAdulto);
+        //System.out.println(testStart.zombies.contains(zombieAdulto));
         //False, zombie morreu
     }
 
@@ -105,42 +109,79 @@ public class TestTWDGameManager {
     @Test
     public void testBatalhaMadeira(){
         //Humano com Escudo de Madeira
-        testStart.humans.add(humanoTest);
+        testStart.humans.add(humanoAdulto);
 
         Equipamento escudoMadeira = Equipamento.criarEquipamento(1,0,new int[]{0,2});
-        humanoTest.equiparEquipamento(escudoMadeira);
+        humanoAdulto.equiparEquipamento(escudoMadeira);
 
-        testStart.batalha(humanoTest, zombieTest);
-        //System.out.println(testStart.humans.contains(hTest));
+        testStart.batalha(humanoAdulto, zombieAdulto);
+        System.out.println(testStart.humans.contains(humanoAdulto));
         //True, escudo com 1 de defesa
 
-        testStart.batalha(humanoTest, zombieTest);
-        //System.out.println(testStart.humans.contains(hTest));
+        testStart.batalha(humanoAdulto, zombieAdulto);
+        System.out.println(testStart.humans.contains(humanoAdulto));
         //False, escudo tem 0 de defesa, portanto quebrou + humano morreu
+    }
+
+    @Test
+    public void testBatalhaMadeiraMilitar(){
+        //Quando militar pega o escudo ele tem que aumentar 1 de defesa
+        Equipamento escudoMadeira = Equipamento.criarEquipamento(1,0,new int[]{0,2});
+        humanoMilitar1.equiparEquipamento(escudoMadeira);
+
+        testStart.humans.add(humanoMilitar1);
+
+        for(int i=0; i < 3; i++) {
+            //Aqui o Militar vai aguentar 2 batalhas com o Zumbi por causa do upgrade do escudo
+            testStart.batalha(humanoMilitar1, zombieAdulto);
+            //System.out.println(testStart.humans.contains(humanoMilitar1));
+        }
+    }
+
+    @Test
+    public void testBatalhaUpgradeEscudoMadeira(){
+        /*Upgrade de um escudo só funciona uma vez
+        Caso um militar equipe o escudo, aumenta defesa para 2
+        Depois um OUTRO militar equipa o mesmo escudo, a defesa NÃO vai para 2*/
+
+        Equipamento escudoMadeira = Equipamento.criarEquipamento(1,0,new int[]{0,2});
+        humanoMilitar1.equiparEquipamento(escudoMadeira);
+        //Testar defesa diretamente
+        //EscudoMadeira defesa = (EscudoMadeira) humanoMilitar1.getEquipamento();
+
+        testStart.batalha(humanoMilitar1,zombieAdulto);
+        //Aqui uma batalha com Militar1, conseguiu defender (2-1 = 1)
+        //System.out.println(defesa.getDefesa());
+
+        humanoMilitar2.equiparEquipamento(escudoMadeira);
+        testStart.batalha(humanoMilitar2,zombieAdulto);
+        //Aqui outra batalha com o mesmo escudo, mas agora o Militar2, conseguiu defender (1-1 = 0)
+        //Portanto na segunda vez não teve upgrade
+        //System.out.println(defesa.getDefesa());
     }
 
     @Test
     public void testBatalhaPistolaNormal(){
         //Humano com Pistola contra zombies normais
-        testStart.zombies.add(zombieTest);
-        testStart.humans.add(humanoTest);
+        testStart.zombies.add(zombieAdulto);
+        testStart.humans.add(humanoAdulto);
 
         Equipamento pistola = Equipamento.criarEquipamento(1,2,new int[]{0,2});
-        humanoTest.equiparEquipamento(pistola);
+        humanoAdulto.equiparEquipamento(pistola);
 
-        testStart.batalha(humanoTest, zombieTest);
+        testStart.batalha(humanoAdulto, zombieAdulto);
         //System.out.println(testStart.zombies.contains(zTest));
         //False, zombie morreu com 1 bala
 
         for(int i=0; i<2; i++) {
-            testStart.zombies.add(zombieTest);
-            testStart.batalha(humanoTest, zombieTest);
+            testStart.zombies.add(zombieAdulto);
+            testStart.batalha(humanoAdulto, zombieAdulto);
             //Gastou 2 balas
             //Gastou 3 balas
         }
 
-        testStart.zombies.add(zombieTest);
-        testStart.batalha(humanoTest, zombieTest);
+        testStart.zombies.add(zombieAdulto);
+        testStart.batalha(humanoAdulto, zombieAdulto);
         //System.out.println(testStart.humans.contains(hTest));
         //False, morreu, pistola sem balas
 
@@ -149,12 +190,12 @@ public class TestTWDGameManager {
     @Test
     public void testBatalhaPistolaZombieVampiro(){
        //Humano com pistola contra ZombieVampiro
-        testStart.zombies.add(vampiroTest);
+        testStart.zombies.add(zombieVampiro);
 
         Equipamento pistola = Equipamento.criarEquipamento(1,2,new int[]{0,2});
-        humanoTest.equiparEquipamento(pistola);
+        humanoAdulto.equiparEquipamento(pistola);
 
-        testStart.batalha(humanoTest, vampiroTest);
+        testStart.batalha(humanoAdulto, zombieVampiro);
         //System.out.println(testStart.zombies.contains(vTest));
         //True, zombie vivo, balas não afetam Zombie Vampiro
     }
@@ -162,12 +203,12 @@ public class TestTWDGameManager {
     @Test
     public void testBatalhaRevistaNormal(){
         //Humano com revista maria contra zombies normais
-        testStart.humans.add(humanoTest);
+        testStart.humans.add(humanoAdulto);
 
         Equipamento revista = Equipamento.criarEquipamento(1,4,new int[]{0,2});
-        humanoTest.equiparEquipamento(revista);
+        humanoAdulto.equiparEquipamento(revista);
 
-        testStart.batalha(humanoTest, zombieTest);
+        testStart.batalha(humanoAdulto, zombieAdulto);
         //System.out.println(testStart.humans.contains(hTest));
         //False, morreu, revista não protege contra zombies normais
     }
@@ -175,12 +216,12 @@ public class TestTWDGameManager {
     @Test
     public void testBatalhaRevistaZombieIdoso(){
         //Humano com revista maria, contra Zombie Idoso
-        testStart.humans.add(humanoTest);
+        testStart.humans.add(humanoAdulto);
 
         Equipamento revista = Equipamento.criarEquipamento(1,4,new int[]{0,2});
-        humanoTest.equiparEquipamento(revista);
+        humanoAdulto.equiparEquipamento(revista);
 
-        testStart.batalha(humanoTest, idosoZombieTest);
+        testStart.batalha(humanoAdulto, zombieIdoso);
         //System.out.println(testStart.humans.contains(hTest));
         //True, sobreviveu, revista protege contra zombies idosos
     }
@@ -188,12 +229,12 @@ public class TestTWDGameManager {
     @Test
     public void testBatalhaAlhoZombieNormal(){
         //Humano com cabeça de alho, contra zombie normal
-        testStart.humans.add(humanoTest);
+        testStart.humans.add(humanoAdulto);
 
         Equipamento alho = Equipamento.criarEquipamento(1,5,new int[]{0,2});
-        humanoTest.equiparEquipamento(alho);
+        humanoAdulto.equiparEquipamento(alho);
 
-        testStart.batalha(humanoTest, zombieTest);
+        testStart.batalha(humanoAdulto, zombieAdulto);
         //System.out.println(testStart.humans.contains(hTest));
         //False, morreu, alho não protege contra zombies normais
     }
@@ -201,12 +242,12 @@ public class TestTWDGameManager {
     @Test
     public void testBatalhaAlhoZombieVampiro(){
         //Humano com cabeça de alho, contra zombie vampiro
-        testStart.humans.add(humanoTest);
+        testStart.humans.add(humanoAdulto);
 
         Equipamento alho = Equipamento.criarEquipamento(1,5,new int[]{0,2});
-        humanoTest.equiparEquipamento(alho);
+        humanoAdulto.equiparEquipamento(alho);
 
-        testStart.batalha(humanoTest, vampiroTest);
+        testStart.batalha(humanoAdulto, zombieVampiro);
         //System.out.println(testStart.humans.contains(hTest));
         //True, sobreviveu, alho protege contra zombies vampiros
     }
@@ -214,26 +255,46 @@ public class TestTWDGameManager {
     @Test
     public void testBatalhaLixivia(){
         //Humano com garrafa de lixivia
-        testStart.humans.add(humanoTest);
+        testStart.humans.add(humanoAdulto);
 
         Equipamento lixivia = Equipamento.criarEquipamento(1,7,new int[]{0,2});
-        humanoTest.equiparEquipamento(lixivia);
+        humanoAdulto.equiparEquipamento(lixivia);
 
-        testStart.batalha(humanoTest,zombieTest);
+        testStart.batalha(humanoAdulto, zombieAdulto);
         //System.out.println(testStart.humans.contains(humanoTest));
         //True, sobreviveu, gastou 0.3Litros
 
         for(int i=0; i<2; i++) {
-            testStart.zombies.add(zombieTest);
-            testStart.batalha(humanoTest, zombieTest);
+            testStart.zombies.add(zombieAdulto);
+            testStart.batalha(humanoAdulto, zombieAdulto);
             //Gastou 0.6Litros
             //Gastou 0.9Litros
         }
 
-        testStart.zombies.add(zombieTest);
-        testStart.batalha(humanoTest, zombieTest);
+        testStart.zombies.add(zombieAdulto);
+        testStart.batalha(humanoAdulto, zombieAdulto);
         //System.out.println(testStart.humans.contains(humanoTest));
         //False, morreu, não tem lixivia suficiente para proteção
+    }
+
+    @Test
+    public void testBatalhaCriança(){
+        //Criança Humano só pode usar espada contra Criança Zombie
+        Equipamento espada = Equipamento.criarEquipamento(1,1,new int[]{0,2});
+        humanoCrianca.equiparEquipamento(espada);
+
+        testStart.humans.add(humanoCrianca);
+        testStart.zombies.add(zombieCrianca);
+        testStart.batalha(humanoCrianca,zombieCrianca);
+        //Criança ficou viva / Zombie Criança morreu
+        //System.out.println(testStart.humans.contains(humanoCrianca));
+        //System.out.println(testStart.zombies.contains(zombieCrianca));
+
+        testStart.zombies.add(zombieAdulto);
+        testStart.batalha(humanoCrianca,zombieAdulto);
+        //Criança morreu / Zombie Adulto ficou vivo
+        //System.out.println(testStart.humans.contains(humanoCrianca));
+        //System.out.println(testStart.zombies.contains(zombieAdulto));
     }
 
     /*OLD TESTES, ainda possa ser útil

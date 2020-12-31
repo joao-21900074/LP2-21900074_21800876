@@ -1,6 +1,8 @@
-package pt.ulusofona.lp2.theWalkingDEISIGame;
+package pt.ulusofona.lp2.theWalkingDEISIGame.equipamentos;
 
-public class Antidoto extends Equipamento{
+import pt.ulusofona.lp2.theWalkingDEISIGame.Equipamento;
+
+public class Antidoto extends Equipamento {
     /*Como funciona o Antidoto
     Cura se envenedado
     > Só pode pegar Humano envenedado

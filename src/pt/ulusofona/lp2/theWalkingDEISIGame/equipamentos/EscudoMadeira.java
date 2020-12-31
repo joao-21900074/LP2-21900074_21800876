@@ -1,4 +1,6 @@
-package pt.ulusofona.lp2.theWalkingDEISIGame;
+package pt.ulusofona.lp2.theWalkingDEISIGame.equipamentos;
+
+import pt.ulusofona.lp2.theWalkingDEISIGame.Equipamento;
 
 public class EscudoMadeira extends Equipamento {
     /*VER SITUAÇÃO DO MILITAR
@@ -7,11 +9,12 @@ public class EscudoMadeira extends Equipamento {
     > Usou 1 vez largou e pegou de volta mantem defesa = 1
     > Usou 1 vez largou outro pegou mantem defesa = 1
 
-    BASICAMENTE o escudo de madeira só vai dar upgrade para Defesa 1 vez
+    BASICAMENTE o escudo de madeira só vai dar upgrade 1 vez
      */
 
     //1 de defesa (GERAL)
     private int defesa = 1;
+    private boolean deuUpgrade = false;
 
     public EscudoMadeira(int id, int idTipo, int[] posicao){
         super(id,idTipo,posicao);
@@ -21,9 +24,12 @@ public class EscudoMadeira extends Equipamento {
         return defesa;
     }
 
-    //Se um militar pegar ele da upgrade
+    //Se um militar pegar ele da upgrade, APENAS FUNCIONA 1 VEZ
     public void upgrade(){
-        defesa = 2;
+        if(!deuUpgrade) {
+            this.defesa = 2;
+            deuUpgrade = true;
+        }
     }
 
     //Após usar ele quebra

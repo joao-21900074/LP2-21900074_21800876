@@ -1,5 +1,7 @@
 package pt.ulusofona.lp2.theWalkingDEISIGame;
 
+import pt.ulusofona.lp2.theWalkingDEISIGame.equipamentos.*;
+
 public abstract class Equipamento {
     private int id;
     private int idTipo;

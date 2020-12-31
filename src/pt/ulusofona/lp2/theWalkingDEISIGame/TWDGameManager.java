@@ -2,6 +2,7 @@ package pt.ulusofona.lp2.theWalkingDEISIGame;
 
 import pt.ulusofona.lp2.theWalkingDEISIGame.criaturas.Humano;
 import pt.ulusofona.lp2.theWalkingDEISIGame.criaturas.Zombie;
+import pt.ulusofona.lp2.theWalkingDEISIGame.equipamentos.*;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -207,7 +208,7 @@ public class TWDGameManager {
                     vivo.validaMove(xD,yD,isDay,destino);
                 }else{//Zombie que vai mover
                     Zombie outro = getZombieById(peca);
-                    outro.validaMove(xD,yD,isDay,destino,currentTeam);
+                    outro.validaMove(xD,yD,isDay,destino);
                 }
             }
             //Atualiza o mapa
@@ -258,6 +259,10 @@ public class TWDGameManager {
                 case 0:
                     //Escudo de Madeira
                     EscudoMadeira escudoMadeira = (EscudoMadeira) humano.getEquipamento();
+                    //Militar aumenta a defesa do Escudo para 2
+                    if(humano.getIdTipo() == 7){
+                        escudoMadeira.upgrade();
+                    }
                     if(escudoMadeira.getDefesa() > 0){
                         //Defendeu + Quebrar escudo ou Diminiuir 1 defesa(CASO MILITAR)
                         escudoMadeira.defender();
@@ -266,11 +271,14 @@ public class TWDGameManager {
                     }
                     break;
 
-                case 1://Não tenho certeza se a Espada mata Zombie Vampiro tbm
-                case 6:
-                case 10:
-                    //Espada + Estaca de Madeira + Beskar Helmet, matam zombies
-                    matou(zombie);
+                case 1:
+                    //Espada, matam zombies
+                    //Caso especifico criança só mata criança
+                    if(humano.getIdTipo() == 5 && !(zombie.getIdTipo() == 0)){
+                        morreu(humano);
+                    }else{
+                        matou(zombie);
+                    }
                     break;
 
                 case 2:
@@ -303,6 +311,12 @@ public class TWDGameManager {
                     if(!(zombie.getIdTipo() == 4)){
                         morreu(humano);
                     }
+                    break;
+
+                case 6:
+                case 10:
+                    //Estaca de Madeira + Beskar Helmet, matam zombies
+                    matou(zombie);
                     break;
 
                 case 7:

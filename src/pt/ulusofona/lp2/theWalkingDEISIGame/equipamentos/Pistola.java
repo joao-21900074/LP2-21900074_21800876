@@ -1,4 +1,6 @@
-package pt.ulusofona.lp2.theWalkingDEISIGame;
+package pt.ulusofona.lp2.theWalkingDEISIGame.equipamentos;
+
+import pt.ulusofona.lp2.theWalkingDEISIGame.Equipamento;
 
 public class Pistola extends Equipamento {
     //Vem com 3 balas

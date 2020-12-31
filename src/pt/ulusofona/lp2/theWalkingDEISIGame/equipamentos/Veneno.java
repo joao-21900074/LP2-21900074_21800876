@@ -1,6 +1,8 @@
-package pt.ulusofona.lp2.theWalkingDEISIGame;
+package pt.ulusofona.lp2.theWalkingDEISIGame.equipamentos;
 
-public class Veneno extends Equipamento{
+import pt.ulusofona.lp2.theWalkingDEISIGame.Equipamento;
+
+public class Veneno extends Equipamento {
     /*Como funciona o Veneno
     Protecao = 2 turnos (começa a contar depois q ele usa)
     > Se ficar envenendado por 3 turnos morre
