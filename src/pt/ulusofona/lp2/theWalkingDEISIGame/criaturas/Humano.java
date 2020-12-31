@@ -4,7 +4,6 @@ import pt.ulusofona.lp2.theWalkingDEISIGame.Creature;
 import pt.ulusofona.lp2.theWalkingDEISIGame.Equipamento;
 
 public abstract class Humano extends Vivo {
-
     public Humano(int id, int idTipo, String nome, int[] posicao) {
         super(id,idTipo,nome,posicao);
         this.imagePng = "human.png";

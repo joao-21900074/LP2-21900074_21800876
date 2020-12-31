@@ -9,34 +9,25 @@ public class Veneno extends Equipamento {
     > Zombies não podem ir aonde tem veneno
      */
 
-    //Da protecao de 2 turnos
-    private int protecaoTurnos = 2;
-    private boolean frasco = true;
+    private boolean frascoCheio = true;
+    private int conteudo = 1;
 
     public Veneno(int id, int idTipo, int[] posicao){
         super(id,idTipo,posicao);
     }
 
     public boolean getFrasco(){
-        return frasco;
-    }
-
-    public int getProtecaoTurnos(){
-        return protecaoTurnos;
+        return frascoCheio;
     }
 
     //Só uma vez
     public void tomar(){
-        frasco = false;
-    }
-
-    //Proteger 2 turnos
-    public void protecao(){
-        protecaoTurnos--;
+        frascoCheio = false;
+        this.conteudo = 0;
     }
 
     @Override
     public String toString() {
-        return "Veneno | " + frasco;
+        return "Veneno | " + conteudo;
     }
 }

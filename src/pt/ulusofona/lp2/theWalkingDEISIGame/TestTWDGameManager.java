@@ -109,17 +109,17 @@ public class TestTWDGameManager {
     @Test
     public void testBatalhaMadeira(){
         //Humano com Escudo de Madeira
-        testStart.humans.add(humanoAdulto);
+        testStart.vivos.add(humanoAdulto);
 
         Equipamento escudoMadeira = Equipamento.criarEquipamento(1,0,new int[]{0,2});
         humanoAdulto.equiparEquipamento(escudoMadeira);
 
         testStart.batalha(humanoAdulto, zombieAdulto);
-        System.out.println(testStart.humans.contains(humanoAdulto));
+        System.out.println(testStart.vivos.contains(humanoAdulto));
         //True, escudo com 1 de defesa
 
         testStart.batalha(humanoAdulto, zombieAdulto);
-        System.out.println(testStart.humans.contains(humanoAdulto));
+        System.out.println(testStart.vivos.contains(humanoAdulto));
         //False, escudo tem 0 de defesa, portanto quebrou + humano morreu
     }
 
@@ -129,7 +129,7 @@ public class TestTWDGameManager {
         Equipamento escudoMadeira = Equipamento.criarEquipamento(1,0,new int[]{0,2});
         humanoMilitar1.equiparEquipamento(escudoMadeira);
 
-        testStart.humans.add(humanoMilitar1);
+        testStart.vivos.add(humanoMilitar1);
 
         for(int i=0; i < 3; i++) {
             //Aqui o Militar vai aguentar 2 batalhas com o Zumbi por causa do upgrade do escudo
@@ -164,7 +164,7 @@ public class TestTWDGameManager {
     public void testBatalhaPistolaNormal(){
         //Humano com Pistola contra zombies normais
         testStart.zombies.add(zombieAdulto);
-        testStart.humans.add(humanoAdulto);
+        testStart.vivos.add(humanoAdulto);
 
         Equipamento pistola = Equipamento.criarEquipamento(1,2,new int[]{0,2});
         humanoAdulto.equiparEquipamento(pistola);
@@ -203,7 +203,7 @@ public class TestTWDGameManager {
     @Test
     public void testBatalhaRevistaNormal(){
         //Humano com revista maria contra zombies normais
-        testStart.humans.add(humanoAdulto);
+        testStart.vivos.add(humanoAdulto);
 
         Equipamento revista = Equipamento.criarEquipamento(1,4,new int[]{0,2});
         humanoAdulto.equiparEquipamento(revista);
@@ -216,7 +216,7 @@ public class TestTWDGameManager {
     @Test
     public void testBatalhaRevistaZombieIdoso(){
         //Humano com revista maria, contra Zombie Idoso
-        testStart.humans.add(humanoAdulto);
+        testStart.vivos.add(humanoAdulto);
 
         Equipamento revista = Equipamento.criarEquipamento(1,4,new int[]{0,2});
         humanoAdulto.equiparEquipamento(revista);
@@ -229,7 +229,7 @@ public class TestTWDGameManager {
     @Test
     public void testBatalhaAlhoZombieNormal(){
         //Humano com cabeça de alho, contra zombie normal
-        testStart.humans.add(humanoAdulto);
+        testStart.vivos.add(humanoAdulto);
 
         Equipamento alho = Equipamento.criarEquipamento(1,5,new int[]{0,2});
         humanoAdulto.equiparEquipamento(alho);
@@ -242,7 +242,7 @@ public class TestTWDGameManager {
     @Test
     public void testBatalhaAlhoZombieVampiro(){
         //Humano com cabeça de alho, contra zombie vampiro
-        testStart.humans.add(humanoAdulto);
+        testStart.vivos.add(humanoAdulto);
 
         Equipamento alho = Equipamento.criarEquipamento(1,5,new int[]{0,2});
         humanoAdulto.equiparEquipamento(alho);
@@ -255,7 +255,7 @@ public class TestTWDGameManager {
     @Test
     public void testBatalhaLixivia(){
         //Humano com garrafa de lixivia
-        testStart.humans.add(humanoAdulto);
+        testStart.vivos.add(humanoAdulto);
 
         Equipamento lixivia = Equipamento.criarEquipamento(1,7,new int[]{0,2});
         humanoAdulto.equiparEquipamento(lixivia);
@@ -283,7 +283,7 @@ public class TestTWDGameManager {
         Equipamento espada = Equipamento.criarEquipamento(1,1,new int[]{0,2});
         humanoCrianca.equiparEquipamento(espada);
 
-        testStart.humans.add(humanoCrianca);
+        testStart.vivos.add(humanoCrianca);
         testStart.zombies.add(zombieCrianca);
         testStart.batalha(humanoCrianca,zombieCrianca);
         //Criança ficou viva / Zombie Criança morreu
@@ -295,6 +295,17 @@ public class TestTWDGameManager {
         //Criança morreu / Zombie Adulto ficou vivo
         //System.out.println(testStart.humans.contains(humanoCrianca));
         //System.out.println(testStart.zombies.contains(zombieAdulto));
+    }
+
+    @Test
+    public void testBatalhaVeneno(){
+        //Caso humano esteja envenenado não pode morrer
+        testStart.vivos.add(humanoAdulto);
+        Equipamento veneno = Equipamento.criarEquipamento(1,8,new int[]{0,2});
+        humanoAdulto.equiparEquipamento(veneno);
+
+        testStart.batalha(humanoAdulto,zombieAdulto);
+        System.out.println(testStart.vivos.contains(humanoAdulto));
     }
 
     /*OLD TESTES, ainda possa ser útil

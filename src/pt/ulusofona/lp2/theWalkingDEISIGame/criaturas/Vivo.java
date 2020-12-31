@@ -8,6 +8,8 @@ public class Vivo extends Creature {
     int nEquipamentos = 0;
     String nomeTipo;
     private boolean safe = false;
+    private boolean envenenado = false;
+    private int protecaoVeneno = 0;
 
 
     //Construtor vazio
@@ -64,6 +66,12 @@ public class Vivo extends Creature {
             return false;
         }
 
+        //Caso seja um veneno, humano ganha proteçao por 2 turnos + fica envenenado
+        if(equipamento.getIdTipo() == 8){
+            this.protecaoVeneno = 2;
+            this.envenenado = true;
+        }
+
         //Lembrar de implementar a situação onde o jogador tem um equipamento
         //derruba ele na posicao anterior e equipa o novo
 
@@ -92,6 +100,10 @@ public class Vivo extends Creature {
             return 0;
         }
         return equipamento.getIdTipo();
+    }
+
+    public int protecao(){
+        return protecaoVeneno;
     }
 
     @Override
