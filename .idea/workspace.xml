@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="277f7e4c-8220-423e-9b73-9c62c1e271f8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/criaturas/Vivo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Creature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Creature.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/criaturas/Cachorro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/criaturas/Cachorro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/criaturas/Humano.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/criaturas/Humano.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/criaturas/Zombie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/criaturas/Zombie.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -69,7 +64,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TestTWDGameManager">
+  <component name="RunManager" selected="Application.AppLauncher">
     <configuration name="AppLauncher" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="pt.ulusofona.lp2.guiSimulator.AppLauncher" />
       <module name="Projeto_LP2" />
@@ -176,13 +171,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605113877526</updated>
-    </task>
-    <task id="LOCAL-00003" summary="edit Criatura">
-      <created>1605115822901</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1605115822901</updated>
     </task>
     <task id="LOCAL-00004" summary="Criação de pasta images e lib&#10;&#10;.jar adicionado a pasta lib">
       <created>1605192566847</created>
@@ -520,7 +508,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609423530814</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Criei a classe Vivo. Editei Humano,Zombie e coloquei mais uma regra em move()">
+      <created>1609431478504</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1609431478504</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -547,7 +542,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="edit startGame" />
     <MESSAGE value="edit startGame move() denovo" />
     <MESSAGE value="edit move() denovo" />
     <MESSAGE value="editei o move() implementei o movimento do zombie" />
@@ -572,7 +566,8 @@
     <MESSAGE value="Save Game V2&#10;(Funcionando 100%)&#10;(Crirei get EquipmentById)&#10;(Alterei todas as funções auxiliares)" />
     <MESSAGE value="edit move()" />
     <MESSAGE value="Refatorei o código. e fiz algumas alterações no toString de Humano e Cachorro" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refatorei o código. e fiz algumas alterações no toString de Humano e Cachorro" />
+    <MESSAGE value="Criei a classe Vivo. Editei Humano,Zombie e coloquei mais uma regra em move()" />
+    <option name="LAST_COMMIT_MESSAGE" value="Criei a classe Vivo. Editei Humano,Zombie e coloquei mais uma regra em move()" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/LP2_21900074_21800876$TestTWDGameManager_testLeituraBad.ic" NAME="TestTWDGameManager.testLeituraBad Coverage Results" MODIFIED="1608812999971" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

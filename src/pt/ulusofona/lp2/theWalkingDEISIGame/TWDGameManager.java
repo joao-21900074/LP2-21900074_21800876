@@ -192,6 +192,31 @@ public class TWDGameManager {
             } else if(xO < xD && getElementId(xD + 1,yD) != 0) {
                 return false;
             }
+            //Diagonais
+        } else if(xD != xO && yD != yO && Math.abs(xO - xD) >= 2 && Math.abs(yO - yD) >= 2) {
+            if(xO > xD && yO < yD) {//Diagonal inferior esquerda
+                if(getElementId(xD - 1, yD + 1) != 0) {
+                    return false;
+                }
+            }
+
+            if(xO < xD && yO < yD) {//Diagonal inferior direita
+                if(getElementId(xD + 1, yD + 1) != 0) {
+                    return false;
+                }
+            }
+
+            if(xO > xD && yO > yD) {//Diagonal superior esquerda
+                if(getElementId(xD - 1, yD - 1) != 0) {
+                    return false;
+                }
+            }
+
+            if(xO < xD && yO > yD) {//Diagonal superior direita
+                if(getElementId(xD + 1, yD - 1) != 0) {
+                    return false;
+                }
+            }
         }
 
         //Situação para destino vazio/safe
