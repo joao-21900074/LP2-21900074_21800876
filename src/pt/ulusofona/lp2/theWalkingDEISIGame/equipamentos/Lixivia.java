@@ -4,7 +4,7 @@ import pt.ulusofona.lp2.theWalkingDEISIGame.Equipamento;
 
 public class Lixivia extends Equipamento {
     //Protege se usar
-    private float litros = 1;
+    private int litros = 3;
 
     public Lixivia(int id, int idTipo, int[] posicao){
         super(id,idTipo,posicao);
@@ -16,7 +16,7 @@ public class Lixivia extends Equipamento {
 
     //A cada utilização gasta 0.3 litros, ou seja da pra usar 3 vezes
     public void usar(){
-        litros -= 0.3;
+        litros--;
     }
 
     @Override

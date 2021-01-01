@@ -216,7 +216,6 @@ public class TWDGameManager {
         }
 
         //Situação para destino vazio/safe
-        /*
         if(destino == 0){
             //Valida é uma Safe
             if(isDoorToSafeHaven(xD,yD)){
@@ -230,29 +229,8 @@ public class TWDGameManager {
                 }else{
                     return false;
                 }
-            }else{
-                //Atualiza o mapa
-                map[xD][yD] = peca;
             }
-        }else{
-            //Vivo para Vivo e Zombie para Zombie
-            if(getCreatureById(peca).getEquipe() == getCreatureById(destino).getEquipe()){
-                return false;
-            }else{//Vivo para Zombie + Zombie para Vivo
-                //VER O QUE O JOÃO TEM DENTRO DE CADA
-                if(getCreatureById(peca).getEquipe() == 10){
-                    Vivo vivo = getHumanoById(peca);
-                    vivo.validaMove(xD,yD,isDay,destino);
-                }else{//Zombie que vai mover
-                    Zombie outro = getZombieById(peca);
-                    outro.validaMove(xD,yD,isDay,destino);
-                }
-            }
-            //Atualiza o mapa
-            map[xD][yD] = peca;
         }
-
-         */
 
         /*Lógica se o Zumbi se mover para um lugar onde tenha um equipamento que ele possa destruir
         Botei dentro do Zumbi essa parte
@@ -275,7 +253,9 @@ public class TWDGameManager {
 
         //Muda a posição da criatura
         creature.setPosicao(new int[]{xD,yD});
-        map[xD][yD] = peca;
+        if(!(isDoorToSafeHaven(xD,yD))) {
+            map[xD][yD] = peca;
+        }
 
         //ARRUMAR ISSO
         if(droparItem) {
@@ -377,8 +357,8 @@ public class TWDGameManager {
                 case 7:
                     //Garrafa de Lixivia
                     Lixivia lixivia = (Lixivia) humano.getEquipamento();
-                    if(lixivia.getLitros() > 0.3){
-                        //Proteger + Gastou 0.3Litros (N sei como quebrar isso n)
+                    if(lixivia.getLitros() > 0){
+                        //Proteger + Gastou 0.3Litros
                         lixivia.usar();
                     }else{
                         morreu(humano);
@@ -616,7 +596,7 @@ public class TWDGameManager {
         try{
             FileWriter escrita = new FileWriter(fich);
             escrita.write(getWorldSize()[0] + " " + getWorldSize()[1] + "\n");
-            escrita.write(initialTeam + "\n");
+            escrita.write(currentTeam + "\n");
             escrita.write(creatures.size() + "\n");
             escrita.write(getAllCreaturesAtributes());
             escrita.write(equipamentos.size() + "\n");
@@ -637,7 +617,7 @@ public class TWDGameManager {
     }
 
     public String[] popCultureExtravaganza() {
-        return null;
+        return new String[0];
     }
 
     public List<String> getGameResults(){
