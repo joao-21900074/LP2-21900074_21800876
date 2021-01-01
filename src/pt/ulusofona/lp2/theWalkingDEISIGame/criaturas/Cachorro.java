@@ -20,17 +20,17 @@ public class Cachorro extends Vivo {
         }
 
         //Verifica se o cachorro esta tentando andar para cima/baixo
-        if(super.getPosicao()[1] == xD && super.getPosicao()[0] != yD) {
+        if(super.getPosicao()[0] == xD && super.getPosicao()[1] != yD) {
             return false;
         }
 
         //Verifica se o cachorro esta tentando andar para esquerda/direita
-        if(super.getPosicao()[1] != xD && super.getPosicao()[0] == yD) {
+        if(super.getPosicao()[0] != xD && super.getPosicao()[1] == yD) {
             return false;
         }
 
         //Verifica movimento no range valido
-        if((Math.abs(super.getPosicao()[0] - yD) > 2) || (Math.abs(super.getPosicao()[1] - xD) > 2)) {
+        if((Math.abs(super.getPosicao()[1] - yD) > 2) || (Math.abs(super.getPosicao()[0] - xD) > 2)) {
             return false;
         }
 
