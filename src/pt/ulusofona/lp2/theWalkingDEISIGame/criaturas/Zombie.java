@@ -19,7 +19,6 @@ public abstract class Zombie extends Creature {
     }
 
     public boolean validaMove(int xD, int yD, boolean isDay, int idDestino, int idTipoDestino) {
-
         /* Valida se tem outro Zombie no destino */
         if(idTipoDestino >= 0 && idTipoDestino <= 4 && idDestino > 0) {
             return false;
@@ -32,12 +31,11 @@ public abstract class Zombie extends Creature {
 
         /* Destruir item*/
         if(idDestino < 0){
-            System.out.println("Flw equip");
             destruirIten();
         }
 
         return true;
-    }
+}
 
     private String retornaNomeTipo(int idTipo) {
         switch (idTipo) {

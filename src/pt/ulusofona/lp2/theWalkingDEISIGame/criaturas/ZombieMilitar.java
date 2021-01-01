@@ -9,10 +9,10 @@ public class ZombieMilitar extends Zombie {
     @Override
     public boolean validaMove(int xD, int yD, boolean isDay, int idDestino, int idTipoDestino) {
         //Valida
+        System.out.println("Hello");
         if(!super.validaMove(xD,yD,isDay,idDestino,idTipoDestino)) {
             return false;
         }
-
         //Verifica movimento no range valido
         if((Math.abs(super.getPosicao()[1] - yD) > 3) || (Math.abs(super.getPosicao()[0] - xD) > 3)) {
             return false;

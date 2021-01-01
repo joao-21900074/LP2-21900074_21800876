@@ -10,7 +10,6 @@ public abstract class Humano extends Vivo {
         if(!super.validaMove(xD,yD,isDay,idDestino,idTipoDestino)) {
             return false;
         }
-
         /*
         Valida se o Humano tem equipamento quando for para cima de
         um zumbi

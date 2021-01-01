@@ -165,12 +165,15 @@ public class TWDGameManager {
         creature = getCreatureById(peca);
 
         //Verifica o que tem no destino e faz uma validação certa
+        System.out.println(getCreatureById(destino) != null);
         if(getCreatureById(destino) != null) {
             Creature creatureDestino = getCreatureById(destino);
             if(!creature.validaMove(xD,yD,isDay,creatureDestino.getId(), creatureDestino.getIdTipo())) {
+                System.out.println("Vou testar para ver se tem um criatura");
                 return false;
             }
         } else if(getEquipmentById(destino) != null) {
+
             Equipamento equipDestino = getEquipmentById(destino);
             if(!creature.validaMove(xD,yD,isDay,equipDestino.getId(), equipDestino.getIdTipo())) {
                 return false;
@@ -179,12 +182,14 @@ public class TWDGameManager {
 
         //Verifica se a peça esta pulando sobre outra peça ou equipamento
         if(xO == xD && Math.abs(yO - yD) >= 2) {//Pulo cima/baixo
+            System.out.println("Tentei pular pra cima ou pra baixo");
             if(yO > yD && getElementId(xD,yD + 1) != 0) {
                 return false;
             } else if (yO < yD && getElementId(xD, yD - 1) != 0) {
                 return false;
             }
         } else if(yO == yD && Math.abs(xO - xD) >= 2) {//Pulo equerda/direita
+            System.out.println("Tentei pular pra esquerda ou direita");
             if(xO > xD && getElementId(xD + 1,yD) != 0) {
                 return false;
             } else if(xO < xD && getElementId(xD - 1,yD) != 0) {
@@ -192,6 +197,7 @@ public class TWDGameManager {
             }
             //Diagonais
         } else if(xD != xO && yD != yO && Math.abs(xO - xD) >= 2 && Math.abs(yO - yD) >= 2) {
+            System.out.println("Tentei pular pra diagonal");
             if(xO > xD && yO < yD) {//Diagonal inferior esquerda
                 if(getElementId(xD + 1, yD - 1) != 0) {
                     return false;
@@ -233,6 +239,10 @@ public class TWDGameManager {
                 }else{
                     return false;
                 }
+            } else {
+                if(!creature.validaMove(xD,yD,isDay,0,-1)){
+                    return false;
+                };
             }
         }
 

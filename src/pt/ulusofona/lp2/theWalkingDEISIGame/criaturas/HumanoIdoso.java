@@ -15,7 +15,7 @@ public class HumanoIdoso extends Humano {
             return false;
         }
 
-        //Valida diagonal
+        //Valida diagonal (Idoso não pode andar na diagonal)
         if(super.getPosicao()[1] != xD && super.getPosicao()[0] != yD) {
             return false;
         }
@@ -36,6 +36,7 @@ public class HumanoIdoso extends Humano {
 
         //Valida se é noite (Humano idoso só pode se movimentar de dia)
         if(!isDay) {
+            System.out.println("to dormindo");
             return false;
         }
 
