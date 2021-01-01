@@ -32,6 +32,10 @@ public class ZombieIdoso extends Zombie {
             }
         }
 
+        if(!isDay) {
+            return false;
+        }
+
         return true;
     }
 }
