@@ -602,4 +602,9 @@ public class TWDGameManager {
         return new String[0];
     }
 
+    public List<String> getGameResults(){
+        return null;
+    }
+
+
 }
