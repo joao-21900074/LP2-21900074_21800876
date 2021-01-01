@@ -226,7 +226,9 @@ public class TWDGameManager {
                     //Deixa o icone na porta e some com o humano adicionado ele aos "Salvos"
                     map[xD][yD] = 0;
                     salvos.add(peca);
-                    //Talvez precise tirar ele dos humans(Para não afetar o Save)
+                    getHumanoById(peca).salvar();
+                    //Tirando dos humanos
+                    vivos.removeIf(v -> v == getHumanoById(peca));
                 //Invalida caso "Outro" foi para a safe
                 }else{
                     return false;
@@ -234,20 +236,13 @@ public class TWDGameManager {
             }
         }
 
-        /*Lógica se o Zumbi se mover para um lugar onde tenha um equipamento que ele possa destruir
-        Botei dentro do Zumbi essa parte
-        if(destino < 0 && creature.getEquipe() == 20) {
-            Zombie z = (Zombie) getCreatureById(destino);
-            z.destruirIten();
-        }*/
-
         //Humano Equipar
         if(destino < 0 && creature.getEquipe() == 10){
             Vivo v = (Vivo) getCreatureById(peca);
             if(v.getEquipamento() == null) {
                 v.equiparEquipamento(getEquipmentById(destino));
             }else{
-                //Dropar item
+                map[xD][yD] = peca;
                 map[xO][yO] = v.getEquipamento().getId();
                 v.equiparEquipamento(getEquipmentById(destino));
             }

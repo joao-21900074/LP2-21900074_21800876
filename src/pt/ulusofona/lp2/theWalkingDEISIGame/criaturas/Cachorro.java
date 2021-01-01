@@ -10,7 +10,7 @@ public class Cachorro extends Vivo {
 
     public Cachorro(int id, int idTipo, String nome, int[] posicao) {
         super(id,idTipo,nome,posicao);
-        this.imagePng = "blank.png";
+        this.imagePng = "unknown-piece.png";
     }
 
     public boolean validaMove(int xD, int yD, boolean isDay, int idDestino) {

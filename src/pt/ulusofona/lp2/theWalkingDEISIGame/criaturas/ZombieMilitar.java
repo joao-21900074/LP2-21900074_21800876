@@ -1,7 +1,5 @@
 package pt.ulusofona.lp2.theWalkingDEISIGame.criaturas;
 
-import pt.ulusofona.lp2.theWalkingDEISIGame.criaturas.Zombie;
-
 public class ZombieMilitar extends Zombie {
 
     public ZombieMilitar(int id, int idTipo, String nome, int[] posicao) {
@@ -9,9 +7,9 @@ public class ZombieMilitar extends Zombie {
     }
 
     @Override
-    public boolean validaMove(int xD, int yD, boolean isDay, int idDestino) {
+    public boolean validaMove(int xD, int yD, boolean isDay, int idDestino, int idTipoDestino) {
         //Valida
-        if(!super.validaMove(xD,yD,isDay,idDestino)) {
+        if(!super.validaMove(xD,yD,isDay,idDestino,idTipoDestino)) {
             return false;
         }
 

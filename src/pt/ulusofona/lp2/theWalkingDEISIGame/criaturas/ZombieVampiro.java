@@ -1,15 +1,14 @@
 package pt.ulusofona.lp2.theWalkingDEISIGame.criaturas;
 
-import pt.ulusofona.lp2.theWalkingDEISIGame.criaturas.Zombie;
-
 public class ZombieVampiro extends Zombie {
     public ZombieVampiro(int id, int idTipo, String nome, int[] posicao) {
         super(id,idTipo,nome,posicao);
     }
 
-    public boolean validaMove(int xD, int yD, boolean isDay, int idDestino) {
+    @Override
+    public boolean validaMove(int xD, int yD, boolean isDay, int idDestino, int idTipoDestino) {
         //Valida
-        if(!super.validaMove(xD,yD,isDay,idDestino)) {
+        if(!super.validaMove(xD,yD,isDay,idDestino,idTipoDestino)) {
             return false;
         }
 
@@ -19,12 +18,12 @@ public class ZombieVampiro extends Zombie {
         }
 
         //Valida se o turno é noturno (Zumbi Vampiro só pode se movimentar de noite)
-        if(isDay) {
+        if(isDay){
             return false;
         }
 
         //Valida se no destino tem uma Cabeça de Alho
-        if(idDestino == -5) {
+        if(idTipoDestino == 5) {
             return false;
         }
 
