@@ -20,14 +20,14 @@ public class ZombieIdoso extends Zombie {
 
         //Valida movimento esquerda/direita
         if(super.getPosicao()[1] == yD) {
-            if(Math.abs(super.getPosicao()[1] - xD) > 1) {
+            if(Math.abs(super.getPosicao()[0] - xD) > 1) {
                 return false;
             }
         }
 
         //Valida movimento baixo/cima
-        if(super.getPosicao()[1] == xD) {
-            if(Math.abs(super.getPosicao()[0] - yD) > 1) {
+        if(super.getPosicao()[0] == xD) {
+            if(Math.abs(super.getPosicao()[1] - yD) > 1) {
                 return false;
             }
         }
