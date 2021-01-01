@@ -5,7 +5,6 @@ import pt.ulusofona.lp2.theWalkingDEISIGame.*;
 public class Cachorro extends Vivo {
     int equipe = 10;
     Equipamento equipamento;
-    int nEquipamentos;
     boolean safe = false;
 
     public Cachorro(int id, int idTipo, String nome, int[] posicao) {

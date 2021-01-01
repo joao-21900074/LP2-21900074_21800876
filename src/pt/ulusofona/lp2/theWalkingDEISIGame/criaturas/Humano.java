@@ -16,9 +16,7 @@ public abstract class Humano extends Vivo {
         */
         if(idTipoDestino >= 0 && idTipoDestino <= 4 && idDestino > 0) { //Valida se tem Zumbi no Destino
             //Valida se o Humano esta sem equipamento
-            System.out.println(idDestino);
             if(equipamento == null) {
-                System.out.println("move() Humano");
                 return false;
             }
             /*
