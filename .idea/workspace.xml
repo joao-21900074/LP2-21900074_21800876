@@ -4,9 +4,6 @@
     <list default="true" id="277f7e4c-8220-423e-9b73-9c62c1e271f8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/criaturas/Cachorro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/criaturas/Cachorro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/criaturas/Vivo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/criaturas/Vivo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/criaturas/Zombie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/criaturas/Zombie.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -175,13 +172,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605113877526</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Editei ToString">
-      <created>1605637877019</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1605637877019</updated>
     </task>
     <task id="LOCAL-00011" summary="Edit hasEquipment and move">
       <created>1605713486410</created>
@@ -519,7 +509,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609531245529</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="Ajustes&#10;(Veneno Zombie)&#10;(Antido só pra envenenados)&#10;(Quantidade equipamentos Cachorro)&#10;(Luta entre crianças)&#10;(Humano mata Zombie e continua no lugar)">
+      <created>1609532664274</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1609532664274</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -546,7 +543,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="inverti coluna com linha" />
     <MESSAGE value="Criei resetGame()" />
     <MESSAGE value="Editei move() e editei leitura de arquivo" />
     <MESSAGE value="Editei leitura de arquivo" />
@@ -571,7 +567,8 @@
     <MESSAGE value="Arrumando move() Zombie" />
     <MESSAGE value="GameResult() adicionado" />
     <MESSAGE value="Função de batalha melhorada" />
-    <option name="LAST_COMMIT_MESSAGE" value="Função de batalha melhorada" />
+    <MESSAGE value="Ajustes&#10;(Veneno Zombie)&#10;(Antido só pra envenenados)&#10;(Quantidade equipamentos Cachorro)&#10;(Luta entre crianças)&#10;(Humano mata Zombie e continua no lugar)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajustes&#10;(Veneno Zombie)&#10;(Antido só pra envenenados)&#10;(Quantidade equipamentos Cachorro)&#10;(Luta entre crianças)&#10;(Humano mata Zombie e continua no lugar)" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/LP2_21900074_21800876$pt_ulusofona_lp2_theWalkingDEISIGame_in_Projeto_LP2.ic" NAME="pt.ulusofona.lp2.theWalkingDEISIGame in Projeto_LP2 Coverage Results" MODIFIED="1609435292135" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
