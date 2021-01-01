@@ -21,7 +21,7 @@ public class Vivo extends Creature {
     }
 
     @Override
-    public boolean validaMove(int xD, int yD, boolean isDay, int idDestino) {
+    public boolean validaMove(int xD, int yD, boolean isDay, int idDestino, int idTipoDestino) {
         /*
         Valida se um Vivo esta tentando se movimentar para
         um lugar onde tem outro vivo

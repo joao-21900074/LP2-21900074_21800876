@@ -267,6 +267,7 @@ public class TWDGameManager {
             if(tamanhoDiaNoite == 0) {//Muda o isDay depois de dois turnos
                 tamanhoDiaNoite = 2; //Reseta a váriavel
                 isDay = !isDay; //Inverte o valor de isDay
+                System.out.println("mudei para " + ((isDay) ? "Dia" : "Noite"));
             }
         }
 

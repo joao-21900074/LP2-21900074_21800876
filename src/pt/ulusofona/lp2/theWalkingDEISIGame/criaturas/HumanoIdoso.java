@@ -10,7 +10,7 @@ public class HumanoIdoso extends Humano {
     @Override
     public boolean validaMove(int xD, int yD, boolean isDay, int idDestino) {
 
-        //Validações comum para todos os Zombies
+        //Validações comum para todos os Humanos
         if(!super.validaMove(xD,yD,isDay,idDestino)) {
             return false;
         }
@@ -34,7 +34,7 @@ public class HumanoIdoso extends Humano {
             }
         }
 
-        //Valida se é noite (Humano idoso só pode se movimentar de noite)
+        //Valida se é noite (Humano idoso só pode se movimentar de dia)
         if(!isDay) {
             return false;
         }

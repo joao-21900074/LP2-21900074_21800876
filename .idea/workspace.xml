@@ -3,11 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="277f7e4c-8220-423e-9b73-9c62c1e271f8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game_sample.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Game_sample.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Creature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Creature.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/criaturas/Cachorro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/criaturas/Cachorro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/criaturas/ZombieAdulto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/criaturas/ZombieAdulto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/criaturas/ZombieMilitar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/criaturas/ZombieMilitar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/criaturas/Humano.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/criaturas/Humano.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/criaturas/HumanoIdoso.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/criaturas/HumanoIdoso.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/criaturas/Vivo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/criaturas/Vivo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/criaturas/Zombie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/criaturas/Zombie.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -175,6 +176,13 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605113877526</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Removi a classe Criatura e editei Humano e Zombie">
+      <created>1605456024994</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1605456024994</updated>
     </task>
     <task id="LOCAL-00006" summary="Editei TWd,Humano,Zombie e adicionei o arquivo com dados de teste">
       <created>1605621821001</created>
@@ -512,14 +520,7 @@
       <option name="project" value="LOCAL" />
       <updated>1609510200521</updated>
     </task>
-    <task id="LOCAL-00054" summary="Arrumando Safe Havens&#10;(Mudei a Lixivia)">
-      <created>1609512782814</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1609512782814</updated>
-    </task>
-    <option name="localTasksCounter" value="55" />
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -546,6 +547,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="edit move() denovo" />
     <MESSAGE value="editei o move() implementei o movimento do zombie" />
     <MESSAGE value="edit move() de novo" />
     <MESSAGE value="fiz alteração na leitura de arquivos" />
@@ -570,32 +572,13 @@
     <MESSAGE value="Refatorei o código. e fiz algumas alterações no toString de Humano e Cachorro" />
     <MESSAGE value="Equipar / Destruir Equipamento" />
     <MESSAGE value="Dropar Equipamento + Game Result&#10;(Ainda nenhum ta funcionando)" />
-    <MESSAGE value="Arrumando Safe Havens&#10;(Mudei a Lixivia)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Arrumando Safe Havens&#10;(Mudei a Lixivia)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dropar Equipamento + Game Result&#10;(Ainda nenhum ta funcionando)" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/LP2_21900074_21800876$pt_ulusofona_lp2_theWalkingDEISIGame_in_Projeto_LP2.ic" NAME="pt.ulusofona.lp2.theWalkingDEISIGame in Projeto_LP2 Coverage Results" MODIFIED="1609435292135" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>pt.ulusofona.lp2.theWalkingDEISIGame.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/LP2_21900074_21800876$TestTWDGameManager_falhaLeitura.ic" NAME="TestTWDGameManager.falhaLeitura Coverage Results" MODIFIED="1608812833196" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/LP2_21900074_21800876$TestTWDGameManager_testLeituraBad.ic" NAME="TestTWDGameManager.testLeituraBad Coverage Results" MODIFIED="1608812999971" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>pt.ulusofona.lp2.theWalkingDEISIGame.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/LP2_21900074_21800876$TestTWDGameManager_testInitialTeam.ic" NAME="TestTWDGameManager.testInitialTeam Coverage Results" MODIFIED="1608813491911" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>pt.ulusofona.lp2.theWalkingDEISIGame.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/LP2_21900074_21800876$TestTWDGameManager_testBatalhaHumanoNoEquip.ic" NAME="TestTWDGameManager.testBatalhaHumanoNoEquip Coverage Results" MODIFIED="1609257165497" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>pt.ulusofona.lp2.theWalkingDEISIGame.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/LP2_21900074_21800876$TestTWDGameManager_testEquipmentTypeId.ic" NAME="TestTWDGameManager.testEquipmentTypeId Coverage Results" MODIFIED="1608819854628" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>pt.ulusofona.lp2.theWalkingDEISIGame.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/LP2_21900074_21800876$TestTWDGameManager.ic" NAME="TestTWDGameManager Coverage Results" MODIFIED="1609435149939" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>pt.ulusofona.lp2.theWalkingDEISIGame.criaturas.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/LP2_21900074_21800876$TestTWDGameManager_testLeituraGood.ic" NAME="TestTWDGameManager.testLeituraGood Coverage Results" MODIFIED="1608813227857" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>pt.ulusofona.lp2.theWalkingDEISIGame.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/LP2_21900074_21800876$TestTWDGameManager_testBatalhaPistola.ic" NAME="TestTWDGameManager.testBatalhaPistola Coverage Results" MODIFIED="1609268072639" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>pt.ulusofona.lp2.theWalkingDEISIGame.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/LP2_21900074_21800876$Main.ic" NAME="Main Coverage Results" MODIFIED="1608812619621" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -604,7 +587,25 @@
     <SUITE FILE_PATH="coverage/LP2_21900074_21800876$TestTWDGameManager_testBatalhaMadeira.ic" NAME="TestTWDGameManager.testBatalhaMadeira Coverage Results" MODIFIED="1609261397564" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>pt.ulusofona.lp2.theWalkingDEISIGame.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/LP2_21900074_21800876$TestTWDGameManager_testLeituraBad.ic" NAME="TestTWDGameManager.testLeituraBad Coverage Results" MODIFIED="1608812999971" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/LP2_21900074_21800876$TestTWDGameManager_testLeituraGood.ic" NAME="TestTWDGameManager.testLeituraGood Coverage Results" MODIFIED="1608813227857" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>pt.ulusofona.lp2.theWalkingDEISIGame.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/LP2_21900074_21800876$TestTWDGameManager_testBatalhaPistola.ic" NAME="TestTWDGameManager.testBatalhaPistola Coverage Results" MODIFIED="1609268072639" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>pt.ulusofona.lp2.theWalkingDEISIGame.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/LP2_21900074_21800876$TestTWDGameManager_falhaLeitura.ic" NAME="TestTWDGameManager.falhaLeitura Coverage Results" MODIFIED="1608812833196" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>pt.ulusofona.lp2.theWalkingDEISIGame.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/LP2_21900074_21800876$TestTWDGameManager.ic" NAME="TestTWDGameManager Coverage Results" MODIFIED="1609435149939" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>pt.ulusofona.lp2.theWalkingDEISIGame.criaturas.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/LP2_21900074_21800876$pt_ulusofona_lp2_theWalkingDEISIGame_in_Projeto_LP2.ic" NAME="pt.ulusofona.lp2.theWalkingDEISIGame in Projeto_LP2 Coverage Results" MODIFIED="1609435292135" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>pt.ulusofona.lp2.theWalkingDEISIGame.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/LP2_21900074_21800876$TestTWDGameManager_testBatalhaHumanoNoEquip.ic" NAME="TestTWDGameManager.testBatalhaHumanoNoEquip Coverage Results" MODIFIED="1609257165497" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>pt.ulusofona.lp2.theWalkingDEISIGame.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/LP2_21900074_21800876$TestTWDGameManager_testEquipmentTypeId.ic" NAME="TestTWDGameManager.testEquipmentTypeId Coverage Results" MODIFIED="1608819854628" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>pt.ulusofona.lp2.theWalkingDEISIGame.*</FILTER>
     </SUITE>
   </component>

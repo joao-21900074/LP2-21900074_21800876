@@ -6,8 +6,8 @@ public abstract class Humano extends Vivo {
         this.imagePng = "human.png";
     }
 
-    public boolean validaMove(int xD, int yD, boolean isDay, int idDestino) {
-        if(!super.validaMove(xD,yD,isDay,idDestino)) {
+    public boolean validaMove(int xD, int yD, boolean isDay, int idDestino, int idTipoDestino) {
+        if(!super.validaMove(xD,yD,isDay,idDestino,idTipoDestino)) {
             return false;
         }
 
@@ -15,7 +15,7 @@ public abstract class Humano extends Vivo {
         Valida se o Humano tem equipamento quando for para cima de
         um zumbi
         */
-        if(idDestino >= 0 && idDestino <= 4) { //Valida se tem Zumbi no Destino
+        if(idTipoDestino >= 0 && idTipoDestino <= 4) { //Valida se tem Zumbi no Destino
             //Valida se o Humano esta sem equipamento
             if(equipamento == null) {
                 return false;
@@ -24,7 +24,7 @@ public abstract class Humano extends Vivo {
             Valida se tem o equipamento certo para enfrentar um
             Zumbi Vampiro
              */
-            if(equipamento.getIdTipo() != -6 && idDestino == 4) {
+            if(equipamento.getIdTipo() != -6 && idTipoDestino == 4) {
                 return false;
             }
         }
