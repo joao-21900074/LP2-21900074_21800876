@@ -213,8 +213,9 @@ public class TWDGameManager {
                 //Caso especifico criança
                 if(creature.getIdTipo() == 5){
                     Vivo crianca = getHumanoById(creature.getId());
-                    if(crianca.getEquipamento().getIdTipo() == 1 && creatureDestino.getIdTipo() != 0)
-                    return false;
+                    if(crianca.getEquipamento().getIdTipo() == 1 && creatureDestino.getIdTipo() != 0) {
+                        return false;
+                    }
                 }
                 if(creature.getEquipe() == 10){
                     batalha((Humano) getHumanoById(creature.getId()),getZombieById(creatureDestino.getId()));

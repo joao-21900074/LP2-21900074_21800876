@@ -26,7 +26,7 @@ public class Vivo extends Creature {
         Valida se um Vivo esta tentando se movimentar para
         um lugar onde tem outro vivo
         */
-        if(idDestino >= 5 && idDestino <= 9) {
+        if(idTipoDestino >= 5 && idTipoDestino <= 9 && idDestino > 0) {
             System.out.println("move() Vivo");
             return false;
         }
