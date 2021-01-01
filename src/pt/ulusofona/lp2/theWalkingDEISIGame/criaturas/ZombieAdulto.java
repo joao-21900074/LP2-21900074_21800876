@@ -15,7 +15,6 @@ public class ZombieAdulto extends Zombie {
 
         //Verifica movimento no range valido
         if((Math.abs(super.getPosicao()[0] - yD) > 2) || (Math.abs(super.getPosicao()[1] - xD) > 2)) {
-            System.out.println("2 if");
             return false;
         }
 

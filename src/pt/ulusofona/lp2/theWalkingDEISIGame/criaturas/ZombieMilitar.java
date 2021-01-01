@@ -1,7 +1,5 @@
 package pt.ulusofona.lp2.theWalkingDEISIGame.criaturas;
 
-import pt.ulusofona.lp2.theWalkingDEISIGame.criaturas.Zombie;
-
 public class ZombieMilitar extends Zombie {
 
     public ZombieMilitar(int id, int idTipo, String nome, int[] posicao) {
