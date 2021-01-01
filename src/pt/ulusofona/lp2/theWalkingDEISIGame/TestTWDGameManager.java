@@ -2,7 +2,6 @@ package pt.ulusofona.lp2.theWalkingDEISIGame;
 
 import org.junit.Test;
 import pt.ulusofona.lp2.theWalkingDEISIGame.criaturas.*;
-import pt.ulusofona.lp2.theWalkingDEISIGame.equipamentos.EscudoMadeira;
 
 import java.io.File;
 
@@ -235,7 +234,7 @@ public class TestTWDGameManager {
         humanoAdulto.equiparEquipamento(alho);
 
         testStart.batalha(humanoAdulto, zombieAdulto);
-        //System.out.println(testStart.humans.contains(hTest));
+        //System.out.println(testStart.vivos.contains(humanoAdulto));
         //False, morreu, alho não protege contra zombies normais
     }
 
@@ -293,7 +292,7 @@ public class TestTWDGameManager {
         testStart.zombies.add(zombieAdulto);
         testStart.batalha(humanoCrianca,zombieAdulto);
         //Criança morreu / Zombie Adulto ficou vivo
-        //System.out.println(testStart.humans.contains(humanoCrianca));
+        //System.out.println(testStart.vivos.contains(humanoCrianca));
         //System.out.println(testStart.zombies.contains(zombieAdulto));
     }
 

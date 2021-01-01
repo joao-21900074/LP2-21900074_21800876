@@ -4,10 +4,7 @@ import pt.ulusofona.lp2.theWalkingDEISIGame.criaturas.*;
 import pt.ulusofona.lp2.theWalkingDEISIGame.equipamentos.*;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class TWDGameManager {
     ArrayList<Creature> creatures = new ArrayList<>();
@@ -173,7 +170,7 @@ public class TWDGameManager {
                 return false;
             }
         } else if(getEquipmentById(destino) != null) {
-            if(!creature.validaMove(xD,yD,isDay,getEquipmentById(destino).getIdTipo())) {
+            if(!creature.validaMove(xD,yD,isDay,getEquipmentById(destino).getId())) {
                 return false;
             }
         }
@@ -257,16 +254,25 @@ public class TWDGameManager {
 
          */
 
+        //Humano Equipar
+        if(destino < 0 && creature.getEquipe() == 10){
+            Vivo v = (Vivo) getCreatureById(peca);
+            v.equiparEquipamento(getEquipmentById(destino));
+        }
 
-        //Lógica se o Zumbi se mover para um lugar onde tenha um equipamento que ele possa destruir
-        if(destino < 0 && currentTeam == 20) {
+        /*Lógica se o Zumbi se mover para um lugar onde tenha um equipamento que ele possa destruir
+        Botei dentro do Zumbi essa parte
+        if(destino < 0 && creature.getEquipe() == 20) {
             Zombie z = (Zombie) getCreatureById(destino);
             z.destruirIten();
-        }
+        }*/
+
+        //Lógica
 
         //Muda a posição da criatura
         creature.setPosicao(new int[]{xD,yD});
         map[xD][yD] = peca;
+
         //ARRUMAR ISSO
         if(droparItem) {
             map[xO][yO] = itemDropado;
@@ -291,7 +297,7 @@ public class TWDGameManager {
     }
 
     //Função para luta entre Humano e Zumbi
-    public void batalha(Humano humano, Zombie zombie){
+    public void batalha(Vivo humano, Zombie zombie){
         //Ainda n sei o q retonar isso
         //Talvez vá ser boolean, true quando matou e false quando morrer
         if(!humano.temEquipamento()){
@@ -397,17 +403,17 @@ public class TWDGameManager {
         return 0;
     }
 
-    public void morreu(Humano humano){
+    public void morreu(Vivo vivo){
         //Humano morreu + tirar da lista dos humanos
-        vivos.remove(humano);
+        vivos.removeIf(v -> v == vivo);
         //Humano vira Zombie + botar na lsita dos zombies
-        Creature novoZombie = Creature.criarCreature(humano.getId(),transformar(humano.getIdTipo()),
-                humano.getNome(),humano.getPosicao());
+        Creature novoZombie = Creature.criarCreature(vivo.getId(),transformar(vivo.getIdTipo()),
+                vivo.getNome(),vivo.getPosicao());
         zombies.add((Zombie) novoZombie);
     }
 
     public void matou(Zombie zombie){
-        zombies.remove(zombie);
+        zombies.removeIf(z -> z == zombie);
     }
 
     //Alterado para usar apenas a Lista das Criaturas

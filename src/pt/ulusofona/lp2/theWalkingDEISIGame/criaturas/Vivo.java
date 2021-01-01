@@ -9,7 +9,7 @@ public class Vivo extends Creature {
     String nomeTipo;
     private boolean safe = false;
     private boolean envenenado = false;
-    private int protecaoVeneno = 0;
+    private int protecaoVeneno = 2;
 
 
     //Construtor vazio
@@ -68,7 +68,6 @@ public class Vivo extends Creature {
 
         //Caso seja um veneno, humano ganha proteçao por 2 turnos + fica envenenado
         if(equipamento.getIdTipo() == 8){
-            this.protecaoVeneno = 2;
             this.envenenado = true;
         }
 
@@ -104,6 +103,14 @@ public class Vivo extends Creature {
 
     public int protecao(){
         return protecaoVeneno;
+    }
+
+    public void danificaProtecao(){
+        protecaoVeneno--;
+    }
+
+    public boolean estaEnvenenado(){
+        return envenenado;
     }
 
     @Override

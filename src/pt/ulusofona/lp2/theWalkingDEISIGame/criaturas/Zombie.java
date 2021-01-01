@@ -30,6 +30,11 @@ public abstract class Zombie extends Creature {
             return false;
         }
 
+        /* Destruir item (FALTA VERIFICAR O VAMPIRO CONTRA ALHO)*/
+        if(idDestino < 0){
+            destruirIten();
+        }
+
         return true;
     }
 
