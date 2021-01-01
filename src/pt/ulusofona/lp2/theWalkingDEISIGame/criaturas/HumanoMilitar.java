@@ -15,7 +15,7 @@ public class HumanoMilitar extends Humano {
         }
 
         //Verifica movimento no range valido
-        if((Math.abs(super.getPosicao()[0] - yD) > 3) || (Math.abs(super.getPosicao()[1] - xD) > 3)) {
+        if((Math.abs(super.getPosicao()[1] - yD) > 3) || (Math.abs(super.getPosicao()[0] - xD) > 3)) {
             return false;
         }
 

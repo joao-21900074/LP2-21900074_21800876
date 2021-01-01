@@ -17,7 +17,7 @@ public class HumanoAdulto extends Humano {
         }
 
         //Verifica movimento no range valido
-        if((Math.abs(super.getPosicao()[0] - yD) > 2) || (Math.abs(super.getPosicao()[1] - xD) > 2)) {
+        if((Math.abs(super.getPosicao()[1] - yD) > 2) || (Math.abs(super.getPosicao()[0] - xD) > 2)) {
             System.out.println("move() Adulto");
             return false;
         }
