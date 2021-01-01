@@ -179,46 +179,8 @@ public class TWDGameManager {
         }
 
         //Verifica se a peça esta pulando sobre outra peça ou equipamento
-        if(xO == xD && Math.abs(yO - yD) >= 2) {//Pulo cima/baixo
-            System.out.println("Tentei pular pra cima ou pra baixo");
-            if(yO > yD && getElementId(xD,yD + 1) != 0) {
-                return false;
-            } else if (yO < yD && getElementId(xD, yD - 1) != 0) {
-                return false;
-            }
-        } else if(yO == yD && Math.abs(xO - xD) >= 2) {//Pulo equerda/direita
-            System.out.println("Tentei pular pra esquerda ou direita");
-            if(xO > xD && getElementId(xD + 1,yD) != 0) {
-                return false;
-            } else if(xO < xD && getElementId(xD - 1,yD) != 0) {
-                return false;
-            }
-            //Diagonais
-        } else if(xD != xO && yD != yO && Math.abs(xO - xD) >= 2 && Math.abs(yO - yD) >= 2) {
-            System.out.println("Tentei pular pra diagonal");
-            if(xO > xD && yO < yD) {//Diagonal inferior esquerda
-                if(getElementId(xD + 1, yD - 1) != 0) {
-                    return false;
-                }
-            }
-
-            if(xO < xD && yO < yD) {//Diagonal inferior direita
-                if(getElementId(xD - 1, yD - 1) != 0) {
-                    return false;
-                }
-            }
-
-            if(xO > xD && yO > yD) {//Diagonal superior esquerda
-                if(getElementId(xD + 1, yD + 1) != 0) {
-                    return false;
-                }
-            }
-
-            if(xO < xD && yO > yD) {//Diagonal superior direita
-                if(getElementId(xD - 1, yD + 1) != 0) {
-                    return false;
-                }
-            }
+        if(!validaPuloCriatura(xO,yO,xD,yD)) {
+            return false;
         }
 
         //Situação para destino vazio/safe
@@ -283,6 +245,76 @@ public class TWDGameManager {
         }
 
         turnos++;
+
+        return true;
+    }
+
+    private boolean validaPuloCriatura(int xO, int yO, int xD, int yD) {
+        int intervalo = 0;
+        if(xO == xD && Math.abs(yO - yD) >= 2) {//Pulo cima/baixo
+            intervalo = Math.abs(yO - yD);
+            if(yO > yD) {
+                for(int i = 1; i <= intervalo; i++) {
+                    if(getElementId(xD, yD + i) != 0) {
+                        return false;
+                    }
+                }
+            } else if(yO < yD) {
+                for(int i = 1; i <= intervalo; i++) {
+                    if(getElementId(xD, yD - i) != 0) {
+                        return false;
+                    }
+                }
+            }
+        } else if(yO == yD && Math.abs(xO - xD) >= 2) {//Movimento esquerda direita
+            intervalo = Math.abs(xO - xD);
+            if(xO > xD) {
+                for(int i = 1; i <= intervalo; i++) {
+                    if(getElementId(xD + i, yD) != 0) {
+                        return false;
+                    }
+                }
+            } else if(xO < xD) {
+                for(int i = 1; i <= intervalo; i++) {
+                    if(getElementId(xD - 1, yD) != 0) {
+                        return false;
+                    }
+                }
+            }
+        } else if(xD != xO && yD != yO && Math.abs(xO - xD) >= 2 && Math.abs(yO - yD) >= 2) {//Movimento Diagonal
+            intervalo = Math.abs(xO - xD);
+            if(xO > xD && yO < yD) {//Diagonal inferior esquerda
+                for(int i = 1; i <= intervalo; i++) {
+                    if(getElementId(xD + i, yD - i) != 0) {
+                        return false;
+                    };
+                }
+            }
+
+            if(xO < xD && yO < yD) {//Diagonal inferior direita
+                for(int i = 1; i <= intervalo; i++) {
+                    if(getElementId(xD - i, yD - i) != 0) {
+                        return false;
+                    }
+                }
+            }
+
+            if(xO > xD && yO > yD) {//Diagonal superior esquerda
+                for(int i = 1; i <= intervalo; i++) {
+                    if(getElementId(xD + i, yD + i) != 0) {
+                        return false;
+                    }
+                }
+            }
+
+            if(xO < xD && yO > yD) {//Diagonal sueperior direita
+                for(int i = 1; i <= intervalo; i++) {
+                    if(getElementId(xD - i, yD + i) != 0) {
+                        return false;
+                    }
+                }
+            }
+        }
 
         return true;
     }
