@@ -8,9 +8,9 @@ public class HumanoMilitar extends Humano {
     }
 
     @Override
-    public boolean validaMove(int xD, int yD, boolean isDay, int idDestino) {
+    public boolean validaMove(int xD, int yD, boolean isDay, int idDestino, int idTipoDestino) {
         //Valida condições gerais de Humano
-        if(!super.validaMove(xD, yD, isDay, idDestino)){
+        if(!super.validaMove(xD, yD, isDay, idDestino, idTipoDestino)){
             return false;
         }
 

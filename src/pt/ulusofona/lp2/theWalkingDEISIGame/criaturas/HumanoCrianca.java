@@ -7,9 +7,9 @@ public class HumanoCrianca extends Humano {
         super(id,idTipo,nome,posicao);
     }
 
-    public boolean validaMove(int xD, int yD, boolean isDay, int idDestino) {
+    public boolean validaMove(int xD, int yD, boolean isDay, int idDestino, int idTipoDestino) {
         //Validações comum para todos os Zombies
-        if(!super.validaMove(xD,yD,isDay,idDestino)) {
+        if(!super.validaMove(xD,yD,isDay,idDestino, idTipoDestino)) {
             return false;
         }
 

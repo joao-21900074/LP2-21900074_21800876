@@ -166,11 +166,13 @@ public class TWDGameManager {
 
         //Verifica o que tem no destino e faz uma validação certa
         if(getCreatureById(destino) != null) {
-            if(!creature.validaMove(xD,yD,isDay,getCreatureById(destino).getIdTipo())) {
+            Creature creatureDestino = getCreatureById(destino);
+            if(!creature.validaMove(xD,yD,isDay,creatureDestino.getId(), creatureDestino.getIdTipo())) {
                 return false;
             }
         } else if(getEquipmentById(destino) != null) {
-            if(!creature.validaMove(xD,yD,isDay,getEquipmentById(destino).getId())) {
+            Equipamento equipDestino = getEquipmentById(destino);
+            if(!creature.validaMove(xD,yD,isDay,equipDestino.getId(), equipDestino.getIdTipo())) {
                 return false;
             }
         }
