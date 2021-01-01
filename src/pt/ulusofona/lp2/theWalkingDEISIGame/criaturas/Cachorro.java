@@ -13,9 +13,9 @@ public class Cachorro extends Vivo {
         this.imagePng = "unknown-piece.png";
     }
 
-    public boolean validaMove(int xD, int yD, boolean isDay, int idDestino) {
+    public boolean validaMove(int xD, int yD, boolean isDay, int idDestino, int idTipoDestino) {
 
-        if(!super.validaMove(xD,yD,isDay,idDestino)) {
+        if(!super.validaMove(xD,yD,isDay,idDestino,idTipoDestino)) {
             return false;
         }
 

@@ -1,7 +1,5 @@
 package pt.ulusofona.lp2.theWalkingDEISIGame.criaturas;
 
-import pt.ulusofona.lp2.theWalkingDEISIGame.criaturas.Humano;
-
 public class HumanoCrianca extends Humano {
     public HumanoCrianca(int id, int idTipo, String nome, int[] posicao) {
         super(id,idTipo,nome,posicao);
