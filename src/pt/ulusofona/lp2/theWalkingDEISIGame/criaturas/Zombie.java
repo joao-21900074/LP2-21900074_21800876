@@ -32,6 +32,7 @@ public abstract class Zombie extends Creature {
 
         /* Destruir item*/
         if(idDestino < 0){
+            System.out.println("Flw equip");
             destruirIten();
         }
 
