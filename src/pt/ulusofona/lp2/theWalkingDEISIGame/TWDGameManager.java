@@ -141,6 +141,7 @@ public class TWDGameManager {
 
 
     public boolean move(int xO, int yO, int xD, int yD) {
+        boolean fight = false;
         boolean droparItem = false;
         int itemDropado = 0;
         int peca; //Peça que o jogador vai mover
@@ -243,6 +244,16 @@ public class TWDGameManager {
                     return false;
                 }
             }
+        }else if(destino > 0){
+            if(getCreatureById(destino) != null) {
+                Creature creatureDestino = getCreatureById(destino);
+                if(creature.getEquipe() == 10){
+                    batalha((Humano) getHumanoById(creature.getId()),getZombieById(creatureDestino.getId()));
+                }else{
+                    batalha((Humano) getHumanoById(creatureDestino.getId()), getZombieById(creature.getId()));
+                }
+                fight = true;
+            }
         }
 
         //Humano Equipar
@@ -258,15 +269,14 @@ public class TWDGameManager {
         }
 
         //Muda a posição da criatura
-        creature.setPosicao(new int[]{xD,yD});
-        if(!(isDoorToSafeHaven(xD,yD))) {
-            map[xD][yD] = peca;
+        if(creatures.contains(creature)) {
+            creature.setPosicao(new int[]{xD, yD});
+            if (!(isDoorToSafeHaven(xD, yD))) {
+                map[xD][yD] = peca;
+            }
         }
 
-        //ARRUMAR ISSO
-        if(droparItem) {
-            map[xO][yO] = itemDropado;
-        } else if(destino != peca) {
+        if(!fight) {
             map[xO][yO] = 0;
         }
 
@@ -288,9 +298,8 @@ public class TWDGameManager {
     }
 
     //Função para luta entre Humano e Zumbi
-    public void batalha(Vivo humano, Zombie zombie){
-        //Ainda n sei o q retonar isso
-        //Talvez vá ser boolean, true quando matou e false quando morrer
+    public void batalha(Humano humano, Zombie zombie){
+        System.out.println("Fight");
         if(!humano.temEquipamento()){
             morreu(humano);
         }else{
@@ -397,14 +406,17 @@ public class TWDGameManager {
     public void morreu(Vivo vivo){
         //Humano morreu + tirar da lista dos humanos
         vivos.removeIf(v -> v == vivo);
+        creatures.removeIf(c -> c == vivo);
         //Humano vira Zombie + botar na lsita dos zombies
         Creature novoZombie = Creature.criarCreature(vivo.getId(),transformar(vivo.getIdTipo()),
                 vivo.getNome(),vivo.getPosicao());
         zombies.add((Zombie) novoZombie);
+        creatures.add(novoZombie);
     }
 
     public void matou(Zombie zombie){
         zombies.removeIf(z -> z == zombie);
+        creatures.removeIf(c -> c == zombie);
     }
 
     //Alterado para usar apenas a Lista das Criaturas
