@@ -254,12 +254,6 @@ public class TWDGameManager {
 
          */
 
-        //Humano Equipar
-        if(destino < 0 && creature.getEquipe() == 10){
-            Vivo v = (Vivo) getCreatureById(peca);
-            v.equiparEquipamento(getEquipmentById(destino));
-        }
-
         /*Lógica se o Zumbi se mover para um lugar onde tenha um equipamento que ele possa destruir
         Botei dentro do Zumbi essa parte
         if(destino < 0 && creature.getEquipe() == 20) {
@@ -267,7 +261,17 @@ public class TWDGameManager {
             z.destruirIten();
         }*/
 
-        //Lógica
+        //Humano Equipar
+        if(destino < 0 && creature.getEquipe() == 10){
+            Vivo v = (Vivo) getCreatureById(peca);
+            if(v.getEquipamento() == null) {
+                v.equiparEquipamento(getEquipmentById(destino));
+            }else{
+                //Dropar item
+                map[xO][yO] = v.getEquipamento().getId();
+                v.equiparEquipamento(getEquipmentById(destino));
+            }
+        }
 
         //Muda a posição da criatura
         creature.setPosicao(new int[]{xD,yD});
@@ -635,4 +639,9 @@ public class TWDGameManager {
     public String[] popCultureExtravaganza() {
         return null;
     }
+
+    public List<String> getGameResults(){
+        return null;
+    }
+
 }
