@@ -27,6 +27,7 @@ public class Vivo extends Creature {
         um lugar onde tem outro vivo
         */
         if(idDestino >= 5 && idDestino <= 9) {
+            System.out.println("move() Vivo");
             return false;
         }
 

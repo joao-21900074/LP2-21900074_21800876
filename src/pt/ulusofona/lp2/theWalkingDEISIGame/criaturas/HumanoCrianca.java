@@ -6,26 +6,26 @@ public class HumanoCrianca extends Humano {
     }
 
     public boolean validaMove(int xD, int yD, boolean isDay, int idDestino, int idTipoDestino) {
-        //Validações comum para todos os Zombies
+        //Validações comum para todos os Humanos
         if(!super.validaMove(xD,yD,isDay,idDestino, idTipoDestino)) {
             return false;
         }
 
         //Valida diagonal
-        if(super.getPosicao()[1] != xD && super.getPosicao()[0] != yD) {
+        if(super.getPosicao()[0] != xD && super.getPosicao()[1] != yD) {
             return false;
         }
 
         //Valida movimento esquerda/direita
-        if(super.getPosicao()[0] == yD) {
-            if(Math.abs(super.getPosicao()[1] - xD) > 1) {
+        if(super.getPosicao()[1] == yD) {
+            if(Math.abs(super.getPosicao()[0] - xD) > 1) {
                 return false;
             }
         }
 
         //Valida movimento baixo/cima
-        if(super.getPosicao()[1] == xD) {
-            if(Math.abs(super.getPosicao()[0] - yD) > 1) {
+        if(super.getPosicao()[0] == xD) {
+            if(Math.abs(super.getPosicao()[1] - yD) > 1) {
                 return false;
             }
         }

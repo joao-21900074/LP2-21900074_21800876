@@ -165,7 +165,6 @@ public class TWDGameManager {
         creature = getCreatureById(peca);
 
         //Verifica o que tem no destino e faz uma validação certa
-        System.out.println(getCreatureById(destino) != null);
         if(getCreatureById(destino) != null) {
             Creature creatureDestino = getCreatureById(destino);
             if(!creature.validaMove(xD,yD,isDay,creatureDestino.getId(), creatureDestino.getIdTipo())) {
@@ -173,7 +172,6 @@ public class TWDGameManager {
                 return false;
             }
         } else if(getEquipmentById(destino) != null) {
-
             Equipamento equipDestino = getEquipmentById(destino);
             if(!creature.validaMove(xD,yD,isDay,equipDestino.getId(), equipDestino.getIdTipo())) {
                 return false;
@@ -239,10 +237,11 @@ public class TWDGameManager {
                 }else{
                     return false;
                 }
-            } else {
+            }else{
                 if(!creature.validaMove(xD,yD,isDay,0,-1)){
+                    System.out.println("move() TWD");
                     return false;
-                };
+                }
             }
         }
 
@@ -442,31 +441,6 @@ public class TWDGameManager {
     }
 
     // pronto
-    public List<String> getSurvivors() {
-        List<String> retorno = new ArrayList<>();
-        String listHumanos = "";
-        String listaZombie = "";
-
-        for(int i = 0; i < vivos.size(); i++){
-            listHumanos += vivos.get(i).getId() + " " + vivos.get(i).getNome() + "\n";
-        }
-
-        for(int i = 0; i < zombies.size(); i++){
-            listaZombie += zombies.get(i).getId() + " (antigamente conhecido como " + zombies.get(i).getNome() + ")";
-            if(i == zombies.size() - 1){
-                listaZombie += "\n";
-            }
-        }
-
-        String infoTurno = "Nr. de turnos terminados:\n" + turnos + "\n\n" + "OS VIVOS\n" + listHumanos + "\n" +
-                "OS OUTROS\n" + listaZombie;
-
-        retorno.add(infoTurno);
-
-        return retorno;
-    }
-
-    // pronto
     public boolean isDay() {
         return isDay;
     }
@@ -626,10 +600,6 @@ public class TWDGameManager {
 
     public String[] popCultureExtravaganza() {
         return new String[0];
-    }
-
-    public List<String> getGameResults(){
-        return null;
     }
 
 }

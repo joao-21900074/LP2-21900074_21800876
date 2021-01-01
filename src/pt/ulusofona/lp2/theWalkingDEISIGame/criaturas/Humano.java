@@ -14,9 +14,11 @@ public abstract class Humano extends Vivo {
         Valida se o Humano tem equipamento quando for para cima de
         um zumbi
         */
-        if(idTipoDestino >= 0 && idTipoDestino <= 4) { //Valida se tem Zumbi no Destino
+        if(idTipoDestino >= 0 && idTipoDestino <= 4 && idDestino > 0) { //Valida se tem Zumbi no Destino
             //Valida se o Humano esta sem equipamento
+            System.out.println(idDestino);
             if(equipamento == null) {
+                System.out.println("move() Humano");
                 return false;
             }
             /*
@@ -24,6 +26,7 @@ public abstract class Humano extends Vivo {
             Zumbi Vampiro
              */
             if(equipamento.getIdTipo() != -6 && idTipoDestino == 4) {
+                System.out.println("move() Humano");
                 return false;
             }
         }
