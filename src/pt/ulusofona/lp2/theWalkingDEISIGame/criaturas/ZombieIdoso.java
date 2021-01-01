@@ -14,12 +14,12 @@ public class ZombieIdoso extends Zombie {
         }
 
         //Valida diagonal
-        if(super.getPosicao()[1] != xD && super.getPosicao()[0] != yD) {
+        if(super.getPosicao()[0] != xD && super.getPosicao()[1] != yD) {
             return false;
         }
 
         //Valida movimento esquerda/direita
-        if(super.getPosicao()[0] == yD) {
+        if(super.getPosicao()[1] == yD) {
             if(Math.abs(super.getPosicao()[1] - xD) > 1) {
                 return false;
             }
