@@ -210,8 +210,10 @@ public class TWDGameManager {
             //Confirmando que temos 2 criaturas lutando
             if(getCreatureById(destino) != null) {
                 Creature creatureDestino = getCreatureById(destino);
-                //Caso especifico criançaZombie vs AdultoZombie
-                if(creature.getIdTipo() == 5 && !(creatureDestino.getIdTipo() == 0)){
+                //Caso especifico criança
+                if(creature.getIdTipo() == 5){
+                    Vivo crianca = getHumanoById(creature.getId());
+                    if(crianca.getEquipamento().getIdTipo() == 1 && creatureDestino.getIdTipo() != 0)
                     return false;
                 }
                 if(creature.getEquipe() == 10){
@@ -425,6 +427,7 @@ public class TWDGameManager {
     //Auxiliares para batalha
     //Muda o id do Humano para id do Zombie
     public int transformar(int idHumano){
+        turnos = 0;
         switch (idHumano){
             case 5:
                 return 0;

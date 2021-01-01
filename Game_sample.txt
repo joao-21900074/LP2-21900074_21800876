@@ -10,7 +10,7 @@
 7 : 6 : AdultoVivo : 1 : 2
 8 : 7 : MilitarVivo : 2 : 8
 9 : 8 : IdosoVivo : 2 : 9
-10 : 9 : Cão : 0 : 0
+10 : 9 : Cão : 2 : 7
 11
 -1 : 0 : 0 : 1
 -2 : 1 : 0 : 2
