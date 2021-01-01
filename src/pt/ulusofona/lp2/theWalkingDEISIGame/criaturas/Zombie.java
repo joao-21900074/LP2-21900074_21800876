@@ -18,15 +18,15 @@ public abstract class Zombie extends Creature {
         nItensDestruido++;
     }
 
-    public boolean validaMove(int xD, int yD, boolean isDay, int idDestino) {
+    public boolean validaMove(int xD, int yD, boolean isDay, int idDestino, int idTipoDestino) {
 
         /* Valida se tem outro Zombie no destino */
-        if(idDestino >= 0 && idDestino <= 4) {
+        if(idTipoDestino >= 0 && idTipoDestino <= 4) {
             return false;
         }
 
         /* Valida se tem um cachorro no destino */
-        if(idDestino == 9) {
+        if(idTipoDestino == 9) {
             return false;
         }
 

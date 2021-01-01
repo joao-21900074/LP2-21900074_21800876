@@ -40,7 +40,7 @@ public abstract class Creature {
         posicao = newPosicao;
     }
 
-    public abstract boolean validaMove(int xD, int yD, boolean isDay, int idDestino);
+    public abstract boolean validaMove(int xD, int yD, boolean isDay, int idDestino, int idTipoDestino);
 
     //Factory
     static Creature criarCreature(int id, int idTipo, String nome, int[]posicao){
