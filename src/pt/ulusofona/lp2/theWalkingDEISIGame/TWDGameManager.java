@@ -223,18 +223,6 @@ public class TWDGameManager {
             }
         }
 
-        //Humano Equipar
-        if(destino < 0 && creature.getEquipe() == 10){
-            Vivo v = (Vivo) getCreatureById(peca);
-            if(v.getEquipamento() == null) {
-                v.equiparEquipamento(getEquipmentById(destino));
-            }else{
-                map[xD][yD] = peca;
-                map[xO][yO] = v.getEquipamento().getId();
-                v.equiparEquipamento(getEquipmentById(destino));
-            }
-        }
-
         //Muda a posição da criatura
         if(creatures.contains(creature) && !fight) {
             creature.setPosicao(new int[]{xD, yD});
@@ -245,6 +233,17 @@ public class TWDGameManager {
 
         if(!fight) {
             map[xO][yO] = 0;
+        }
+
+        //Humano Equipar
+        if(destino < 0 && creature.getEquipe() == 10){
+            Vivo v = (Vivo) getCreatureById(peca);
+            if(v.getEquipamento() == null) {
+                v.equiparEquipamento(getEquipmentById(destino));
+            }else{
+                map[xO][yO] = v.getEquipamento().getId();
+                v.equiparEquipamento(getEquipmentById(destino));
+            }
         }
 
         //Muda o time depois da jogada
