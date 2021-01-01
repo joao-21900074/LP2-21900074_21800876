@@ -245,8 +245,13 @@ public class TWDGameManager {
                 }
             }
         }else if(destino > 0){
+            //Confirmando que temos 2 criaturas lutando
             if(getCreatureById(destino) != null) {
                 Creature creatureDestino = getCreatureById(destino);
+                //Caso especifico criançaZombie vs AdultoZombie
+                if(creature.getIdTipo() == 5 && !(creatureDestino.getIdTipo() == 0)){
+                    return false;
+                }
                 if(creature.getEquipe() == 10){
                     batalha((Humano) getHumanoById(creature.getId()),getZombieById(creatureDestino.getId()));
                 }else{
@@ -269,7 +274,7 @@ public class TWDGameManager {
         }
 
         //Muda a posição da criatura
-        if(creatures.contains(creature)) {
+        if(creatures.contains(creature) && !fight) {
             creature.setPosicao(new int[]{xD, yD});
             if (!(isDoorToSafeHaven(xD, yD))) {
                 map[xD][yD] = peca;
@@ -299,7 +304,6 @@ public class TWDGameManager {
 
     //Função para luta entre Humano e Zumbi
     public void batalha(Humano humano, Zombie zombie){
-        System.out.println("Fight");
         if(!humano.temEquipamento()){
             morreu(humano);
         }else{

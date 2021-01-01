@@ -34,6 +34,11 @@ public abstract class Zombie extends Creature {
             destruirIten();
         }
 
+        //Valida se tem venveno no chão
+        if(idTipoDestino == 8){
+            return false;
+        }
+
         return true;
 }
 

@@ -31,6 +31,10 @@ public class Vivo extends Creature {
             return false;
         }
 
+        if(idTipoDestino == 9 && !envenenado){
+            return false;
+        }
+
         return true;
     }
 
@@ -70,6 +74,10 @@ public class Vivo extends Creature {
         //Caso seja um veneno, humano ganha proteçao por 2 turnos + fica envenenado
         if(equipamento.getIdTipo() == 8){
             this.envenenado = true;
+        }
+
+        if(equipamento.getIdTipo() == 9){
+            this.envenenado = false;
         }
 
         //Lembrar de implementar a situação onde o jogador tem um equipamento
