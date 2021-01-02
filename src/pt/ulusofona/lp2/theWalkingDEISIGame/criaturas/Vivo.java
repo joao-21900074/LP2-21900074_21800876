@@ -69,6 +69,7 @@ public class Vivo extends Creature {
 
     public boolean equiparEquipamento(Equipamento equipamento) {
         if(equipamento == null) {
+            this.equipamento = null;
             return false;
         }
 
