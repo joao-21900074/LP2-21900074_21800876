@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="277f7e4c-8220-423e-9b73-9c62c1e271f8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TestTWDGameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TestTWDGameManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,7 +37,7 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Auto-Mercadao" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -173,13 +172,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605113877526</updated>
-    </task>
-    <task id="LOCAL-00022" summary="edit startGame">
-      <created>1605804886306</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1605804886306</updated>
     </task>
     <task id="LOCAL-00023" summary="edit startGame move() denovo">
       <created>1605807752955</created>
@@ -517,7 +509,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609607192709</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="Adicionado +testes">
+      <created>1609607548809</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1609607548809</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -544,7 +543,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Save Game V1&#10;+ Teste/Funções Auxiliares&#10;+ LoadGame&#10;(getPosicao para Equipamento e Criatura)&#10;(Falta alterar a posicao da Criatura quando move)&#10;(Falta ordenar os dados do ficheiro de save)" />
     <MESSAGE value="Validação move() Equipe&#10;(Adicionado o numero da equipe em Humano e Zombie)" />
     <MESSAGE value="Validação move() Safe&#10;(Valido quando vivo entra + Adicionado aos salvos)&#10;(Invalido quando o outro entra)" />
     <MESSAGE value="Save Game V2&#10;(Funcionando 100%)&#10;(Crirei get EquipmentById)&#10;(Alterei todas as funções auxiliares)" />
@@ -569,7 +567,8 @@
     <MESSAGE value="Implementei getResults()" />
     <MESSAGE value="Editei gameIsOver()" />
     <MESSAGE value="Ajutes GameResult" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajutes GameResult" />
+    <MESSAGE value="Adicionado +testes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adicionado +testes" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/LP2_21900074_21800876$pt_ulusofona_lp2_theWalkingDEISIGame_in_Projeto_LP2.ic" NAME="pt.ulusofona.lp2.theWalkingDEISIGame in Projeto_LP2 Coverage Results" MODIFIED="1609607485841" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

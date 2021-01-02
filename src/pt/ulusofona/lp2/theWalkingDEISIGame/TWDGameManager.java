@@ -741,7 +741,7 @@ public class TWDGameManager {
         resultado.add("");
         resultado.add("OS OUTROS");
         for(Zombie z : zombies) {
-            resultado.add(z.getId() + " (antigamente conhecido como <" + z.getNome() + ">)");
+            resultado.add(z.getId() + " (antigamente conhecido como " + z.getNome() + ")");
         }
         resultado.add("");
         resultado.add("Num safe haven:");
