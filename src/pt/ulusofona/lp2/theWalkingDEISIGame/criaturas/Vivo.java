@@ -82,8 +82,10 @@ public class Vivo extends Creature {
         }
 
         if(equipamento.getIdTipo() == 9){
+            assert equipamento instanceof Antidoto;
             Antidoto a = (Antidoto) equipamento;
             a.tomar();
+            protecaoVeneno = 0;
             this.envenenado = false;
         }
 
