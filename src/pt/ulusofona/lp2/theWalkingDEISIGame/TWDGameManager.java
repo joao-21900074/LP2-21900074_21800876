@@ -220,20 +220,23 @@ public class TWDGameManager {
                 if(creature.getEquipe() == 10){
                     Humano h = (Humano) getHumanoById(creature.getId());
                     batalha(h,getZombieById(creatureDestino.getId()));
-                    if(creatures.contains(h)){
+                    //Humano pega posição do zombie, quando equipamento ofensivo
+                    if(creatures.contains(h) && !h.getEquipamento().isDefensivo()){
                         h.setPosicao(new int[]{xD, yD});
                         map[xD][yD] = peca;
                         map[xO][yO] = 0;
                     }
-                }else{
-                    batalha((Humano) getHumanoById(creatureDestino.getId()), getZombieById(creature.getId()));
+                }else if(creature.getEquipe() == 20){
+                    Humano h = (Humano) getHumanoById(creatureDestino.getId());
+                    batalha(h, getZombieById(creature.getId()));
+                    //quando zombie, vai pra cima de humano(ofensivo) ele some
                 }
                 fight = true;
             }
         }
 
         //Muda a posição da criatura
-        if(creatures.contains(creature)) {
+        if(creatures.contains(creature) && !fight) {
             creature.setPosicao(new int[]{xD, yD});
             if (!(isDoorToSafeHaven(xD, yD))) {
                 map[xD][yD] = peca;
@@ -431,7 +434,6 @@ public class TWDGameManager {
                     //Garrafa de Lixivia
                     Lixivia lixivia = (Lixivia) humano.getEquipamento();
                     if(lixivia.getLitros() > 0){
-                        //Proteger + Gastou 0.3Litros
                         lixivia.usar();
                         if(lixivia.getLitros() <= 0) {//Destroe lixivia quando acaba a carga
                             humano.equiparEquipamento(null);

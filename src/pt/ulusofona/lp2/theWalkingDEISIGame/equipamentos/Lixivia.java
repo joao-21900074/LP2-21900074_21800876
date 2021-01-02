@@ -10,7 +10,7 @@ public class Lixivia extends Equipamento {
         super(id,idTipo,posicao);
     }
 
-    public float getLitros(){
+    public int getLitros(){
         return litros;
     }
 
