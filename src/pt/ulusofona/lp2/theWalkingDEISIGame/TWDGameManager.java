@@ -227,10 +227,11 @@ public class TWDGameManager {
         }
 
         //Muda a posição da criatura
-        if(creatures.contains(creature) && !fight) {
+        if(creatures.contains(creature)) {
             creature.setPosicao(new int[]{xD, yD});
             if (!(isDoorToSafeHaven(xD, yD))) {
                 map[xD][yD] = peca;
+                map[xO][yO] = 0;
             }
         }
 
@@ -241,12 +242,16 @@ public class TWDGameManager {
         //Humano Equipar
         if(destino < 0 && creature.getEquipe() == 10){
             Vivo v = (Vivo) getCreatureById(peca);
-            if(v.getEquipamento() == null) {
+            if (v.getEquipamento() == null) {
                 v.equiparEquipamento(getEquipmentById(destino));
-            }else{
+            } else {
                 map[xO][yO] = v.getEquipamento().getId();
                 v.equiparEquipamento(getEquipmentById(destino));
             }
+        }else if(destino == 0 && creature.getIdTipo() == 8){
+            Vivo v = (Vivo) getCreatureById(peca);
+            map[xO][yO] = v.getEquipamento().getId();
+            v.equiparEquipamento(null);
         }
 
         //Muda o time depois da jogada
@@ -260,9 +265,6 @@ public class TWDGameManager {
                 System.out.println("mudei para " + ((isDay) ? "Dia" : "Noite"));
             }
         }
-
-        System.out.println(getElementId(xD,yD));//Destino = 0
-        System.out.println(getElementId(xO,yO));//Aonde eu to = 2
 
         turnos++;
 
