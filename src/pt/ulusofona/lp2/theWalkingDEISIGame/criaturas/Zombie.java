@@ -4,7 +4,6 @@ import pt.ulusofona.lp2.theWalkingDEISIGame.Creature;
 
 public abstract class Zombie extends Creature {
     private int nItensDestruido = 0;
-    private int equipe = 20;
     private String nomeTipo;
     private boolean dead = false;
 
@@ -68,7 +67,7 @@ public abstract class Zombie extends Creature {
     }
 
     @Override
-    public int getEquipe(){return equipe;}
+    public int getEquipe(){return 20;}
 
     //Mudar para cada tipo de Zombie
     public String toString() {

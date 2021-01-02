@@ -34,7 +34,6 @@ public class HumanoIdoso extends Humano {
 
         //Valida se é noite (Humano idoso só pode se movimentar de dia)
         if(!isDay) {
-            System.out.println("to dormindo");
             return false;
         }
 
