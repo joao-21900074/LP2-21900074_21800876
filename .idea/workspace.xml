@@ -3,10 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="277f7e4c-8220-423e-9b73-9c62c1e271f8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game_sample.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Game_sample.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/criaturas/Zombie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/criaturas/Zombie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/criaturas/ZombieVampiro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/criaturas/ZombieVampiro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-files/allequipments" beforeDir="false" afterPath="$PROJECT_DIR$/test-files/allequipments" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -175,13 +174,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605113877526</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Edit move">
-      <created>1605716942899</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1605716942899</updated>
     </task>
     <task id="LOCAL-00014" summary="Editei move() e criei getID() pra Equipamento">
       <created>1605724289286</created>
@@ -519,7 +511,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609583583537</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="+Ajustes&#10;(Arrumando certo moves)">
+      <created>1609584846225</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1609584846225</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -546,7 +545,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Editei leitura de arquivo" />
     <MESSAGE value="+ edits no move()" />
     <MESSAGE value="Nova lib adicionado" />
     <MESSAGE value="Leitura de Ficheiro V1&#10;&#10;(Falta passar os dados para os respectivos Objetos)" />
@@ -571,7 +569,8 @@
     <MESSAGE value="Ajustes&#10;(Veneno Zombie)&#10;(Antido só pra envenenados)&#10;(Quantidade equipamentos Cachorro)&#10;(Luta entre crianças)&#10;(Humano mata Zombie e continua no lugar)" />
     <MESSAGE value="Ajuste&#10;(Mais uma vez arrumando criança)" />
     <MESSAGE value="+Ajustes" />
-    <option name="LAST_COMMIT_MESSAGE" value="+Ajustes" />
+    <MESSAGE value="+Ajustes&#10;(Arrumando certo moves)" />
+    <option name="LAST_COMMIT_MESSAGE" value="+Ajustes&#10;(Arrumando certo moves)" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/LP2_21900074_21800876$pt_ulusofona_lp2_theWalkingDEISIGame_in_Projeto_LP2.ic" NAME="pt.ulusofona.lp2.theWalkingDEISIGame in Projeto_LP2 Coverage Results" MODIFIED="1609435292135" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

@@ -32,9 +32,10 @@ public abstract class Zombie extends Creature {
         /* Destruir item - Veneno*/
         if(idDestino < 0 && !(idTipoDestino == 8)){
             //Não contar quando zombie vampiro vai pra cima de alho
-            if(!(idTipo == 4) && idTipoDestino == 5) {
-                destruirIten();
+            if(idTipo == 4 && idTipoDestino == 5) {
+                nItensDestruido--;
             }
+            destruirIten();
         }
 
         //Valida se tem veneno no chão
