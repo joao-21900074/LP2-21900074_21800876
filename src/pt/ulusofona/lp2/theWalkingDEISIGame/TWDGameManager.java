@@ -369,6 +369,9 @@ public class TWDGameManager {
                     if(escudoMadeira.getDefesa() > 0){
                         //Defendeu + Quebrar escudo ou Diminiuir 1 defesa(CASO MILITAR)
                         escudoMadeira.defender();
+                        if(escudoMadeira.getDefesa() <= 0) {//Destroe escudo quando as defesas acabarem
+                            humano.equiparEquipamento(null);
+                        }
                     }else{
                         morreu(humano);
                     }
@@ -392,6 +395,9 @@ public class TWDGameManager {
                         if(!(zombie.getIdTipo() == 4)) {
                             pistola.atirar();
                             matou(zombie);
+                            if(pistola.getBalas() <= 0) {//Destroe pistola quando acaba bala
+                                humano.equiparEquipamento(null);
+                            }
                         }else{
                             morreu(humano);
                         }
@@ -429,6 +435,9 @@ public class TWDGameManager {
                     Lixivia lixivia = (Lixivia) humano.getEquipamento();
                     if(lixivia.getLitros() > 0){
                         lixivia.usar();
+                        if(lixivia.getLitros() <= 0) {//Destroe lixivia quando acaba a carga
+                            humano.equiparEquipamento(null);
+                        }
                     }else{
                         morreu(humano);
                     }
