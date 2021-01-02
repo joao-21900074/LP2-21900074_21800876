@@ -23,7 +23,7 @@ public class ZombieVampiro extends Zombie {
         }
 
         //Valida se no destino tem uma Cabeça de Alho
-        if(idTipoDestino == 5) {
+        if(idTipoDestino == 5 && idDestino < 0) {
             return false;
         }
 

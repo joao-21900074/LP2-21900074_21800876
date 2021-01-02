@@ -261,8 +261,6 @@ public class TWDGameManager {
             }
         }
 
-        System.out.println(creature);
-
         turnos++;
 
         return true;
@@ -376,10 +374,12 @@ public class TWDGameManager {
                     //Pistola
                     Pistola pistola = (Pistola) humano.getEquipamento();
                     if(pistola.getBalas() > 0){
-                        pistola.atirar();
                         //Não funciona contra ZombieVampiro
                         if(!(zombie.getIdTipo() == 4)) {
+                            pistola.atirar();
                             matou(zombie);
+                        }else{
+                            morreu(humano);
                         }
                     }else{
                         morreu(humano);

@@ -4,7 +4,7 @@
 1 : 0 : CriançaZombie : 4 : 3
 2 : 1 : AdultoZombie : 8 : 8
 3 : 2 : MilitarZombie : 7 : 2
-4 : 3 : IdosoZombie : 2 : 3
+4 : 3 : IdosoZombie : 2 : 0
 5 : 4 : Zombie Vampiro : 3 : 4
 6 : 5 : CriançaVivo : 2 : 1
 7 : 6 : AdultoVivo : 1 : 2

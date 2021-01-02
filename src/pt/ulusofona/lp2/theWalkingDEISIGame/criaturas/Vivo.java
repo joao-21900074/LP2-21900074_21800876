@@ -31,7 +31,8 @@ public class Vivo extends Creature {
             return false;
         }
 
-        if(idTipoDestino == 9 && !envenenado){
+        //Antitodo no chão e não envenenado, da false
+        if(idTipoDestino == 9 && idDestino < 0 && !envenenado){
             return false;
         }
 
