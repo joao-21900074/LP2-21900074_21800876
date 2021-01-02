@@ -1,15 +1,16 @@
 package pt.ulusofona.lp2.theWalkingDEISIGame.criaturas;
 
 import pt.ulusofona.lp2.theWalkingDEISIGame.*;
+import pt.ulusofona.lp2.theWalkingDEISIGame.equipamentos.*;
 
 public class Vivo extends Creature {
 
-    Equipamento equipamento;
-    int nEquipamentos = 0;
-    String nomeTipo;
+    protected Equipamento equipamento;
+    private int nEquipamentos = 0;
+    private String nomeTipo;
     private boolean safe = false;
     private boolean envenenado = false;
-    private int protecaoVeneno = 2;
+    private int protecaoVeneno = 3;
 
 
     //Construtor vazio
@@ -73,12 +74,16 @@ public class Vivo extends Creature {
             return false;
         }
 
-        //Caso seja um veneno, humano ganha proteçao por 2 turnos + fica envenenado
+        //Caso seja um veneno, humano ganha proteçao por 3 turnos + fica envenenado
         if(equipamento.getIdTipo() == 8){
+            Veneno v = (Veneno) equipamento;
+            v.tomar();
             this.envenenado = true;
         }
 
         if(equipamento.getIdTipo() == 9){
+            Antidoto a = (Antidoto) equipamento;
+            a.tomar();
             this.envenenado = false;
         }
 

@@ -9,21 +9,20 @@ public class Veneno extends Equipamento {
     > Zombies não podem ir aonde tem veneno
      */
 
-    private boolean frascoCheio = true;
     private int conteudo = 1;
 
     public Veneno(int id, int idTipo, int[] posicao){
         super(id,idTipo,posicao);
     }
 
-    public boolean getFrasco(){
-        return frascoCheio;
-    }
 
     //Só uma vez
     public void tomar(){
-        frascoCheio = false;
         this.conteudo = 0;
+    }
+
+    public int getConteudo(){
+        return conteudo;
     }
 
     @Override

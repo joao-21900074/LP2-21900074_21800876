@@ -1,7 +1,5 @@
 package pt.ulusofona.lp2.theWalkingDEISIGame.criaturas;
 
-import pt.ulusofona.lp2.theWalkingDEISIGame.criaturas.Humano;
-
 public class HumanoAdulto extends Humano {
 
     //Construtor

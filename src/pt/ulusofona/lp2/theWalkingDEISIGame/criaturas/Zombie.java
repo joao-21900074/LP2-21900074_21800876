@@ -28,18 +28,13 @@ public abstract class Zombie extends Creature {
             return false;
         }
 
-        /* Destruir item - Veneno*/
+        /* Destruir item tirando Veneno*/
         if(idDestino < 0 && !(idTipoDestino == 8)){
             //Não contar quando zombie vampiro vai pra cima de alho
             if(idTipo == 4 && idTipoDestino == 5) {
                 nItensDestruido--;
             }
             destruirIten();
-        }
-
-        //Valida se tem veneno no chão
-        if(idTipoDestino == 8 && idDestino < 0){
-            return false;
         }
 
         return true;

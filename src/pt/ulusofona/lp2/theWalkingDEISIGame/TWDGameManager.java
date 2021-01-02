@@ -7,19 +7,20 @@ import java.io.*;
 import java.util.*;
 
 public class TWDGameManager {
-    ArrayList<Creature> creatures = new ArrayList<>();
+    private ArrayList<Creature> creatures = new ArrayList<>();
     ArrayList<Vivo> vivos = new ArrayList<>();
     ArrayList<Zombie> zombies = new ArrayList<>();
-    ArrayList<Equipamento> equipamentos = new ArrayList<>();
-    ArrayList<int[]> safeHavens = new ArrayList<>();
-    ArrayList<Integer> salvos = new ArrayList<>();
-    int initialTeam;
-    int currentTeam;
-    int[][] map;
-    int[] worldSize;
-    boolean isDay = true;
-    int tamanhoDiaNoite = 2;
-    int turnos = 0;
+    private ArrayList<Equipamento> equipamentos = new ArrayList<>();
+    private ArrayList<int[]> safeHavens = new ArrayList<>();
+    private ArrayList<Integer> salvos = new ArrayList<>();
+    private ArrayList<Creature> mortos = new ArrayList<>();
+    private int initialTeam;
+    private int currentTeam;
+    private int[][] map;
+    private int[] worldSize;
+    private boolean isDay = true;
+    private int tamanhoDiaNoite = 2;
+    private int turnos = 0;
 
     //Construtor Vazio
     public TWDGameManager() {}
@@ -174,6 +175,13 @@ public class TWDGameManager {
             }
         } else if(getEquipmentById(destino) != null) {
             Equipamento equipDestino = getEquipmentById(destino);
+            if(equipDestino.getIdTipo() == 8 && creature.getEquipe() == 20){
+                //Valida se tem veneno no chão
+                Veneno v = (Veneno) equipDestino;
+                if(!(v.getConteudo() == 0)){
+                    return false;
+                }
+            }
             if(!creature.validaMove(xD,yD,isDay,equipDestino.getId(), equipDestino.getIdTipo())) {
                 return false;
             }
@@ -195,7 +203,7 @@ public class TWDGameManager {
                     salvos.add(peca);
                     getHumanoById(peca).salvar();
                     //Tirando dos humanos
-                    vivos.removeIf(v -> v == getHumanoById(peca));
+                    //vivos.removeIf(v -> v == getHumanoById(peca));
                 //Invalida caso "Outro" foi para a safe
                 }else{
                     return false;
@@ -272,6 +280,16 @@ public class TWDGameManager {
                 tamanhoDiaNoite = 2; //Reseta a váriavel
                 isDay = !isDay; //Inverte o valor de isDay
                 System.out.println("mudei para " + ((isDay) ? "Dia" : "Noite"));
+            }
+        }
+
+        for(Vivo v : vivos){
+            if(v.estaEnvenenado()) {
+                v.danificaProtecao();
+                if (v.protecao() == 0) {
+                    morreu(v);
+                    mortos.add(v);
+                }
             }
         }
 
@@ -470,11 +488,13 @@ public class TWDGameManager {
         //Humano morreu + tirar da lista dos humanos
         vivos.removeIf(v -> v == vivo);
         creatures.removeIf(c -> c == vivo);
-        //Humano vira Zombie + botar na lsita dos zombies
-        Creature novoZombie = Creature.criarCreature(vivo.getId(),transformar(vivo.getIdTipo()),
-                vivo.getNome(),vivo.getPosicao());
-        zombies.add((Zombie) novoZombie);
-        creatures.add(novoZombie);
+        if(!(vivo.protecao() == 0)){
+            //Humano vira Zombie + botar na lsita dos zombies
+            Creature novoZombie = Creature.criarCreature(vivo.getId(),transformar(vivo.getIdTipo()),
+                    vivo.getNome(),vivo.getPosicao());
+            zombies.add((Zombie) novoZombie);
+            creatures.add(novoZombie);
+        }
     }
 
     public void matou(Zombie zombie){
@@ -482,6 +502,7 @@ public class TWDGameManager {
         zombie.die();
         zombies.removeIf(z -> z == zombie);
         creatures.removeIf(c -> c == zombie);
+        mortos.add(zombie);
     }
 
     //Alterado para usar apenas a Lista das Criaturas
