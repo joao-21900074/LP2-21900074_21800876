@@ -206,7 +206,7 @@ public class TWDGameManager {
                     return false;
                 }
             }
-        }else if(destino > 0){
+        } else if(destino > 0) {
             //Confirmando que temos 2 criaturas lutando
             if(getCreatureById(destino) != null) {
                 Creature creatureDestino = getCreatureById(destino);
@@ -219,7 +219,7 @@ public class TWDGameManager {
                 }
                 if(creature.getEquipe() == 10){
                     batalha((Humano) getHumanoById(creature.getId()),getZombieById(creatureDestino.getId()));
-                }else{
+                }else if(creature.getEquipe() == 20){
                     batalha((Humano) getHumanoById(creatureDestino.getId()), getZombieById(creature.getId()));
                 }
                 fight = true;
@@ -274,13 +274,13 @@ public class TWDGameManager {
         if(xO == xD && Math.abs(yO - yD) >= 2) {//Pulo cima/baixo
             intervalo = Math.abs(yO - yD);
             if(yO > yD) {
-                for(int i = 1; i <= intervalo; i++) {
+                for(int i = 1; i < intervalo; i++) {
                     if(getElementId(xD, yD + i) != 0) {
                         return false;
                     }
                 }
             } else if(yO < yD) {
-                for(int i = 1; i <= intervalo; i++) {
+                for(int i = 1; i < intervalo; i++) {
                     if(getElementId(xD, yD - i) != 0) {
                         return false;
                     }
@@ -289,13 +289,13 @@ public class TWDGameManager {
         } else if(yO == yD && Math.abs(xO - xD) >= 2) {//Movimento esquerda direita
             intervalo = Math.abs(xO - xD);
             if(xO > xD) {
-                for(int i = 1; i <= intervalo; i++) {
+                for(int i = 1; i < intervalo; i++) {
                     if(getElementId(xD + i, yD) != 0) {
                         return false;
                     }
                 }
             } else if(xO < xD) {
-                for(int i = 1; i <= intervalo; i++) {
+                for(int i = 1; i < intervalo; i++) {
                     if(getElementId(xD - 1, yD) != 0) {
                         return false;
                     }
@@ -304,7 +304,7 @@ public class TWDGameManager {
         } else if(xD != xO && yD != yO && Math.abs(xO - xD) >= 2 && Math.abs(yO - yD) >= 2) {//Movimento Diagonal
             intervalo = Math.abs(xO - xD);
             if(xO > xD && yO < yD) {//Diagonal inferior esquerda
-                for(int i = 1; i <= intervalo; i++) {
+                for(int i = 1; i < intervalo; i++) {
                     if(getElementId(xD + i, yD - i) != 0) {
                         return false;
                     };
@@ -312,7 +312,7 @@ public class TWDGameManager {
             }
 
             if(xO < xD && yO < yD) {//Diagonal inferior direita
-                for(int i = 1; i <= intervalo; i++) {
+                for(int i = 1; i < intervalo; i++) {
                     if(getElementId(xD - i, yD - i) != 0) {
                         return false;
                     }
@@ -320,7 +320,7 @@ public class TWDGameManager {
             }
 
             if(xO > xD && yO > yD) {//Diagonal superior esquerda
-                for(int i = 1; i <= intervalo; i++) {
+                for(int i = 1; i < intervalo; i++) {
                     if(getElementId(xD + i, yD + i) != 0) {
                         return false;
                     }
@@ -328,7 +328,7 @@ public class TWDGameManager {
             }
 
             if(xO < xD && yO > yD) {//Diagonal sueperior direita
-                for(int i = 1; i <= intervalo; i++) {
+                for(int i = 1; i < intervalo; i++) {
                     if(getElementId(xD - i, yD + i) != 0) {
                         return false;
                     }
