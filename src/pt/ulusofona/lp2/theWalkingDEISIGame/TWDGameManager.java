@@ -218,11 +218,16 @@ public class TWDGameManager {
                     }
                 }
                 if(creature.getEquipe() == 10){
-                    batalha((Humano) getHumanoById(creature.getId()),getZombieById(creatureDestino.getId()));
+                    Humano h = (Humano) getHumanoById(creature.getId());
+                    batalha(h,getZombieById(creatureDestino.getId()));
+                    if(creatures.contains(h)){
+                        h.setPosicao(new int[]{xD, yD});
+                        map[xD][yD] = peca;
+                        map[xO][yO] = 0;
+                    }
                 }else{
                     batalha((Humano) getHumanoById(creatureDestino.getId()), getZombieById(creature.getId()));
                 }
-                fight = true;
             }
         }
 
@@ -233,10 +238,6 @@ public class TWDGameManager {
                 map[xD][yD] = peca;
                 map[xO][yO] = 0;
             }
-        }
-
-        if(!fight) {
-            map[xO][yO] = 0;
         }
 
         //Humano Equipar
@@ -265,6 +266,9 @@ public class TWDGameManager {
                 System.out.println("mudei para " + ((isDay) ? "Dia" : "Noite"));
             }
         }
+
+        System.out.println("Destino = " + getElementId(xD,yD));
+        System.out.println("Peca = " + getElementId(xO,yO));
 
         turnos++;
 
