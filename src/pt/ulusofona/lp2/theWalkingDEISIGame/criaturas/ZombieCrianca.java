@@ -20,7 +20,7 @@ public class ZombieCrianca extends Zombie {
 
         //Valida movimento esquerda/direita
         if(super.getPosicao()[1] == yD) {
-            if(Math.abs(super.getPosicao()[1] - xD) > 1) {
+            if(Math.abs(super.getPosicao()[0] - xD) > 1) {
                 return false;
             }
         }

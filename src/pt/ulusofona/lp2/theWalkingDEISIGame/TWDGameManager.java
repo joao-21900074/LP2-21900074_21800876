@@ -261,6 +261,8 @@ public class TWDGameManager {
             }
         }
 
+        System.out.println(creature);
+
         turnos++;
 
         return true;
@@ -470,7 +472,7 @@ public class TWDGameManager {
 
     // pronto (acho que vai ter mais condições nas proximas entregas
     public boolean gameIsOver() {
-        return turnos >= 12;
+        return turnos >= 12 || vivos.size() == 0;
     }
 
     // pronto
