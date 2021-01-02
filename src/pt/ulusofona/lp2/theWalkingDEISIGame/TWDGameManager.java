@@ -494,7 +494,7 @@ public class TWDGameManager {
 
     // pronto (acho que vai ter mais condições nas proximas entregas
     public boolean gameIsOver() {
-        return turnos >= 12 || vivos.size() == 0;
+        return turnos > 12 || vivos.size() == 0;
     }
 
     // pronto
@@ -636,7 +636,7 @@ public class TWDGameManager {
     public String getAllEquipmentAtributes(){
         StringBuilder allAtributes = new StringBuilder();
         for(int i=0; i < equipamentos.size(); i++){
-            allAtributes.append(getEquipmentAtributes(equipamentos.get(i).getId())).append("\n");
+            allAtributes.append(getEquipmentAtributes(equipamentos.get(i).getId() * -1)).append("\n");
         }
         return allAtributes.toString();
     }
@@ -680,6 +680,4 @@ public class TWDGameManager {
     public List<String> getGameResults(){
         return null;
     }
-
-
 }
