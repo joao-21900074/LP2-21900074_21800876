@@ -731,6 +731,7 @@ public class TWDGameManager {
         resultado.add("" + turnosTerminados);
         resultado.add("");
         resultado.add("Ainda pelo bairo:");
+        resultado.add("");
         resultado.add("OS VIVOS");
         for(Vivo v : vivos) {
             if(!v.estaSalvo()) {
