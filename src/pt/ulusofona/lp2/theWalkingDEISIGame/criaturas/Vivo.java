@@ -6,7 +6,7 @@ import pt.ulusofona.lp2.theWalkingDEISIGame.equipamentos.*;
 public class Vivo extends Creature {
 
     protected Equipamento equipamento;
-    private int nEquipamentos = 0;
+    protected int nEquipamentos = 0;
     private String nomeTipo;
     private boolean safe = false;
     private boolean envenenado = false;
@@ -127,6 +127,10 @@ public class Vivo extends Creature {
 
     public boolean estaEnvenenado(){
         return envenenado;
+    }
+
+    public boolean estaSalvo() {
+        return safe;
     }
 
     @Override

@@ -21,6 +21,7 @@ public class TWDGameManager {
     private boolean isDay = true;
     private int tamanhoDiaNoite = 2;
     private int turnos = 0;
+    private int turnosTerminados = 0;
 
     //Construtor Vazio
     public TWDGameManager() {}
@@ -293,7 +294,8 @@ public class TWDGameManager {
             }
         }
 
-        turnos++;
+        turnos++; //Essa variavel é zerada toda vez que alguém foi transformado
+        turnosTerminados++; //Essa varival representa o numero de turnos terminados
 
         return true;
     }
@@ -659,7 +661,7 @@ public class TWDGameManager {
     public String getAllEquipmentAtributes(){
         StringBuilder allAtributes = new StringBuilder();
         for(int i=0; i < equipamentos.size(); i++){
-            allAtributes.append(getEquipmentAtributes(equipamentos.get(i).getId() * -1)).append("\n");
+            allAtributes.append(getEquipmentAtributes(equipamentos.get(i).getId())).append("\n");
         }
         return allAtributes.toString();
     }
@@ -701,6 +703,60 @@ public class TWDGameManager {
     }
 
     public List<String> getGameResults(){
-        return null;
+        ArrayList<String> resultado = new ArrayList<>();
+
+        resultado.add("Nr. de turnos terminados:");
+        resultado.add("" + turnosTerminados);
+        resultado.add("");
+        resultado.add("Ainda pelo bairo:");
+        resultado.add("OS VIVOS");
+        for(Vivo v : vivos) {
+            if(!v.estaSalvo()) {
+                resultado.add(v.getId() + " " + v.getNome());
+            }
+        }
+        resultado.add("");
+        resultado.add("OS OUTROS");
+        for(Zombie z : zombies) {
+            resultado.add(z.getId() + " (antigamente conhecido como <" + z.getNome() + ">)");
+        }
+        resultado.add("");
+        resultado.add("Num safe haven:");
+        resultado.add("");
+        resultado.add("OS VIVOS");
+        for(Vivo v : vivos) {
+            if(v.estaSalvo()) {
+                resultado.add(v.getId() + " " + v.getNome());
+            }
+        }
+        resultado.add("");
+        resultado.add("Envenenados / Destruidos");
+        resultado.add("");
+        resultado.add("OS VIVOS");
+        for(Creature m : mortos) {
+            switch(m.getIdTipo()) {
+                case 5:
+                case 6:
+                case 7:
+                case 8:
+                case 9:
+                    resultado.add(m.getId() + " " + m.getNome());
+                    break;
+            }
+        }
+        resultado.add("");
+        resultado.add("OS OUTROS");
+        for(Creature m : mortos) {
+            switch (m.getIdTipo()) {
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                case 4:
+                    resultado.add(m.getId() + " (antigamente conhecido como <" + m.getNome() + ">)");
+            }
+        }
+
+        return resultado;
     }
 }

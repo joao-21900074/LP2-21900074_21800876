@@ -3,7 +3,6 @@ package pt.ulusofona.lp2.theWalkingDEISIGame.criaturas;
 import pt.ulusofona.lp2.theWalkingDEISIGame.*;
 
 public class Cachorro extends Vivo {
-    int equipe = 10;
     Equipamento equipamento;
     boolean safe = false;
 
@@ -42,7 +41,7 @@ public class Cachorro extends Vivo {
     }
 
     @Override
-    public int getEquipe(){return equipe;}
+    public int getEquipe(){return 10;}
 
     @Override
     public String toString() {
