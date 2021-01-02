@@ -230,7 +230,7 @@ public class TWDGameManager {
                     Humano h = (Humano) getHumanoById(creature.getId());
                     batalha(h,getZombieById(creatureDestino.getId()));
                     //Humano pega posição do zombie, quando equipamento ofensivo
-                    if(creatures.contains(h) && !h.getEquipamento().isDefensivo()){
+                    if(vivos.contains(h) && !h.getEquipamento().isDefensivo()){
                         h.setPosicao(new int[]{xD, yD});
                         map[xD][yD] = peca;
                         map[xO][yO] = 0;
@@ -287,10 +287,11 @@ public class TWDGameManager {
         for(Vivo v : vivos){
             if(v.estaEnvenenado()) {
                 v.danificaProtecao();
-                if (v.protecao() == 0) {
-                    morreu(v);
-                    mortos.add(v);
-                }
+            }
+            if (v.protecao() == 0 && v.estaEnvenenado()) {
+                map[v.getPosicao()[0]][v.getPosicao()[1]] = 0;
+                morreu(v);
+                mortos.add(v);
             }
         }
 
@@ -463,6 +464,13 @@ public class TWDGameManager {
                     }
                     break;
 
+                case 9:
+                    //Antidoto
+                    System.out.println(humano.getEquipamento());
+                    morreu(humano);
+                    System.out.println(humano.getEquipamento());
+                    break;
+
                 default:
                     break;
             }
@@ -489,8 +497,8 @@ public class TWDGameManager {
     public void morreu(Vivo vivo){
         //Humano morreu + tirar da lista dos humanos
         vivos.removeIf(v -> v == vivo);
-        creatures.removeIf(c -> c == vivo);
-        if(!(vivo.protecao() == 0)){
+        //creatures.removeIf(c -> c == vivo);
+        if(!vivo.estaEnvenenado()){
             //Humano vira Zombie + botar na lsita dos zombies
             Creature novoZombie = Creature.criarCreature(vivo.getId(),transformar(vivo.getIdTipo()),
                     vivo.getNome(),vivo.getPosicao());
@@ -503,7 +511,7 @@ public class TWDGameManager {
         map[zombie.getPosicao()[0]][zombie.getPosicao()[1]] = 0;
         zombie.die();
         zombies.removeIf(z -> z == zombie);
-        creatures.removeIf(c -> c == zombie);
+        //creatures.removeIf(c -> c == zombie);
         mortos.add(zombie);
     }
 
