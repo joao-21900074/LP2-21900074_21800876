@@ -175,13 +175,6 @@
       <option name="presentableId" value="Default" />
       <updated>1605113877526</updated>
     </task>
-    <task id="LOCAL-00014" summary="Editei move() e criei getID() pra Equipamento">
-      <created>1605724289286</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1605724289303</updated>
-    </task>
     <task id="LOCAL-00015" summary="Edit Humano.getNome Zombie.getNome gameOver + getSurvivors">
       <created>1605727054249</created>
       <option name="number" value="00015" />
@@ -518,7 +511,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609584846225</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="Destruindo Equipamentos">
+      <created>1609585332386</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1609585332386</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -545,7 +545,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="+ edits no move()" />
     <MESSAGE value="Nova lib adicionado" />
     <MESSAGE value="Leitura de Ficheiro V1&#10;&#10;(Falta passar os dados para os respectivos Objetos)" />
     <MESSAGE value="Leitura de Ficheiro V1.1&#10;(Mudei ifs para switch)&#10;(Adicionei alguns testes básicos)" />
@@ -570,7 +569,8 @@
     <MESSAGE value="Ajuste&#10;(Mais uma vez arrumando criança)" />
     <MESSAGE value="+Ajustes" />
     <MESSAGE value="+Ajustes&#10;(Arrumando certo moves)" />
-    <option name="LAST_COMMIT_MESSAGE" value="+Ajustes&#10;(Arrumando certo moves)" />
+    <MESSAGE value="Destruindo Equipamentos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Destruindo Equipamentos" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/LP2_21900074_21800876$pt_ulusofona_lp2_theWalkingDEISIGame_in_Projeto_LP2.ic" NAME="pt.ulusofona.lp2.theWalkingDEISIGame in Projeto_LP2 Coverage Results" MODIFIED="1609435292135" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

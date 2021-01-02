@@ -261,6 +261,9 @@ public class TWDGameManager {
             }
         }
 
+        System.out.println(getElementId(xD,yD));//Destino = 0
+        System.out.println(getElementId(xO,yO));//Aonde eu to = 2
+
         turnos++;
 
         return true;
@@ -456,6 +459,8 @@ public class TWDGameManager {
     }
 
     public void matou(Zombie zombie){
+        map[zombie.getPosicao()[0]][zombie.getPosicao()[1]] = 0;
+        zombie.die();
         zombies.removeIf(z -> z == zombie);
         creatures.removeIf(c -> c == zombie);
     }

@@ -39,7 +39,7 @@ public abstract class Zombie extends Creature {
         }
 
         //Valida se tem veneno no chão
-        if(idTipoDestino == 8){
+        if(idTipoDestino == 8 && idDestino < 0){
             return false;
         }
 
