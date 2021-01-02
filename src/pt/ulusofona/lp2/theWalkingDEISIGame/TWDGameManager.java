@@ -519,7 +519,22 @@ public class TWDGameManager {
 
     // pronto (acho que vai ter mais condições nas proximas entregas
     public boolean gameIsOver() {
-        return turnos > 12 || vivos.size() == 0;
+        if(turnos > 12 || vivos. size() == 0) {
+            return true;
+        }
+        int nSalvos = 0;
+
+        for(Vivo v : vivos) {
+            if(!v.estaSalvo()) {
+                nSalvos++;
+            }
+        }
+
+        if(nSalvos <= 0) {
+            return true;
+        }
+
+        return false;
     }
 
     // pronto
