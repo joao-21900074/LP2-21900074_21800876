@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="277f7e4c-8220-423e-9b73-9c62c1e271f8" name="Default Changelist" comment="Sumindo com Zombie do mapa quando ele morre">
+    <list default="true" id="277f7e4c-8220-423e-9b73-9c62c1e271f8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" afterDir="false" />
     </list>
@@ -172,13 +172,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605113877526</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Editei ToString em Humano e Zombie e Editei move()">
-      <created>1605733576227</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1605733576227</updated>
     </task>
     <task id="LOCAL-00017" summary="Editei ToString em Humano e Zombie e Editei move() de novo">
       <created>1605737920127</created>
@@ -516,7 +509,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609589002891</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="Idoso com Equipamento">
+      <created>1609592531113</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1609592531113</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -543,7 +543,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Leitura de Ficheiro V1&#10;&#10;(Falta passar os dados para os respectivos Objetos)" />
     <MESSAGE value="Leitura de Ficheiro V1.1&#10;(Mudei ifs para switch)&#10;(Adicionei alguns testes básicos)" />
     <MESSAGE value="Leitura de Ficheiro V1.2&#10;+ Funçoes relacionadas a Equipamentos&#10;(Mudei a classe Equipamentos para abstract)&#10;(Criação de Equipamentos com Factory)&#10;(Teste das novas funções + Factory)" />
     <MESSAGE value="Criação das Classes dos Equipamentos&#10;(Arquivo de teste com todos os equipamentos)" />
@@ -568,7 +567,8 @@
     <MESSAGE value="+Ajustes&#10;(Arrumando certo moves)" />
     <MESSAGE value="Destruindo Equipamentos" />
     <MESSAGE value="Sumindo com Zombie do mapa quando ele morre" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sumindo com Zombie do mapa quando ele morre" />
+    <MESSAGE value="Idoso com Equipamento" />
+    <option name="LAST_COMMIT_MESSAGE" value="Idoso com Equipamento" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/LP2_21900074_21800876$AppLauncher.ic" NAME="AppLauncher Coverage Results" MODIFIED="1609518097128" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

@@ -218,8 +218,14 @@ public class TWDGameManager {
                     }
                 }
                 if(creature.getEquipe() == 10){
-                    batalha((Humano) getHumanoById(creature.getId()),getZombieById(creatureDestino.getId()));
-                }else if(creature.getEquipe() == 20){
+                    Humano h = (Humano) getHumanoById(creature.getId());
+                    batalha(h,getZombieById(creatureDestino.getId()));
+                    if(creatures.contains(h)){
+                        h.setPosicao(new int[]{xD, yD});
+                        map[xD][yD] = peca;
+                        map[xO][yO] = 0;
+                    }
+                }else{
                     batalha((Humano) getHumanoById(creatureDestino.getId()), getZombieById(creature.getId()));
                 }
                 fight = true;
