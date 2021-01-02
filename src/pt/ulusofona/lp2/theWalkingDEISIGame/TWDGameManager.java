@@ -776,7 +776,7 @@ public class TWDGameManager {
                 case 2:
                 case 3:
                 case 4:
-                    resultado.add(m.getId() + " (antigamente conhecido como <" + m.getNome() + ">)");
+                    resultado.add(m.getId() + " (antigamente conhecido como " + m.getNome() + ")");
             }
         }
 
