@@ -29,8 +29,8 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
-        <option value="Matheus-21800876 &lt;a21800876@alunos.ulht.pt&gt;" />
         <option value="joao-21900074 &lt;a21900074@alunos.ulht.pt&gt;" />
+        <option value="Matheus-21800876 &lt;a21800876@alunos.ulht.pt&gt;" />
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
