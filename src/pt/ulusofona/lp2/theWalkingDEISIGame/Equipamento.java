@@ -25,6 +25,17 @@ public abstract class Equipamento {
 
     public int[] getPosicao(){return posicao;}
 
+    public boolean isDefensivo(){
+        switch (idTipo){
+            case 1:
+            case 2:
+            case 6:
+            case 10:
+                return false;
+        }
+        return true;
+    }
+
     //Factory
     static Equipamento criarEquipamento(int id, int idTipo, int[]posicao){
         switch (idTipo){
