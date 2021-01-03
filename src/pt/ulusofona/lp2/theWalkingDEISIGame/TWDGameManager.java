@@ -226,7 +226,7 @@ public class TWDGameManager {
                         return false;
                     }
                 }
-                if(creature.getEquipe() == 10){
+                if(creature.getEquipe() == 10 && creatureDestino.getEquipe() == 20){
                     Humano h = (Humano) getHumanoById(creature.getId());
                     batalha(h,getZombieById(creatureDestino.getId()));
                     //Humano pega posição do zombie, quando equipamento ofensivo
@@ -235,7 +235,7 @@ public class TWDGameManager {
                         map[xD][yD] = peca;
                         map[xO][yO] = 0;
                     }
-                }else if(creature.getEquipe() == 20){
+                }else if(creature.getEquipe() == 20 && creatureDestino.getEquipe() == 10){
                     Humano h = (Humano) getHumanoById(creatureDestino.getId());
                     batalha(h, getZombieById(creature.getId()));
                     //quando zombie, vai pra cima de humano(ofensivo) ele some
@@ -491,27 +491,26 @@ public class TWDGameManager {
             case 8:
                 return 3;
         }
-        return 0;
+        return -1;
     }
 
     public void morreu(Vivo vivo){
-        //Humano morreu + tirar da lista dos humanos
-        vivos.removeIf(v -> v == vivo);
-        //creatures.removeIf(c -> c == vivo);
         if(!vivo.estaEnvenenado()){
             //Humano vira Zombie + botar na lsita dos zombies
             Creature novoZombie = Creature.criarCreature(vivo.getId(),transformar(vivo.getIdTipo()),
                     vivo.getNome(),vivo.getPosicao());
             zombies.add((Zombie) novoZombie);
+            creatures.removeIf(c -> c == vivo);
             creatures.add(novoZombie);
         }
+        //Humano morreu + tirar da lista dos humanos
+        vivos.removeIf(v -> v == vivo);
     }
 
     public void matou(Zombie zombie){
         map[zombie.getPosicao()[0]][zombie.getPosicao()[1]] = 0;
         zombie.die();
         zombies.removeIf(z -> z == zombie);
-        //creatures.removeIf(c -> c == zombie);
         mortos.add(zombie);
     }
 
@@ -775,7 +774,7 @@ public class TWDGameManager {
         resultado.add("");
         resultado.add("OS OUTROS");
         for(Zombie z : zombies) {
-            resultado.add(z.getId() + " (antigamente conhecido como <" + z.getNome() + ">)");
+            resultado.add(z.getId() + " (antigamente conhecido como " + z.getNome() + ")");
         }
         resultado.add("");
         resultado.add("Num safe haven:");
@@ -810,7 +809,7 @@ public class TWDGameManager {
                 case 2:
                 case 3:
                 case 4:
-                    resultado.add(m.getId() + " (antigamente conhecido como <" + m.getNome() + ">)");
+                    resultado.add(m.getId() + " (antigamente conhecido como " + m.getNome() + ")");
             }
         }
 

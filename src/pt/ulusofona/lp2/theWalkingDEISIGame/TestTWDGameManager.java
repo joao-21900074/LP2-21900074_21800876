@@ -17,6 +17,7 @@ public class TestTWDGameManager {
     private HumanoMilitar humanoMilitar1 = new HumanoMilitar(7,7,"TestHM",new int[]{5,0});
     private HumanoMilitar humanoMilitar2 = new HumanoMilitar(8,7,"TestHM",new int[]{6,0});
 
+
     @Test
     public void testLeituraRuim(){
         TWDGameManager testStart = new TWDGameManager();
@@ -83,7 +84,7 @@ public class TestTWDGameManager {
         testStart.batalha(humanoAdulto, zombieAdulto);
     }
 
-    @Test
+    /*@Test
     public void testBatalhaMatarZombie(){
         //Destinado para Equipamentos que matam zombies
         //Espada + Estaca + Beskar
@@ -102,7 +103,7 @@ public class TestTWDGameManager {
         testStart.batalha(humanoAdulto, zombieAdulto);
         //System.out.println(testStart.zombies.contains(zombieAdulto));
         //False, zombie morreu
-    }
+    }*/
 
     //Não sei se vao deixar usar humans.add aqui n
     @Test
@@ -159,7 +160,7 @@ public class TestTWDGameManager {
         //System.out.println(defesa.getDefesa());
     }
 
-    @Test
+    /*@Test
     public void testBatalhaPistolaNormal(){
         //Humano com Pistola contra zombies normais
         testStart.zombies.add(zombieAdulto);
@@ -184,7 +185,7 @@ public class TestTWDGameManager {
         //System.out.println(testStart.humans.contains(hTest));
         //False, morreu, pistola sem balas
 
-    }
+    }*/
 
     @Test
     public void testBatalhaPistolaZombieVampiro(){
@@ -223,6 +224,13 @@ public class TestTWDGameManager {
         testStart.batalha(humanoAdulto, zombieIdoso);
         //System.out.println(testStart.humans.contains(hTest));
         //True, sobreviveu, revista protege contra zombies idosos
+    }
+
+    @Test
+    public void testGameResult(){
+        //Teste básico de resultado
+        testLeituraBoa();
+        testStart.getGameResults();
     }
 
     @Test
@@ -276,7 +284,7 @@ public class TestTWDGameManager {
         //False, morreu, não tem lixivia suficiente para proteção
     }
 
-    @Test
+    /*@Test
     public void testBatalhaCriança(){
         //Criança Humano só pode usar espada contra Criança Zombie
         Equipamento espada = Equipamento.criarEquipamento(1,1,new int[]{0,2});
@@ -294,7 +302,7 @@ public class TestTWDGameManager {
         //Criança morreu / Zombie Adulto ficou vivo
         //System.out.println(testStart.vivos.contains(humanoCrianca));
         //System.out.println(testStart.zombies.contains(zombieAdulto));
-    }
+    }*/
 
     @Test
     public void testBatalhaVeneno(){
