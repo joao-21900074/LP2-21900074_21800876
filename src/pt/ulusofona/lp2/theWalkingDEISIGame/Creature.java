@@ -7,7 +7,7 @@ public abstract class Creature {
     protected int idTipo;
     protected String nome;
     protected String imagePng;
-    int[] posicao;
+    protected int[] posicao;
 
     public Creature() {}
 
@@ -77,3 +77,12 @@ public abstract class Creature {
     @Override
     abstract public String toString();
 }
+
+
+
+
+
+
+
+
+

@@ -14,10 +14,11 @@ public class Vivo extends Creature {
 
 
     //Construtor vazio
-    public Vivo() {}
+    public Vivo() {
+    }
 
     public Vivo(int id, int idTipo, String nome, int[] posicao) {
-        super(id,idTipo,nome,posicao);
+        super(id, idTipo, nome, posicao);
         nomeTipo = retornaNomeTipo(idTipo);
     }
 
@@ -27,13 +28,13 @@ public class Vivo extends Creature {
         Valida se um Vivo esta tentando se movimentar para
         um lugar onde tem outro vivo
         */
-        if(idTipoDestino >= 5 && idTipoDestino <= 9 && idDestino > 0) {
+        if (idTipoDestino >= 5 && idTipoDestino <= 9 && idDestino > 0) {
             System.out.println("move() Vivo");
             return false;
         }
 
         //Antitodo no chão e não envenenado, da false
-        if(idTipoDestino == 9 && idDestino < 0 && !envenenado){
+        if (idTipoDestino == 9 && idDestino < 0 && !envenenado) {
             return false;
         }
 
@@ -52,7 +53,7 @@ public class Vivo extends Creature {
 
     //Função usada para determinar o nomeTipo que vai ser usado no toString
     private String retornaNomeTipo(int idTipo) {
-        switch(idTipo) {
+        switch (idTipo) {
             case 5:
                 return "Criança (Vivo)";
             case 6:
@@ -69,19 +70,19 @@ public class Vivo extends Creature {
     }
 
     public boolean equiparEquipamento(Equipamento equipamento) {
-        if(equipamento == null) {
+        if (equipamento == null) {
             this.equipamento = null;
             return false;
         }
 
         //Caso seja um veneno, humano ganha proteçao por 3 turnos + fica envenenado
-        if(equipamento.getIdTipo() == 8){
+        if (equipamento.getIdTipo() == 8) {
             Veneno v = (Veneno) equipamento;
             v.tomar();
             this.envenenado = true;
         }
 
-        if(equipamento.getIdTipo() == 9){
+        if (equipamento.getIdTipo() == 9) {
             assert equipamento instanceof Antidoto;
             Antidoto a = (Antidoto) equipamento;
             a.tomar();
@@ -105,29 +106,29 @@ public class Vivo extends Creature {
         return equipamento;
     }
 
-    public int getIdEquipamento(){
-        if(equipamento == null){
+    public int getIdEquipamento() {
+        if (equipamento == null) {
             return 0;
         }
         return equipamento.getId();
     }
 
-    public int getIdTipoEquipamento(){
-        if(equipamento == null){
+    public int getIdTipoEquipamento() {
+        if (equipamento == null) {
             return 0;
         }
         return equipamento.getIdTipo();
     }
 
-    public int protecao(){
+    public int protecao() {
         return protecaoVeneno;
     }
 
-    public void danificaProtecao(){
+    public void danificaProtecao() {
         protecaoVeneno--;
     }
 
-    public boolean estaEnvenenado(){
+    public boolean estaEnvenenado() {
         return envenenado;
     }
 
@@ -137,7 +138,7 @@ public class Vivo extends Creature {
 
     @Override
     public String toString() {
-        if(safe) {
+        if (safe) {
             return id + " | " + nomeTipo + " | Os Vivos | " + nome + " " + nEquipamentos + " @ A salvo";
 
         }

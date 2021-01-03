@@ -720,6 +720,7 @@ public class TWDGameManager {
         return startGame(fich);
     }
 
+    //ainda faltam algumas repostas
     public String[] popCultureExtravaganza() {
         String[] retorno = new String[14];
 
@@ -740,7 +741,7 @@ public class TWDGameManager {
         retorno[6] = "Mandaloarian";
         //Considere o actor que aparece com ID=2 no ficheiro de exemplo. Qual o
         // ano em que esse actor contracenou pela primeira vez com o Bruce Lee?
-        retorno[7] = "Enter The Dragon";
+        retorno[7] = "1972";
         //Em que filme aparece a Espada Hattori Hanzo?
         retorno[8] = "Kill Bill";
         //Em que ano foi pela primeira vez publicada a Revista Maria?
@@ -754,9 +755,10 @@ public class TWDGameManager {
         //Qual é o verdadeiro nome do Freddie M. ?
         retorno[13] = "Farrokh Bulsara";
 
-        return new String[0];
+        return retorno;
     }
 
+    //Pronto
     public List<String> getGameResults(){
         ArrayList<String> resultado = new ArrayList<>();
 
