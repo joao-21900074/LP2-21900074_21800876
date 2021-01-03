@@ -722,6 +722,39 @@ public class TWDGameManager {
     }
 
     public String[] popCultureExtravaganza() {
+        String[] retorno = new String[14];
+
+        // Em que filme sobre Zombies entra a personagem “Alice” do nosso ficheiro exemplo ?
+        retorno[0] = "Resident Evil";
+        //Em que filme aparecia o “Ash” ?
+        retorno[1] = "Evil Dead";
+        //E o "Sam" ?
+        retorno[2] = "I Am Legend";
+        //Em que filme era usada a líxivia como repelente contra criaturas estranhas?
+        retorno[3] = "";
+        //Em que série animada nos inspirámos para a técnica especial do Militar quando empunha um
+        //escudo de madeira?
+        retorno[4] = "";
+        //Em que filme foi usada um veneno/doença (e respectivo antídoto) como forma de repelir Zombies?
+        retorno[5] = "World War Z";
+        //Qual o nome do grupo de nómadas que usavam o “ Beskar helmet”?
+        retorno[6] = "Mandaloarian";
+        //Considere o actor que aparece com ID=2 no ficheiro de exemplo. Qual o
+        // ano em que esse actor contracenou pela primeira vez com o Bruce Lee?
+        retorno[7] = "Enter The Dragon";
+        //Em que filme aparece a Espada Hattori Hanzo?
+        retorno[8] = "Kill Bill";
+        //Em que ano foi pela primeira vez publicada a Revista Maria?
+        retorno[9] = "1978";
+        //Qual o nome do personagem britânico que usava uma pistola Walther PPK?
+        retorno[10] = "James Bond";
+        //“Os Outros” é uma referência à melhor série de televisão de sempre. Que série é essa?
+        retorno[11] = "Lost";
+        //Qual é a expressão tuga que muitas vezes acompanha a “Cabeça de alho”?
+        retorno[12] = "Cabeça de alho choco";
+        //Qual é o verdadeiro nome do Freddie M. ?
+        retorno[13] = "Farrokh Bulsara";
+
         return new String[0];
     }
 
