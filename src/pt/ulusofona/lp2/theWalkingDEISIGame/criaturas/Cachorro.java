@@ -3,8 +3,6 @@ package pt.ulusofona.lp2.theWalkingDEISIGame.criaturas;
 import pt.ulusofona.lp2.theWalkingDEISIGame.*;
 
 public class Cachorro extends Vivo {
-    Equipamento equipamento;
-    boolean safe = false;
 
     public Cachorro(int id, int idTipo, String nome, int[] posicao) {
         super(id,idTipo,nome,posicao);
@@ -35,20 +33,16 @@ public class Cachorro extends Vivo {
         return true;
     }
 
-
-    public void salvar() {
-        safe = true;
-    }
-
-    @Override
-    public int getEquipe(){return 10;}
-
     @Override
     public String toString() {
-        if(safe) {
+        if(super.estaSalvo()) {
             return id + " | Cão | Os Vivos | " + nome + " " + nEquipamentos + " @ A salvo";
         }
 
         return id + " | Cão | Os Vivos | " + nome + " " + nEquipamentos + " @ (" + super.getPosicao()[0] + ", " + super.getPosicao()[1] + ")";
     }
 }
+
+
+
+
