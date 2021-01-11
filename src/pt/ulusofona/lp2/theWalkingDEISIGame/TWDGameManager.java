@@ -616,7 +616,6 @@ public class TWDGameManager {
         return null;
     }
 
-    // ++++MÉTODOS NOVOS+++
     public List<Creature> getCreatures() {
         return creatures;
     }
@@ -816,5 +815,32 @@ public class TWDGameManager {
         }
 
         return resultado;
+    }
+
+    public Map<String, List<String>> getGameStatistics() {
+        HashMap<String, List<String>> retorno = new HashMap<String, List<String>>();
+
+        //Quais os 3 zombies que mais Vivos transformaram ?
+        retorno.put("os3ZombiesMaisTramados", null);
+
+        //Quais os 3 vivos que mais zombies destruiram ?
+        retorno.put("os3VivosMaisDuros", null);
+
+        //Quais os equipamentos que mais safaram os Vivos ?
+        //Devem ser considerados quer os esquipamentos ofensivos
+        //quer os defensivos.
+        retorno.put("tiposDeEquipamentoMaisUteis", null);
+
+        //Qual o total de equipamentos destruido por cada tipo
+        //de Zombie ?
+        retorno.put("tiposDeZombieESeusEquipamentosDestruidos", null);
+
+        //Quais as 5 criaturas que mais equipamentos
+        //apanharam/destruiram que ainda estão em jogo
+        //(isto é não foram destruidas nem foram para
+        //o safe haven)?
+        retorno.put("criaturasMaisEquipadas", null);
+
+        return retorno;
     }
 }
