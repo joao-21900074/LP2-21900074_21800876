@@ -1,8 +1,19 @@
 package pt.ulusofona.lp2.theWalkingDEISIGame.criaturas;
 
 public class ZombieVampiro extends Zombie {
+
+    private static int totalEquipDestruidos = 0;
+
     public ZombieVampiro(int id, int idTipo, String nome, int[] posicao) {
         super(id,idTipo,nome,posicao);
+    }
+
+    public void addTotalEquipDestruidos() {
+        totalEquipDestruidos++;
+    }
+
+    public int getTotalEquipDestruidos() {
+        return totalEquipDestruidos;
     }
 
     @Override

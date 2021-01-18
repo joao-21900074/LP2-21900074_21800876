@@ -11,10 +11,11 @@ public class Veneno extends Equipamento {
 
     private int conteudo = 1;
 
+    private static int nrUsos = 0;
+
     public Veneno(int id, int idTipo, int[] posicao){
         super(id,idTipo,posicao);
     }
-
 
     //Só uma vez
     public void tomar(){
@@ -23,6 +24,16 @@ public class Veneno extends Equipamento {
 
     public int getConteudo(){
         return conteudo;
+    }
+
+    @Override
+    public void addNrUsos() {
+        nrUsos++;
+    }
+
+    @Override
+    public int getNrUsos() {
+        return nrUsos;
     }
 
     @Override

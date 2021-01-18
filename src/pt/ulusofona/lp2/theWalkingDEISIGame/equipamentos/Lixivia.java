@@ -6,6 +6,8 @@ public class Lixivia extends Equipamento {
     //Protege se usar
     private int litros = 3;
 
+    private static int nrUsos = 0;
+
     public Lixivia(int id, int idTipo, int[] posicao){
         super(id,idTipo,posicao);
     }
@@ -17,6 +19,16 @@ public class Lixivia extends Equipamento {
     //A cada utilização gasta 0.3 litros, ou seja da pra usar 3 vezes
     public void usar(){
         litros--;
+    }
+
+    @Override
+    public void addNrUsos() {
+        nrUsos++;
+    }
+
+    @Override
+    public int getNrUsos() {
+        return nrUsos;
     }
 
     @Override

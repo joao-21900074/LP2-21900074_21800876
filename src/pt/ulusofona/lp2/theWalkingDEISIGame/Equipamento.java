@@ -66,5 +66,10 @@ public abstract class Equipamento {
         }
     }
 
+
+    abstract public int getNrUsos();
+
+    abstract public void addNrUsos();
+
     abstract public String toString();
 }

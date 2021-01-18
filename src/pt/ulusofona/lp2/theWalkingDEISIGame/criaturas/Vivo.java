@@ -11,7 +11,7 @@ public class Vivo extends Creature {
     private boolean safe = false;
     private boolean envenenado = false;
     private int protecaoVeneno = 3;
-
+    private int nKills = 0;
 
     //Construtor vazio
     public Vivo() {
@@ -134,6 +134,14 @@ public class Vivo extends Creature {
 
     public boolean estaSalvo() {
         return safe;
+    }
+
+    public int getNKills() {
+        return nKills;
+    }
+
+    public void addNKills() {
+        nKills++;
     }
 
     @Override

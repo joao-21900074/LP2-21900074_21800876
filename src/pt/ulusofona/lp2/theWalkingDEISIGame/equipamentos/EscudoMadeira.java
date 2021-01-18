@@ -16,6 +16,8 @@ public class EscudoMadeira extends Equipamento {
     private int defesa = 1;
     private boolean deuUpgrade = false;
 
+    private static int nrUsos = 0;
+
     public EscudoMadeira(int id, int idTipo, int[] posicao){
         super(id,idTipo,posicao);
     }
@@ -35,6 +37,16 @@ public class EscudoMadeira extends Equipamento {
     //Após usar ele quebra
     public void defender(){
         defesa--;
+    }
+
+    @Override
+    public void addNrUsos() {
+        nrUsos++;
+    }
+
+    @Override
+    public int getNrUsos() {
+        return nrUsos;
     }
 
     @Override

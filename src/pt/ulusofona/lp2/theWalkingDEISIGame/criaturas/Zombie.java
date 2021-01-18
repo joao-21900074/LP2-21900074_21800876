@@ -41,7 +41,7 @@ public abstract class Zombie extends Creature {
         return true;
 }
 
-    private String retornaNomeTipo(int idTipo) {
+    public String retornaNomeTipo(int idTipo) {
         switch (idTipo) {
             case 0:
                 return "Criança (Zombie)";
@@ -70,8 +70,13 @@ public abstract class Zombie extends Creature {
         nTransformacoes++;
     }
 
+
     @Override
     public int getEquipe(){return 20;}
+
+    public abstract void addTotalEquipDestruidos();
+
+    public abstract int getTotalEquipDestruidos();
 
     //Mudar para cada tipo de Zombie
     public String toString() {

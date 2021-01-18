@@ -7,6 +7,8 @@ public class HumanoAdulto extends Humano {
         super(id,idTipo,nome,posicao);
     }
 
+
+
     @Override
     public boolean validaMove(int xD, int yD, boolean isDay, int idDestino, int idTipoDestino) {
         //Valida condições gerais de Humano

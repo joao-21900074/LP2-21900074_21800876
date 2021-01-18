@@ -9,6 +9,8 @@ public class Antidoto extends Equipamento {
     > Consome insta
      */
 
+    private static int nrUsos = 0;
+
     private int conteudo = 1;
 
     public Antidoto(int id, int idTipo, int[] posicao){
@@ -18,6 +20,16 @@ public class Antidoto extends Equipamento {
     //Só uma uma vez, só se tiver envenedado
     public void tomar(){
         this.conteudo = 0;
+    }
+
+    @Override
+    public void addNrUsos() {
+        nrUsos++;
+    }
+
+    @Override
+    public int getNrUsos() {
+        return nrUsos;
     }
 
     @Override
