@@ -7,6 +7,7 @@ public class InvalidTWDInitialFileException extends Exception {
 
     public InvalidTWDInitialFileException(){}
 
+    //Precisa desse construtor para dar display da linha errada na interface
     public InvalidTWDInitialFileException(String s){
         this.erroneousLine = s;
     }
@@ -24,7 +25,6 @@ public class InvalidTWDInitialFileException extends Exception {
             throws InvalidTWDInitialFileException{
 
         this.creatureDefinition = argumentosCriaturaStartgame;
-        this.erroneousLine = linhaErrada;
         if(!validCreatureDefinition()){
             throw new InvalidTWDInitialFileException(linhaErrada);
         }
