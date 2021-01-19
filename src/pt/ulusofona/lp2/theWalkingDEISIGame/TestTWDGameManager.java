@@ -4,6 +4,7 @@ import org.junit.Test;
 import pt.ulusofona.lp2.theWalkingDEISIGame.criaturas.*;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 
 public class TestTWDGameManager {
     private TWDGameManager testStart = new TWDGameManager();
@@ -19,61 +20,61 @@ public class TestTWDGameManager {
 
 
     @Test
-    public void testLeituraRuim(){
+    public void testLeituraRuim() throws InvalidTWDInitialFileException, FileNotFoundException {
         TWDGameManager testStart = new TWDGameManager();
         File ficheiroTest = new File("");
         testStart.startGame(ficheiroTest);
     }
 
     @Test
-    public void testLeituraBoa(){
+    public void testLeituraBoa() throws InvalidTWDInitialFileException, FileNotFoundException {
         testStart.startGame(ficheiroTest);
     }
 
     @Test
-    public void testWolrdSize(){
+    public void testWolrdSize() throws InvalidTWDInitialFileException, FileNotFoundException {
         testLeituraBoa();
         testStart.getWorldSize();
     }
 
     @Test
-    public void testInitialTeam(){
+    public void testInitialTeam() throws InvalidTWDInitialFileException, FileNotFoundException {
         testLeituraBoa();
         testStart.getInitialTeam();
     }
 
     @Test
-    public void testEquipmentTypeId(){
+    public void testEquipmentTypeId() throws InvalidTWDInitialFileException, FileNotFoundException {
         testLeituraBoa();
         testStart.getEquipmentTypeId(-1);
     }
 
     @Test
-    public void testEquipmentInfo(){
+    public void testEquipmentInfo() throws InvalidTWDInitialFileException, FileNotFoundException {
         testLeituraBoa();
         testStart.getEquipmentInfo(-1);
     }
 
     @Test
-    public void testFicheiroAllEquipments(){
+    public void testFicheiroAllEquipments() throws InvalidTWDInitialFileException, FileNotFoundException {
         File ficheiroE = new File("./test-files/allequipments");
         testStart.startGame(ficheiroE);
     }
 
     @Test
-    public void testDoorSafeHavenBoa(){
+    public void testDoorSafeHavenBoa() throws InvalidTWDInitialFileException, FileNotFoundException {
         testLeituraBoa();
         testStart.isDoorToSafeHaven(6,6);
     }
 
     @Test
-    public void testDoorSafeHavenRuim(){
+    public void testDoorSafeHavenRuim() throws InvalidTWDInitialFileException, FileNotFoundException {
         testLeituraBoa();
         testStart.isDoorToSafeHaven(5,5);
     }
 
     @Test
-    public void testSaveGame(){
+    public void testSaveGame() throws InvalidTWDInitialFileException, FileNotFoundException {
         testLeituraBoa();
         testStart.saveGame(new File("save.txt"));
     }
@@ -227,7 +228,7 @@ public class TestTWDGameManager {
     }
 
     @Test
-    public void testGameResult(){
+    public void testGameResult() throws InvalidTWDInitialFileException, FileNotFoundException {
         //Teste básico de resultado
         testLeituraBoa();
         testStart.getGameResults();

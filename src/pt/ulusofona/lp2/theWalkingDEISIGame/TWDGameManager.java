@@ -29,7 +29,7 @@ public class TWDGameManager {
 
     //Leitura do Ficheiro, onde pretende-se iniciar o jogo
     //MUDAR O RETORNO PRA SER VOID
-    public boolean startGame(File ficheiroInicial) throws InvalidTWDInitialFileException{
+    public void startGame(File ficheiroInicial) throws InvalidTWDInitialFileException, FileNotFoundException{
         try {
             //Leitor para o ficheiro do jogo
             Scanner leitor = new Scanner(new FileReader(ficheiroInicial));
@@ -61,9 +61,19 @@ public class TWDGameManager {
                     case 3:
                         int nCriaturas = Integer.parseInt(info[0]);
 
+                        if(nCriaturas < 2){
+                            throw new InvalidTWDInitialFileException(nCriaturas);
+                        }
+
                         //Criação das Criaturas
                         while (nCriaturas != 0) {
-                            info = leitor.nextLine().split(" : ");
+                            String linhaCriatura = leitor.nextLine();
+                            info = linhaCriatura.split(" : ");
+
+                            if(info.length != 5){
+                                throw new InvalidTWDInitialFileException(info.length, linhaCriatura);
+                            }
+
                             int id = Integer.parseInt(info[0]);
                             int idTipo = Integer.parseInt(info[1]);
                             String nome = info[2];
@@ -126,11 +136,9 @@ public class TWDGameManager {
                 }
             }
 
-            return true;
         } catch (FileNotFoundException e) {
             System.out.println("Ficheiro não encontrado");
         }
-        return false;
     }
 
     //Tamanho do mapa (PRONTO)
@@ -738,8 +746,8 @@ public class TWDGameManager {
         return false;
     }
 
-    public boolean loadGame(File fich) throws InvalidTWDInitialFileException {
-        return startGame(fich);
+    public void loadGame(File fich) throws InvalidTWDInitialFileException, FileNotFoundException {
+        startGame(fich);
     }
 
     //ainda faltam algumas repostas
