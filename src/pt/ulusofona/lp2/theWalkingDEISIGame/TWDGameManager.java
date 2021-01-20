@@ -30,117 +30,113 @@ public class TWDGameManager {
     //Leitura do Ficheiro, onde pretende-se iniciar o jogo
     //MUDAR O RETORNO PRA SER VOID
     public void startGame(File ficheiroInicial) throws InvalidTWDInitialFileException, FileNotFoundException{
-        try {
-            //Leitor para o ficheiro do jogo
-            Scanner leitor = new Scanner(new FileReader(ficheiroInicial));
-            String[] info;
-            int nLinha = 0;
+        //Leitor para o ficheiro do jogo
+        Scanner leitor = new Scanner(new FileReader(ficheiroInicial));
+        String[] info;
+        int nLinha = 0;
 
-            //While de leitura
-            while(leitor.hasNextLine()) {
-                info = leitor.nextLine().split(":");
-                nLinha++;
-                switch (nLinha) {
+        //While de leitura
+        while(leitor.hasNextLine()) {
+            info = leitor.nextLine().split(":");
+            nLinha++;
+            switch (nLinha) {
 
-                    //Criação do Mapa + worldSize
-                    case 1:
-                        String[] cxl = info[0].split(" ");
-                        int linhas = Integer.parseInt(cxl[0]);
-                        int colunas = Integer.parseInt(cxl[1]);
-                        map = new int[colunas][linhas];
-                        worldSize = new int[]{linhas, colunas};
-                        break;
+                //Criação do Mapa + worldSize
+                case 1:
+                    String[] cxl = info[0].split(" ");
+                    int linhas = Integer.parseInt(cxl[0]);
+                    int colunas = Integer.parseInt(cxl[1]);
+                    map = new int[colunas][linhas];
+                    worldSize = new int[]{linhas, colunas};
+                    break;
 
-                    //Equipe Inicial
-                    case 2:
-                        initialTeam = Integer.parseInt(info[0]);
-                        currentTeam = initialTeam;
-                        break;
+                //Equipe Inicial
+                case 2:
+                    initialTeam = Integer.parseInt(info[0]);
+                    currentTeam = initialTeam;
+                    break;
 
-                    //Quantidade de Criaturas
-                    case 3:
-                        int nCriaturas = Integer.parseInt(info[0]);
+                //Quantidade de Criaturas
+                case 3:
+                    int nCriaturas = Integer.parseInt(info[0]);
 
-                        //Necssário pelo menos 2 criaturas para jogar o jogo
-                        if(nCriaturas < 2){
-                            throw new InvalidTWDInitialFileException(nCriaturas);
+                    //Necssário pelo menos 2 criaturas para jogar o jogo
+                    if(nCriaturas < 2){
+                        throw new InvalidTWDInitialFileException(nCriaturas);
+                    }
+
+                    //Criação das Criaturas
+                    while (nCriaturas != 0) {
+                        String linhaCriatura = leitor.nextLine();
+                        info = linhaCriatura.split(" : ");
+
+                        //Dados das criaturas devem estar completos
+                        if(info.length != 5){
+                            throw new InvalidTWDInitialFileException(info.length, linhaCriatura);
                         }
 
-                        //Criação das Criaturas
-                        while (nCriaturas != 0) {
-                            String linhaCriatura = leitor.nextLine();
-                            info = linhaCriatura.split(" : ");
+                        int id = Integer.parseInt(info[0]);
+                        int idTipo = Integer.parseInt(info[1]);
+                        String nome = info[2];
+                        int posicaoX = Integer.parseInt(info[3]);
+                        int posicaoY = Integer.parseInt(info[4]);
 
-                            //Dados das criaturas devem estar completos
-                            if(info.length != 5){
-                                throw new InvalidTWDInitialFileException(info.length, linhaCriatura);
-                            }
+                        //Usando o Factory do Creature para criar objetos
+                        Creature c = Creature.criarCreature(id, idTipo, nome, new int[]{posicaoX,posicaoY});
 
-                            int id = Integer.parseInt(info[0]);
-                            int idTipo = Integer.parseInt(info[1]);
-                            String nome = info[2];
-                            int posicaoX = Integer.parseInt(info[3]);
-                            int posicaoY = Integer.parseInt(info[4]);
+                        creatures.add(c);
+                        map[posicaoX][posicaoY] = id;
 
-                            //Usando o Factory do Creature para criar objetos
-                            Creature c = Creature.criarCreature(id, idTipo, nome, new int[]{posicaoX,posicaoY});
-
-                            creatures.add(c);
-                            map[posicaoX][posicaoY] = id;
-
-                            if(idTipo > 4 && idTipo < 10){
-                                vivos.add((Vivo) c);
-                            }else if(idTipo <= 4){
-                                zombies.add((Zombie) c);
-                            }
-
-                            nCriaturas--;
+                        if(idTipo > 4 && idTipo < 10){
+                            vivos.add((Vivo) c);
+                        }else if(idTipo <= 4){
+                            zombies.add((Zombie) c);
                         }
-                        break;
 
-                    //Quantidade de Equipamentos
-                    case 4:
-                        int nEquimamentos = Integer.parseInt(info[0]);
+                        nCriaturas--;
+                    }
+                    break;
 
-                        //Criação dos Equipamentos
-                        while (nEquimamentos != 0) {
-                            info = leitor.nextLine().split(" : ");
-                            int id = Integer.parseInt(info[0]);
-                            int idTipo = Integer.parseInt(info[1]);
-                            int posicaoX = Integer.parseInt(info[2]);
-                            int posicaoY = Integer.parseInt(info[3]);
+                //Quantidade de Equipamentos
+                case 4:
+                    int nEquimamentos = Integer.parseInt(info[0]);
 
-                            //Usando o Factory do Equipamento para criar objetos
-                            Equipamento e = Equipamento.criarEquipamento(id, idTipo, new int[]{posicaoX,posicaoY});
+                    //Criação dos Equipamentos
+                    while (nEquimamentos != 0) {
+                        info = leitor.nextLine().split(" : ");
+                        int id = Integer.parseInt(info[0]);
+                        int idTipo = Integer.parseInt(info[1]);
+                        int posicaoX = Integer.parseInt(info[2]);
+                        int posicaoY = Integer.parseInt(info[3]);
 
-                            equipamentos.add(e);
-                            map[posicaoX][posicaoY] = id;
+                        //Usando o Factory do Equipamento para criar objetos
+                        Equipamento e = Equipamento.criarEquipamento(id, idTipo, new int[]{posicaoX,posicaoY});
 
-                            nEquimamentos--;
-                        }
-                        break;
+                        equipamentos.add(e);
+                        map[posicaoX][posicaoY] = id;
 
-                    //Quantidade de Safe Havens
-                    case 5:
-                        int nSafeHaven = Integer.parseInt(info[0]);
+                        nEquimamentos--;
+                    }
+                    break;
 
-                        while (nSafeHaven != 0) {
-                            info = leitor.nextLine().split(" : ");
-                            int posicaoX = Integer.parseInt(info[0]);
-                            int posicaoY = Integer.parseInt(info[1]);
+                //Quantidade de Safe Havens
+                case 5:
+                    int nSafeHaven = Integer.parseInt(info[0]);
 
-                            safeHavens.add(new int[]{posicaoX,posicaoY});
-                            map[posicaoX][posicaoY] = 0;
+                    while (nSafeHaven != 0) {
+                        info = leitor.nextLine().split(" : ");
+                        int posicaoX = Integer.parseInt(info[0]);
+                        int posicaoY = Integer.parseInt(info[1]);
 
-                            nSafeHaven--;
-                        }
-                        break;
-                }
+                        safeHavens.add(new int[]{posicaoX,posicaoY});
+                        map[posicaoX][posicaoY] = 0;
+
+                        nSafeHaven--;
+                    }
+                    break;
             }
-
-        } catch (FileNotFoundException e) {
-            System.out.println("Ficheiro não encontrado");
         }
+
     }
 
     //Tamanho do mapa (PRONTO)
