@@ -748,8 +748,15 @@ public class TWDGameManager {
         return false;
     }
 
-    public void loadGame(File fich) throws InvalidTWDInitialFileException, FileNotFoundException {
-        startGame(fich);
+    public boolean loadGame(File fich) throws InvalidTWDInitialFileException, FileNotFoundException {
+        try {
+            startGame(fich);
+            return true;
+        } catch (IOException e) {
+            System.out.println("Falha no load");
+        }
+
+        return false;
     }
 
     //ainda faltam algumas repostas
