@@ -8,6 +8,9 @@ public abstract class Creature {
     protected String nome;
     protected String imagePng;
     protected int[] posicao;
+    protected int nEquipamentos;
+    protected int nItensDestruidos;
+    protected int score;
 
     public Creature() {}
 
@@ -28,6 +31,28 @@ public abstract class Creature {
 
     public String getNome() {
         return nome;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public void addNEquipamentos() {
+        nEquipamentos++;
+        score = nEquipamentos;
+    }
+
+    public int getNEquipamentos() {
+        return nEquipamentos;
+    }
+
+    public void addNItensDestruidos() {
+        nItensDestruidos++;
+        score = nItensDestruidos;
+    }
+
+    public int getNItensDestruidos() {
+        return nItensDestruidos;
     }
 
     public String getImagePNG() {

@@ -878,16 +878,31 @@ public class TWDGameManager {
 
         //Qual o total de equipamentos destruido por cada tipo
         //de Zombie ?
-        retorno.put("tiposDeZombieESeusEquipamentosDestruidos",null);
+
+
+        retorno.put("tiposDeZombieESeusEquipamentosDestruidos",
+                zombies.stream()
+                .sorted(Comparator.comparingInt(Zombie::getTotalEquipDestruidos))
+                .map((z) -> z.retornaNomeTipo(z.getIdTipo()) + ":" +
+                        (int) zombies.stream().filter((i) -> i.getIdTipo() == z.getIdTipo()).count() + ":" +
+                        z.getnTransformacoes())
+                .distinct().collect(Collectors.toList()));
 
         //Quais as 5 criaturas que mais equipamentos
         //apanharam/destruiram que ainda estão em jogo
         //(isto é não foram destruidas nem foram para
         //o safe haven)?
 
+        List<Creature> auxCreature = vivos.stream().filter((v) -> !v.estaSalvo()).collect(Collectors.toList());
 
+        auxCreature.addAll(zombies.stream().filter((z) -> !z.isDead()).collect(Collectors.toList()));
 
-        retorno.put("criaturasMaisEquipadas", null);
+        retorno.put("criaturasMaisEquipadas",
+                auxCreature.stream()
+                .sorted(Comparator.comparingInt(Creature::getScore))
+                .map((a) -> a.getId() + ":" + a.getNome() + ":" + a.getScore())
+                .limit(5)
+                .collect(Collectors.toList()));
 
         return retorno;
     }

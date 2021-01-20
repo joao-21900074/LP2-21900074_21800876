@@ -3,7 +3,6 @@ package pt.ulusofona.lp2.theWalkingDEISIGame.criaturas;
 import pt.ulusofona.lp2.theWalkingDEISIGame.Creature;
 
 public abstract class Zombie extends Creature {
-    private int nItensDestruido = 0;
     private String nomeTipo;
     private boolean dead = false;
     private int nTransformacoes = 0;
@@ -15,7 +14,7 @@ public abstract class Zombie extends Creature {
     }
 
     public void destruirIten() {
-        nItensDestruido++;
+        super.addNItensDestruidos();
     }
 
     public boolean validaMove(int xD, int yD, boolean isDay, int idDestino, int idTipoDestino) {
@@ -33,7 +32,7 @@ public abstract class Zombie extends Creature {
         if(idDestino < 0 && !(idTipoDestino == 8)){
             //Não contar quando zombie vampiro vai pra cima de alho
             if(idTipo == 4 && idTipoDestino == 5) {
-                nItensDestruido--;
+                super.nItensDestruidos--;
             }
             destruirIten();
         }
@@ -62,6 +61,10 @@ public abstract class Zombie extends Creature {
         dead = true;
     }
 
+    public boolean isDead() {
+        return dead;
+    }
+
     public int getnTransformacoes() {
         return nTransformacoes;
     }
@@ -82,9 +85,9 @@ public abstract class Zombie extends Creature {
     public String toString() {
 
         if(dead) {
-            return id + " | " + nomeTipo + " | Os Outros | " + nome + " " + nItensDestruido + " @ RIP";
+            return id + " | " + nomeTipo + " | Os Outros | " + nome + " " + super.getNItensDestruidos() + " @ RIP";
         }
 
-        return id + " | " + nomeTipo + " | Os Outros | " + nome + " " + nItensDestruido + " @ (" + super.getPosicao()[0] + ", " + super.getPosicao()[1] + ")";
+        return id + " | " + nomeTipo + " | Os Outros | " + nome + " " + super.getNItensDestruidos() + " @ (" + super.getPosicao()[0] + ", " + super.getPosicao()[1] + ")";
     }
 }

@@ -6,7 +6,6 @@ import pt.ulusofona.lp2.theWalkingDEISIGame.equipamentos.*;
 public class Vivo extends Creature {
 
     protected Equipamento equipamento;
-    protected int nEquipamentos = 0;
     private String nomeTipo;
     private boolean safe = false;
     private boolean envenenado = false;
@@ -94,7 +93,7 @@ public class Vivo extends Creature {
         //derruba ele na posicao anterior e equipa o novo
 
         this.equipamento = equipamento;
-        nEquipamentos++;
+        super.addNEquipamentos();
         return true;
     }
 
@@ -147,10 +146,10 @@ public class Vivo extends Creature {
     @Override
     public String toString() {
         if (safe) {
-            return id + " | " + nomeTipo + " | Os Vivos | " + nome + " " + nEquipamentos + " @ A salvo";
+            return id + " | " + nomeTipo + " | Os Vivos | " + nome + " " + getNEquipamentos() + " @ A salvo";
 
         }
 
-        return id + " | " + nomeTipo + " | Os Vivos | " + nome + " " + nEquipamentos + " @ (" + super.getPosicao()[0] + ", " + super.getPosicao()[1] + ")";
+        return id + " | " + nomeTipo + " | Os Vivos | " + nome + " " + getNEquipamentos() + " @ (" + super.getPosicao()[0] + ", " + super.getPosicao()[1] + ")";
     }
 }
