@@ -43,13 +43,13 @@ public abstract class Zombie extends Creature {
     public String retornaNomeTipo(int idTipo) {
         switch (idTipo) {
             case 0:
-                return "Criança";
+                return "Criança (Zombie)";
             case 1:
-                return "Adulto";
+                return "Adulto (Zombie)";
             case 2:
-                return "Militar";
+                return "Militar (Zombie)";
             case 3:
-                return "Idoso";
+                return "Idoso (Zombie)";
             case 4:
                 return "Zombie Vampiro";
             default:

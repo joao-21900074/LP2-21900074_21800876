@@ -993,9 +993,9 @@ public class TWDGameManager {
                 zombies.stream()
                         .sorted(Comparator.comparingInt(Zombie::getTotalEquipDestruidos).reversed())
                         .filter((z) -> !z.isDead())
-                        .map((z) -> z.retornaNomeTipo(z.getIdTipo()) + ":" +
+                        .map((z) -> z.retornaNomeTipoSimples(z.getIdTipo()) + ":" +
                         (int) zombies.stream().filter((i) -> i.getIdTipo() == z.getIdTipo()).count() + ":" +
-                        z.getnTransformacoes())
+                        z.getTotalEquipDestruidos())
                         .distinct().collect(Collectors.toList()));
 
         //Quais as 5 criaturas que mais equipamentos

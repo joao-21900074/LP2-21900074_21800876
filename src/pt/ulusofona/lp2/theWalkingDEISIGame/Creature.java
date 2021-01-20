@@ -65,6 +65,29 @@ public abstract class Creature {
         posicao = newPosicao;
     }
 
+    public String retornaNomeTipoSimples(int idTipo) {
+        switch (idTipo) {
+            case 0:
+            case 5:
+                return "Criança";
+            case 1:
+            case 6:
+                return "Adulto";
+            case 2:
+            case 7:
+                return "Militar";
+            case 3:
+            case 8:
+                return "Idoso";
+            case 4:
+                return "Zombie Vampiro";
+            case 9:
+                return "Cão";
+            default:
+                return "Erro";
+        }
+    }
+
     public abstract boolean validaMove(int xD, int yD, boolean isDay, int idDestino, int idTipoDestino);
 
     //Factory
