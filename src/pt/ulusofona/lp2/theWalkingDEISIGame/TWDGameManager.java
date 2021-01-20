@@ -952,14 +952,15 @@ public class TWDGameManager {
         //Quais os 3 zombies que mais Vivos transformaram ?
         retorno.put("os3ZombiesMaisTramados",
                 zombies.stream()
-                .sorted(Comparator.comparingInt(Zombie::getnTransformacoes))
-                .map((z) -> z.getId() + ":" + z.getNome() + ":" + z.getnTransformacoes())
-                .collect(Collectors.toList()));
+                        .sorted(Comparator.comparingInt(Zombie::getnTransformacoes))
+                        .filter((z) -> z.getnTransformacoes() >= 1)
+                        .map((z) -> z.getId() + ":" + z.getNome() + ":" + z.getnTransformacoes())
+                        .collect(Collectors.toList()));
 
         //Quais os 3 vivos que mais zombies destruiram ?
         retorno.put("os3VivosMaisDuros",
                 vivos.stream()
-                .sorted(Comparator.comparingInt(Vivo::getNKills))
+                .sorted(Comparator.comparingInt(Vivo::getNKills).reversed())
                 .map((v) -> v.getId() + ":" + v.getNome() + ":" + v.getNKills())
                 .collect(Collectors.toList()));
 
@@ -978,7 +979,7 @@ public class TWDGameManager {
 
         retorno.put("tiposDeZombieESeusEquipamentosDestruidos",
                 zombies.stream()
-                .sorted(Comparator.comparingInt(Zombie::getTotalEquipDestruidos))
+                .sorted(Comparator.comparingInt(Zombie::getTotalEquipDestruidos).reversed())
                 .map((z) -> z.retornaNomeTipo(z.getIdTipo()) + ":" +
                         (int) zombies.stream().filter((i) -> i.getIdTipo() == z.getIdTipo()).count() + ":" +
                         z.getnTransformacoes())
@@ -995,7 +996,7 @@ public class TWDGameManager {
 
         retorno.put("criaturasMaisEquipadas",
                 auxCreature.stream()
-                .sorted(Comparator.comparingInt(Creature::getScore))
+                .sorted(Comparator.comparingInt(Creature::getScore).reversed())
                 .map((a) -> a.getId() + ":" + a.getNome() + ":" + a.getScore())
                 .limit(5)
                 .collect(Collectors.toList()));
