@@ -54,13 +54,13 @@ public class Vivo extends Creature {
     private String retornaNomeTipo(int idTipo) {
         switch (idTipo) {
             case 5:
-                return "Criança (Vivo)";
+                return "Criança";
             case 6:
-                return "Adulto (Vivo)";
+                return "Adulto";
             case 7:
-                return "Militar (Vivo)";
+                return "Militar";
             case 8:
-                return "Idoso (Vivo)";
+                return "Idoso";
             case 9:
                 return "Cão";
             default:

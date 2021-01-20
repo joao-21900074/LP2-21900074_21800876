@@ -35,6 +35,15 @@ public class TWDGameManager {
         String[] info;
         int nLinha = 0;
 
+        //Reset de variaveis
+        equipamentos = new ArrayList<>();
+        vivos = new ArrayList<>();
+        zombies = new ArrayList<>();
+        creatures = new ArrayList<>();
+        salvos = new ArrayList<>();
+        mortos = new ArrayList<>();
+        safeHavens = new ArrayList<>();
+
         //While de leitura
         while(leitor.hasNextLine()) {
             info = leitor.nextLine().split(":");
@@ -956,24 +965,26 @@ public class TWDGameManager {
                 zombies.stream()
                         .sorted(Comparator.comparingInt(Zombie::getnTransformacoes))
                         .filter((z) -> z.getnTransformacoes() >= 1)
+                        .filter((z) -> !z.isDead())
                         .map((z) -> z.getId() + ":" + z.getNome() + ":" + z.getnTransformacoes())
                         .collect(Collectors.toList()));
 
         //Quais os 3 vivos que mais zombies destruiram ?
         retorno.put("os3VivosMaisDuros",
                 vivos.stream()
-                .sorted(Comparator.comparingInt(Vivo::getNKills).reversed())
-                .map((v) -> v.getId() + ":" + v.getNome() + ":" + v.getNKills())
-                .collect(Collectors.toList()));
+                        .sorted(Comparator.comparingInt(Vivo::getNKills).reversed())
+                        .filter((v) -> !v.estaSalvo())
+                        .map((v) -> v.getId() + ":" + v.getNome() + ":" + v.getNKills())
+                        .collect(Collectors.toList()));
 
         //Quais os equipamentos que mais safaram os Vivos ?
         //Devem ser considerados quer os esquipamentos ofensivos
         //quer os defensivos.
         retorno.put("tiposDeEquipamentoMaisUteis",
                 equipamentos.stream()
-                .sorted(Comparator.comparingInt(Equipamento::getNrUsos))
-                .map((e) -> e.getId() + " " + e.getNrUsos())
-                .collect(Collectors.toList()));
+                            .sorted(Comparator.comparingInt(Equipamento::getNrUsos))
+                            .map((e) -> e.getId() + " " + e.getNrUsos())
+                            .collect(Collectors.toList()));
 
         //Qual o total de equipamentos destruido por cada tipo
         //de Zombie ?
@@ -981,11 +992,12 @@ public class TWDGameManager {
 
         retorno.put("tiposDeZombieESeusEquipamentosDestruidos",
                 zombies.stream()
-                .sorted(Comparator.comparingInt(Zombie::getTotalEquipDestruidos).reversed())
-                .map((z) -> z.retornaNomeTipo(z.getIdTipo()) + ":" +
+                        .sorted(Comparator.comparingInt(Zombie::getTotalEquipDestruidos).reversed())
+                        .filter((z) -> !z.isDead())
+                        .map((z) -> z.retornaNomeTipo(z.getIdTipo()) + ":" +
                         (int) zombies.stream().filter((i) -> i.getIdTipo() == z.getIdTipo()).count() + ":" +
                         z.getnTransformacoes())
-                .distinct().collect(Collectors.toList()));
+                        .distinct().collect(Collectors.toList()));
 
         //Quais as 5 criaturas que mais equipamentos
         //apanharam/destruiram que ainda estão em jogo
