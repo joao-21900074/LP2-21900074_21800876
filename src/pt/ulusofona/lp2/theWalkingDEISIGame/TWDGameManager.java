@@ -68,20 +68,17 @@ public class TWDGameManager {
                 //Quantidade de Criaturas
                 case 3:
                     int nCriaturas = Integer.parseInt(info[0]);
-
-                    //Necssário pelo menos 2 criaturas para jogar o jogo
-                    if(nCriaturas < 3){
-                        throw new InvalidTWDInitialFileException(nCriaturas);
-                    }
+                    int hold = nCriaturas;
 
                     //Criação das Criaturas
                     while (nCriaturas != 0) {
                         String linhaCriatura = leitor.nextLine();
                         info = linhaCriatura.split(" : ");
 
+                        //Necssário pelo menos 2 criaturas para jogar o jogo
                         //Dados das criaturas devem estar completos
-                        if(info.length != 5){
-                            throw new InvalidTWDInitialFileException(info.length, linhaCriatura);
+                        if(hold < 3){
+                            throw new InvalidTWDInitialFileException(hold, info.length, linhaCriatura);
                         }
 
                         int id = Integer.parseInt(info[0]);
