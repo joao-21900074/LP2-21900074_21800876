@@ -76,8 +76,12 @@ public class TWDGameManager {
                         info = linhaCriatura.split(" : ");
 
                         //Necssário pelo menos 2 criaturas para jogar o jogo
-                        //Dados das criaturas devem estar completos
                         if(hold < 2){
+                            throw new InvalidTWDInitialFileException(hold, info.length, linhaCriatura);
+                        }
+
+                        //Dados das criaturas devem estar completos
+                        if(info.length != 5){
                             throw new InvalidTWDInitialFileException(hold, info.length, linhaCriatura);
                         }
 
