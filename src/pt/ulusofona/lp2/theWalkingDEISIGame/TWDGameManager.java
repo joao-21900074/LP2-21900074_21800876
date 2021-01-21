@@ -68,14 +68,20 @@ public class TWDGameManager {
                 //Quantidade de Criaturas
                 case 3:
                     int nCriaturas = Integer.parseInt(info[0]);
+
+                    //Necssário pelo menos 2 criaturas para jogar o jogo
+                    if(nCriaturas < 3){
+                        throw new InvalidTWDInitialFileException(nCriaturas);
+                    }
+
                     //Criação das Criaturas
                     while (nCriaturas != 0) {
                         String linhaCriatura = leitor.nextLine();
                         info = linhaCriatura.split(" : ");
 
                         //Dados das criaturas devem estar completos
-                        if(info.length != 5 || nCriaturas < 3){
-                            throw new InvalidTWDInitialFileException(nCriaturas, info.length, linhaCriatura);
+                        if(info.length != 5){
+                            throw new InvalidTWDInitialFileException(info.length, linhaCriatura);
                         }
 
                         int id = Integer.parseInt(info[0]);
@@ -194,10 +200,7 @@ public class TWDGameManager {
             if(!creature.validaMove(xD,yD,isDay,equipDestino.getId(), equipDestino.getIdTipo())) {
                 return false;
             }
-
-            if(creature.getEquipe() == 20) {
-                destruirEquipamentoNoDestino(destino);
-            }
+            destruirEquipamentoNoDestino(destino);
         }
 
         //Verifica se a peça esta pulando sobre outra peça ou equipamento
