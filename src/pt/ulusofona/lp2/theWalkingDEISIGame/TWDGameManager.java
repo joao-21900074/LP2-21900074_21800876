@@ -200,7 +200,10 @@ public class TWDGameManager {
             if(!creature.validaMove(xD,yD,isDay,equipDestino.getId(), equipDestino.getIdTipo())) {
                 return false;
             }
-            destruirEquipamentoNoDestino(destino);
+
+            if(creature.getEquipe() == 20) {
+                destruirEquipamentoNoDestino(destino);
+            }
         }
 
         //Verifica se a peça esta pulando sobre outra peça ou equipamento
