@@ -5,8 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/InvalidTWDInitialFileException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/InvalidTWDInitialFileException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/criaturas/Vivo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/criaturas/Vivo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-files/allequipments" beforeDir="false" afterPath="$PROJECT_DIR$/test-files/allequipments" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-files/input" beforeDir="false" afterPath="$PROJECT_DIR$/test-files/input" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,8 +26,8 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
-        <option value="joao-21900074 &lt;a21900074@alunos.ulht.pt&gt;" />
         <option value="Matheus-21800876 &lt;a21800876@alunos.ulht.pt&gt;" />
+        <option value="joao-21900074 &lt;a21900074@alunos.ulht.pt&gt;" />
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -174,13 +173,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605113877526</updated>
-    </task>
-    <task id="LOCAL-00035" summary="Criei resetGame()">
-      <created>1605916031223</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1605916031223</updated>
     </task>
     <task id="LOCAL-00036" summary="Editei move() e editei leitura de arquivo">
       <created>1605963431467</created>
@@ -518,7 +510,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611243907926</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="Alteração Veneno e Classe de Erro&#10;(Veneno tava aumentando utilização de outros equipamentos)&#10;(Mais uma tentativa de arrumar a classe de erro)">
+      <created>1611250757985</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1611250757986</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -601,7 +600,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Ajustes&#10;(Veneno Zombie)&#10;(Antido só pra envenenados)&#10;(Quantidade equipamentos Cachorro)&#10;(Luta entre crianças)&#10;(Humano mata Zombie e continua no lugar)" />
     <MESSAGE value="Ajuste&#10;(Mais uma vez arrumando criança)" />
     <MESSAGE value="+Ajustes" />
     <MESSAGE value="+Ajustes&#10;(Arrumando certo moves)" />
@@ -626,7 +624,8 @@
     <MESSAGE value="editei gameStatistics() e arrumei a alteração a de alguns parametros" />
     <MESSAGE value="editei gameStatistics()" />
     <MESSAGE value="Editei getGameStatistics() novamente" />
-    <option name="LAST_COMMIT_MESSAGE" value="Editei getGameStatistics() novamente" />
+    <MESSAGE value="Alteração Veneno e Classe de Erro&#10;(Veneno tava aumentando utilização de outros equipamentos)&#10;(Mais uma tentativa de arrumar a classe de erro)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Alteração Veneno e Classe de Erro&#10;(Veneno tava aumentando utilização de outros equipamentos)&#10;(Mais uma tentativa de arrumar a classe de erro)" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/LP2_21900074_21800876$pt_ulusofona_lp2_theWalkingDEISIGame_in_Projeto_LP2.ic" NAME="pt.ulusofona.lp2.theWalkingDEISIGame in Projeto_LP2 Coverage Results" MODIFIED="1609607485841" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

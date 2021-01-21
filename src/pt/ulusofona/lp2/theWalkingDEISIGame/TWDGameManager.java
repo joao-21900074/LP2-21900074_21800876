@@ -70,7 +70,7 @@ public class TWDGameManager {
                     int nCriaturas = Integer.parseInt(info[0]);
 
                     //Necssário pelo menos 2 criaturas para jogar o jogo
-                    if(nCriaturas < 2){
+                    if(nCriaturas < 3){
                         throw new InvalidTWDInitialFileException(nCriaturas);
                     }
 
