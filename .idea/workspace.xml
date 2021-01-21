@@ -4,7 +4,6 @@
     <list default="true" id="277f7e4c-8220-423e-9b73-9c62c1e271f8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/InvalidTWDInitialFileException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/InvalidTWDInitialFileException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-files/input" beforeDir="false" afterPath="$PROJECT_DIR$/test-files/input" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -173,20 +172,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605113877526</updated>
-    </task>
-    <task id="LOCAL-00038" summary="+ edits no move()">
-      <created>1605976832683</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1605976832683</updated>
-    </task>
-    <task id="LOCAL-00039" summary="Nova lib adicionado">
-      <created>1607531262819</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1607531262819</updated>
     </task>
     <task id="LOCAL-00040" summary="Leitura de Ficheiro V1&#10;&#10;(Falta passar os dados para os respectivos Objetos)">
       <created>1608408929541</created>
@@ -517,7 +502,21 @@
       <option name="project" value="LOCAL" />
       <updated>1611264387744</updated>
     </task>
-    <option name="localTasksCounter" value="87" />
+    <task id="LOCAL-00087" summary="Refiz a classe de erros">
+      <created>1611266734081</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1611266734081</updated>
+    </task>
+    <task id="LOCAL-00088" summary="Refiz a classe de erros">
+      <created>1611266759825</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1611266759825</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -600,7 +599,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="+Ajustes&#10;(Arrumando certo moves)" />
     <MESSAGE value="Destruindo Equipamentos" />
     <MESSAGE value="Sumindo com Zombie do mapa quando ele morre" />
     <MESSAGE value="Idoso com Equipamento" />
@@ -625,7 +623,8 @@
     <MESSAGE value="Ordem de erros alterada" />
     <MESSAGE value="Erros" />
     <MESSAGE value="+Erros" />
-    <option name="LAST_COMMIT_MESSAGE" value="+Erros" />
+    <MESSAGE value="Refiz a classe de erros" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refiz a classe de erros" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/LP2_21900074_21800876$pt_ulusofona_lp2_theWalkingDEISIGame_in_Projeto_LP2.ic" NAME="pt.ulusofona.lp2.theWalkingDEISIGame in Projeto_LP2 Coverage Results" MODIFIED="1609607485841" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

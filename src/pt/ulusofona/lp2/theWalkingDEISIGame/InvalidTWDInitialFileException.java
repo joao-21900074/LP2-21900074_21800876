@@ -5,6 +5,8 @@ public class InvalidTWDInitialFileException extends Exception {
     private int creatureDefinition;
     private String erroneousLine;
 
+    public InvalidTWDInitialFileException(){}
+
     //Precisa desse construtor para dar display da linha errada na interface
     public InvalidTWDInitialFileException(String s){
         this.erroneousLine = s;
@@ -23,7 +25,7 @@ public class InvalidTWDInitialFileException extends Exception {
 
     //Este método deve devolver true se e só se o ficheiro tiver pelo menos 2 criaturas
     public boolean validNrOfCreatures() {
-        return nrOfCreatures < 3;
+        return !(nrOfCreatures < 2);
     }
 
 
