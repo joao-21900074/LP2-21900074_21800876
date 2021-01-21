@@ -68,15 +68,14 @@ public class TWDGameManager {
                 //Quantidade de Criaturas
                 case 3:
                     int nCriaturas = Integer.parseInt(info[0]);
-
                     //Criação das Criaturas
                     while (nCriaturas != 0) {
                         String linhaCriatura = leitor.nextLine();
                         info = linhaCriatura.split(" : ");
 
                         //Dados das criaturas devem estar completos
-                        if(info.length != 5){
-                            throw new InvalidTWDInitialFileException(info.length, linhaCriatura);
+                        if(info.length != 5 || nCriaturas < 3){
+                            throw new InvalidTWDInitialFileException(nCriaturas, info.length, linhaCriatura);
                         }
 
                         int id = Integer.parseInt(info[0]);
@@ -99,12 +98,6 @@ public class TWDGameManager {
 
                         nCriaturas--;
                     }
-
-                    //Necssário pelo menos 2 criaturas para jogar o jogo
-                    if(creatures.size() < 3){
-                        throw new InvalidTWDInitialFileException(creatures.size());
-                    }
-
                     break;
 
                 //Quantidade de Equipamentos
@@ -146,6 +139,7 @@ public class TWDGameManager {
                     break;
             }
         }
+
     }
 
     //Tamanho do mapa (PRONTO)
