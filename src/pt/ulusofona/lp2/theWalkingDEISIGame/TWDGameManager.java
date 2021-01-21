@@ -36,13 +36,13 @@ public class TWDGameManager {
         int nLinha = 0;
 
         //Reset de variaveis
-        equipamentos = new ArrayList<>();
-        vivos = new ArrayList<>();
-        zombies = new ArrayList<>();
-        creatures = new ArrayList<>();
-        salvos = new ArrayList<>();
-        mortos = new ArrayList<>();
-        safeHavens = new ArrayList<>();
+        equipamentos.clear();
+        vivos.clear();
+        zombies.clear();
+        creatures.clear();
+        salvos.clear();
+        mortos.clear();
+        safeHavens.clear();
 
         //While de leitura
         while(leitor.hasNextLine()) {
@@ -316,6 +316,8 @@ public class TWDGameManager {
         turnos++; //Essa variavel é zerada toda vez que alguém foi transformado
         turnosTerminados++; //Essa varival representa o numero de turnos terminados
 
+        //printaArrays();
+
         return true;
     }
 
@@ -393,6 +395,7 @@ public class TWDGameManager {
     public void batalha(Humano humano, Zombie zombie){
         if(!humano.temEquipamento()){
             morreu(humano);
+            zombie.addNTranformacoes();
         }else{
             if(!(humano.protecao() > 0)){
                 morreu(humano);
@@ -957,13 +960,13 @@ public class TWDGameManager {
     }
 
     public Map<String, List<String>> getGameStatistics() {
-        HashMap<String, List<String>> retorno = new HashMap<String, List<String>>();
+        Map<String, List<String>> retorno = new HashMap<String, List<String>>();
 
         //Quais os 3 zombies que mais Vivos transformaram ?
         retorno.put("os3ZombiesMaisTramados",
                 zombies.stream()
                         .sorted(Comparator.comparingInt(Zombie::getnTransformacoes))
-                        .filter((z) -> z.getnTransformacoes() >= 1)
+                        .filter((z) -> z.getnTransformacoes() > 0)
                         .filter((z) -> !z.isDead())
                         .map((z) -> z.getId() + ":" + z.getNome() + ":" + z.getnTransformacoes())
                         .collect(Collectors.toList()));
@@ -972,6 +975,7 @@ public class TWDGameManager {
         retorno.put("os3VivosMaisDuros",
                 vivos.stream()
                         .sorted(Comparator.comparingInt(Vivo::getNKills).reversed())
+                        .filter((v) -> v.getNKills() > 0)
                         .filter((v) -> !v.estaSalvo())
                         .map((v) -> v.getId() + ":" + v.getNome() + ":" + v.getNKills())
                         .collect(Collectors.toList()));
@@ -981,6 +985,7 @@ public class TWDGameManager {
         //quer os defensivos.
         retorno.put("tiposDeEquipamentoMaisUteis",
                 equipamentos.stream()
+                            .filter((e) -> e.getNrUsos() > 0)
                             .sorted(Comparator.comparingInt(Equipamento::getNrUsos))
                             .map((e) -> e.getId() + " " + e.getNrUsos())
                             .collect(Collectors.toList()));
@@ -991,8 +996,9 @@ public class TWDGameManager {
 
         retorno.put("tiposDeZombieESeusEquipamentosDestruidos",
                 zombies.stream()
-                        .sorted(Comparator.comparingInt(Zombie::getTotalEquipDestruidos).reversed())
+                        .filter((z) -> z.getTotalEquipDestruidos() > 0)
                         .filter((z) -> !z.isDead())
+                        .sorted(Comparator.comparingInt(Zombie::getTotalEquipDestruidos).reversed())
                         .map((z) -> z.retornaNomeTipoSimples(z.getIdTipo()) + ":" +
                         (int) zombies.stream().filter((i) -> i.getIdTipo() == z.getIdTipo()).count() + ":" +
                         z.getTotalEquipDestruidos())
@@ -1009,11 +1015,36 @@ public class TWDGameManager {
 
         retorno.put("criaturasMaisEquipadas",
                 auxCreature.stream()
-                .sorted(Comparator.comparingInt(Creature::getScore).reversed())
-                .map((a) -> a.getId() + ":" + a.getNome() + ":" + a.getScore())
-                .limit(5)
-                .collect(Collectors.toList()));
+                        .filter((a) -> a.getScore() > 0)
+                        .sorted(Comparator.comparingInt(Creature::getScore).reversed())
+                        .map((a) -> a.getId() + ":" + a.getNome() + ":" + a.getScore())
+                        .limit(5)
+                        .collect(Collectors.toList()));
 
         return retorno;
+    }
+
+    public void printaArrays() {
+        Map<String, List<String>> map = getGameStatistics();
+
+        System.out.println("\nos3ZombiesMaisTramados");
+        System.out.println(map.get("os3ZombiesMaisTramados").size());
+        map.get("os3ZombiesMaisTramados").forEach(System.out::println);
+
+        System.out.println("\nose3VivosMaisDuros");
+        System.out.println(map.get("os3VivosMaisDuros").size());
+        map.get("os3VivosMaisDuros").forEach(System.out::println);
+
+        System.out.println("\ntiposDeEquipamentoMaisUteis");
+        System.out.println(map.get("tiposDeEquipamentoMaisUteis").size());
+        map.get("tiposDeEquipamentoMaisUteis").forEach(System.out::println);
+
+        System.out.println("\ntiposDeZombieESeusEquipamentosDestruidos");
+        System.out.println(map.get("tiposDeZombieESeusEquipamentosDestruidos").size());
+        map.get("tiposDeZombieESeusEquipamentosDestruidos").forEach(System.out::println);
+
+        System.out.println("\ncriaturaMaisEquipadas");
+        System.out.println(map.get("criaturasMaisEquipadas").size());
+        map.get("criaturasMaisEquipadas").forEach(System.out::println);
     }
 }
