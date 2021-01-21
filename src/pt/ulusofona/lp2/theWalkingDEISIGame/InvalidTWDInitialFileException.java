@@ -23,7 +23,6 @@ public class InvalidTWDInitialFileException extends Exception {
 
     //Este método deve devolver true se e só se o ficheiro tiver pelo menos 2 criaturas
     public boolean validNrOfCreatures() {
-        System.out.println(nrOfCreatures < 3);
         return nrOfCreatures < 3;
     }
 
