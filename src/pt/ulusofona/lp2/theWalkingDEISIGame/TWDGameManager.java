@@ -1015,7 +1015,6 @@ public class TWDGameManager {
 
         retorno.put("criaturasMaisEquipadas",
                 auxCreature.stream()
-                        .filter((a) -> a.getScore() > 0)
                         .sorted(Comparator.comparingInt(Creature::getScore).reversed())
                         .map((a) -> a.getId() + ":" + a.getNome() + ":" + a.getScore())
                         .limit(5)
