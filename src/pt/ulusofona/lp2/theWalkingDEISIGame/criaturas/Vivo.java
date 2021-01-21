@@ -78,6 +78,8 @@ public class Vivo extends Creature {
         if (equipamento.getIdTipo() == 8) {
             Veneno v = (Veneno) equipamento;
             v.tomar();
+            //Incrementa o numero de usos do veneno
+            getEquipamento().addNrUsos();
             this.envenenado = true;
         }
 
@@ -85,6 +87,8 @@ public class Vivo extends Creature {
             assert equipamento instanceof Antidoto;
             Antidoto a = (Antidoto) equipamento;
             a.tomar();
+            //Incrementa o numero de usos do Antidoto
+            getEquipamento().addNrUsos();
             protecaoVeneno = 0;
             this.envenenado = false;
         }

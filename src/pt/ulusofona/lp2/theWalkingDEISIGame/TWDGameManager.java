@@ -431,6 +431,7 @@ public class TWDGameManager {
                     }else{
                         matou(zombie);
                         humano.addNKills();
+                        humano.getEquipamento().addNrUsos();
                     }
                     break;
 
