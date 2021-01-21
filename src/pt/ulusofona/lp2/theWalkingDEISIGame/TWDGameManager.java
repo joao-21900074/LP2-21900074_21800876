@@ -197,7 +197,10 @@ public class TWDGameManager {
             if(!creature.validaMove(xD,yD,isDay,equipDestino.getId(), equipDestino.getIdTipo())) {
                 return false;
             }
-            destruirEquipamentoNoDestino(destino);
+            if(creature.getEquipe() == 20) {
+                System.out.println("\n\n CHEGUEI NA LINHA LA \n\n");
+                destruirEquipamentoNoDestino(destino);
+            }
         }
 
         //Verifica se a peça esta pulando sobre outra peça ou equipamento
@@ -218,7 +221,7 @@ public class TWDGameManager {
                     //Tirando dos humanos
                     //vivos.removeIf(v -> v == getHumanoById(peca));
                 //Invalida caso "Outro" foi para a safe
-                }else{
+                } else {
                     return false;
                 }
             }else{
@@ -292,7 +295,6 @@ public class TWDGameManager {
             if(tamanhoDiaNoite == 0) {//Muda o isDay depois de dois turnos
                 tamanhoDiaNoite = 2; //Reseta a váriavel
                 isDay = !isDay; //Inverte o valor de isDay
-                System.out.println("mudei para " + ((isDay) ? "Dia" : "Noite"));
             }
         }
 
@@ -310,7 +312,7 @@ public class TWDGameManager {
         turnos++; //Essa variavel é zerada toda vez que alguém foi transformado
         turnosTerminados++; //Essa varival representa o numero de turnos terminados
 
-        //printaArrays();
+        printaArrays();
 
         return true;
     }
@@ -740,24 +742,24 @@ public class TWDGameManager {
         return allAtributes.toString();
     }
 
-    public String getAllEquipmentAtributes(){
+    public String getAllEquipmentAtributes() {
         StringBuilder allAtributes = new StringBuilder();
-        for(int i=0; i < equipamentos.size(); i++){
+        for(int i=0; i < equipamentos.size(); i++) {
             allAtributes.append(getEquipmentAtributes(equipamentos.get(i).getId())).append("\n");
         }
         return allAtributes.toString();
     }
 
-    public String getSafePosicao(){
+    public String getSafePosicao() {
         StringBuilder retorno = new StringBuilder();
-        for(int[] s : safeHavens){
+        for(int[] s : safeHavens) {
             retorno.append(s[0]).append(" : ").append(s[1]).append("\n");
         }
         return retorno.toString();
     }
 
     public boolean saveGame(File fich) {
-        try{
+        try {
             FileWriter escrita = new FileWriter(fich);
             escrita.write(getWorldSize()[0] + " " + getWorldSize()[1] + "\n");
             escrita.write(currentTeam + "\n");
@@ -1049,7 +1051,7 @@ public class TWDGameManager {
         Map<String, List<String>> map = getGameStatistics();
 
         System.out.println("\nEquipamentos");
-        equipamentos.forEach(System.out::println);
+        equipamentos.stream().filter((e) -> !e.getDestruido()).forEach(System.out::println);
 
         System.out.println("\nos3ZombiesMaisTramados");
         System.out.println(map.get("os3ZombiesMaisTramados").size());
