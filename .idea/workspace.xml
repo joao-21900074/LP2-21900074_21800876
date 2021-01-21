@@ -172,13 +172,6 @@
       <option name="presentableId" value="Default" />
       <updated>1605113877526</updated>
     </task>
-    <task id="LOCAL-00031" summary="edit move() de novo">
-      <created>1605903508621</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1605903508622</updated>
-    </task>
     <task id="LOCAL-00032" summary="fiz alteração na leitura de arquivos">
       <created>1605903607092</created>
       <option name="number" value="00032" />
@@ -515,7 +508,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611183778752</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="editei gameStatistics() e arrumei a alteração a de alguns parametros">
+      <created>1611238297774</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1611238297774</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -598,7 +598,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Arrumando move() Zombie" />
     <MESSAGE value="GameResult() adicionado" />
     <MESSAGE value="Função de batalha melhorada" />
     <MESSAGE value="Ajustes&#10;(Veneno Zombie)&#10;(Antido só pra envenenados)&#10;(Quantidade equipamentos Cachorro)&#10;(Luta entre crianças)&#10;(Humano mata Zombie e continua no lugar)" />
@@ -623,7 +622,8 @@
     <MESSAGE value="(Erro de numero de criaturas)" />
     <MESSAGE value="editei getGameStatistics e retornaNomeTipo()" />
     <MESSAGE value="editei getGameStatistics e criei retornaNomeTipoSimples()" />
-    <option name="LAST_COMMIT_MESSAGE" value="editei getGameStatistics e criei retornaNomeTipoSimples()" />
+    <MESSAGE value="editei gameStatistics() e arrumei a alteração a de alguns parametros" />
+    <option name="LAST_COMMIT_MESSAGE" value="editei gameStatistics() e arrumei a alteração a de alguns parametros" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/LP2_21900074_21800876$AppLauncher.ic" NAME="AppLauncher Coverage Results" MODIFIED="1609607289736" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
