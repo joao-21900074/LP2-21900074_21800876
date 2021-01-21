@@ -74,12 +74,15 @@ public class Vivo extends Creature {
             return false;
         }
 
+        this.equipamento = equipamento;
+
         //Caso seja um veneno, humano ganha proteçao por 3 turnos + fica envenenado
         if (equipamento.getIdTipo() == 8) {
             Veneno v = (Veneno) equipamento;
             v.tomar();
             //Incrementa o numero de usos do veneno
-            getEquipamento().addNrUsos();
+            //ADICIONADO NA BATALHA
+            //getEquipamento().addNrUsos();
             this.envenenado = true;
         }
 
@@ -96,7 +99,6 @@ public class Vivo extends Creature {
         //Lembrar de implementar a situação onde o jogador tem um equipamento
         //derruba ele na posicao anterior e equipa o novo
 
-        this.equipamento = equipamento;
         super.addNEquipamentos();
         return true;
     }

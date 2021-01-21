@@ -68,11 +68,14 @@ public class TWDGameManager {
                 //Quantidade de Criaturas
                 case 3:
                     int nCriaturas = Integer.parseInt(info[0]);
-                    int contagemCriaturas = 0;
+
+                    //Necssário pelo menos 2 criaturas para jogar o jogo
+                    if(nCriaturas < 2){
+                        throw new InvalidTWDInitialFileException(nCriaturas);
+                    }
 
                     //Criação das Criaturas
                     while (nCriaturas != 0) {
-                        contagemCriaturas++;
                         String linhaCriatura = leitor.nextLine();
                         info = linhaCriatura.split(" : ");
 
@@ -100,10 +103,6 @@ public class TWDGameManager {
                         }
 
                         nCriaturas--;
-                    }
-                    //Necssário pelo menos 2 criaturas para jogar o jogo
-                    if(contagemCriaturas < 2){
-                        throw new InvalidTWDInitialFileException(nCriaturas);
                     }
                     break;
 
@@ -313,10 +312,10 @@ public class TWDGameManager {
             }
         }
 
-        turnos++; //Essa variavel é zerada toda vez que alguém foi transformado
-        turnosTerminados++; //Essa varival representa o numero de turnos terminados
+        //turnos++; //Essa variavel é zerada toda vez que alguém foi transformado
+        //turnosTerminados++; //Essa varival representa o numero de turnos terminados
 
-        //printaArrays();
+        printaArrays();
 
         return true;
     }
@@ -460,6 +459,9 @@ public class TWDGameManager {
                     break;
 
                 case 3:
+
+                case 8:
+                    //Veneno
                     //Escudo Táctio, só defende então não mata nem morre
                     humano.getEquipamento().addNrUsos();
                     break;
@@ -1029,24 +1031,24 @@ public class TWDGameManager {
     public void printaArrays() {
         Map<String, List<String>> map = getGameStatistics();
 
-        System.out.println("\nos3ZombiesMaisTramados");
+        /*System.out.println("\nos3ZombiesMaisTramados");
         System.out.println(map.get("os3ZombiesMaisTramados").size());
         map.get("os3ZombiesMaisTramados").forEach(System.out::println);
 
         System.out.println("\nose3VivosMaisDuros");
         System.out.println(map.get("os3VivosMaisDuros").size());
-        map.get("os3VivosMaisDuros").forEach(System.out::println);
+        map.get("os3VivosMaisDuros").forEach(System.out::println);*/
 
         System.out.println("\ntiposDeEquipamentoMaisUteis");
         System.out.println(map.get("tiposDeEquipamentoMaisUteis").size());
         map.get("tiposDeEquipamentoMaisUteis").forEach(System.out::println);
 
-        System.out.println("\ntiposDeZombieESeusEquipamentosDestruidos");
+        /*System.out.println("\ntiposDeZombieESeusEquipamentosDestruidos");
         System.out.println(map.get("tiposDeZombieESeusEquipamentosDestruidos").size());
         map.get("tiposDeZombieESeusEquipamentosDestruidos").forEach(System.out::println);
 
         System.out.println("\ncriaturaMaisEquipadas");
         System.out.println(map.get("criaturasMaisEquipadas").size());
-        map.get("criaturasMaisEquipadas").forEach(System.out::println);
+        map.get("criaturasMaisEquipadas").forEach(System.out::println);*/
     }
 }
