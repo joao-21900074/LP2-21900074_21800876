@@ -77,7 +77,7 @@ public class TWDGameManager {
 
                         //Necssário pelo menos 2 criaturas para jogar o jogo
                         //Dados das criaturas devem estar completos
-                        if(hold < 3){
+                        if(hold < 2){
                             throw new InvalidTWDInitialFileException(hold, info.length, linhaCriatura);
                         }
 

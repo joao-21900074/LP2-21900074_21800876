@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="277f7e4c-8220-423e-9b73-9c62c1e271f8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/InvalidTWDInitialFileException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/InvalidTWDInitialFileException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-files/input" beforeDir="false" afterPath="$PROJECT_DIR$/test-files/input" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -173,13 +171,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605113877526</updated>
-    </task>
-    <task id="LOCAL-00043" summary="Criação das Classes dos Equipamentos&#10;(Arquivo de teste com todos os equipamentos)">
-      <created>1608825046323</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1608825046323</updated>
     </task>
     <task id="LOCAL-00044" summary="Factory para Creature&#10;(Creature passa para abstract)&#10;(Ajuste na visibilidade de variáveis em Creature)&#10;(Imagens ainda não estão aparecendo)">
       <created>1608897359593</created>
@@ -517,7 +508,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611269188378</updated>
     </task>
-    <option name="localTasksCounter" value="92" />
+    <task id="LOCAL-00092" summary="Classe de erros">
+      <created>1611270643164</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1611270643164</updated>
+    </task>
+    <option name="localTasksCounter" value="93" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -600,7 +598,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Ajustes&#10;(Idoso larga equip)" />
     <MESSAGE value="Lixivia" />
     <MESSAGE value="Implementei getResults()" />
     <MESSAGE value="Editei gameIsOver()" />
@@ -625,7 +622,8 @@
     <MESSAGE value="+++Erros" />
     <MESSAGE value="Apenas 1 construtor nos erros" />
     <MESSAGE value="Voltando classe de erro antiga" />
-    <option name="LAST_COMMIT_MESSAGE" value="Voltando classe de erro antiga" />
+    <MESSAGE value="Classe de erros" />
+    <option name="LAST_COMMIT_MESSAGE" value="Classe de erros" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/LP2_21900074_21800876$pt_ulusofona_lp2_theWalkingDEISIGame_in_Projeto_LP2.ic" NAME="pt.ulusofona.lp2.theWalkingDEISIGame in Projeto_LP2 Coverage Results" MODIFIED="1609607485841" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
