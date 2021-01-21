@@ -965,6 +965,7 @@ public class TWDGameManager {
         //Quais os 3 zombies que mais Vivos transformaram ?
         retorno.put("os3ZombiesMaisTramados",
                 zombies.stream()
+                        .filter((z) -> z.getnTransformacoes() > 0)
                         .filter((z) -> !z.isDead())
                         .sorted(Comparator.comparingInt(Zombie::getnTransformacoes))
                         .limit(3)
@@ -974,6 +975,7 @@ public class TWDGameManager {
         //Quais os 3 vivos que mais zombies destruiram ?
         retorno.put("os3VivosMaisDuros",
                 vivos.stream()
+                        .filter((v) -> v.getNKills() > 0)
                         .filter((v) -> !v.estaSalvo())
                         .sorted(Comparator.comparingInt(Vivo::getNKills).reversed())
                         .limit(3)
