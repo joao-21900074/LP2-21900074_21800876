@@ -6,6 +6,7 @@ public abstract class Equipamento {
     private int id;
     private int idTipo;
     private int[] posicao = new int[2];
+    private boolean destruido = false;
 
     public Equipamento() {}
 
@@ -34,6 +35,14 @@ public abstract class Equipamento {
                 return false;
         }
         return true;
+    }
+
+    public boolean getDestruido() {
+        return destruido;
+    }
+
+    public void destruirEquipamento() {
+        destruido = true;
     }
 
     //Factory

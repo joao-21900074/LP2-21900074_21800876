@@ -13,8 +13,9 @@ public abstract class Zombie extends Creature {
         nomeTipo = retornaNomeTipo(idTipo);
     }
 
-    public void destruirIten() {
+    public void destruirIten(int idIten) {
         super.addNItensDestruidos();
+
     }
 
     public boolean validaMove(int xD, int yD, boolean isDay, int idDestino, int idTipoDestino) {
@@ -34,7 +35,7 @@ public abstract class Zombie extends Creature {
             if(idTipo == 4 && idTipoDestino == 5) {
                 super.nItensDestruidos--;
             }
-            destruirIten();
+            destruirIten(idDestino);
         }
 
         return true;

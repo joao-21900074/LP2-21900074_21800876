@@ -162,11 +162,10 @@ public class TWDGameManager {
 
     public boolean move(int xO, int yO, int xD, int yD) {
         boolean fight = false;
-        boolean droparItem = false;
-        int itemDropado = 0;
         int peca; //Peça que o jogador vai mover
         int destino; //Lugar,Equipamento ou inimigo para onde o jogador vai se mover
         Creature creature; //Criatura que vai se movimentada
+        boolean destruirEquipamentoNoDestino = false;
 
         //Valida se o destino esta fora do mapa
         if(xD < 0 || xD > worldSize[1] || yD < 0 || yD > worldSize[0]){
@@ -189,7 +188,6 @@ public class TWDGameManager {
         if(getCreatureById(destino) != null) {
             Creature creatureDestino = getCreatureById(destino);
             if(!creature.validaMove(xD,yD,isDay,creatureDestino.getId(), creatureDestino.getIdTipo())) {
-                System.out.println("Vou testar para ver se tem um criatura");
                 return false;
             }
         } else if(getEquipmentById(destino) != null) {
@@ -204,6 +202,7 @@ public class TWDGameManager {
             if(!creature.validaMove(xD,yD,isDay,equipDestino.getId(), equipDestino.getIdTipo())) {
                 return false;
             }
+            destruirEquipamentoNoDestino(destino);
         }
 
         //Verifica se a peça esta pulando sobre outra peça ou equipamento
@@ -393,6 +392,7 @@ public class TWDGameManager {
 
     //Função para luta entre Humano e Zumbi
     public void batalha(Humano humano, Zombie zombie){
+
         if(!humano.temEquipamento()){
             morreu(humano);
             zombie.addNTranformacoes();
@@ -414,9 +414,13 @@ public class TWDGameManager {
                         //Incrementa o número total de usos da classe "Escudo de Madeira"
                         escudoMadeira.addNrUsos();
                         if(escudoMadeira.getDefesa() <= 0) {//Destroe escudo quando as defesas acabarem
+                            //Ecudo é destruido
+                            humano.getEquipamento().destruirEquipamento();
                             humano.equiparEquipamento(null);
                         }
                     } else {//Humano perde porque o escudo quebra (Acho que ele nunca entra nesse if)
+                        //Escudo é destruido porque humano é transformado
+                        humano.getEquipamento().destruirEquipamento();
                         morreu(humano);
                         zombie.addNTranformacoes();
                     }
@@ -426,6 +430,8 @@ public class TWDGameManager {
                     //Espada, matam zombies
                     //Caso especifico criança só mata criança
                     if(humano.getIdTipo() == 5 && !(zombie.getIdTipo() == 0)){
+                        //Espada é destruida porque o humano é transformado
+                        humano.getEquipamento().destruirEquipamento();
                         morreu(humano);
                         zombie.addNTranformacoes();
                     }else{
@@ -447,9 +453,13 @@ public class TWDGameManager {
                             matou(zombie);
                             humano.addNKills();
                             if(pistola.getBalas() <= 0) {//Destroe pistola quando acaba bala
+                                //Destroe a pistola porque acabaram as balas
+                                humano.getEquipamento().destruirEquipamento();
                                 humano.equiparEquipamento(null);
                             }
                         }else {//Humano perde porque a pistola não funciona contra ZumbiVampiro
+                            //Destroe a Pistola porque o humano morrreu
+                            humano.getEquipamento().destruirEquipamento();
                             morreu(humano);
                             zombie.addNTranformacoes();
                         }
@@ -467,6 +477,8 @@ public class TWDGameManager {
                 case 4:
                     //Revista Maria, só defende contra ZombieIdoso
                     if(!(zombie.getIdTipo() == 3)){
+                        //Destroe a Revista Maria que o Humano esta segurando
+                        humano.getEquipamento().destruirEquipamento();
                         morreu(humano);
                         zombie.addNTranformacoes();
                     } else {
@@ -477,6 +489,8 @@ public class TWDGameManager {
                 case 5:
                     //Cabeça de Alho, só defende contra ZombieVampiro
                     if(!(zombie.getIdTipo() == 4)){
+                        //Destroe o Alho que o Humano esta segurando
+                        humano.getEquipamento().destruirEquipamento();
                         morreu(humano);
                         zombie.addNTranformacoes();
                     } else {
@@ -500,6 +514,7 @@ public class TWDGameManager {
                         //Incrementa o número de usos
                         lixivia.addNrUsos();
                         if(lixivia.getLitros() <= 0) {//Destroe lixivia quando acaba a carga
+                            humano.getEquipamento().destruirEquipamento();
                             humano.equiparEquipamento(null);
                         }
                     } else {//Humano é transformado se a Lixivia n tiver mais carga
@@ -510,6 +525,8 @@ public class TWDGameManager {
 
                 case 9:
                     //Antidoto
+                    //Destroe o Antidoto que o Humano esta segurando
+                    humano.getEquipamento().destruirEquipamento();
                     morreu(humano);
                     zombie.addNTranformacoes();
                     break;
@@ -659,6 +676,10 @@ public class TWDGameManager {
         return null;
     }
 
+    public void destruirEquipamentoNoDestino(int idEquipamento) {
+        getEquipmentById(idEquipamento).destruirEquipamento();
+    }
+
     public List<Creature> getCreatures() {
         return creatures;
     }
@@ -737,6 +758,7 @@ public class TWDGameManager {
         }
         return retorno.toString();
     }
+
 
     public boolean saveGame(File fich) {
         try{
@@ -989,6 +1011,7 @@ public class TWDGameManager {
         retorno.put("tiposDeEquipamentoMaisUteis",
                 equipamentos.stream()
                             .filter((e) -> e.getNrUsos() > 0)
+                            .filter((e) -> !e.getDestruido())
                             .sorted(Comparator.comparingInt(Equipamento::getNrUsos))
                             .map((e) -> e.getId() + ":" + e.getNrUsos())
                             .collect(Collectors.toList()));
@@ -1028,6 +1051,9 @@ public class TWDGameManager {
 
     public void printaArrays() {
         Map<String, List<String>> map = getGameStatistics();
+
+        System.out.println("\nEquipamentos");
+        equipamentos.forEach(System.out::println);
 
         System.out.println("\nos3ZombiesMaisTramados");
         System.out.println(map.get("os3ZombiesMaisTramados").size());
