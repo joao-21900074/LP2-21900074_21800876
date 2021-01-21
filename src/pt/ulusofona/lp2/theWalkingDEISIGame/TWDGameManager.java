@@ -68,11 +68,14 @@ public class TWDGameManager {
                 //Quantidade de Criaturas
                 case 3:
                     int nCriaturas = Integer.parseInt(info[0]);
-                    int contagemCriaturas = 0;
+
+                    //Necssário pelo menos 2 criaturas para jogar o jogo
+                    if(nCriaturas < 2){
+                        throw new InvalidTWDInitialFileException(nCriaturas);
+                    }
 
                     //Criação das Criaturas
                     while (nCriaturas != 0) {
-                        contagemCriaturas++;
                         String linhaCriatura = leitor.nextLine();
                         info = linhaCriatura.split(" : ");
 
@@ -100,10 +103,6 @@ public class TWDGameManager {
                         }
 
                         nCriaturas--;
-                    }
-                    //Necssário pelo menos 2 criaturas para jogar o jogo
-                    if(contagemCriaturas < 2){
-                        throw new InvalidTWDInitialFileException(nCriaturas);
                     }
                     break;
 
@@ -165,7 +164,6 @@ public class TWDGameManager {
         int peca; //Peça que o jogador vai mover
         int destino; //Lugar,Equipamento ou inimigo para onde o jogador vai se mover
         Creature creature; //Criatura que vai se movimentada
-        boolean destruirEquipamentoNoDestino = false;
 
         //Valida se o destino esta fora do mapa
         if(xD < 0 || xD > worldSize[1] || yD < 0 || yD > worldSize[0]){
@@ -392,7 +390,6 @@ public class TWDGameManager {
 
     //Função para luta entre Humano e Zumbi
     public void batalha(Humano humano, Zombie zombie){
-
         if(!humano.temEquipamento()){
             morreu(humano);
             zombie.addNTranformacoes();
@@ -470,6 +467,9 @@ public class TWDGameManager {
                     break;
 
                 case 3:
+
+                case 8:
+                    //Veneno
                     //Escudo Táctio, só defende então não mata nem morre
                     humano.getEquipamento().addNrUsos();
                     break;
@@ -758,7 +758,6 @@ public class TWDGameManager {
         }
         return retorno.toString();
     }
-
 
     public boolean saveGame(File fich) {
         try{
