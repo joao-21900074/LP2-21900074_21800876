@@ -890,9 +890,6 @@ public class TWDGameManager {
                                 if(c.getEquipe() == 10){
                                     Vivo v = (Vivo) c;
                                     v.equiparEquipamento(e);
-                                }else if(c.getEquipe() == 20){
-                                    Zombie z = (Zombie) c;
-                                    z.destruirIten(id);
                                 }
                             }
 
