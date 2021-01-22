@@ -4,7 +4,6 @@
     <list default="true" id="277f7e4c-8220-423e-9b73-9c62c1e271f8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TestTWDGameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TestTWDGameManager.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -177,13 +176,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605113877526</updated>
-    </task>
-    <task id="LOCAL-00060" summary="Ajuste&#10;(Mais uma vez arrumando criança)">
-      <created>1609535950686</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1609535950686</updated>
     </task>
     <task id="LOCAL-00061" summary="+Ajustes">
       <created>1609583583537</created>
@@ -521,7 +513,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611351789685</updated>
     </task>
-    <option name="localTasksCounter" value="109" />
+    <task id="LOCAL-00109" summary="Save / Load&#10;(Função adicional)">
+      <created>1611355311313</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1611355311313</updated>
+    </task>
+    <option name="localTasksCounter" value="110" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -604,7 +603,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Editei getGameStatistics() novamente" />
     <MESSAGE value="Ordem de erros alterada" />
     <MESSAGE value="Erros" />
     <MESSAGE value="+Erros" />
@@ -629,7 +627,8 @@
     <MESSAGE value="Editei gameStatistics novamente" />
     <MESSAGE value="Editei getGameStatistic porque estava passando id ao inves de idTipo" />
     <MESSAGE value="+Tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="+Tests" />
+    <MESSAGE value="Save / Load&#10;(Função adicional)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Save / Load&#10;(Função adicional)" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/LP2_21900074_21800876$pt_ulusofona_lp2_theWalkingDEISIGame_in_Projeto_LP2.ic" NAME="pt.ulusofona.lp2.theWalkingDEISIGame in Projeto_LP2 Coverage Results" MODIFIED="1611351615635" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

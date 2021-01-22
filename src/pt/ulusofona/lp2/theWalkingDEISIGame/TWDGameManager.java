@@ -854,6 +854,7 @@ public class TWDGameManager {
                             creatures.add(c);
                             map[posicaoX][posicaoY] = id;
 
+
                             if(idTipo > 4 && idTipo < 10){
                                 vivos.add((Vivo) c);
                             }else if(idTipo <= 4){
@@ -880,8 +881,19 @@ public class TWDGameManager {
                             Equipamento e = Equipamento.criarEquipamento(id, idTipo, new int[]{posicaoX,posicaoY});
 
                             equipamentos.add(e);
+                            //Equip só aparece se não tiver nenhuma criatura no lugar
                             if(map[posicaoX][posicaoY] == 0) {
                                 map[posicaoX][posicaoY] = id;
+                            }else if (map[posicaoX][posicaoY] > 0){
+                                //Tem alguem ja nesse lugar, então equipa ou destroe
+                                Creature c = getCreatureById(map[posicaoX][posicaoY]);
+                                if(c.getEquipe() == 10){
+                                    Vivo v = (Vivo) c;
+                                    v.equiparEquipamento(e);
+                                }else if(c.getEquipe() == 20){
+                                    Zombie z = (Zombie) c;
+                                    z.destruirIten(id);
+                                }
                             }
 
                             nEquimamentos--;
