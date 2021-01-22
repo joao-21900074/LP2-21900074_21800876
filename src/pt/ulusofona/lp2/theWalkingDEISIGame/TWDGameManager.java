@@ -1039,9 +1039,9 @@ public class TWDGameManager {
         //(isto é não foram destruidas nem foram para
         //o safe haven)?
 
-        List<Creature> auxCreature = vivos.stream().filter((v) -> !v.estaSalvo()).collect(Collectors.toList());
+        List<Creature> auxCreature = zombies.stream().filter((z) -> !z.isDead()).collect(Collectors.toList());
 
-        auxCreature.addAll(zombies.stream().filter((z) -> !z.isDead()).collect(Collectors.toList()));
+        auxCreature.addAll(vivos.stream().filter((v) -> !v.estaSalvo()).collect(Collectors.toList()));
 
         retorno.put("criaturasMaisEquipadas",
                 auxCreature.stream()
