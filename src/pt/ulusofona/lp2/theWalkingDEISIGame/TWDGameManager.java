@@ -880,7 +880,9 @@ public class TWDGameManager {
                             Equipamento e = Equipamento.criarEquipamento(id, idTipo, new int[]{posicaoX,posicaoY});
 
                             equipamentos.add(e);
-                            map[posicaoX][posicaoY] = id;
+                            if(map[posicaoX][posicaoY] == 0) {
+                                map[posicaoX][posicaoY] = id;
+                            }
 
                             nEquimamentos--;
                         }
