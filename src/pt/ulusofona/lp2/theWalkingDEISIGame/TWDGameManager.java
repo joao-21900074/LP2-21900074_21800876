@@ -1017,6 +1017,7 @@ public class TWDGameManager {
                             .filter((e) -> e.getNrUsos() > 0)
                             .sorted(Comparator.comparingInt(Equipamento::getNrUsos))
                             .map((e) -> e.getId() + ":" + e.getNrUsos())
+                            .distinct()
                             .collect(Collectors.toList()));
 
         //Qual o total de equipamentos destruido por cada tipo
@@ -1095,5 +1096,15 @@ public class TWDGameManager {
         allEquips.add(Equipamento.criarEquipamento(-30,10, new int[]{0, 0}));
 
         allEquips.forEach(Equipamento::resetNrUsos);
+
+        ArrayList<Zombie> allZombies = new ArrayList<>();
+        allZombies.add((Zombie) Creature.criarCreature(20,0,"Fulano", new int[]{0,0}));
+        allZombies.add((Zombie) Creature.criarCreature(21,1,"Fulano", new int[]{0,0}));
+        allZombies.add((Zombie) Creature.criarCreature(22,2,"Fulano", new int[]{0,0}));
+        allZombies.add((Zombie) Creature.criarCreature(23,3,"Fulano", new int[]{0,0}));
+        allZombies.add((Zombie) Creature.criarCreature(24,4,"Fulano", new int[]{0,0}));
+
+        allZombies.forEach(Zombie::resetTotalEquipDestruidos);
+
     }
 }

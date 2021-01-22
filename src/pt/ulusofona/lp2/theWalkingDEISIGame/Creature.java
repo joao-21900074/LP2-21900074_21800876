@@ -46,6 +46,7 @@ public abstract class Creature {
         return nEquipamentos;
     }
 
+
     public void addNItensDestruidos() {
         nItensDestruidos++;
         score = nItensDestruidos;

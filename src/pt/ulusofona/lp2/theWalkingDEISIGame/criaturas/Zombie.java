@@ -82,6 +82,8 @@ public abstract class Zombie extends Creature {
 
     public abstract int getTotalEquipDestruidos();
 
+    public abstract void resetTotalEquipDestruidos();
+
     //Mudar para cada tipo de Zombie
     public String toString() {
 

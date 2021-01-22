@@ -16,6 +16,12 @@ public class ZombieAdulto extends Zombie {
         return totalEquipDestruidos;
     }
 
+
+    @Override
+    public void resetTotalEquipDestruidos() {
+        totalEquipDestruidos = 0;
+    }
+
     @Override
     public boolean validaMove(int xD, int yD, boolean isDay, int idDestino, int idTipoDestino) {
         //Valida

@@ -17,6 +17,11 @@ public class ZombieCrianca extends Zombie {
     }
 
     @Override
+    public void resetTotalEquipDestruidos() {
+        totalEquipDestruidos = 0;
+    }
+
+    @Override
     public boolean validaMove(int xD, int yD, boolean isDay, int idDestino, int idTipoDestino) {
         //Validações comum para todos os Zombies
         if(!super.validaMove(xD,yD,isDay,idDestino, idTipoDestino)) {
