@@ -1013,7 +1013,6 @@ public class TWDGameManager {
         retorno.put("tiposDeEquipamentoMaisUteis",
                 equipamentos.stream()
                             .filter((e) -> e.getNrUsos() > 0)
-                            .filter((e) -> !e.getDestruido())
                             .sorted(Comparator.comparingInt(Equipamento::getNrUsos))
                             .map((e) -> e.getId() + ":" + e.getNrUsos())
                             .collect(Collectors.toList()));
