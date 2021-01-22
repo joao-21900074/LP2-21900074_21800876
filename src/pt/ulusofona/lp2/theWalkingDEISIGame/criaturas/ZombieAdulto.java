@@ -8,10 +8,12 @@ public class ZombieAdulto extends Zombie {
         super(id,idTipo,nome,posicao);
     }
 
+    @Override
     public void addTotalEquipDestruidos() {
         totalEquipDestruidos++;
     }
 
+    @Override
     public int getTotalEquipDestruidos() {
         return totalEquipDestruidos;
     }

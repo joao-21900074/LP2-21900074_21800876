@@ -1,5 +1,6 @@
 package pt.ulusofona.lp2.theWalkingDEISIGame;
 
+import org.w3c.dom.ls.LSOutput;
 import pt.ulusofona.lp2.theWalkingDEISIGame.criaturas.*;
 import pt.ulusofona.lp2.theWalkingDEISIGame.equipamentos.*;
 
@@ -205,6 +206,7 @@ public class TWDGameManager {
             }
             if(creature.getEquipe() == 20) {
                 destruirEquipamentoNoDestino(destino);
+                getZombieById(creature.getId()).addTotalEquipDestruidos();
             }
         }
 
@@ -435,6 +437,7 @@ public class TWDGameManager {
                         humano.getEquipamento().destruirEquipamento();
                         morreu(humano);
                         zombie.addNTranformacoes();
+                        zombie.addTotalEquipDestruidos();
                     } else {
                         matou(zombie);
                         humano.addNKills();
@@ -462,6 +465,7 @@ public class TWDGameManager {
                             //Destroe a Pistola porque o humano morrreu
                             humano.getEquipamento().destruirEquipamento();
                             morreu(humano);
+                            zombie.addTotalEquipDestruidos();
                             zombie.addNTranformacoes();
                         }
                     } else {//Humano perde porque não tinha mais munição na pistola
@@ -484,6 +488,7 @@ public class TWDGameManager {
                         humano.getEquipamento().destruirEquipamento();
                         morreu(humano);
                         zombie.addNTranformacoes();
+                        zombie.addTotalEquipDestruidos();
                     } else {
                         humano.getEquipamento().addNrUsos();
                     }
@@ -496,6 +501,7 @@ public class TWDGameManager {
                         humano.getEquipamento().destruirEquipamento();
                         morreu(humano);
                         zombie.addNTranformacoes();
+                        zombie.addTotalEquipDestruidos();
                     } else {
                         humano.getEquipamento().addNrUsos();
                     }
@@ -1076,13 +1082,13 @@ public class TWDGameManager {
         System.out.println("\nEquipamentos");
         equipamentos.stream().filter((e) -> !e.getDestruido()).forEach(System.out::println);
 
-        System.out.println("\nos3ZombiesMaisTramados");
-        System.out.println(map.get("os3ZombiesMaisTramados").size());
-        map.get("os3ZombiesMaisTramados").forEach(System.out::println);
+        //System.out.println("\nos3ZombiesMaisTramados");
+        //System.out.println(map.get("os3ZombiesMaisTramados").size());
+        //map.get("os3ZombiesMaisTramados").forEach(System.out::println);
 
-        System.out.println("\nose3VivosMaisDuros");
-        System.out.println(map.get("os3VivosMaisDuros").size());
-        map.get("os3VivosMaisDuros").forEach(System.out::println);
+        //System.out.println("\nose3VivosMaisDuros");
+        //System.out.println(map.get("os3VivosMaisDuros").size());
+        //map.get("os3VivosMaisDuros").forEach(System.out::println);
 
         System.out.println("\ntiposDeEquipamentoMaisUteis");
         System.out.println(map.get("tiposDeEquipamentoMaisUteis").size());
