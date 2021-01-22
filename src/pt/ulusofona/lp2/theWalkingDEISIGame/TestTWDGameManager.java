@@ -9,22 +9,16 @@ import java.io.FileNotFoundException;
 public class TestTWDGameManager {
     private TWDGameManager testStart = new TWDGameManager();
     private File ficheiroTest = new File("./test-files/input");
+    private File moveTest = new File("./test-files/MoveTests");
     private HumanoAdulto humanoAdulto = new HumanoAdulto(1,6,"TestHA",new int[]{0,0});
-    private ZombieAdulto zombieAdulto = new ZombieAdulto(2,1,"TestZA",new int[]{0,1});
     private ZombieVampiro zombieVampiro = new ZombieVampiro(3,4,"TestZV",new int[]{1,0});
-    private ZombieIdoso zombieIdoso = new ZombieIdoso(4,3,"TestZI",new int[]{2,0});
+    private ZombieAdulto zombieAdulto = new ZombieAdulto(2,1,"TestZA",new int[]{2,0});
     private HumanoCrianca humanoCrianca = new HumanoCrianca(5,5,"TestHC",new int[]{3,0});
     private ZombieCrianca zombieCrianca = new ZombieCrianca(6,0,"TestZC",new int[]{4,0});
     private HumanoMilitar humanoMilitar1 = new HumanoMilitar(7,7,"TestHM",new int[]{5,0});
     private HumanoMilitar humanoMilitar2 = new HumanoMilitar(8,7,"TestHM",new int[]{6,0});
-
-
-    /*@Test
-    public void testLeituraRuim() throws InvalidTWDInitialFileException, FileNotFoundException {
-        TWDGameManager testStart = new TWDGameManager();
-        File ficheiroTest = new File("");
-        testStart.startGame(ficheiroTest);
-    }*/
+    private ZombieIdoso zombieIdoso = new ZombieIdoso(4,3,"TestZI",new int[]{7,0});
+    private Cachorro dogzera = new Cachorro(9,9,"Dog",new int[]{5,6});
 
     @Test
     public void testLeituraBoa() throws InvalidTWDInitialFileException, FileNotFoundException {
@@ -85,8 +79,11 @@ public class TestTWDGameManager {
         testStart.batalha(humanoAdulto, zombieAdulto);
     }
 
-    /*@Test
-    public void testBatalhaMatarZombie(){
+    @Test
+    public void testBatalhaMatarZombie() throws InvalidTWDInitialFileException, FileNotFoundException {
+        //Adicionando o Zombie no mapa
+        testLeituraBoa();
+
         //Destinado para Equipamentos que matam zombies
         //Espada + Estaca + Beskar
         testStart.zombies.add(zombieAdulto);
@@ -104,9 +101,8 @@ public class TestTWDGameManager {
         testStart.batalha(humanoAdulto, zombieAdulto);
         //System.out.println(testStart.zombies.contains(zombieAdulto));
         //False, zombie morreu
-    }*/
+    }
 
-    //Não sei se vao deixar usar humans.add aqui n
     @Test
     public void testBatalhaMadeira(){
         //Humano com Escudo de Madeira
@@ -161,8 +157,11 @@ public class TestTWDGameManager {
         //System.out.println(defesa.getDefesa());
     }
 
-    /*@Test
-    public void testBatalhaPistolaNormal(){
+    @Test
+    public void testBatalhaPistolaNormal() throws InvalidTWDInitialFileException, FileNotFoundException {
+        //Adicionando bonecos no mapa
+        testLeituraBoa();
+
         //Humano com Pistola contra zombies normais
         testStart.zombies.add(zombieAdulto);
         testStart.vivos.add(humanoAdulto);
@@ -186,7 +185,7 @@ public class TestTWDGameManager {
         //System.out.println(testStart.humans.contains(hTest));
         //False, morreu, pistola sem balas
 
-    }*/
+    }
 
     @Test
     public void testBatalhaPistolaZombieVampiro(){
@@ -285,8 +284,10 @@ public class TestTWDGameManager {
         //False, morreu, não tem lixivia suficiente para proteção
     }
 
-    /*@Test
-    public void testBatalhaCriança(){
+    @Test
+    public void testBatalhaCriança() throws InvalidTWDInitialFileException, FileNotFoundException {
+        testLeituraBoa();
+
         //Criança Humano só pode usar espada contra Criança Zombie
         Equipamento espada = Equipamento.criarEquipamento(1,1,new int[]{0,2});
         humanoCrianca.equiparEquipamento(espada);
@@ -303,7 +304,7 @@ public class TestTWDGameManager {
         //Criança morreu / Zombie Adulto ficou vivo
         //System.out.println(testStart.vivos.contains(humanoCrianca));
         //System.out.println(testStart.zombies.contains(zombieAdulto));
-    }*/
+    }
 
     @Test
     public void testBatalhaVeneno(){
@@ -316,59 +317,57 @@ public class TestTWDGameManager {
         System.out.println(testStart.vivos.contains(humanoAdulto));
     }
 
-    /*OLD TESTES, ainda possa ser útil
     @Test
-    public void testMoveDireita(){
-        TWDGameManager testStart = new TWDGameManager();
-        File ficheiroTest = new File("./test-files/input");
-        testStart.startGame(ficheiroTest);
-        assertTrue("Movimento para Direita",testStart.move(1,1,2,1));
+    public void testMove1Passo() throws InvalidTWDInitialFileException, FileNotFoundException {
+        testStart.startGame(moveTest);
+        testStart.move(0,0,0,1);
+        testStart.move(1,0,1,1);
+        testStart.move(2,0,2,1);
+        testStart.move(3,0,3,1);
+        testStart.move(4,0,4,1);
+        testStart.move(5,0,5,1);
+        testStart.move(6,0,6,1);
+        testStart.move(7,0,7,1);
+        testStart.move(8,0,8,1);
+        testStart.move(9,0,9,1);
     }
 
     @Test
-    public void testMoveEsquerda(){
-        TWDGameManager testStart = new TWDGameManager();
-        File ficheiroTest = new File("./test-files/input");
-        testStart.startGame(ficheiroTest);
-        assertTrue("Movimento para Esquerda",testStart.move(1,1,0,1));
+    public void testMoveSalvo() throws InvalidTWDInitialFileException, FileNotFoundException {
+        testStart.startGame(moveTest);
+
+        testStart.move(9,8,9,9);
+        //System.out.println(testStart.getIdsInSafeHaven());
     }
 
     @Test
-    public void testMoveBasicoCima(){
-        TWDGameManager testStart = new TWDGameManager();
-        File ficheiroTest = new File("./test-files/input");
-        testStart.startGame(ficheiroTest);
-        assertTrue("Movimento para Cima",testStart.move(1,1,1,0));
+    public void testMoveFight() throws InvalidTWDInitialFileException, FileNotFoundException {
+        testStart.startGame(moveTest);
+
+        //Pega espada
+        testStart.move(0,2,0,1);
+
+        //Muda turno
+        testStart.move(1,0,1,1);
+
+        //Fight
+        testStart.move(0,1,0,0);
     }
 
-    @Test
-    public void testMoveBasicoBaixo(){
-        TWDGameManager testStart = new TWDGameManager();
-        File ficheiroTest = new File("./test-files/input");
-        testStart.startGame(ficheiroTest);
-        assertTrue("Movimento para Baixo",testStart.move(1,1,1,2));
+    @Test public void testSaveLoadGame() throws InvalidTWDInitialFileException, FileNotFoundException {
+        testStart.startGame(moveTest);
+        testStart.move(0,0,0,1);
+        testStart.saveGame(moveTest);
+        testStart.loadGame(moveTest);
     }
 
-    @Test
-    public void testMoveDiagonal(){
-        TWDGameManager testStart = new TWDGameManager();
-        File ficheiroTest = new File("./test-files/input");
-        testStart.startGame(ficheiroTest);
-        assertTrue("Movimento na Diagonal",testStart.move(1,1,2,2));
+    @Test public void testPop(){
+        testStart.popCultureExtravaganza();
     }
 
-    @Test
-    public void testMoveOutOfBounds(){
-        TWDGameManager testStart = new TWDGameManager();
-        File ficheiroTest = new File("./test-files/input");
-        testStart.startGame(ficheiroTest);
-        assertTrue("Movimento para fora do mapa",testStart.move(4,4,4,5));
+    @Test public void testStatics(){
+        testStart.getGameStatistics();
+        testStart.printaArrays();
     }
 
-    @Test
-    public void testStartGameBonecoForaDoMapa(){
-        TWDGameManager testStart = new TWDGameManager();
-        File ficheiroTest = new File("./test-files/input");
-        assertTrue("Boneco nasce fora do mapa",testStart.startGame(ficheiroTest));
-    }*/
 }
