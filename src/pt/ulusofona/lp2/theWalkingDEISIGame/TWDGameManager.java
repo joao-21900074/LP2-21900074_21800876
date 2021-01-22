@@ -1021,7 +1021,6 @@ public class TWDGameManager {
         //quer os defensivos.
         retorno.put("tiposDeEquipamentoMaisUteis",
                 equipamentos.stream()
-                            .filter((e) -> !e.getDestruido())
                             .filter((e) -> e.getNrUsos() > 0)
                             .sorted(Comparator.comparingInt(Equipamento::getNrUsos))
                             .map((e) -> e.getId() + ":" + e.getNrUsos())
