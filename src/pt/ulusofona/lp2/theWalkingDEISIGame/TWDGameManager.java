@@ -751,6 +751,7 @@ public class TWDGameManager {
         for(int i=0; i < equipamentos.size(); i++) {
             allAtributes.append(getEquipmentAtributes(equipamentos.get(i).getId())).append("\n");
         }
+
         return allAtributes.toString();
     }
 
@@ -769,8 +770,17 @@ public class TWDGameManager {
             escrita.write(currentTeam + "\n");
             escrita.write(creatures.size() + "\n");
             escrita.write(getAllCreaturesAtributes());
-            escrita.write(equipamentos.size() + "\n");
-            escrita.write(getAllEquipmentAtributes());
+            escrita.write(equipamentos.stream().filter((e) -> !e.getDestruido()).count() + "\n");
+            //escrita.write(getAllEquipmentAtributes());
+
+            StringBuilder allEquipaments = new StringBuilder();
+            equipamentos.stream().filter((e) -> !e.getDestruido())
+                    .map((e) -> e.getId() + " : " + e.getIdTipo() + " : " + e.getPosicao()[0] +
+                            " : "  + e.getPosicao()[1] + "\n")
+                    .forEach(allEquipaments::append);
+
+            escrita.write(allEquipaments.toString());
+
             escrita.write(safeHavens.size() + "\n");
             escrita.write(getSafePosicao().trim());
 
