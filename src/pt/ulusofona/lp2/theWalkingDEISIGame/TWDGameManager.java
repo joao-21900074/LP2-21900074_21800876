@@ -1041,6 +1041,7 @@ public class TWDGameManager {
                             .sorted(Comparator.comparingInt(Equipamento::getNrUsos))
                             .map((e) -> e.getId() + ":" + e.getNrUsos())
                             .distinct()
+                            .limit(5)
                             .collect(Collectors.toList()));
 
         //Qual o total de equipamentos destruido por cada tipo
