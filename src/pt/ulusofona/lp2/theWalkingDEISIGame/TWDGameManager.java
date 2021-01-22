@@ -162,7 +162,6 @@ public class TWDGameManager {
         return initialTeam;
     }
 
-
     public boolean move(int xO, int yO, int xD, int yD) {
         boolean fight = false;
         int peca; //Peça que o jogador vai mover
@@ -192,8 +191,8 @@ public class TWDGameManager {
             if(!creature.validaMove(xD,yD,isDay,creatureDestino.getId(), creatureDestino.getIdTipo())) {
                 return false;
             }
-        } else if(getEquipmentById(destino) != null) {
-            Equipamento equipDestino = getEquipmentById(destino);
+        } else if(getEquipmentById(destino) != null) { //Verifica se tem um equipamento no destino
+            Equipamento equipDestino = getEquipmentById(destino); //Guarda o equipamento do destino
             if(equipDestino.getIdTipo() == 8 && creature.getEquipe() == 20){
                 //Valida se tem veneno no chão
                 Veneno v = (Veneno) equipDestino;
@@ -416,7 +415,7 @@ public class TWDGameManager {
                         //Incrementa o número total de usos da classe "Escudo de Madeira"
                         escudoMadeira.addNrUsos();
                         if(escudoMadeira.getDefesa() <= 0) {//Destroe escudo quando as defesas acabarem
-                            //Ecudo é destruido
+                            //Escudo é destruido
                             humano.getEquipamento().destruirEquipamento();
                             humano.equiparEquipamento(null);
                         }
@@ -436,7 +435,7 @@ public class TWDGameManager {
                         humano.getEquipamento().destruirEquipamento();
                         morreu(humano);
                         zombie.addNTranformacoes();
-                    }else{
+                    } else {
                         matou(zombie);
                         humano.addNKills();
                         humano.getEquipamento().addNrUsos();
@@ -472,7 +471,6 @@ public class TWDGameManager {
                     break;
 
                 case 3:
-
                 case 8:
                     //Veneno
                     //Escudo Táctio, só defende então não mata nem morre
@@ -1023,6 +1021,7 @@ public class TWDGameManager {
         //quer os defensivos.
         retorno.put("tiposDeEquipamentoMaisUteis",
                 equipamentos.stream()
+                            .filter((e) -> !e.getDestruido())
                             .filter((e) -> e.getNrUsos() > 0)
                             .sorted(Comparator.comparingInt(Equipamento::getNrUsos))
                             .map((e) -> e.getId() + ":" + e.getNrUsos())

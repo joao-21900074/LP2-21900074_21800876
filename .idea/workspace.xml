@@ -172,13 +172,6 @@
       <option name="presentableId" value="Default" />
       <updated>1605113877526</updated>
     </task>
-    <task id="LOCAL-00051" summary="Refatorei o código. e fiz algumas alterações no toString de Humano e Cachorro">
-      <created>1609423530813</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1609423530814</updated>
-    </task>
     <task id="LOCAL-00052" summary="Equipar / Destruir Equipamento">
       <created>1609509015781</created>
       <option name="number" value="00052" />
@@ -515,7 +508,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611313760334</updated>
     </task>
-    <option name="localTasksCounter" value="100" />
+    <task id="LOCAL-00100" summary="Dei reset nas variaveis do load">
+      <created>1611315969623</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1611315969623</updated>
+    </task>
+    <option name="localTasksCounter" value="101" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -598,7 +598,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Nova lib/interface adicionada" />
     <MESSAGE value="Tratamento de erros&#10;(Alterado startGame para void)&#10;(Tudo relacionado aos erros)" />
     <MESSAGE value="Terminei de implementar getGameStatistics()" />
     <MESSAGE value="loadGame() != startGame()" />
@@ -623,7 +622,8 @@
     <MESSAGE value="Adicionei uma forma de resetar as váriaveis static de todos os equipamentos" />
     <MESSAGE value="Adicionei uma forma de resetar as váriaveis static de todos os Zumbis" />
     <MESSAGE value="Alterei gameStatistics" />
-    <option name="LAST_COMMIT_MESSAGE" value="Alterei gameStatistics" />
+    <MESSAGE value="Dei reset nas variaveis do load" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dei reset nas variaveis do load" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/LP2_21900074_21800876$AppLauncher.ic" NAME="AppLauncher Coverage Results" MODIFIED="1611267953536" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
