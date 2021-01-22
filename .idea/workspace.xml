@@ -4,7 +4,6 @@
     <list default="true" id="277f7e4c-8220-423e-9b73-9c62c1e271f8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/criaturas/ZombieAdulto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/criaturas/ZombieAdulto.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -172,13 +171,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605113877526</updated>
-    </task>
-    <task id="LOCAL-00055" summary="Move() Dog">
-      <created>1609515559518</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1609515559518</updated>
     </task>
     <task id="LOCAL-00056" summary="Arrumando move() Zombie">
       <created>1609516715672</created>
@@ -516,7 +508,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611328829556</updated>
     </task>
-    <option name="localTasksCounter" value="104" />
+    <task id="LOCAL-00104" summary="Arrumei a contagem de destruição de itens">
+      <created>1611338889283</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1611338889283</updated>
+    </task>
+    <option name="localTasksCounter" value="105" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -599,7 +598,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="(Erro de numero de criaturas)" />
     <MESSAGE value="editei getGameStatistics e retornaNomeTipo()" />
     <MESSAGE value="editei getGameStatistics e criei retornaNomeTipoSimples()" />
     <MESSAGE value="editei gameStatistics() e arrumei a alteração a de alguns parametros" />
@@ -624,7 +622,8 @@
     <MESSAGE value="Filtrei equipamentos destruidos" />
     <MESSAGE value="Parei de filtrar itens apagados" />
     <MESSAGE value="Editei o salvamento do arquivo para não salvar os equipamentos destruidos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Editei o salvamento do arquivo para não salvar os equipamentos destruidos" />
+    <MESSAGE value="Arrumei a contagem de destruição de itens" />
+    <option name="LAST_COMMIT_MESSAGE" value="Arrumei a contagem de destruição de itens" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/LP2_21900074_21800876$AppLauncher.ic" NAME="AppLauncher Coverage Results" MODIFIED="1611267953536" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

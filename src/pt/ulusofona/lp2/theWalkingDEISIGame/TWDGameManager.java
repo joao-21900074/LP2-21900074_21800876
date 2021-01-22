@@ -1049,7 +1049,6 @@ public class TWDGameManager {
 
         retorno.put("tiposDeZombieESeusEquipamentosDestruidos",
                 zombies.stream()
-                        .filter((z) -> z.getTotalEquipDestruidos() > 0)
                         .filter((z) -> !z.isDead())
                         .sorted(Comparator.comparingInt(Zombie::getTotalEquipDestruidos).reversed())
                         .map((z) -> z.retornaNomeTipoSimples(z.getIdTipo()) + ":" +
