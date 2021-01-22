@@ -44,6 +44,9 @@ public class TWDGameManager {
         mortos.clear();
         safeHavens.clear();
 
+        //Reset váriaveis staticas dos Equipamentos
+        resetVarsStatics();
+
         //While de leitura
         while(leitor.hasNextLine()) {
             info = leitor.nextLine().split(":");
@@ -1074,5 +1077,23 @@ public class TWDGameManager {
         System.out.println("\ncriaturaMaisEquipadas");
         System.out.println(map.get("criaturasMaisEquipadas").size());
         map.get("criaturasMaisEquipadas").forEach(System.out::println);
+    }
+
+    public void resetVarsStatics() {
+        ArrayList<Equipamento> allEquips = new ArrayList<>();
+
+        allEquips.add(Equipamento.criarEquipamento(-20,0, new int[]{0, 0}));
+        allEquips.add(Equipamento.criarEquipamento(-21,1, new int[]{0, 0}));
+        allEquips.add(Equipamento.criarEquipamento(-22,2, new int[]{0, 0}));
+        allEquips.add(Equipamento.criarEquipamento(-23,3, new int[]{0, 0}));
+        allEquips.add(Equipamento.criarEquipamento(-24,4, new int[]{0, 0}));
+        allEquips.add(Equipamento.criarEquipamento(-25,5, new int[]{0, 0}));
+        allEquips.add(Equipamento.criarEquipamento(-26,6, new int[]{0, 0}));
+        allEquips.add(Equipamento.criarEquipamento(-27,7, new int[]{0, 0}));
+        allEquips.add(Equipamento.criarEquipamento(-28,8, new int[]{0, 0}));
+        allEquips.add(Equipamento.criarEquipamento(-29,9, new int[]{0, 0}));
+        allEquips.add(Equipamento.criarEquipamento(-30,10, new int[]{0, 0}));
+
+        allEquips.forEach(Equipamento::resetNrUsos);
     }
 }

@@ -7,7 +7,6 @@ public abstract class Equipamento {
     private int idTipo;
     private int[] posicao = new int[2];
     private boolean destruido = false;
-    private int nrUsos = 0;
 
     public Equipamento() {}
 
@@ -77,13 +76,11 @@ public abstract class Equipamento {
     }
 
 
-    public int getNrUsos() {
-        return nrUsos;
-    };
+    abstract public int getNrUsos();
 
-    public void addNrUsos() {
-        nrUsos++;
-    };
+    abstract public void addNrUsos();
+
+    abstract public void resetNrUsos();
 
     abstract public String toString();
 }

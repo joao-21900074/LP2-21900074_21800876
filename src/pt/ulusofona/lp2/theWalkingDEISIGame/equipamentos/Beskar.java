@@ -22,6 +22,11 @@ public class Beskar extends Equipamento {
     }
 
     @Override
+    public void resetNrUsos() {
+        nrUsos = 0;
+    }
+
+    @Override
     public String toString() {
         return "Beskar Helmet";
     }

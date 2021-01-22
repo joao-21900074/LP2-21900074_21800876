@@ -22,6 +22,11 @@ public class Alho extends Equipamento {
     }
 
     @Override
+    public void resetNrUsos() {
+        nrUsos = 0;
+    }
+
+    @Override
     public String toString() {
         return "Cabeça de Alho";
     }
