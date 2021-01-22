@@ -1039,7 +1039,7 @@ public class TWDGameManager {
                 equipamentos.stream()
                             .filter((e) -> e.getNrUsos() > 0)
                             .sorted(Comparator.comparingInt(Equipamento::getNrUsos))
-                            .map((e) -> e.getIdTipo() + ":" + e.getNrUsos())
+                            .map((e) -> e.getId() + ":" + e.getNrUsos())
                             .distinct()
                             .limit(5)
                             .collect(Collectors.toList()));
