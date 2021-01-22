@@ -786,6 +786,15 @@ public class TWDGameManager {
 
     public boolean loadGame(File fich) {
         try {
+            //Reset de variaveis
+            equipamentos.clear();
+            vivos.clear();
+            zombies.clear();
+            creatures.clear();
+            salvos.clear();
+            mortos.clear();
+            safeHavens.clear();
+
             //Leitor para o ficheiro do jogo
             Scanner leitor = new Scanner(new FileReader(fich));
             String[] info;

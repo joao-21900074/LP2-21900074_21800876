@@ -172,13 +172,6 @@
       <option name="presentableId" value="Default" />
       <updated>1605113877526</updated>
     </task>
-    <task id="LOCAL-00050" summary="edit move()">
-      <created>1609289414624</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1609289414624</updated>
-    </task>
     <task id="LOCAL-00051" summary="Refatorei o código. e fiz algumas alterações no toString de Humano e Cachorro">
       <created>1609423530813</created>
       <option name="number" value="00051" />
@@ -515,7 +508,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611283499003</updated>
     </task>
-    <option name="localTasksCounter" value="99" />
+    <task id="LOCAL-00099" summary="Alterei gameStatistics">
+      <created>1611313760334</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1611313760334</updated>
+    </task>
+    <option name="localTasksCounter" value="100" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -598,7 +598,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Criei getGameStatistics()" />
     <MESSAGE value="Nova lib/interface adicionada" />
     <MESSAGE value="Tratamento de erros&#10;(Alterado startGame para void)&#10;(Tudo relacionado aos erros)" />
     <MESSAGE value="Terminei de implementar getGameStatistics()" />
@@ -623,7 +622,8 @@
     <MESSAGE value="Editei o move()" />
     <MESSAGE value="Adicionei uma forma de resetar as váriaveis static de todos os equipamentos" />
     <MESSAGE value="Adicionei uma forma de resetar as váriaveis static de todos os Zumbis" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adicionei uma forma de resetar as váriaveis static de todos os Zumbis" />
+    <MESSAGE value="Alterei gameStatistics" />
+    <option name="LAST_COMMIT_MESSAGE" value="Alterei gameStatistics" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/LP2_21900074_21800876$AppLauncher.ic" NAME="AppLauncher Coverage Results" MODIFIED="1611267953536" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
