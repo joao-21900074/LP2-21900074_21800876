@@ -202,7 +202,6 @@ public class TWDGameManager {
                 return false;
             }
             if(creature.getEquipe() == 20) {
-                System.out.println("\n\n CHEGUEI NA LINHA LA \n\n");
                 destruirEquipamentoNoDestino(destino);
             }
         }
@@ -316,7 +315,7 @@ public class TWDGameManager {
         turnos++; //Essa variavel é zerada toda vez que alguém foi transformado
         turnosTerminados++; //Essa varival representa o numero de turnos terminados
 
-        printaArrays();
+        //printaArrays();
 
         return true;
     }
