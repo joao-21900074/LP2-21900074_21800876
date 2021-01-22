@@ -6,7 +6,7 @@ public class Pistola extends Equipamento {
     //Vem com 3 balas
     private int balas = 3;
 
-    private static int nrUsos = 0;
+    //private static int nrUsos = 0;
 
     public Pistola(int id, int idTipo, int[] posicao){
         super(id,idTipo,posicao);
@@ -20,7 +20,7 @@ public class Pistola extends Equipamento {
     public void atirar(){
         balas--;
     }
-
+/*
     @Override
     public void addNrUsos() {
         nrUsos++;
@@ -30,7 +30,7 @@ public class Pistola extends Equipamento {
     public int getNrUsos() {
         return nrUsos;
     }
-
+*/
     @Override
     public String toString() {
         return "Pistola Walther PPK | " + balas;

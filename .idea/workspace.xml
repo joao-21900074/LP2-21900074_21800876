@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="277f7e4c-8220-423e-9b73-9c62c1e271f8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Equipamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/Equipamento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/equipamentos/EscudoMadeira.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/equipamentos/EscudoMadeira.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/equipamentos/EscudoTactico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/equipamentos/EscudoTactico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/equipamentos/Espada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/equipamentos/Espada.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/equipamentos/Pistola.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/equipamentos/Pistola.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -171,13 +175,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605113877526</updated>
-    </task>
-    <task id="LOCAL-00045" summary="Criação das Safe Havens&#10;+ teste/implementação isDoorToSafeHaven&#10;+ implementação getEquipmentId&#10;(Ajustado imagens)">
-      <created>1608901229708</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1608901229708</updated>
     </task>
     <task id="LOCAL-00046" summary="Save Game V1&#10;+ Teste/Funções Auxiliares&#10;+ LoadGame&#10;(getPosicao para Equipamento e Criatura)&#10;(Falta alterar a posicao da Criatura quando move)&#10;(Falta ordenar os dados do ficheiro de save)">
       <created>1608907726852</created>
@@ -515,7 +512,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611271378175</updated>
     </task>
-    <option name="localTasksCounter" value="94" />
+    <task id="LOCAL-00094" summary="Editei getGameStatistics()">
+      <created>1611275227637</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1611275227665</updated>
+    </task>
+    <option name="localTasksCounter" value="95" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -598,7 +602,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Implementei getResults()" />
     <MESSAGE value="Editei gameIsOver()" />
     <MESSAGE value="Ajutes GameResult" />
     <MESSAGE value="Adicionado +testes" />
@@ -623,7 +626,8 @@
     <MESSAGE value="Voltando classe de erro antiga" />
     <MESSAGE value="Classe de erros" />
     <MESSAGE value="IF errado básico" />
-    <option name="LAST_COMMIT_MESSAGE" value="IF errado básico" />
+    <MESSAGE value="Editei getGameStatistics()" />
+    <option name="LAST_COMMIT_MESSAGE" value="Editei getGameStatistics()" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/LP2_21900074_21800876$AppLauncher.ic" NAME="AppLauncher Coverage Results" MODIFIED="1611267953536" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

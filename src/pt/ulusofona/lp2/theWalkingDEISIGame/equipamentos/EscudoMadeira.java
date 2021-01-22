@@ -16,7 +16,7 @@ public class EscudoMadeira extends Equipamento {
     private int defesa = 1;
     private boolean deuUpgrade = false;
 
-    private static int nrUsos = 0;
+    //private static int nrUsos = 0;
 
     public EscudoMadeira(int id, int idTipo, int[] posicao){
         super(id,idTipo,posicao);
@@ -38,7 +38,7 @@ public class EscudoMadeira extends Equipamento {
     public void defender(){
         defesa--;
     }
-
+/*
     @Override
     public void addNrUsos() {
         nrUsos++;
@@ -48,7 +48,7 @@ public class EscudoMadeira extends Equipamento {
     public int getNrUsos() {
         return nrUsos;
     }
-
+*/
     @Override
     public String toString() {
         return "Escudo de Madeira | " + defesa;
