@@ -172,13 +172,6 @@
       <option name="presentableId" value="Default" />
       <updated>1605113877526</updated>
     </task>
-    <task id="LOCAL-00057" summary="GameResult() adicionado">
-      <created>1609524984554</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1609524984554</updated>
-    </task>
     <task id="LOCAL-00058" summary="Função de batalha melhorada">
       <created>1609531245529</created>
       <option name="number" value="00058" />
@@ -515,7 +508,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611339838762</updated>
     </task>
-    <option name="localTasksCounter" value="106" />
+    <task id="LOCAL-00106" summary="Editei gameStatistics novamente">
+      <created>1611340057115</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1611340057115</updated>
+    </task>
+    <option name="localTasksCounter" value="107" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -598,7 +598,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="editei getGameStatistics e criei retornaNomeTipoSimples()" />
     <MESSAGE value="editei gameStatistics() e arrumei a alteração a de alguns parametros" />
     <MESSAGE value="editei gameStatistics()" />
     <MESSAGE value="Editei getGameStatistics() novamente" />
@@ -623,7 +622,8 @@
     <MESSAGE value="Editei o salvamento do arquivo para não salvar os equipamentos destruidos" />
     <MESSAGE value="Arrumei a contagem de destruição de itens" />
     <MESSAGE value="Editei getGameStatistics" />
-    <option name="LAST_COMMIT_MESSAGE" value="Editei getGameStatistics" />
+    <MESSAGE value="Editei gameStatistics novamente" />
+    <option name="LAST_COMMIT_MESSAGE" value="Editei gameStatistics novamente" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/LP2_21900074_21800876$AppLauncher.ic" NAME="AppLauncher Coverage Results" MODIFIED="1611267953536" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
