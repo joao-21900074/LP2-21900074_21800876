@@ -52,6 +52,10 @@ public abstract class Creature {
         score = nItensDestruidos;
     }
 
+    public void setNItensDestruidos(int destruidos){
+        this.nItensDestruidos = destruidos;
+    }
+
     public int getNItensDestruidos() {
         return nItensDestruidos;
     }

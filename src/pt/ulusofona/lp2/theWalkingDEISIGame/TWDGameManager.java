@@ -24,6 +24,7 @@ public class TWDGameManager {
     private int tamanhoDiaNoite = 2;
     private int turnos = 0;
     private int turnosTerminados = 0;
+    private HashMap<Integer,Integer> infoSave = new HashMap<>();
 
     //Construtor Vazio
     public TWDGameManager() {}
@@ -748,6 +749,10 @@ public class TWDGameManager {
         StringBuilder allAtributes = new StringBuilder();
         for(int i=0; i < creatures.size(); i++){
             allAtributes.append(getCreatureAtributes(creatures.get(i).getId())).append("\n");
+            if(creatures.get(i).getEquipe() == 20){
+                Zombie z = (Zombie) creatures.get(i);
+                infoSave.put(z.id,z.getNItensDestruidos());
+            }
         }
         return allAtributes.toString();
     }
@@ -859,6 +864,7 @@ public class TWDGameManager {
                                 vivos.add((Vivo) c);
                             }else if(idTipo <= 4){
                                 zombies.add((Zombie) c);
+                                c.setNItensDestruidos(infoSave.get(c.id));
                             }
 
                             nCriaturas--;
@@ -885,7 +891,7 @@ public class TWDGameManager {
                             if(map[posicaoX][posicaoY] == 0) {
                                 map[posicaoX][posicaoY] = id;
                             }else if (map[posicaoX][posicaoY] > 0){
-                                //Tem alguem ja nesse lugar, então equipa ou destroe
+                                //Tem alguem ja nesse lugar, então equipa
                                 Creature c = getCreatureById(map[posicaoX][posicaoY]);
                                 if(c.getEquipe() == 10){
                                     Vivo v = (Vivo) c;
