@@ -6,6 +6,7 @@ public class ZombieAdulto extends Zombie {
 
     public ZombieAdulto(int id, int idTipo, String nome, int[] posicao) {
         super(id,idTipo,nome,posicao);
+        this.imagePng = "zombie_normal.png";
     }
 
     @Override

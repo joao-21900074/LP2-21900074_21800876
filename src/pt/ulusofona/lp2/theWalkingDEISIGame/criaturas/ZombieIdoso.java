@@ -6,6 +6,7 @@ public class ZombieIdoso extends Zombie {
 
     public ZombieIdoso(int id, int idTipo, String nome, int[] posicao) {
         super(id,idTipo,nome,posicao);
+        this.imagePng = "zombie_idoso.png";
     }
 
     public void addTotalEquipDestruidos() {

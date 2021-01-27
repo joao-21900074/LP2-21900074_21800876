@@ -5,6 +5,7 @@ import pt.ulusofona.lp2.theWalkingDEISIGame.criaturas.Humano;
 public class HumanoMilitar extends Humano {
     public HumanoMilitar(int id, int idTipo, String nome, int[] posicao) {
         super(id,idTipo,nome,posicao);
+        this.imagePng = "humano_militar.png";
     }
 
     @Override

@@ -3,6 +3,7 @@ package pt.ulusofona.lp2.theWalkingDEISIGame.criaturas;
 public class HumanoIdoso extends Humano {
     public HumanoIdoso(int id, int idTipo, String nome, int[] posicao) {
         super(id,idTipo,nome,posicao);
+        this.imagePng = "humano_idoso.png";
     }
 
     @Override

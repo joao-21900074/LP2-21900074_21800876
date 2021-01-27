@@ -5,6 +5,7 @@ public class HumanoAdulto extends Humano {
     //Construtor
     public HumanoAdulto(int id, int idTipo, String nome, int[] posicao) {
         super(id,idTipo,nome,posicao);
+        this.imagePng = "humano_normal.png";
     }
 
 

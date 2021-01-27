@@ -9,13 +9,12 @@ public abstract class Zombie extends Creature {
 
     public Zombie(int id, int idTipo, String nome, int[] posicao) {
         super(id,idTipo,nome,posicao);
-        this.imagePng = "zombie.png";
+        this.imagePng = "zumbi.png";
         nomeTipo = retornaNomeTipo(idTipo);
     }
 
     public void destruirIten(int idIten) {
         super.addNItensDestruidos();
-
     }
 
     public boolean validaMove(int xD, int yD, boolean isDay, int idDestino, int idTipoDestino) {
