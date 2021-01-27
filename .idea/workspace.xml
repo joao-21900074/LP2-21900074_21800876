@@ -177,13 +177,6 @@
       <option name="presentableId" value="Default" />
       <updated>1605113877526</updated>
     </task>
-    <task id="LOCAL-00064" summary="Sumindo com Zombie do mapa quando ele morre">
-      <created>1609589002891</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1609589002891</updated>
-    </task>
     <task id="LOCAL-00065" summary="Idoso com Equipamento">
       <created>1609592531113</created>
       <option name="number" value="00065" />
@@ -520,7 +513,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611776266591</updated>
     </task>
-    <option name="localTasksCounter" value="113" />
+    <task id="LOCAL-00113" summary="Editei gameStart()">
+      <created>1611778633968</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1611778633968</updated>
+    </task>
+    <option name="localTasksCounter" value="114" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -603,7 +603,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Erros" />
     <MESSAGE value="+Erros" />
     <MESSAGE value="Refiz a classe de erros" />
     <MESSAGE value="+++Erros" />
@@ -628,7 +627,8 @@
     <MESSAGE value="Save / Load&#10;(Função adicional)" />
     <MESSAGE value="Save / Load&#10;(Criatura equipa/destroe equipamento)" />
     <MESSAGE value="Editei getGameStatistics" />
-    <option name="LAST_COMMIT_MESSAGE" value="Editei getGameStatistics" />
+    <MESSAGE value="Editei gameStart()" />
+    <option name="LAST_COMMIT_MESSAGE" value="Editei gameStart()" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/LP2_21900074_21800876$TestTWDGameManager_testLeituraBad.ic" NAME="TestTWDGameManager.testLeituraBad Coverage Results" MODIFIED="1608812999971" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

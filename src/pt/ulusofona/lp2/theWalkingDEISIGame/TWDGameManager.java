@@ -867,7 +867,11 @@ public class TWDGameManager {
                                 vivos.add((Vivo) c);
                             }else if(idTipo <= 4){
                                 zombies.add((Zombie) c);
-                                c.setNItensDestruidos(infoSave.get(c.id));
+                                if(infoSave.get(c.id) != null) {
+                                    c.setNItensDestruidos(infoSave.get(c.id));
+                                } else {
+                                    c.setNItensDestruidos(0);
+                                }
                             }
 
                             nCriaturas--;
