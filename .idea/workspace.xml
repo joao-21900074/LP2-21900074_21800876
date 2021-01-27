@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="277f7e4c-8220-423e-9b73-9c62c1e271f8" name="Default Changelist" comment="Save / Load&#10;(Criatura equipa/destroe equipamento)">
+    <list default="true" id="277f7e4c-8220-423e-9b73-9c62c1e271f8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pt/ulusofona/lp2/theWalkingDEISIGame/TWDGameManager.java" afterDir="false" />
     </list>
@@ -24,8 +24,8 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
-        <option value="Matheus-21800876 &lt;a21800876@alunos.ulht.pt&gt;" />
         <option value="joao-21900074 &lt;a21900074@alunos.ulht.pt&gt;" />
+        <option value="Matheus-21800876 &lt;a21800876@alunos.ulht.pt&gt;" />
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -176,13 +176,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605113877526</updated>
-    </task>
-    <task id="LOCAL-00063" summary="Destruindo Equipamentos">
-      <created>1609585332386</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1609585332386</updated>
     </task>
     <task id="LOCAL-00064" summary="Sumindo com Zombie do mapa quando ele morre">
       <created>1609589002891</created>
@@ -520,7 +513,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611356538246</updated>
     </task>
-    <option name="localTasksCounter" value="112" />
+    <task id="LOCAL-00112" summary="Editei getGameStatistics">
+      <created>1611776266591</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1611776266591</updated>
+    </task>
+    <option name="localTasksCounter" value="113" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -622,13 +622,13 @@
     <MESSAGE value="Parei de filtrar itens apagados" />
     <MESSAGE value="Editei o salvamento do arquivo para não salvar os equipamentos destruidos" />
     <MESSAGE value="Arrumei a contagem de destruição de itens" />
-    <MESSAGE value="Editei getGameStatistics" />
     <MESSAGE value="Editei gameStatistics novamente" />
     <MESSAGE value="Editei getGameStatistic porque estava passando id ao inves de idTipo" />
     <MESSAGE value="+Tests" />
     <MESSAGE value="Save / Load&#10;(Função adicional)" />
     <MESSAGE value="Save / Load&#10;(Criatura equipa/destroe equipamento)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Save / Load&#10;(Criatura equipa/destroe equipamento)" />
+    <MESSAGE value="Editei getGameStatistics" />
+    <option name="LAST_COMMIT_MESSAGE" value="Editei getGameStatistics" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/LP2_21900074_21800876$TestTWDGameManager_testLeituraBad.ic" NAME="TestTWDGameManager.testLeituraBad Coverage Results" MODIFIED="1608812999971" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

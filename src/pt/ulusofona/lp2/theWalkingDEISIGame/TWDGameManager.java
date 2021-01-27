@@ -754,7 +754,7 @@ public class TWDGameManager {
             allAtributes.append(getCreatureAtributes(creatures.get(i).getId())).append("\n");
             if(creatures.get(i).getEquipe() == 20){
                 Zombie z = (Zombie) creatures.get(i);
-                infoSave.put(z.id,z.getNItensDestruidos());
+                infoSave.put(z.getId(),z.getNItensDestruidos());
             }
         }
         return allAtributes.toString();
