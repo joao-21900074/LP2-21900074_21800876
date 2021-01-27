@@ -476,6 +476,9 @@ public class TWDGameManager {
                     break;
 
                 case 3:
+                    humano.getEquipamento().addNrUsos();
+                    break;
+
                 case 8:
                     //Veneno
                     //Escudo Táctio, só defende então não mata nem morre
@@ -1056,7 +1059,7 @@ public class TWDGameManager {
                 equipamentos.stream()
                             .filter((e) -> e.getNrUsos() > 0)
                             .sorted(Comparator.comparingInt(Equipamento::getNrUsos))
-                            .map((e) -> e.getId() + ":" + e.getNrUsos())
+                            .map((e) -> e.getIdTipo() + " " + e.getNrUsos())
                             .distinct()
                             .limit(5)
                             .collect(Collectors.toList()));
