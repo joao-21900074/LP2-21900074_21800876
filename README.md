@@ -4,7 +4,7 @@ A game about Humans and Zombies.
 
 This project uses Java and has a focus on oriented programming.
 
-Below you can find a video demonstrating some mechanics and an UML with all the classes.
+Below you can find a video demonstrating some mechanics and a UML with all the classes.
 
 Video test
 https://youtu.be/bniexmoSlTo
